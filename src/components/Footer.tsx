@@ -36,36 +36,36 @@ export function Footer() {
             <span className="font-display text-primary-foreground">Her Wellness Harmony</span>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-6">
+          {/* Social Icons - Plain HTML anchors for Safari compatibility */}
+          <nav className="flex items-center gap-6" aria-label="Social media links">
             <a
               href="https://www.instagram.com/herwellnessharmony"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer external"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              aria-label="Instagram"
+              aria-label="Follow us on Instagram"
             >
-              <Instagram className="w-6 h-6" />
+              <Instagram className="w-6 h-6" aria-hidden="true" />
             </a>
             <a
               href="https://www.tiktok.com/@herwellnessharmony"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer external"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              aria-label="TikTok"
+              aria-label="Follow us on TikTok"
             >
-              <TikTokIcon className="w-6 h-6" />
+              <TikTokIcon className="w-6 h-6" aria-hidden="true" />
             </a>
             <a
               href="https://www.youtube.com/@HerWellnessHarmony"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer external"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              aria-label="YouTube"
+              aria-label="Subscribe on YouTube"
             >
-              <YouTubeIcon className="w-6 h-6" />
+              <YouTubeIcon className="w-6 h-6" aria-hidden="true" />
             </a>
-          </div>
+          </nav>
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm">
