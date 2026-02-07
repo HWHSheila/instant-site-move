@@ -45,7 +45,7 @@ export function Header() {
               asChild
               className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground rounded-full px-6"
             >
-              <a href="https://www.herwellnessharmony.com/ready" target="_blank" rel="noopener noreferrer">
+              <a href="/free-guide">
                 Free Guide
               </a>
             </Button>
@@ -79,7 +79,7 @@ export function Header() {
                 asChild
                 className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground rounded-full w-full mt-2"
               >
-                <a href="https://www.herwellnessharmony.com/ready" target="_blank" rel="noopener noreferrer">
+                <a href="/free-guide">
                   Free Guide
                 </a>
               </Button>
