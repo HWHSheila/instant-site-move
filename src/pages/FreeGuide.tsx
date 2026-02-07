@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle } from "lucide-react";
@@ -38,6 +39,10 @@ export default function FreeGuide() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Free Gut Repair Guide" 
+        description="Download the free Gut Repair Guide and learn how to support gut healing, metabolism, and hormones with a simple step-by-step roadmap."
+      />
       <Header />
       
       <main className="flex-grow flex items-center justify-center pt-20 md:pt-24 pb-16 md:pb-20">
