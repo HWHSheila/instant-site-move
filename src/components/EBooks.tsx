@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 // Image imports for ebooks
-import ebookGutReset from "@/assets/ebook-gut-reset.png";
+import ebookGutReset from "@/assets/ebook-gut-reset-cover.jpg";
 import ebookGlp1 from "@/assets/ebook-glp1.jpg";
 import ebookGutEnvironment from "@/assets/ebook-gut-environment.jpg";
 
