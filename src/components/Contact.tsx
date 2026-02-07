@@ -1,49 +1,27 @@
-import { Mail, Instagram, Facebook } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28 bg-wellness-forest">
       <div className="container-wellness">
-        <div className="text-center mb-12">
-          <p className="section-label text-wellness-gold mb-3">Get In Touch</p>
-          <h2 className="section-title text-primary-foreground">Let's Start Your Healing Journey</h2>
-        </div>
-
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-lg text-primary-foreground/90 leading-relaxed mb-8">
-            Have questions about which service is right for you? Ready to take the first step toward root-cause healing? I'd love to hear from you.
+        <div className="bg-wellness-forest-dark rounded-3xl py-16 md:py-20 px-8 md:px-16 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground mb-6">
+            Ready to Start Your Healing Journey?
+          </h2>
+          
+          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Download the exact guide Sheila wishes she had when she started. It's free, it's simple, and it's the first step toward feeling whole again.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
-            <a
-              href="mailto:hello@herwellnessharmony.com"
-              className="flex items-center gap-3 text-primary-foreground hover:text-wellness-gold transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              <span>hello@herwellnessharmony.com</span>
+          
+          <Button
+            asChild
+            size="lg"
+            className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
+          >
+            <a href="https://www.herwellnessharmony.com/ready" target="_blank" rel="noopener noreferrer">
+              Download Your Free Gut Reset Guide
             </a>
-          </div>
-
-          <div className="flex items-center justify-center gap-4">
-            <a
-              href="https://instagram.com/herwellnessharmony"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://facebook.com/herwellnessharmony"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5" />
-            </a>
-          </div>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import { Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 // TikTok icon component (not available in lucide-react)
@@ -24,105 +23,83 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted border-t border-border">
-      {/* CTA Section */}
-      <div className="py-16 md:py-20">
-        <div className="container-wellness text-center">
-          <img 
-            src={logo} 
-            alt="Her Wellness Harmony" 
-            className="w-20 h-20 md:w-24 md:h-24 object-contain mx-auto mb-6"
-          />
-          
-          <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
-            Her Wellness Harmony helps women heal the root cause of gut imbalance, hormone disruption, and metabolic burnout through simple functional lifestyle shifts.
-          </p>
-          
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Start your gut-healing journey today with simple, evidence-based shifts that support your metabolism, hormones, and long-term wellness.
-          </p>
-          
-          <Button
-            asChild
-            size="lg"
-            className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground rounded-full px-8 py-6 text-base font-semibold"
-          >
-            <a href="https://www.herwellnessharmony.com/ready" target="_blank" rel="noopener noreferrer">
-              Download Your Free Gut Reset Guide
+    <footer className="py-8 bg-wellness-forest border-t border-wellness-forest-dark">
+      <div className="container-wellness">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <img 
+              src={logo} 
+              alt="Her Wellness Harmony" 
+              className="w-10 h-10 object-contain"
+            />
+            <span className="font-display text-primary-foreground">Her Wellness Harmony</span>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-6">
+            <a
+              href="https://www.instagram.com/herwellnessharmony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6" />
             </a>
-          </Button>
-        </div>
-      </div>
+            <a
+              href="https://www.tiktok.com/@herwellnessharmony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              aria-label="TikTok"
+            >
+              <TikTokIcon className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.youtube.com/@HerWellnessHarmony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              aria-label="YouTube"
+            >
+              <YouTubeIcon className="w-6 h-6" />
+            </a>
+          </div>
 
-      {/* Social & Legal Section */}
-      <div className="py-8 border-t border-border">
-        <div className="container-wellness">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Social Icons */}
-            <div className="flex items-center gap-6">
-              <a
-                href="https://www.instagram.com/herwellnessharmony"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-wellness-forest transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.tiktok.com/@herwellnessharmony"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-wellness-forest transition-colors"
-                aria-label="TikTok"
-              >
-                <TikTokIcon className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.youtube.com/@HerWellnessHarmony"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-wellness-forest transition-colors"
-                aria-label="YouTube"
-              >
-                <YouTubeIcon className="w-6 h-6" />
-              </a>
-            </div>
-
-            {/* Copyright */}
-            <p className="text-sm text-muted-foreground">
-              © {currentYear} Her Wellness Harmony. All rights reserved.
-            </p>
-
-            {/* Legal Links */}
-            <div className="flex items-center gap-6 text-sm">
-              <a
-                href="https://www.herwellnessharmony.com/terms"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Terms & Conditions
-              </a>
-              <a
-                href="https://www.herwellnessharmony.com/disclaimer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Disclaimer
-              </a>
-              <a
-                href="https://www.herwellnessharmony.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Privacy Policy
-              </a>
-            </div>
+          {/* Legal Links */}
+          <div className="flex items-center gap-6 text-sm">
+            <a
+              href="https://www.herwellnessharmony.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            >
+              Terms
+            </a>
+            <a
+              href="https://www.herwellnessharmony.com/disclaimer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            >
+              Disclaimer
+            </a>
+            <a
+              href="https://www.herwellnessharmony.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            >
+              Privacy
+            </a>
           </div>
         </div>
+
+        {/* Copyright */}
+        <p className="text-sm text-primary-foreground/60 text-center">
+          © {currentYear} Her Wellness Harmony. All rights reserved.
+        </p>
       </div>
     </footer>
   );
