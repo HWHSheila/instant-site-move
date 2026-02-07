@@ -19,6 +19,13 @@ function YouTubeIcon({ className }: { className?: string }) {
   );
 }
 
+// Handle external link click for Safari iframe compatibility
+function handleExternalLink(e: React.MouseEvent<HTMLAnchorElement>, url: string) {
+  e.preventDefault();
+  // Use window.open with specific features to work around Safari COOP in iframes
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -36,31 +43,28 @@ export function Footer() {
             <span className="font-display text-primary-foreground">Her Wellness Harmony</span>
           </div>
 
-          {/* Social Icons - Plain HTML anchors for Safari compatibility */}
+          {/* Social Icons - Using window.open for Safari iframe compatibility */}
           <nav className="flex items-center gap-6" aria-label="Social media links">
             <a
               href="https://www.instagram.com/herwellnessharmony"
-              target="_blank"
-              rel="noopener noreferrer external"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              onClick={(e) => handleExternalLink(e, "https://www.instagram.com/herwellnessharmony")}
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors cursor-pointer"
               aria-label="Follow us on Instagram"
             >
               <Instagram className="w-6 h-6" aria-hidden="true" />
             </a>
             <a
               href="https://www.tiktok.com/@herwellnessharmony"
-              target="_blank"
-              rel="noopener noreferrer external"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              onClick={(e) => handleExternalLink(e, "https://www.tiktok.com/@herwellnessharmony")}
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors cursor-pointer"
               aria-label="Follow us on TikTok"
             >
               <TikTokIcon className="w-6 h-6" aria-hidden="true" />
             </a>
             <a
               href="https://www.youtube.com/@HerWellnessHarmony"
-              target="_blank"
-              rel="noopener noreferrer external"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              onClick={(e) => handleExternalLink(e, "https://www.youtube.com/@HerWellnessHarmony")}
+              className="text-primary-foreground/70 hover:text-primary-foreground transition-colors cursor-pointer"
               aria-label="Subscribe on YouTube"
             >
               <YouTubeIcon className="w-6 h-6" aria-hidden="true" />
