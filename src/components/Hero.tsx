@@ -35,7 +35,7 @@ export function Hero() {
               size="lg"
               className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base"
             >
-              <a href="https://www.herwellnessharmony.com/ready" target="_blank" rel="noopener noreferrer">
+              <a href="/free-guide">
                 Download Your Free Gut Reset Guide
               </a>
             </Button>
