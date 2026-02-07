@@ -7,25 +7,34 @@ interface ServiceCardProps {
   duration: string;
   description: string;
   bookingLink: string;
+  featured?: boolean;
 }
 
-function ServiceCard({ price, priceLabel, title, duration, description, bookingLink }: ServiceCardProps) {
+function ServiceCard({ price, priceLabel, title, duration, description, bookingLink, featured }: ServiceCardProps) {
   return (
-    <div className="card-wellness p-6 flex flex-col h-full">
+    <div className={`p-6 flex flex-col h-full rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-300 ${
+      featured 
+        ? 'bg-wellness-forest text-primary-foreground border-wellness-forest' 
+        : 'bg-card text-foreground border-border'
+    }`}>
       <div className="mb-4">
-        <span className="text-sm text-muted-foreground">{priceLabel}</span>
-        <span className="text-2xl font-display font-semibold text-accent ml-2">${price}</span>
+        <span className={`text-sm ${featured ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>{priceLabel}</span>
+        <span className={`text-2xl font-display font-semibold ml-2 ${featured ? 'text-wellness-gold' : 'text-accent'}`}>${price}</span>
       </div>
       
-      <h3 className="text-xl font-display font-medium text-foreground mb-2">{title}</h3>
+      <h3 className={`text-xl font-display font-medium mb-2 ${featured ? 'text-primary-foreground' : 'text-foreground'}`}>{title}</h3>
       
-      <p className="text-sm text-muted-foreground mb-4">{duration}</p>
+      <p className={`text-sm mb-4 ${featured ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>{duration}</p>
       
-      <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{description}</p>
+      <p className={`leading-relaxed mb-6 flex-grow ${featured ? 'text-primary-foreground/90' : 'text-muted-foreground'}`}>{description}</p>
       
       <Button
         asChild
-        className="w-full bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground rounded-full"
+        className={`w-full rounded-full ${
+          featured 
+            ? 'bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark' 
+            : 'bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground'
+        }`}
       >
         <a href={bookingLink} target="_blank" rel="noopener noreferrer">
           Book Now
@@ -43,6 +52,7 @@ const services: ServiceCardProps[] = [
     duration: "60 minutes",
     description: "The best place to start. We'll explore your symptoms, gut patterns, stress load, hormone clues, and build a personalized plan with 3–5 simple steps you can begin immediately.",
     bookingLink: "https://buy.stripe.com/7sYdRaf5wbI89hG2xl38400",
+    featured: true,
   },
   {
     price: "125",
