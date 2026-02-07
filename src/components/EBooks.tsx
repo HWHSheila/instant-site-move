@@ -14,22 +14,24 @@ interface EBookCardProps {
 
 function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: EBookCardProps) {
   return (
-    <div className="card-wellness overflow-hidden flex flex-col h-full">
+    <div className={`card-wellness overflow-hidden flex flex-col h-full ${comingSoon ? 'opacity-70' : ''}`}>
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${comingSoon ? 'grayscale-[30%]' : ''}`}
         />
         {comingSoon && (
-          <div className="absolute top-4 right-4 bg-wellness-gold text-wellness-forest-dark text-xs font-semibold px-3 py-1 rounded-full">
-            Launching Soon
+          <div className="absolute inset-0 flex items-center justify-center bg-wellness-forest/40">
+            <span className="bg-wellness-gold text-wellness-forest-dark text-lg font-display font-semibold px-6 py-3 rounded-full shadow-lg">
+              Launching Soon
+            </span>
           </div>
         )}
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-display font-medium text-foreground mb-3">{title}</h3>
+        <h3 className={`text-xl font-display font-medium mb-3 ${comingSoon ? 'text-muted-foreground' : 'text-foreground'}`}>{title}</h3>
         <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{description}</p>
         
         {ctaLink && !comingSoon ? (

@@ -44,7 +44,7 @@ export function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8 py-6 text-base"
+              className="border-primary-foreground text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-full px-8 py-6 text-base backdrop-blur-sm"
             >
               <a href="#services">
                 View Services
