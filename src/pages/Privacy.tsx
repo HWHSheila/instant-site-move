@@ -85,7 +85,15 @@ export default function Privacy() {
                   <li>Request deletion of your personal information</li>
                   <li>Opt out of marketing communications</li>
                 </ul>
-                <p>To exercise any of these rights, please contact us at hello@herwellnessharmony.com.</p>
+                <p>
+                  To exercise any of these rights, please contact us at{" "}
+                  <a 
+                    href="mailto:support@herwellnessharmony.com" 
+                    className="text-wellness-forest hover:text-wellness-forest-dark underline"
+                  >
+                    support@herwellnessharmony.com
+                  </a>.
+                </p>
               </section>
 
               <section className="space-y-4">
@@ -105,7 +113,13 @@ export default function Privacy() {
               <section className="space-y-4">
                 <h2 className="text-xl font-display font-medium text-foreground">11. Contact Us</h2>
                 <p>
-                  If you have questions or concerns about this Privacy Policy, please contact us at hello@herwellnessharmony.com.
+                  If you have questions or concerns about this Privacy Policy, please contact us at{" "}
+                  <a 
+                    href="mailto:support@herwellnessharmony.com" 
+                    className="text-wellness-forest hover:text-wellness-forest-dark underline"
+                  >
+                    support@herwellnessharmony.com
+                  </a>.
                 </p>
               </section>
             </div>

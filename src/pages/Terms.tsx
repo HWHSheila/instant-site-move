@@ -82,7 +82,13 @@ export default function Terms() {
               <section className="space-y-4">
                 <h2 className="text-xl font-display font-medium text-foreground">9. Contact Information</h2>
                 <p>
-                  For questions about these Terms of Service, please contact us at hello@herwellnessharmony.com.
+                  For questions about these Terms of Service, please contact us at{" "}
+                  <a 
+                    href="mailto:support@herwellnessharmony.com" 
+                    className="text-wellness-forest hover:text-wellness-forest-dark underline"
+                  >
+                    support@herwellnessharmony.com
+                  </a>.
                 </p>
               </section>
             </div>
