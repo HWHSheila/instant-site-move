@@ -1,25 +1,66 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "E-Books", href: "#ebooks" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/", isRoute: true },
+  { label: "About", href: "/#about", isRoute: false },
+  { label: "Services", href: "/#services", isRoute: false },
+  { label: "E-Books", href: "/#ebooks", isRoute: false },
+  { label: "Contact", href: "/#contact", isRoute: false },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute: boolean) => {
+    if (isRoute) {
+      // It's a full route, let the link work normally
+      return;
+    }
+
+    e.preventDefault();
+    
+    // Check if we're on the home page
+    if (location.pathname === "/") {
+      // Just scroll to the section
+      const sectionId = href.replace("/#", "");
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home page first, then scroll
+      navigate("/");
+      setTimeout(() => {
+        const sectionId = href.replace("/#", "");
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <div className="container-wellness">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" onClick={handleLogoClick} className="flex items-center gap-3">
             <img 
               src={logo} 
               alt="Her Wellness Harmony" 
@@ -36,6 +77,7 @@ export function Header() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href, link.isRoute)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
@@ -69,8 +111,11 @@ export function Header() {
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => {
+                    handleNavClick(e, link.href, link.isRoute);
+                    setMobileMenuOpen(false);
+                  }}
                   className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
