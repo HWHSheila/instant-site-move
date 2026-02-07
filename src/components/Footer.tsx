@@ -70,25 +70,19 @@ export function Footer() {
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm">
             <a
-              href="https://www.herwellnessharmony.com/terms"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/terms"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
             >
               Terms
             </a>
             <a
-              href="https://www.herwellnessharmony.com/disclaimer"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/disclaimer"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
             >
               Disclaimer
             </a>
             <a
-              href="https://www.herwellnessharmony.com/privacy"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/privacy"
               className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
             >
               Privacy
