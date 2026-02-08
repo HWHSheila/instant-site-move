@@ -18,18 +18,25 @@ export default function FreeGuideThankYou() {
             {/* Section Label */}
             <p className="section-label mb-4">Free Resource</p>
             
-            {/* Confirmation Card */}
-            <div className="bg-card rounded-2xl border border-border p-8 md:p-10">
-              <div className="flex justify-center mb-4">
-                <CheckCircle className="w-16 h-16 text-wellness-forest" />
-              </div>
-              <h1 className="text-2xl md:text-3xl font-display font-medium text-foreground mb-3">
-                You're In!
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Check your email for the guide. If you don't see it within a few minutes, please check your spam folder.
-              </p>
+            {/* Success Icon */}
+            <div className="flex justify-center mb-6">
+              <CheckCircle className="w-20 h-20 text-wellness-forest" />
             </div>
+            
+            {/* Headline */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
+              You're In!
+            </h1>
+            
+            {/* Supporting Text */}
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              Check your email for the Free Gut Repair Guide. If you don't see it within a few minutes, please check your spam or promotions folder.
+            </p>
+            
+            {/* Additional Info */}
+            <p className="text-sm text-muted-foreground">
+              Questions? Reach out anytime — we're here to help.
+            </p>
           </div>
         </div>
       </main>
