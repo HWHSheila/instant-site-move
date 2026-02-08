@@ -30,7 +30,7 @@ export default function FreeGuide() {
             {/* Raw HTML Form - Direct Systeme.io Submission */}
             <form 
               method="post" 
-              action="https://systeme.io/embedded/37722709/subscription"
+              action="https://systeme.io/embedded/37730375/subscription"
               className="space-y-4"
             >
               <input 
