@@ -33,7 +33,8 @@ export function About() {
             </div>
 
             <div className="card-wellness p-6">
-              <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">
+              <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">My Philosophy
+
                 <span className="text-2xl">💛</span> My Philosophy
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -44,8 +45,7 @@ export function About() {
 
           {/* Tags */}
           <div className="flex flex-wrap justify-center gap-3">
-            {tags.map((tag) =>
-            <span key={tag} className="badge-wellness">
+            {tags.map((tag) => <span key={tag} className="badge-wellness">
                 {tag}
               </span>
             )}
