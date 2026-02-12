@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28 bg-wellness-forest">
       <div className="container-wellness">
-        <div className="bg-wellness-forest-dark rounded-3xl py-16 md:py-20 px-8 md:px-16 text-center">
+        <div className="bg-wellness-forest-dark rounded-3xl py-16 md:py-20 px-8 md:px-16 text-center flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground mb-6">
             Ready to Start Your Healing Journey?
           </h2>
