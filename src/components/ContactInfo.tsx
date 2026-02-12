@@ -1,4 +1,4 @@
-import { Mail, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export function ContactInfo() {
   return (
@@ -50,7 +50,7 @@ export function ContactInfo() {
             {/* Email Support */}
             <div className="bg-wellness-forest rounded-2xl p-8 text-center">
               <div className="flex justify-center mb-4">
-                <Mail className="w-10 h-10 text-wellness-gold" />
+                
               </div>
               <h3 className="text-xl font-display font-medium text-primary-foreground mb-2">Email Support
 
