@@ -16,7 +16,7 @@ export function Contact() {
           <Button
             asChild
             size="lg"
-            className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
+            className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base mx-auto"
           >
             <a href="/free-guide">
               Download Your Free Gut Reset Guide
