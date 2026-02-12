@@ -35,7 +35,7 @@ export function About() {
             <div className="card-wellness p-6">
               <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">My Philosophy
 
-                 My Philosophy
+
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Healing doesn't happen through force. It happens through gentleness, rhythm, safety, and honoring your body's timing. I blend evidence-based strategies, functional lifestyle shifts, and TCM energetics — because true healing is biochemical, energetic, emotional, and metabolic.
