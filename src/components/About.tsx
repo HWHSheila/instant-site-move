@@ -33,8 +33,7 @@ export function About() {
             </div>
 
             <div className="card-wellness p-6">
-              <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">My Philosophy
-
+              <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">
                 <span className="text-2xl">💛</span> My Philosophy
               </h3>
               <p className="text-muted-foreground leading-relaxed">
