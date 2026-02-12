@@ -19,7 +19,7 @@ export function Contact() {
             className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base mx-auto"
           >
             <a href="/free-guide">
-              Download Your Free Gut Reset Guide
+              Download Your Free Guide
             </a>
           </Button>
         </div>
