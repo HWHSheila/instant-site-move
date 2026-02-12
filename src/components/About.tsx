@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 
 const tags = [
-  "Gut Repair",
-  "Hormone Balance",
-  "Metabolic Support",
-  "Mitochondrial Resilience",
-  "Nervous System Harmony",
-];
+"Gut Repair",
+"Hormone Balance",
+"Metabolic Support",
+"Mitochondrial Resilience",
+"Nervous System Harmony"];
+
 
 export function About() {
   return (
@@ -25,7 +25,7 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             <div className="card-wellness p-6">
               <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">
-                <span className="text-2xl">🌱</span> My Journey
+                 My Journey
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 After nearly 20 years in science, a severe reaction triggered mitochondrial dysfunction, gut damage, hormone imbalance, and metabolic crash. When traditional answers failed, I went deeper — studying root-cause gut healing, functional nutrition, and nervous system recovery. Little by little, everything shifted.
@@ -44,29 +44,29 @@ export function About() {
 
           {/* Tags */}
           <div className="flex flex-wrap justify-center gap-3">
-            {tags.map((tag) => (
-              <span key={tag} className="badge-wellness">
+            {tags.map((tag) =>
+            <span key={tag} className="badge-wellness">
                 {tag}
               </span>
-            ))}
+            )}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 export function WorkingWith() {
   const attributes = [
-    "Gentle & supportive",
-    "Non-judgmental",
-    "Science-informed",
-    "Nervous-system aware",
-    "Gut-first approach",
-    "Hormone-friendly",
-    "Emotionally safe",
-    "Root-cause focused",
-  ];
+  "Gentle & supportive",
+  "Non-judgmental",
+  "Science-informed",
+  "Nervous-system aware",
+  "Gut-first approach",
+  "Hormone-friendly",
+  "Emotionally safe",
+  "Root-cause focused"];
+
 
   return (
     <section className="py-20 md:py-28 bg-wellness-forest">
@@ -84,8 +84,8 @@ export function WorkingWith() {
           <Button
             asChild
             size="lg"
-            className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base mb-12"
-          >
+            className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base mb-12">
+
             <a href="https://buy.stripe.com/7sYdRaf5wbI89hG2xl38400" target="_blank" rel="noopener noreferrer">
               Book Your Initial Consultation
             </a>
@@ -94,18 +94,18 @@ export function WorkingWith() {
           {/* Scrolling Marquee */}
           <div className="overflow-hidden">
             <div className="flex animate-marquee whitespace-nowrap">
-              {[...attributes, ...attributes].map((attr, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center px-6 py-2 mx-2 rounded-full border border-primary-foreground/30 text-primary-foreground/90 text-sm"
-                >
+              {[...attributes, ...attributes].map((attr, index) =>
+              <span
+                key={index}
+                className="inline-flex items-center px-6 py-2 mx-2 rounded-full border border-primary-foreground/30 text-primary-foreground/90 text-sm">
+
                   {attr}
                 </span>
-              ))}
+              )}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

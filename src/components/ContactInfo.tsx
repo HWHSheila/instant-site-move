@@ -14,8 +14,8 @@ export function ContactInfo() {
         <div className="max-w-3xl mx-auto">
           {/* What you can email about */}
           <div className="mb-10">
-            <h3 className="text-xl font-display font-medium text-foreground mb-4">
-              💬 What you can email me about:
+            <h3 className="text-xl font-display font-medium text-foreground mb-4">What you can email me about:
+
             </h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>• Questions about coaching services</li>
@@ -28,8 +28,8 @@ export function ContactInfo() {
 
           {/* What I cannot respond to */}
           <div className="mb-10 bg-background rounded-2xl p-6 border border-border">
-            <h3 className="text-xl font-display font-medium text-foreground mb-4">
-              ⛔ What I <em>cannot</em> respond to:
+            <h3 className="text-xl font-display font-medium text-foreground mb-4">What I cannot respond to:
+              <em>cannot</em> respond to:
             </h3>
             <p className="text-muted-foreground mb-4">
               To protect your safety and abide by regulations, I cannot answer:
@@ -52,13 +52,13 @@ export function ContactInfo() {
               <div className="flex justify-center mb-4">
                 <Mail className="w-10 h-10 text-wellness-gold" />
               </div>
-              <h3 className="text-xl font-display font-medium text-primary-foreground mb-2">
-                📩 Email Support
+              <h3 className="text-xl font-display font-medium text-primary-foreground mb-2">Email Support
+
               </h3>
-              <a 
+              <a
                 href="mailto:support@herwellnessharmony.com"
-                className="text-wellness-gold hover:text-wellness-gold-light font-semibold text-lg transition-colors"
-              >
+                className="text-wellness-gold hover:text-wellness-gold-light font-semibold text-lg transition-colors">
+
                 support@herwellnessharmony.com
               </a>
               <p className="text-primary-foreground/80 mt-3 text-sm">
@@ -71,8 +71,8 @@ export function ContactInfo() {
               <div className="flex justify-center mb-4">
                 <Clock className="w-10 h-10 text-wellness-gold" />
               </div>
-              <h3 className="text-xl font-display font-medium text-primary-foreground mb-2">
-                💛 Client Support Hours
+              <h3 className="text-xl font-display font-medium text-primary-foreground mb-2">Client Support Hours
+
               </h3>
               <p className="text-primary-foreground font-semibold text-lg">
                 Monday–Friday
@@ -87,11 +87,11 @@ export function ContactInfo() {
           </div>
 
           {/* Thank you message */}
-          <p className="text-center text-muted-foreground mt-10 text-lg">
-            🧡 Thank you for trusting me with your healing journey.
+          <p className="text-center text-muted-foreground mt-10 text-lg">Thank you for trusting me with your healing journey.
+
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
