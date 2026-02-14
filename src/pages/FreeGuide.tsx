@@ -1,8 +1,39 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function FreeGuide() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke(
+        "systeme-subscribe",
+        { body: { email } }
+      );
+
+      if (fnError) throw fnError;
+      if (data?.error) throw new Error(data.error);
+
+      navigate("/free-guide/thank-you");
+    } catch (err: unknown) {
+      console.error("Subscription error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
@@ -27,25 +58,27 @@ export default function FreeGuide() {
               Learn how to support gut healing, metabolism, and hormones with a simple step-by-step roadmap.
             </p>
             
-            {/* Raw HTML Form - Direct Systeme.io Submission */}
-            <form 
-              method="post" 
-              action="https://systeme.io/embedded/37730375/subscription"
-              className="space-y-4"
-            >
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input 
                 type="email" 
-                name="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required 
                 placeholder="Enter your email address"
                 className="w-full h-14 text-base rounded-full px-6 border border-border bg-card focus:border-wellness-forest focus:ring-wellness-forest focus:outline-none focus:ring-2"
               />
               
+              {error && (
+                <p className="text-sm text-destructive">{error}</p>
+              )}
+              
               <button 
                 type="submit"
-                className="w-full bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-full px-8 py-4 text-base h-14 transition-colors"
+                disabled={loading}
+                className="w-full bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-full px-8 py-4 text-base h-14 transition-colors disabled:opacity-50"
               >
-                Get the FREE Guide
+                {loading ? "Sending..." : "Get the FREE Guide"}
               </button>
               
               <p className="text-sm text-muted-foreground mt-4">
