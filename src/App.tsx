@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import FreeGuide from "./pages/FreeGuide";
 import FreeGuideThankYou from "./pages/FreeGuideThankYou";
+import ThankYouRoadmap from "./pages/ThankYouRoadmap";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Disclaimer from "./pages/Disclaimer";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/free-guide" element={<FreeGuide />} />
           <Route path="/free-guide/thank-you" element={<FreeGuideThankYou />} />
+          <Route path="/thank-you-roadmap" element={<ThankYouRoadmap />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
