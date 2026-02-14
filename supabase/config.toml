@@ -1,1 +1,4 @@
 project_id = "npwitirccxyphbtxyfbs"
+
+[functions.systeme-subscribe]
+verify_jwt = false
