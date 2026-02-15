@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import FreeGuide from "./pages/FreeGuide";
 import FreeGuideThankYou from "./pages/FreeGuideThankYou";
 import ThankYouRoadmap from "./pages/ThankYouRoadmap";
+import GutRoadmap from "./pages/GutRoadmap";
 import Confirm from "./pages/Confirm";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/free-guide" element={<FreeGuide />} />
           <Route path="/free-guide/thank-you" element={<FreeGuideThankYou />} />
           <Route path="/thank-you-roadmap" element={<ThankYouRoadmap />} />
+          <Route path="/gutroadmap" element={<GutRoadmap />} />
           <Route path="/confirm" element={<Confirm />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />

@@ -3,13 +3,14 @@ import { Helmet } from "react-helmet-async";
 interface SEOProps {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const DEFAULT_TITLE = "Her Wellness Harmony | Root-Cause Wellness for Women";
 const DEFAULT_DESCRIPTION = "Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.";
 const OG_IMAGE = "https://instant-site-move.lovable.app/og-image.png";
 
-export function SEO({ title, description }: SEOProps) {
+export function SEO({ title, description, noindex }: SEOProps) {
   const pageTitle = title ? `${title} | Her Wellness Harmony` : DEFAULT_TITLE;
   const pageDescription = description || DEFAULT_DESCRIPTION;
 
@@ -17,6 +18,7 @@ export function SEO({ title, description }: SEOProps) {
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />

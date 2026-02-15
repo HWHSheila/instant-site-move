@@ -30,8 +30,7 @@ export default function ThankYouRoadmap() {
             </p>
             
             <a
-              href="https://gutroadmap-herwellnessharmony.lovable.app"
-              target="_blank"
+              href="/gutroadmap"
               rel="noopener noreferrer"
               className="inline-block w-full bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-full px-8 py-4 text-base h-14 leading-[1.75rem] transition-colors"
             >
