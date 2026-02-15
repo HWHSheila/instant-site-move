@@ -29,10 +29,27 @@ const COVER_STYLE: React.CSSProperties = {
 
 export default function GutRoadmap() {
   return (
-    <div style={{ backgroundColor: "#e8e4dc", minHeight: "100vh", paddingBottom: "3rem" }}>
+    <div
+      className="gut-roadmap-root"
+      style={{ backgroundColor: "#e8e4dc", minHeight: "100vh", paddingBottom: "3rem" }}
+    >
       <Helmet>
         <title>30 Day Gut Reset Roadmap | Her Wellness Harmony</title>
         <meta name="robots" content="noindex, nofollow" />
+        <style>{`
+          .gut-roadmap-root, .gut-roadmap-root * {
+            border-color: transparent;
+            font-family: inherit;
+          }
+          .gut-roadmap-root h1, .gut-roadmap-root h2, .gut-roadmap-root h3,
+          .gut-roadmap-root h4, .gut-roadmap-root h5, .gut-roadmap-root h6 {
+            font-family: 'Playfair Display', serif;
+          }
+          .gut-roadmap-root p, .gut-roadmap-root li, .gut-roadmap-root span,
+          .gut-roadmap-root a, .gut-roadmap-root div {
+            font-family: 'Lato', sans-serif;
+          }
+        `}</style>
       </Helmet>
 
       {/* ===== Page 1 — Cover ===== */}
