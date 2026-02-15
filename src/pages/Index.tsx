@@ -14,7 +14,7 @@ const Index = () => {
       <SEO
         title="Her Wellness Harmony"
         description="Root-cause wellness for women… Gut → Metabolism → Hormones… structured resets without chaos."
-        ogImage="https://www.herwellnessharmony.com/og-preview-2.png"
+        ogImage="https://www.herwellnessharmony.com/og-preview-3.png"
         ogUrl="https://www.herwellnessharmony.com"
       />
       <Header />
