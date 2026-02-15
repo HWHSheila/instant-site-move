@@ -8,7 +8,7 @@ export default function ThankYouRoadmap() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
         title="You're In! - 30 Day Gut Reset Roadmap" 
-        description="Thank you for requesting the 30-Day Gut Reset Roadmap. Check your email for the download link."
+        description="Your 30-Day Gut Reset Roadmap is on the way. Check your inbox."
       />
       <Header />
       
@@ -22,16 +22,21 @@ export default function ThankYouRoadmap() {
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
-              You're In!
+              You're In… Your Roadmap Is On The Way
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Check your email for the 30-Day Gut Reset Roadmap. If you don't see it within a few minutes, please check your spam or promotions folder.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              Check your inbox in the next few minutes. If you don't see it, check spam.
             </p>
             
-            <p className="text-sm text-muted-foreground">
-              Questions? Reach out anytime — we're here to help.
-            </p>
+            <a
+              href="https://gutroadmap-herwellnessharmony.lovable.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-full px-8 py-4 text-base h-14 leading-[1.75rem] transition-colors"
+            >
+              Access Your Roadmap Now
+            </a>
           </div>
         </div>
       </main>

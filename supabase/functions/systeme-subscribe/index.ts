@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 const SYSTEME_API_BASE = "https://api.systeme.io/api";
-const TAG_NAME = "HWH - Gut Repair Freebie";
+const DEFAULT_TAG_NAME = "HWH - Gut Repair Freebie";
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -20,7 +20,9 @@ serve(async (req) => {
       throw new Error("SYSTEME_IO_API_KEY is not configured");
     }
 
-    const { email } = await req.json();
+    const { email, tagName } = await req.json();
+    const resolvedTag = tagName || DEFAULT_TAG_NAME;
+
     if (!email || typeof email !== "string" || !email.includes("@")) {
       return new Response(
         JSON.stringify({ error: "A valid email is required" }),
@@ -48,7 +50,6 @@ serve(async (req) => {
       console.log("Contact created:", contactId);
     } else {
       const errorBody = await contactRes.text();
-      // If contact already exists, try to find them
       if (contactRes.status === 422 || contactRes.status === 400) {
         console.log("Contact may already exist, searching...", errorBody);
         const searchRes = await fetch(
@@ -81,15 +82,14 @@ serve(async (req) => {
     const tagsData = await tagsRes.json();
     const tagsList = tagsData.items || tagsData;
     let tag = Array.isArray(tagsList)
-      ? tagsList.find((t: { name: string }) => t.name === TAG_NAME)
+      ? tagsList.find((t: { name: string }) => t.name === resolvedTag)
       : undefined;
 
     if (!tag) {
-      // Create the tag
       const createTagRes = await fetch(`${SYSTEME_API_BASE}/tags`, {
         method: "POST",
         headers,
-        body: JSON.stringify({ name: TAG_NAME }),
+        body: JSON.stringify({ name: resolvedTag }),
       });
       if (!createTagRes.ok) {
         const tagErr = await createTagRes.text();
@@ -113,7 +113,6 @@ serve(async (req) => {
 
     if (!assignRes.ok) {
       const assignErr = await assignRes.text();
-      // 422 likely means tag already assigned – that's fine
       if (assignRes.status !== 422) {
         throw new Error(`Failed to assign tag [${assignRes.status}]: ${assignErr}`);
       }
