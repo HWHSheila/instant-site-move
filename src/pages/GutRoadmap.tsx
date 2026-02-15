@@ -296,13 +296,13 @@ export default function GutRoadmap() {
           What felt stabilizing or calming during this phase? What seemed to increase stress or symptoms?
           Note any changes in appetite, digestion, energy, or overall sense of calm.
         </P>
-        <NotesBox label="Phase 1 Notes & Body Feedback:" />
+        <NotesBox label="Phase 1 Notes & Body Feedback:" lines={10} />
         <H3>Phase 2 — Digestion &amp; Motility</H3>
         <P>
           What changes did you notice in digestion or bowel regularity? Which foods, timing, or routines felt
           supportive? Were there any patterns that stood out?
         </P>
-        <NotesBox label="Phase 2 Notes & Body Feedback:" />
+        <NotesBox label="Phase 2 Notes & Body Feedback:" lines={10} />
       </EbookPage>
 
       {/* ===== Page 11 — Reflections 3 & 4 ===== */}
@@ -313,13 +313,13 @@ export default function GutRoadmap() {
           What felt nourishing or supportive during this phase? Did you notice any reactions or sensitivities?
           What seemed to help your body feel more resilient or steady?
         </P>
-        <NotesBox label="Phase 3 Notes & Body Feedback:" />
+        <NotesBox label="Phase 3 Notes & Body Feedback:" lines={10} />
         <H3>Phase 4 — Integrate &amp; Personalize</H3>
         <P>
           Which habits or routines do you want to keep moving forward? What would you adjust if you repeated
           this reset? What signals from your body felt the most clear or reliable?
         </P>
-        <NotesBox label="Phase 4 Notes & Body Feedback:" />
+        <NotesBox label="Phase 4 Notes & Body Feedback:" lines={10} />
       </EbookPage>
 
       {/* ===== Page 12 — After Day 30 ===== */}
@@ -420,10 +420,13 @@ function Callout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function NotesBox({ label }: { label: string }) {
+function NotesBox({ label, lines = 10 }: { label: string; lines?: number }) {
   return (
-    <div style={{ border: "1px solid #d1cdc4", borderRadius: 8, padding: 16, minHeight: 100, backgroundColor: "#fff", marginBottom: 24 }}>
-      <p style={{ fontSize: 13, color: "#8a9490", fontStyle: "italic", margin: 0 }}>{label}</p>
+    <div style={{ border: "1px solid #d1cdc4", borderRadius: 8, padding: "16px 16px 8px 16px", backgroundColor: "#fff", marginBottom: 24 }}>
+      <p style={{ fontSize: 13, color: "#8a9490", fontStyle: "italic", margin: "0 0 12px 0" }}>{label}</p>
+      {Array.from({ length: lines }).map((_, i) => (
+        <div key={i} style={{ borderBottom: "1px solid #e0ddd6", height: 28 }} />
+      ))}
     </div>
   );
 }
