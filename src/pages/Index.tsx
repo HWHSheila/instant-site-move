@@ -11,7 +11,12 @@ import { SEO } from "@/components/SEO";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <SEO />
+      <SEO
+        title="Her Wellness Harmony"
+        description="Root-cause wellness for women… Gut → Metabolism → Hormones… structured resets without chaos."
+        ogImage="https://www.herwellnessharmony.com/og-preview-2.png"
+        ogUrl="https://www.herwellnessharmony.com"
+      />
       <Header />
       <Hero />
       <About />
