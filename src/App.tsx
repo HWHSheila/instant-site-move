@@ -10,6 +10,9 @@ import FreeGuideThankYou from "./pages/FreeGuideThankYou";
 import ThankYouRoadmap from "./pages/ThankYouRoadmap";
 import GutRoadmap from "./pages/GutRoadmap";
 import RootCauseFree from "./pages/RootCauseFree";
+import GLP1Signal from "./pages/GLP1Signal";
+import GLP1Confirm from "./pages/GLP1Confirm";
+import GLP1ThankYou from "./pages/GLP1ThankYou";
 import Confirm from "./pages/Confirm";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/thank-you-roadmap" element={<ThankYouRoadmap />} />
           <Route path="/gutroadmap" element={<GutRoadmap />} />
           <Route path="/root-cause-free" element={<RootCauseFree />} />
+          <Route path="/glp1-signal" element={<GLP1Signal />} />
+          <Route path="/glp1-confirm" element={<GLP1Confirm />} />
+          <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/confirm" element={<Confirm />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
