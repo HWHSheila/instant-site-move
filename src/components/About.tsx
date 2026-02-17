@@ -18,8 +18,8 @@ export function About() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-foreground leading-relaxed mb-8">
-            My name is <strong>Sheila McFarland</strong>, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body — and the fierce determination to take that power back.
+          <p className="text-lg text-foreground leading-relaxed mb-8">My name is Sheila McFarland, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body, and the fierce determination to take that power back.
+            <strong>Sheila McFarland</strong>, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body — and the fierce determination to take that power back.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -27,8 +27,8 @@ export function About() {
               <h3 className="text-xl font-display font-medium text-foreground mb-4 flex items-center gap-2">
                  My Journey
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                After nearly 20 years in science, a severe reaction triggered mitochondrial dysfunction, gut damage, hormone imbalance, and metabolic crash. When traditional answers failed, I went deeper — studying root-cause gut healing, functional nutrition, and nervous system recovery. Little by little, everything shifted.
+              <p className="text-muted-foreground leading-relaxed">After nearly 20 years in science, a severe reaction triggered mitochondrial dysfunction, gut damage, hormone imbalance, and metabolic crash. When traditional answers failed, I went deeper, studying root-cause gut healing, functional nutrition, and nervous system recovery. Little by little, everything shifted.
+
               </p>
             </div>
 
@@ -37,8 +37,8 @@ export function About() {
 
 
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Healing doesn't happen through force. It happens through gentleness, rhythm, safety, and honoring your body's timing. I blend evidence-based strategies, functional lifestyle shifts, and TCM energetics — because true healing is biochemical, energetic, emotional, and metabolic.
+              <p className="text-muted-foreground leading-relaxed">Healing doesn't happen through force. It happens through gentleness, rhythm, safety, and honoring your body's timing. I blend evidence-based strategies, functional lifestyle shifts, and TCM energetics, because true healing is biochemical, energetic, emotional, and metabolic.
+
               </p>
             </div>
           </div>

@@ -9,8 +9,8 @@ export function Hero() {
         <img
           src={heroImage}
           alt="Wellness lifestyle"
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full object-cover" />
+
         <div className="absolute inset-0 bg-gradient-to-r from-wellness-forest/85 via-wellness-forest/60 to-wellness-forest/40" />
       </div>
 
@@ -25,16 +25,16 @@ export function Hero() {
             Healing Gut, Hormones & Metabolism
           </h1>
           
-          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.
+          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing, without pressure or confusion.
+
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button
               asChild
               size="lg"
-              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base"
-            >
+              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base">
+
               <a href="/free-guide">
                 Download Your Free Gut Reset Guide
               </a>
@@ -44,8 +44,8 @@ export function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-full px-8 py-6 text-base backdrop-blur-sm"
-            >
+              className="border-primary-foreground text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-full px-8 py-6 text-base backdrop-blur-sm">
+
               <a href="#services">
                 View Services
               </a>
@@ -53,6 +53,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
