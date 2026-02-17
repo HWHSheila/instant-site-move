@@ -61,14 +61,14 @@ const ebooks: EBookCardProps[] = [
   {
     image: ebookGutReset,
     title: "30-Day Gut Reset Roadmap",
-    description: "A structured, step-by-step reset designed to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms — without restriction, extremes, or burnout.",
+    description: "A structured, step-by-step reset designed to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms without restriction, extremes, or burnout.",
     ctaText: "Get Your Copy",
     ctaLink: "https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408",
   },
   {
     image: ebookGlp1,
     title: "Understanding GLP-1 Signaling",
-    description: "Learn how gut health, blood sugar regulation, and metabolic stress influence GLP-1 signaling, appetite, and weight response — and how to strengthen it naturally.",
+    description: "Learn how gut health, blood sugar regulation, and metabolic stress influence GLP-1 signaling, appetite, and weight response and how to strengthen it naturally.",
     ctaText: "Coming Soon",
     comingSoon: true,
   },
