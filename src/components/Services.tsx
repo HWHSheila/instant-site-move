@@ -51,7 +51,7 @@ const services: ServiceCardProps[] = [
   title: "Integrative Wellness Consultation",
   duration: "60 minutes",
   description: "The best place to start. We'll explore your symptoms, gut patterns, stress load, hormone clues, and build a personalized plan with 3–5 simple steps you can begin immediately.",
-  bookingLink: "https://buy.stripe.com/9B6eVe5uW7rS0La1th38404",
+  bookingLink: "https://buy.stripe.com/7sYdRaf5wbI89hG2xl38400",
   featured: true
 },
 {
