@@ -59,7 +59,7 @@ const services: ServiceCardProps[] = [
   priceLabel: "48-Hour Turnaround",
   title: "Educational Lab Result Review",
   duration: "Written Report",
-  description: "Understand what your lab results actually mean — without fear-based interpretations. Get clear explanations, common overlooked patterns, and better questions to bring to your provider.",
+  description: "Understand what your lab results actually mean without fear-based interpretations. Get clear explanations, common overlooked patterns, and better questions to bring to your provider.",
   bookingLink: "https://buy.stripe.com/bJecN62iKfYo51qdbZ38407"
 },
 {
@@ -83,7 +83,7 @@ const services: ServiceCardProps[] = [
   priceLabel: "Personalized Rhythms",
   title: "Morning + Night Routine Blueprint",
   duration: "60 minutes",
-  description: "Together we build supportive A.M. and P.M. routines — supporting gut motility, cortisol rhythm, hydration, blood sugar, and circadian alignment.",
+  description: "Together we build supportive A.M. and P.M. routines supporting gut motility, cortisol rhythm, hydration, blood sugar, and circadian alignment.",
   bookingLink: "https://buy.stripe.com/9B600kaPgcMc2Ti5Jx38403"
 },
 {
