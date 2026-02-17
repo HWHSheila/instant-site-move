@@ -18,9 +18,7 @@ export function About() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-foreground leading-relaxed mb-8">My name is Sheila McFarland, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body, and the fierce determination to take that power back.
-            <strong>Sheila McFarland</strong>, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body — and the fierce determination to take that power back.
-          </p>
+          <p className="text-lg text-foreground leading-relaxed mb-8">My name is <strong>Sheila McFarland</strong>, and Her Wellness Harmony was born from my own unexpected detour into illness, burnout, and complete loss of control over my body, and the fierce determination to take that power back.</p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             <div className="card-wellness p-6">
