@@ -83,7 +83,7 @@ export function WorkingWith() {
             size="lg"
             className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base mb-12">
 
-            <a href="https://buy.stripe.com/7sYdRaf5wbI89hG2xl38400" target="_blank" rel="noopener noreferrer">
+            <a href="https://buy.stripe.com/9B6eVe5uW7rS0La1th38404" target="_blank" rel="noopener noreferrer">
               Book Your Initial Consultation
             </a>
           </Button>
