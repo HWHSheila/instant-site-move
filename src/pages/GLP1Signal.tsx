@@ -4,6 +4,13 @@ import chapterOpener from "@/assets/glp1-chapter-opener.jpg";
 import protocolTransition from "@/assets/glp1-protocol-transition.jpg";
 import coachingImg from "@/assets/glp1-coaching.jpg";
 
+const PageFooter = ({ pageNum }: { pageNum: number }) => (
+  <div className="ebook-doc-footer">
+    <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
+    <div style={{ marginTop: "0.25em", fontSize: "0.6rem" }}>{pageNum}</div>
+  </div>
+);
+
 export default function GLP1Signal() {
   return (
     <div style={{ fontFamily: "'Montserrat', sans-serif", background: "#D9D1CB", minHeight: "100vh" }}>
@@ -234,7 +241,7 @@ export default function GLP1Signal() {
           Sheila McFarland
         </p>
         <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", position: "absolute", bottom: "0.75in" }}>
-          www.herwellnessharmony.com
+          <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
       </div>
       <div className="ebook-spacer" />
@@ -260,9 +267,7 @@ export default function GLP1Signal() {
             <span>{item.title}</span>
           </div>
         ))}
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <PageFooter pageNum={2} />
       </div>
       <div className="ebook-spacer" />
 
@@ -287,6 +292,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This book is not anti-medication. It is not a quick fix. It is not a restrictive diet strategy. It is a physiology first framework for understanding how GLP-1 fits into the broader picture of metabolic renewal, and how to work with the body instead of against it.</p>
         <p className="ebook-doc-body">If you understand the signal, you understand the system.</p>
         <p className="ebook-doc-body">When you understand the system, you can begin rebuilding it with intention.</p>
+        <PageFooter pageNum={3} />
       </div>
       <div className="ebook-spacer" />
 
@@ -347,6 +353,7 @@ export default function GLP1Signal() {
         </ul>
         <p className="ebook-doc-body">The issue is rarely that GLP-1 does not exist.</p>
         <p className="ebook-doc-body">The issue is that the signaling environment has become distorted.</p>
+        <PageFooter pageNum={4} />
       </div>
       <div className="ebook-spacer" />
 
@@ -367,9 +374,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is a signal that helps regulate energy distribution, appetite, and glucose balance.</p>
         <p className="ebook-doc-body">If you understand that it is a messenger rather than a fat burner, everything else in this book will make more sense.</p>
         <p className="ebook-doc-body">In the next chapter, we will look more closely at why calling GLP-1 a fat-burning hormone is not only inaccurate, but misleading.</p>
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <PageFooter pageNum={5} />
       </div>
       <div className="ebook-spacer" />
 
@@ -410,6 +415,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It may reduce appetite.</p>
         <p className="ebook-doc-body">It may improve blood sugar.</p>
         <p className="ebook-doc-body">But it does not automatically rebuild the terrain.</p>
+        <PageFooter pageNum={6} />
       </div>
       <div className="ebook-spacer" />
 
@@ -431,9 +437,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
         <p className="ebook-doc-body">When signaling improves, regulation becomes smoother.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine why GLP-1 signaling breaks in the first place, and what disrupts the communication network that supports metabolic stability.</p>
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <PageFooter pageNum={7} />
       </div>
       <div className="ebook-spacer" />
 
@@ -485,6 +489,7 @@ export default function GLP1Signal() {
           <li>Difficulty losing weight</li>
         </ul>
         <p className="ebook-doc-body">The signal may still be present, but the response is altered.</p>
+        <PageFooter pageNum={8} />
       </div>
       <div className="ebook-spacer" />
 
@@ -526,6 +531,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
         <p className="ebook-doc-body">This is why understanding upstream factors matters.</p>
         <p className="ebook-doc-body">In the next chapter, we will look at GLP-1 medications and examine what they actually do within this signaling network.</p>
+        <PageFooter pageNum={9} />
       </div>
       <div className="ebook-spacer" />
 
@@ -548,6 +554,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">For others, side effects emerge.</p>
         <p className="ebook-doc-body">Nausea, digestive discomfort, gallbladder stress, fatigue, or muscle loss can occur. Reduced appetite without adequate protein intake may accelerate lean tissue loss. Rapid weight loss without resistance training can compromise metabolic resilience.</p>
         <p className="ebook-doc-body">The outcome depends on the environment in which the medication is used.</p>
+        <PageFooter pageNum={10} />
       </div>
       <div className="ebook-spacer" />
 
@@ -563,9 +570,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It does not automatically restore the system.</p>
         <p className="ebook-doc-body">Understanding what these drugs do allows you to make informed decisions. Whether you choose to use medication, avoid it, or use it temporarily, the same foundational principles apply. Gut stability, metabolic support, muscle preservation, stress regulation, and inflammatory control remain essential.</p>
         <p className="ebook-doc-body">In the next chapter, we will shift toward how GLP-1 signaling can be supported naturally by improving the terrain in which the signal operates.</p>
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <PageFooter pageNum={11} />
       </div>
       <div className="ebook-spacer" />
 
@@ -582,6 +587,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Carbohydrate quality matters more than carbohydrate elimination. Whole, minimally processed carbohydrates paired with protein and fat produce a different glycemic response than refined sugars eaten alone. Stable blood sugar supports coordinated hormone communication.</p>
         <p className="ebook-doc-body">Meal timing influences signaling rhythm. Constant grazing can blunt hunger and satiety cues. Extended periods of chaotic eating can destabilize blood sugar. Regular meals with balanced macronutrients allow the signaling network to regain predictability.</p>
         <p className="ebook-doc-body">Muscle tissue plays a central role in metabolic health. Resistance training improves insulin sensitivity and enhances glucose disposal. When muscle mass increases or is preserved, metabolic flexibility improves. This indirectly supports GLP-1 effectiveness because the downstream response becomes more efficient.</p>
+        <PageFooter pageNum={12} />
       </div>
       <div className="ebook-spacer" />
 
@@ -602,9 +608,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
         <p className="ebook-doc-body">This is not a quick intervention. It is a systems approach.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why restoring the gut and metabolic environment must come before expecting hormone signaling to normalize.</p>
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <PageFooter pageNum={13} />
       </div>
       <div className="ebook-spacer" />
 
@@ -642,6 +646,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Gut stability supports metabolic chemistry. Metabolic chemistry supports hormone signaling. Hormone signaling influences appetite, energy, and body composition.</p>
         <p className="ebook-doc-body">When you respect the hierarchy, you work with the system rather than against it.</p>
         <p className="ebook-doc-body">In the next chapter, we will bring this framework together in a structured 90-day approach that moves through these layers intentionally and progressively.</p>
+        <PageFooter pageNum={14} />
       </div>
       <div className="ebook-spacer" />
 
@@ -672,6 +677,7 @@ export default function GLP1Signal() {
           </ul>
           <p className="ebook-doc-body">The objective is stability, not intensity. Appetite cues should begin to feel less chaotic. Energy should become more predictable.</p>
         </div>
+        <PageFooter pageNum={15} />
       </div>
       <div className="ebook-spacer" />
 
@@ -713,6 +719,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 signaling improves when the environment supports it. When gut stability, muscle mass, sleep, and stress regulation are aligned, hormone communication becomes more efficient.</p>
         <p className="ebook-doc-body">The body responds to sequence.</p>
         <p className="ebook-doc-body">When you respect order of operations, the system stabilizes.</p>
+        <PageFooter pageNum={16} />
       </div>
       <div className="ebook-spacer" />
 
@@ -752,6 +759,7 @@ export default function GLP1Signal() {
           <li>Supportive supplement or essential oil routines, if desired</li>
         </ul>
         <p className="ebook-doc-body">You will leave this session with a personalized 4-week starting plan aligned with your current capacity.</p>
+        <PageFooter pageNum={17} />
       </div>
       <div className="ebook-spacer" />
 
@@ -774,10 +782,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This coaching experience provides clarity, accountability, and refinement beyond what a static protocol can offer.</p>
         <p className="ebook-doc-body">If you feel steady and confident after 90 days, continue building. If you feel ready for deeper personalization, this is your next step.</p>
         <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>Coaching sessions are educational in nature and do not replace care from your licensed healthcare provider.</p>
-        <p className="ebook-doc-body">To inquire about availability, visit: www.herwellnessharmony.com and view services</p>
-        <div className="ebook-doc-footer">
-          www.herwellnessharmony.com
-        </div>
+        <p className="ebook-doc-body">To inquire about availability, visit: <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a> and view services</p>
+        <PageFooter pageNum={18} />
       </div>
       <div className="ebook-spacer" />
 
@@ -797,6 +803,7 @@ export default function GLP1Signal() {
           <li style={{ marginBottom: "0.8em" }}>Chaudhri, O.B., et al. (2008). The role of gut hormones in appetite regulation. <em>Gastroenterology</em>, 135(6), 2030-2042. Describes how gut-derived hormones, including GLP-1, influence satiety and energy intake.</li>
           <li style={{ marginBottom: "0.8em" }}>Lean, M.E.J., et al. (2021). The role of GLP-1 receptor agonists in weight management. <em>Nature Reviews Endocrinology</em>, 17, 593-606. Reviews pharmaceutical GLP-1 agonists and their effects on weight, appetite, and metabolic regulation.</li>
         </ul>
+        <PageFooter pageNum={19} />
       </div>
       <div className="ebook-spacer" />
 
@@ -831,8 +838,9 @@ export default function GLP1Signal() {
 
         <hr className="ebook-doc-divider" />
         <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", marginTop: "1.5em" }}>
-          www.herwellnessharmony.com
+          <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
+        <PageFooter pageNum={20} />
       </div>
     </div>
   );
