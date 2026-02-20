@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import glp1Cover from "@/assets/glp1-signaling-thumbnail.png";
-import bundleCovers from "@/assets/glp1-bundle-product.jpg";
+import gutRoadmapCover from "@/assets/gut-roadmap-thumbnail.png";
 
 export default function GLP1Option() {
   return (
@@ -62,15 +62,36 @@ export default function GLP1Option() {
 
             {/* Option 2: Bundle */}
             <div className="rounded-2xl overflow-hidden shadow-md flex flex-col" style={{ background: "#4B2E39" }}>
-              <div className="aspect-[3/4] overflow-hidden relative">
-                <img
-                  src={bundleCovers}
-                  alt="GLP-1 Signaling Guide and 30-Day Gut Reset Roadmap Bundle"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 right-4 text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full" style={{ background: "#C9A96E", color: "#4B2E39" }}>
+              {/* Bundle image area — two covers layered diagonally */}
+              <div className="relative overflow-hidden flex items-center justify-center" style={{ background: "#F4EFEA", aspectRatio: "3/4" }}>
+                <div
+                  className="absolute top-4 right-4 z-10 text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
+                  style={{ background: "#C9A96E", color: "#4B2E39" }}
+                >
                   Best Value
                 </div>
+                {/* Back cover — GLP-1, rotated left */}
+                <img
+                  src={glp1Cover}
+                  alt="Understanding GLP-1 Signaling Ebook"
+                  className="absolute rounded shadow-lg"
+                  style={{
+                    width: "55%",
+                    transform: "rotate(-7deg) translateX(-22%)",
+                    zIndex: 1,
+                  }}
+                />
+                {/* Front cover — Gut Roadmap, rotated right */}
+                <img
+                  src={gutRoadmapCover}
+                  alt="30-Day Gut Reset Roadmap Ebook"
+                  className="absolute rounded shadow-xl"
+                  style={{
+                    width: "55%",
+                    transform: "rotate(6deg) translateX(22%)",
+                    zIndex: 2,
+                  }}
+                />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-2" style={{ color: "#C9A96E" }}>
