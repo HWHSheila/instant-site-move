@@ -76,8 +76,8 @@ export default function GLP1Option() {
                   alt="Understanding GLP-1 Signaling Ebook"
                   className="absolute rounded shadow-lg"
                   style={{
-                    width: "55%",
-                    transform: "rotate(-7deg) translateX(-22%)",
+                    width: "50%",
+                    transform: "rotate(-7deg) translateX(-42%)",
                     zIndex: 1,
                   }}
                 />
@@ -87,8 +87,8 @@ export default function GLP1Option() {
                   alt="30-Day Gut Reset Roadmap Ebook"
                   className="absolute rounded shadow-xl"
                   style={{
-                    width: "55%",
-                    transform: "rotate(6deg) translateX(22%)",
+                    width: "50%",
+                    transform: "rotate(6deg) translateX(42%)",
                     zIndex: 2,
                   }}
                 />
