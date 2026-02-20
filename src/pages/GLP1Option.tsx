@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import glp1Cover from "@/assets/ebook-glp1.jpg";
+import glp1Cover from "@/assets/glp1-cover-bg.jpg";
 import bundleCovers from "@/assets/glp1-bundle-covers.jpg";
 
 export default function GLP1Option() {
