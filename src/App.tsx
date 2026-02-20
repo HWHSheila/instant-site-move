@@ -13,6 +13,8 @@ import RootCauseFree from "./pages/RootCauseFree";
 import GLP1Signal from "./pages/GLP1Signal";
 import GLP1Confirm from "./pages/GLP1Confirm";
 import GLP1ThankYou from "./pages/GLP1ThankYou";
+import GLP1BundleConfirm from "./pages/GLP1BundleConfirm";
+import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import Confirm from "./pages/Confirm";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/glp1-signal" element={<GLP1Signal />} />
           <Route path="/glp1-confirm" element={<GLP1Confirm />} />
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
+          <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
+          <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
           <Route path="/confirm" element={<Confirm />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
