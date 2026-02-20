@@ -46,7 +46,7 @@ export default function GLP1Option() {
                   Understanding GLP-1 Signaling
                 </h2>
                 <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ color: "#555555" }}>
-                  Learn how gut health, blood sugar regulation, and metabolic stress influence GLP-1 signaling, appetite, and weight response — and how to strengthen it naturally.
+                  Learn how gut health, blood sugar regulation, and metabolic stress influence GLP-1 signaling, appetite, and weight response, and how to strengthen it naturally. Includes the 90-Day GLP-1 Optimization Protocol.
                 </p>
                 <a
                   href="https://buy.stripe.com/28E14oaPgbI8alK4Ft38409"
@@ -101,7 +101,7 @@ export default function GLP1Option() {
                   GLP-1 Guide + 30-Day Gut Reset Roadmap
                 </h2>
                 <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ color: "#D9D1CB" }}>
-                  Get both guides together — the GLP-1 Signaling Guide and the 30-Day Gut Reset Roadmap — for a complete foundation to support your metabolism and gut health.
+                  The 30-Day Gut Reset Roadmap is Phase 1 of the 90-Day GLP-1 Optimization Protocol. Get both guides together and save 20% with the bundle package.
                 </p>
                 <a
                   href="https://buy.stripe.com/eVq00k4qS6nO9hG7RF3840a"
