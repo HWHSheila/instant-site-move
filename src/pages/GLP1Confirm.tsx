@@ -52,7 +52,7 @@ export default function GLP1Confirm() {
         <div className="container-wellness">
           <div className="max-w-xl mx-auto text-center">
             <p className="text-sm font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "#8FA89E" }}>
-              Free Guide
+              GLP-1 Guide
             </p>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium mb-6 leading-tight" style={{ color: "#4B2E39" }}>
