@@ -31,7 +31,7 @@ export default function GLP1Option() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Option 1: GLP-1 Guide Only */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-              <div className="flex items-center justify-center overflow-hidden" style={{ background: "#D8CFC4", aspectRatio: "3/4" }}>
+              <div className="flex items-center justify-center overflow-hidden p-8" style={{ background: "#D8CFC4", aspectRatio: "4/5" }}>
                 <img
                   src={glp1Cover}
                   alt="Understanding GLP-1 Signaling Ebook Cover"
@@ -64,7 +64,7 @@ export default function GLP1Option() {
             {/* Option 2: Bundle */}
             <div className="rounded-2xl overflow-hidden shadow-md flex flex-col" style={{ background: "#4B2E39" }}>
               {/* Bundle image area — two covers layered diagonally */}
-              <div className="relative overflow-hidden flex items-center justify-center" style={{ background: "#D8CFC4", aspectRatio: "3/4" }}>
+              <div className="relative overflow-hidden flex items-center justify-center p-8" style={{ background: "#D8CFC4", aspectRatio: "4/5" }}>
                 <div
                   className="absolute top-4 right-4 z-10 text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
                   style={{ background: "#C9A96E", color: "#4B2E39" }}
