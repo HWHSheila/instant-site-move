@@ -60,7 +60,7 @@ function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: 
 const ebooks: EBookCardProps[] = [
   {
     image: ebookGutReset,
-    title: "30-Day Gut Reset Roadmap",
+    title: "30-Day Gut Reset Roadmap - $37",
     description: "A structured, step-by-step reset designed to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms without restriction, extremes, or burnout.",
     ctaText: "Get Your Copy",
     ctaLink: "https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408",
