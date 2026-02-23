@@ -70,7 +70,7 @@ export default function Phase1GutReset() {
                   className="text-2xl md:text-3xl font-display font-medium mb-4 leading-snug"
                   style={{ color: "#4B2E39" }}
                 >
-                  30-Day Gut Reset Roadmap
+                  30-Day Gut Reset Roadmap — $37
                 </h2>
 
                 <p
@@ -100,23 +100,15 @@ export default function Phase1GutReset() {
                 </ul>
 
                 {/* Price + CTA */}
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <span
-                    className="text-3xl font-display font-semibold"
-                    style={{ color: "#4B2E39" }}
-                  >
-                    $37
-                  </span>
-                  <a
-                    href="https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full sm:flex-1 text-center font-semibold rounded-full px-8 py-4 text-base transition-colors"
-                    style={{ background: "#8FA89E", color: "#FFFFFF" }}
-                  >
-                    Get the Roadmap — $37
-                  </a>
-                </div>
+                <a
+                  href="https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center font-semibold rounded-full px-8 py-4 text-base transition-colors"
+                  style={{ background: "#8FA89E", color: "#FFFFFF" }}
+                >
+                  Get the Roadmap
+                </a>
               </div>
             </div>
           </div>
