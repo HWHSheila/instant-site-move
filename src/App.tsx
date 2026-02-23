@@ -16,6 +16,7 @@ import GLP1ThankYou from "./pages/GLP1ThankYou";
 import GLP1BundleConfirm from "./pages/GLP1BundleConfirm";
 import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
+import Phase1GutReset from "./pages/Phase1GutReset";
 import Confirm from "./pages/Confirm";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/glp1-confirm" element={<GLP1Confirm />} />
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/glp1-option" element={<GLP1Option />} />
+          <Route path="/90day-phase1" element={<Phase1GutReset />} />
           <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
           <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
           <Route path="/confirm" element={<Confirm />} />
