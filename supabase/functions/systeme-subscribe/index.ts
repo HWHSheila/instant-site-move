@@ -9,6 +9,10 @@ const corsHeaders = {
 const SYSTEME_API_BASE = "https://api.systeme.io/api";
 const DEFAULT_TAG_NAME = "HWH - Gut Repair Freebie";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_TAG_LENGTH = 100;
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -17,18 +21,34 @@ serve(async (req) => {
   try {
     const apiKey = Deno.env.get("SYSTEME_IO_API_KEY");
     if (!apiKey) {
-      throw new Error("SYSTEME_IO_API_KEY is not configured");
+      console.error("SYSTEME_IO_API_KEY is not configured");
+      return new Response(
+        JSON.stringify({ error: "Server configuration error. Please try again later." }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     const { email, tagName } = await req.json();
-    const resolvedTag = tagName || DEFAULT_TAG_NAME;
 
-    if (!email || typeof email !== "string" || !email.includes("@")) {
+    // Validate email
+    if (!email || typeof email !== "string" || email.length > MAX_EMAIL_LENGTH || !EMAIL_REGEX.test(email)) {
       return new Response(
         JSON.stringify({ error: "A valid email is required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+
+    // Validate tagName if provided
+    if (tagName !== undefined && tagName !== null) {
+      if (typeof tagName !== "string" || tagName.length === 0 || tagName.length > MAX_TAG_LENGTH) {
+        return new Response(
+          JSON.stringify({ error: "Invalid tag name" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+    }
+
+    const resolvedTag = tagName || DEFAULT_TAG_NAME;
 
     const headers = {
       "X-API-Key": apiKey,
@@ -57,8 +77,8 @@ serve(async (req) => {
           { headers }
         );
         if (!searchRes.ok) {
-          const searchErr = await searchRes.text();
-          throw new Error(`Failed to search contact [${searchRes.status}]: ${searchErr}`);
+          console.error(`Failed to search contact [${searchRes.status}]:`, await searchRes.text());
+          throw new Error("Failed to look up contact");
         }
         const searchData = await searchRes.json();
         const items = searchData.items || searchData;
@@ -66,18 +86,20 @@ serve(async (req) => {
           contactId = items[0].id;
           console.log("Found existing contact:", contactId);
         } else {
-          throw new Error(`Contact creation failed and not found: ${errorBody}`);
+          console.error("Contact creation failed and not found:", errorBody);
+          throw new Error("Failed to create contact");
         }
       } else {
-        throw new Error(`Failed to create contact [${contactRes.status}]: ${errorBody}`);
+        console.error(`Failed to create contact [${contactRes.status}]:`, errorBody);
+        throw new Error("Failed to create contact");
       }
     }
 
     // Step 2: Find or create the tag
     const tagsRes = await fetch(`${SYSTEME_API_BASE}/tags`, { headers });
     if (!tagsRes.ok) {
-      const tagsErr = await tagsRes.text();
-      throw new Error(`Failed to list tags [${tagsRes.status}]: ${tagsErr}`);
+      console.error(`Failed to list tags [${tagsRes.status}]:`, await tagsRes.text());
+      throw new Error("Failed to process tags");
     }
     const tagsData = await tagsRes.json();
     const tagsList = tagsData.items || tagsData;
@@ -92,8 +114,8 @@ serve(async (req) => {
         body: JSON.stringify({ name: resolvedTag }),
       });
       if (!createTagRes.ok) {
-        const tagErr = await createTagRes.text();
-        throw new Error(`Failed to create tag [${createTagRes.status}]: ${tagErr}`);
+        console.error(`Failed to create tag [${createTagRes.status}]:`, await createTagRes.text());
+        throw new Error("Failed to process tags");
       }
       tag = await createTagRes.json();
       console.log("Tag created:", tag.id);
@@ -114,7 +136,8 @@ serve(async (req) => {
     if (!assignRes.ok) {
       const assignErr = await assignRes.text();
       if (assignRes.status !== 422) {
-        throw new Error(`Failed to assign tag [${assignRes.status}]: ${assignErr}`);
+        console.error(`Failed to assign tag [${assignRes.status}]:`, assignErr);
+        throw new Error("Failed to assign tag");
       }
       console.log("Tag may already be assigned:", assignErr);
     } else {
@@ -127,9 +150,8 @@ serve(async (req) => {
     );
   } catch (error: unknown) {
     console.error("Error in systeme-subscribe:", error);
-    const message = error instanceof Error ? error.message : "Unknown error";
     return new Response(
-      JSON.stringify({ error: message }),
+      JSON.stringify({ error: "Failed to process subscription. Please try again." }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
