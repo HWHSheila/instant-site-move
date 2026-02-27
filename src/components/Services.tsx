@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 
 interface ServiceCardProps {
   price: string;
+  originalPrice?: string;
+  spotsRemaining?: number;
   priceLabel: string;
   title: string;
   duration: string;
@@ -10,7 +12,7 @@ interface ServiceCardProps {
   featured?: boolean;
 }
 
-function ServiceCard({ price, priceLabel, title, duration, description, bookingLink, featured }: ServiceCardProps) {
+function ServiceCard({ price, originalPrice, spotsRemaining, priceLabel, title, duration, description, bookingLink, featured }: ServiceCardProps) {
   return (
     <div className={`p-6 flex flex-col h-full rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-300 ${
     featured ?
@@ -19,7 +21,15 @@ function ServiceCard({ price, priceLabel, title, duration, description, bookingL
     }>
       <div className="mb-4">
         <span className={`text-sm ${featured ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>{priceLabel}</span>
-        <span className={`text-2xl font-display font-semibold ml-2 ${featured ? 'text-wellness-gold' : 'text-accent'}`}>${price}</span>
+        <div className="ml-2 flex items-baseline gap-2">
+          {originalPrice && (
+            <span className={`text-lg line-through ${featured ? 'text-primary-foreground/50' : 'text-muted-foreground/60'}`}>${originalPrice}</span>
+          )}
+          <span className={`text-2xl font-display font-semibold ${featured ? 'text-wellness-gold' : 'text-accent'}`}>${price}</span>
+          {spotsRemaining && (
+            <span className={`text-xs font-medium ${featured ? 'text-wellness-gold/80' : 'text-accent/80'}`}>({spotsRemaining} spots remaining)</span>
+          )}
+        </div>
       </div>
       
       <h3 className={`text-xl font-display font-medium mb-2 ${featured ? 'text-primary-foreground' : 'text-foreground'}`}>{title}</h3>
@@ -88,6 +98,8 @@ const services: ServiceCardProps[] = [
 },
 {
   price: "647",
+  originalPrice: "1,000",
+  spotsRemaining: 7,
   priceLabel: "Deep Support Package",
   title: "4-Week Gut & Hormone Coaching",
   duration: "4 Weeks",
