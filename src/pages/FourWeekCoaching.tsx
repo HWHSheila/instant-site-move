@@ -14,7 +14,7 @@ export default function FourWeekCoaching() {
       <Header />
 
       {/* Hero Section — matches homepage hero */}
-      <section className="relative min-h-[70vh] flex items-center pt-16 md:pt-20">
+      <section className="relative min-h-[60vh] flex items-center pt-14 md:pt-16">
         <div className="absolute inset-0">
           <img
             src={heroImage}
@@ -24,7 +24,7 @@ export default function FourWeekCoaching() {
           <div className="absolute inset-0 bg-gradient-to-r from-wellness-forest/85 via-wellness-forest/60 to-wellness-forest/40" />
         </div>
 
-        <div className="relative z-10 container-wellness py-20 md:py-32">
+        <div className="relative z-10 container-wellness py-16 md:py-16">
           <div className="max-w-2xl">
             <p className="section-label text-wellness-gold mb-4 animate-fade-in">
               Coaching
@@ -43,7 +43,7 @@ export default function FourWeekCoaching() {
       </section>
 
       {/* Authority Anchor */}
-      <section className="bg-muted py-16 md:py-20">
+      <section className="bg-muted py-12 md:py-10">
         <div className="container-wellness">
           <div className="max-w-3xl">
             <p className="text-lg md:text-xl text-foreground leading-relaxed italic">
@@ -54,7 +54,7 @@ export default function FourWeekCoaching() {
       </section>
 
       {/* What's Included */}
-      <section className="bg-background py-16 md:py-20">
+      <section className="bg-background py-12 md:py-10">
         <div className="container-wellness">
           <div className="max-w-3xl">
             <p className="section-label text-accent mb-4">What's Included</p>
@@ -69,7 +69,7 @@ export default function FourWeekCoaching() {
       </section>
 
       {/* Who This Is For */}
-      <section className="bg-muted py-16 md:py-20">
+      <section className="bg-muted py-12 md:py-10">
         <div className="container-wellness">
           <div className="max-w-3xl">
             <p className="section-label text-accent mb-4">Who This Is For</p>
@@ -84,7 +84,7 @@ export default function FourWeekCoaching() {
       </section>
 
       {/* Investment + CTA — dark overlay like hero */}
-      <section className="relative py-20 md:py-28">
+      <section className="relative py-16 md:py-14">
         <div className="absolute inset-0 bg-wellness-forest" />
         <div className="relative z-10 container-wellness">
           <div className="max-w-3xl">
@@ -93,7 +93,7 @@ export default function FourWeekCoaching() {
               <span className="text-xl line-through text-primary-foreground/50">$1,000</span>
               <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$647</span>
             </div>
-            <p className="text-sm font-medium text-wellness-gold mb-10">
+            <p className="text-sm font-medium text-wellness-gold mb-6">
               (Only 7 spots remaining)
             </p>
             <Button
