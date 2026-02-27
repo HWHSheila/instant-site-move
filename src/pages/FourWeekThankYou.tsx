@@ -23,7 +23,7 @@ export default function FourWeekThankYou() {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
-              4-Week Gut & Hormone Coaching
+              You're In — Welcome to the Deep Support Package
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">

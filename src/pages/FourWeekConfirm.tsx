@@ -54,7 +54,7 @@ export default function FourWeekConfirm() {
             <p className="section-label mb-4">Step 2 of 2</p>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
-              You're In — Welcome to the Deep Support Package
+              4-Week Gut & Hormone Coaching
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
