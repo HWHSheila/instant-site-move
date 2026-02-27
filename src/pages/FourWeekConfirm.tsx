@@ -22,7 +22,7 @@ export default function FourWeekConfirm() {
         {
           body: {
             email,
-            groupName: "4-Week Coaching Clients",
+            groupName: "PAID 4 Week Coaching Clients",
           },
         }
       );
