@@ -25,9 +25,9 @@ function ServiceCard({ price, originalPrice, spotsRemaining, priceLabel, title, 
           {originalPrice && (
             <span className={`text-lg line-through ${featured ? 'text-primary-foreground/50' : 'text-muted-foreground/60'}`}>${originalPrice}</span>
           )}
-          <span className={`text-2xl font-display font-semibold ${featured ? 'text-wellness-gold' : 'text-accent'}`}>${price}</span>
+          <span className={`text-2xl font-display font-semibold ${featured ? 'text-primary-foreground' : 'text-wellness-forest'}`}>${price}</span>
           {spotsRemaining && (
-            <span className={`text-xs font-medium ${featured ? 'text-wellness-gold/80' : 'text-accent/80'}`}>({spotsRemaining} spots remaining)</span>
+            <span className={`text-xs font-medium ${featured ? 'text-primary-foreground/80' : 'text-wellness-forest/80'}`}>({spotsRemaining} spots remaining)</span>
           )}
         </div>
       </div>
