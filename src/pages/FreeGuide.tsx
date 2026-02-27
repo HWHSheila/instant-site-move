@@ -18,8 +18,8 @@ export default function FreeGuide() {
 
     try {
       const { data, error: fnError } = await supabase.functions.invoke(
-        "systeme-subscribe",
-        { body: { email } }
+        "mailerlite-subscribe",
+        { body: { email, groupName: "FREE Root Cause Guide" } }
       );
 
       if (fnError) throw fnError;
