@@ -9,8 +9,8 @@ export default function FourWeekCoaching() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
         title="Deep Support Package — 4-Week Gut & Hormone Coaching"
-        description="A structured 4-week container designed to stabilize digestion and stress load to support metabolic rhythm and hormone signaling in the correct order."
-      />
+        description="A structured 4-week container designed to stabilize digestion and stress load to support metabolic rhythm and hormone signaling in the correct order." />
+
       <Header />
 
       {/* Hero Section — matches homepage hero */}
@@ -19,8 +19,8 @@ export default function FourWeekCoaching() {
           <img
             src={heroImage}
             alt="Wellness lifestyle"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" />
+
           <div className="absolute inset-0 bg-gradient-to-r from-wellness-forest/85 via-wellness-forest/60 to-wellness-forest/40" />
         </div>
 
@@ -43,15 +43,15 @@ export default function FourWeekCoaching() {
       </section>
 
       {/* Authority Anchor */}
-      <section className="bg-muted py-12 md:py-10">
-        <div className="container-wellness">
-          <div className="max-w-3xl">
-            <p className="text-lg md:text-xl text-foreground leading-relaxed italic">
-              "My name is Sheila, and I've dropped over 100 pounds combining my science background with root-cause wellness for women."
-            </p>
-          </div>
-        </div>
-      </section>
+      
+
+
+
+
+
+
+
+
 
       {/* What's Included */}
       <section className="bg-background py-12 md:py-10">
@@ -99,8 +99,8 @@ export default function FourWeekCoaching() {
             <Button
               asChild
               size="lg"
-              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
-            >
+              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base">
+
               <a href="https://buy.stripe.com/9B6eVe5uW7rS0La1th38404">
                 Secure Your Spot
               </a>
@@ -110,6 +110,6 @@ export default function FourWeekCoaching() {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 }
