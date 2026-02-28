@@ -17,6 +17,7 @@ import GLP1BundleConfirm from "./pages/GLP1BundleConfirm";
 import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
 import Phase1GutReset from "./pages/Phase1GutReset";
+import ThirtyDayRoadmap from "./pages/ThirtyDayRoadmap";
 import FourWeekCoaching from "./pages/FourWeekCoaching";
 import FourWeekConfirm from "./pages/FourWeekConfirm";
 import FourWeekThankYou from "./pages/FourWeekThankYou";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/glp1-option" element={<GLP1Option />} />
           <Route path="/90day-phase1" element={<Phase1GutReset />} />
+            <Route path="/30day-roadmap" element={<ThirtyDayRoadmap />} />
             <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
             <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
             <Route path="/4-week-coaching" element={<FourWeekCoaching />} />
