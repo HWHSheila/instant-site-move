@@ -18,11 +18,11 @@ export default function Confirm() {
 
     try {
       const { data, error: fnError } = await supabase.functions.invoke(
-        "systeme-subscribe",
+        "mailerlite-subscribe",
         {
           body: {
             email,
-            tagName: "Purchased – 30 Day Gut Reset Roadmap",
+            groupName: "PAID 30 Day Gut Reset Roadmap",
           },
         }
       );
