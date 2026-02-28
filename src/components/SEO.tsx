@@ -10,6 +10,7 @@ interface SEOProps {
 
 const DEFAULT_TITLE = "Her Wellness Harmony | Root-Cause Wellness for Women";
 const DEFAULT_DESCRIPTION = "Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.";
+const FAVICON_URL = "/favicon.png?v=20260228";
 const OG_IMAGE = "https://instant-site-move.lovable.app/og-image.png";
 
 export function SEO({ title, description, noindex, ogImage, ogUrl }: SEOProps) {
@@ -19,6 +20,9 @@ export function SEO({ title, description, noindex, ogImage, ogUrl }: SEOProps) {
 
   return (
     <Helmet>
+      <link rel="icon" type="image/png" href={FAVICON_URL} />
+      <link rel="shortcut icon" href={FAVICON_URL} />
+      <link rel="apple-touch-icon" href={FAVICON_URL} />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
