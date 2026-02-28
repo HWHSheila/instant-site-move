@@ -1,8 +1,49 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect, useRef, useCallback } from "react";
 import coverBg from "@/assets/glp1-cover-bg.jpg";
 import chapterOpener from "@/assets/glp1-chapter-opener.jpg";
 import protocolTransition from "@/assets/glp1-protocol-transition.jpg";
 import coachingImg from "@/assets/glp1-coaching.jpg";
+
+function EbookScaler({ children }: { children: React.ReactNode }) {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+
+  const rescale = useCallback(() => {
+    const outer = outerRef.current;
+    const inner = innerRef.current;
+    if (!outer || !inner) return;
+    const pageWidthPx = 816; // 8.5in at 96dpi
+    const viewportWidth = outer.clientWidth;
+    if (viewportWidth < pageWidthPx) {
+      const scale = viewportWidth / pageWidthPx;
+      inner.style.transform = `scale(${scale})`;
+      inner.style.transformOrigin = "top left";
+      inner.style.width = `${pageWidthPx}px`;
+      outer.style.height = `${inner.scrollHeight * scale}px`;
+    } else {
+      inner.style.transform = "";
+      inner.style.width = "";
+      outer.style.height = "";
+    }
+  }, []);
+
+  useEffect(() => {
+    rescale();
+    window.addEventListener("resize", rescale);
+    const timer = setTimeout(rescale, 500);
+    return () => {
+      window.removeEventListener("resize", rescale);
+      clearTimeout(timer);
+    };
+  }, [rescale]);
+
+  return (
+    <div ref={outerRef} style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+      <div ref={innerRef}>{children}</div>
+    </div>
+  );
+}
 
 const PageFooter = ({ pageNum }: { pageNum: number }) => (
   <div className="ebook-doc-footer">
@@ -214,6 +255,7 @@ export default function GLP1Signal() {
         }
       `}</style>
 
+      <EbookScaler>
       {/* ==================== COVER PAGE ==================== */}
       <div className="ebook-doc-page" style={{
         backgroundImage: `url(${coverBg})`,
@@ -842,6 +884,7 @@ export default function GLP1Signal() {
         </p>
         <PageFooter pageNum={20} />
       </div>
+      </EbookScaler>
     </div>
   );
 }
