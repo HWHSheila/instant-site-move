@@ -77,14 +77,17 @@ export function WorkingWith() {
           <p className="text-lg text-primary-foreground/90 leading-relaxed mb-8">
             I help you understand your body, reconnect with your intuition, and support your gut, metabolism, and hormones in a way that feels grounding, doable, and empowering. You'll never be rushed, shamed, or overwhelmed. This is root-cause healing with compassion and clarity.
           </p>
+          <p className="text-lg text-primary-foreground/90 leading-relaxed mb-8">
+            If you're unsure where to begin, this 15-minute Initial Root Cause Strategy Call helps clarify your primary symptom patterns and determine the right next step. This is not a full protocol session. It is a focused starting point.
+          </p>
 
           <Button
             asChild
             size="lg"
             className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base mb-12">
 
-            <a href="https://buy.stripe.com/9B6eVe5uW7rS0La1th38404" target="_blank" rel="noopener noreferrer">
-              Book Your Initial Consultation
+            <a href="https://calendly.com/herwellnessharmony-support/initial-root-cause-strategy-session" target="_blank" rel="noopener noreferrer">
+              Schedule Your Strategy Call
             </a>
           </Button>
 
