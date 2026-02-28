@@ -26,6 +26,11 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Disclaimer from "./pages/Disclaimer";
 import StrategyCall from "./pages/StrategyCall";
+import WellnessConsultation from "./pages/WellnessConsultation";
+import LabReview from "./pages/LabReview";
+import FollowUpSession from "./pages/FollowUpSession";
+import SupplementReview from "./pages/SupplementReview";
+import RoutineBlueprint from "./pages/RoutineBlueprint";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +66,11 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/strategy-call" element={<StrategyCall />} />
+          <Route path="/wellness-consultation" element={<WellnessConsultation />} />
+          <Route path="/lab-review" element={<LabReview />} />
+          <Route path="/follow-up-session" element={<FollowUpSession />} />
+          <Route path="/supplement-review" element={<SupplementReview />} />
+          <Route path="/routine-blueprint" element={<RoutineBlueprint />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

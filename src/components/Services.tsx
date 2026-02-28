@@ -46,7 +46,7 @@ function ServiceCard({ price, originalPrice, spotsRemaining, priceLabel, title, 
         'bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground'}`
         }>
 
-        <a href={bookingLink} target="_blank" rel="noopener noreferrer">
+        <a href={bookingLink}>
           Book Now
         </a>
       </Button>
@@ -61,7 +61,7 @@ const services: ServiceCardProps[] = [
   title: "Integrative Wellness Consultation",
   duration: "60 minutes",
   description: "The best place to start. We'll explore your symptoms, gut patterns, stress load, hormone clues, and build a personalized plan with 3–5 simple steps you can begin immediately.",
-  bookingLink: "https://buy.stripe.com/7sYdRaf5wbI89hG2xl38400",
+  bookingLink: "/wellness-consultation",
   featured: true
 },
 {
@@ -70,7 +70,7 @@ const services: ServiceCardProps[] = [
   title: "Educational Lab Result Review",
   duration: "Written Report",
   description: "Understand what your lab results actually mean without fear-based interpretations. Get clear explanations, common overlooked patterns, and better questions to bring to your provider.",
-  bookingLink: "https://buy.stripe.com/bJecN62iKfYo51qdbZ38407"
+  bookingLink: "/lab-review"
 },
 {
   price: "99",
@@ -78,7 +78,7 @@ const services: ServiceCardProps[] = [
   title: "Follow-Up Coaching Session",
   duration: "45 minutes",
   description: "Continued support, guidance, and accountability. We'll review what's improving, what's shifting, and adjust supplements, food rhythm, and inflammation triggers.",
-  bookingLink: "https://buy.stripe.com/aFa00k8H8cMc51q1th38401"
+  bookingLink: "/follow-up-session"
 },
 {
   price: "150",
@@ -86,7 +86,7 @@ const services: ServiceCardProps[] = [
   title: "Gut Support & Supplement Review",
   duration: "45 minutes",
   description: "If your supplement routine feels overwhelming, this session brings clarity. We'll simplify your routine with a clear, gut-friendly supplement plan.",
-  bookingLink: "https://buy.stripe.com/aFaeVe7D4h2sbpOb3R38402"
+  bookingLink: "/supplement-review"
 },
 {
   price: "125",
@@ -94,7 +94,7 @@ const services: ServiceCardProps[] = [
   title: "Morning + Night Routine Blueprint",
   duration: "60 minutes",
   description: "Together we build supportive A.M. and P.M. routines supporting gut motility, cortisol rhythm, hydration, blood sugar, and circadian alignment.",
-  bookingLink: "https://buy.stripe.com/9B600kaPgcMc2Ti5Jx38403"
+  bookingLink: "/routine-blueprint"
 },
 {
   price: "647",
@@ -104,7 +104,7 @@ const services: ServiceCardProps[] = [
   title: "4-Week Gut & Hormone Coaching",
   duration: "4 Weeks",
   description: "A comprehensive package for women ready to commit to deeper root-cause healing with weekly sessions, personalized plans, and ongoing support.",
-  bookingLink: "https://buy.stripe.com/9B6eVe5uW7rS0La1th38404"
+  bookingLink: "/4-week-coaching"
 }];
 
 
