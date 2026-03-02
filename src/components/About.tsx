@@ -86,7 +86,7 @@ export function WorkingWith() {
             size="lg"
             className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-8 py-6 text-base mb-12">
 
-            <a href="https://calendly.com/herwellnessharmony-support/initial-root-cause-strategy-session" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.herwellnessharmony.com/strategy-call">
               Schedule Your Strategy Call
             </a>
           </Button>
