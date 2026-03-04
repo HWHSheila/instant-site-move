@@ -14,7 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      strategy_intake_submissions: {
+        Row: {
+          bowel_frequency: string | null
+          call_date_time: string
+          craving_timing: string[] | null
+          craving_types: string[] | null
+          created_at: string
+          cycle_patterns: string[] | null
+          desired_clarity: string | null
+          desired_outcomes: string | null
+          diagnoses: string | null
+          digestive_other: string | null
+          digestive_symptoms: string[] | null
+          email: string
+          energy_patterns: string[] | null
+          food_triggers: string[] | null
+          full_name: string
+          has_cravings: string | null
+          has_recent_labs: string | null
+          hormonal_symptoms: string[] | null
+          id: string
+          lab_details: string | null
+          medications_supplements: string | null
+          nervous_system: string[] | null
+          open_to_coaching: string | null
+          phone: string | null
+          stool_consistency: string | null
+          timing_pattern: string[] | null
+          tried_approaches: string | null
+          weight_fluid_patterns: string[] | null
+          what_helped: string | null
+          what_worsened: string | null
+        }
+        Insert: {
+          bowel_frequency?: string | null
+          call_date_time: string
+          craving_timing?: string[] | null
+          craving_types?: string[] | null
+          created_at?: string
+          cycle_patterns?: string[] | null
+          desired_clarity?: string | null
+          desired_outcomes?: string | null
+          diagnoses?: string | null
+          digestive_other?: string | null
+          digestive_symptoms?: string[] | null
+          email: string
+          energy_patterns?: string[] | null
+          food_triggers?: string[] | null
+          full_name: string
+          has_cravings?: string | null
+          has_recent_labs?: string | null
+          hormonal_symptoms?: string[] | null
+          id?: string
+          lab_details?: string | null
+          medications_supplements?: string | null
+          nervous_system?: string[] | null
+          open_to_coaching?: string | null
+          phone?: string | null
+          stool_consistency?: string | null
+          timing_pattern?: string[] | null
+          tried_approaches?: string | null
+          weight_fluid_patterns?: string[] | null
+          what_helped?: string | null
+          what_worsened?: string | null
+        }
+        Update: {
+          bowel_frequency?: string | null
+          call_date_time?: string
+          craving_timing?: string[] | null
+          craving_types?: string[] | null
+          created_at?: string
+          cycle_patterns?: string[] | null
+          desired_clarity?: string | null
+          desired_outcomes?: string | null
+          diagnoses?: string | null
+          digestive_other?: string | null
+          digestive_symptoms?: string[] | null
+          email?: string
+          energy_patterns?: string[] | null
+          food_triggers?: string[] | null
+          full_name?: string
+          has_cravings?: string | null
+          has_recent_labs?: string | null
+          hormonal_symptoms?: string[] | null
+          id?: string
+          lab_details?: string | null
+          medications_supplements?: string | null
+          nervous_system?: string[] | null
+          open_to_coaching?: string | null
+          phone?: string | null
+          stool_consistency?: string | null
+          timing_pattern?: string[] | null
+          tried_approaches?: string | null
+          weight_fluid_patterns?: string[] | null
+          what_helped?: string | null
+          what_worsened?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

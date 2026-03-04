@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.mailerlite-subscribe]
 verify_jwt = false
+
+[functions.send-intake-email]
+verify_jwt = false
