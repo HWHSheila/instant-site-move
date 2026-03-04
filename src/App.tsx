@@ -31,6 +31,8 @@ import LabReview from "./pages/LabReview";
 import FollowUpSession from "./pages/FollowUpSession";
 import SupplementReview from "./pages/SupplementReview";
 import RoutineBlueprint from "./pages/RoutineBlueprint";
+import FreeStrategyIntake from "./pages/FreeStrategyIntake";
+import StrategyIntakeThankYou from "./pages/StrategyIntakeThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -71,6 +73,8 @@ const App = () => (
           <Route path="/follow-up-session" element={<FollowUpSession />} />
           <Route path="/supplement-review" element={<SupplementReview />} />
           <Route path="/routine-blueprint" element={<RoutineBlueprint />} />
+          <Route path="/free-strategy-intake" element={<FreeStrategyIntake />} />
+          <Route path="/strategy-intake-thankyou" element={<StrategyIntakeThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
