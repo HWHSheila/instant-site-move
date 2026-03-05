@@ -1,6 +1,9 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
+const MAILERLITE_API_BASE = "https://connect.mailerlite.com/api";
+const MAILERLITE_GROUP_NAME = "Strategy Call Intake Submitted";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -168,27 +171,68 @@ Submitted: ${new Date().toISOString()}
     const MAILERLITE_API_KEY = Deno.env.get("MAILERLITE_API_KEY");
 
     if (MAILERLITE_API_KEY) {
-      // Add subscriber to a "Strategy Intake" group for tracking
       try {
-        const subscriberRes = await fetch("https://api.mailerlite.com/api/v2/subscribers", {
+        const mlHeaders = {
+          "Authorization": `Bearer ${MAILERLITE_API_KEY}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        };
+
+        // Find or create the group
+        const groupsRes = await fetch(
+          `${MAILERLITE_API_BASE}/groups?filter[name]=${encodeURIComponent(MAILERLITE_GROUP_NAME)}&limit=100`,
+          { headers: mlHeaders }
+        );
+
+        if (!groupsRes.ok) {
+          console.error(`Failed to list groups [${groupsRes.status}]:`, await groupsRes.text());
+          throw new Error("Failed to look up group");
+        }
+
+        const groupsData = await groupsRes.json();
+        let group = groupsData.data?.find((g: { name: string }) => g.name === MAILERLITE_GROUP_NAME);
+
+        if (!group) {
+          const createGroupRes = await fetch(`${MAILERLITE_API_BASE}/groups`, {
+            method: "POST",
+            headers: mlHeaders,
+            body: JSON.stringify({ name: MAILERLITE_GROUP_NAME }),
+          });
+
+          if (!createGroupRes.ok) {
+            console.error(`Failed to create group [${createGroupRes.status}]:`, await createGroupRes.text());
+            throw new Error("Failed to create group");
+          }
+
+          const createGroupData = await createGroupRes.json();
+          group = createGroupData.data;
+          console.log("Group created:", group.id);
+        } else {
+          console.log("Group found:", group.id);
+        }
+
+        // Add subscriber to the group
+        const subscriberRes = await fetch(`${MAILERLITE_API_BASE}/subscribers`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-MailerLite-ApiKey": MAILERLITE_API_KEY,
-          },
+          headers: mlHeaders,
           body: JSON.stringify({
             email: data.email,
-            name: data.full_name,
             fields: {
+              name: data.full_name,
               phone: data.phone || "",
-              company: `Strategy Intake - ${data.call_date_time}`,
             },
+            groups: [group.id],
           }),
         });
-        const subText = await subscriberRes.text();
-        console.log("MailerLite subscriber response:", subText);
+
+        if (!subscriberRes.ok) {
+          console.error(`Failed to add subscriber [${subscriberRes.status}]:`, await subscriberRes.text());
+        } else {
+          const subData = await subscriberRes.json();
+          console.log("Subscriber added to group:", subData.data?.id);
+        }
       } catch (mlError) {
-        console.error("MailerLite subscriber error:", mlError);
+        console.error("MailerLite error:", mlError);
       }
     }
 
