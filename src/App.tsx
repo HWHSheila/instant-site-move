@@ -33,6 +33,15 @@ import SupplementReview from "./pages/SupplementReview";
 import RoutineBlueprint from "./pages/RoutineBlueprint";
 import FreeStrategyIntake from "./pages/FreeStrategyIntake";
 import StrategyIntakeThankYou from "./pages/StrategyIntakeThankYou";
+import NinetyDayCoaching from "./pages/NinetyDayCoaching";
+import NinetyDayCoachingConfirm from "./pages/NinetyDayCoachingConfirm";
+import NinetyDayCoachingThankYou from "./pages/NinetyDayCoachingThankYou";
+import SixMonthCoaching from "./pages/SixMonthCoaching";
+import SixMonthCoachingConfirm from "./pages/SixMonthCoachingConfirm";
+import SixMonthCoachingThankYou from "./pages/SixMonthCoachingThankYou";
+import TwelveMonthCoaching from "./pages/TwelveMonthCoaching";
+import TwelveMonthCoachingConfirm from "./pages/TwelveMonthCoachingConfirm";
+import TwelveMonthCoachingThankYou from "./pages/TwelveMonthCoachingThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -75,6 +84,15 @@ const App = () => (
           <Route path="/routine-blueprint" element={<RoutineBlueprint />} />
           <Route path="/free-strategy-intake" element={<FreeStrategyIntake />} />
           <Route path="/strategy-intake-thankyou" element={<StrategyIntakeThankYou />} />
+          <Route path="/90day-coaching" element={<NinetyDayCoaching />} />
+          <Route path="/90day-coaching-confirm" element={<NinetyDayCoachingConfirm />} />
+          <Route path="/90day-coaching-thankyou" element={<NinetyDayCoachingThankYou />} />
+          <Route path="/6month-coaching" element={<SixMonthCoaching />} />
+          <Route path="/6month-coaching-confirm" element={<SixMonthCoachingConfirm />} />
+          <Route path="/6month-coaching-thankyou" element={<SixMonthCoachingThankYou />} />
+          <Route path="/12month-coaching" element={<TwelveMonthCoaching />} />
+          <Route path="/12month-coaching-confirm" element={<TwelveMonthCoachingConfirm />} />
+          <Route path="/12month-coaching-thankyou" element={<TwelveMonthCoachingThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
