@@ -99,7 +99,7 @@ const services: ServiceCardProps[] = [
 {
   price: "647",
   originalPrice: "1,000",
-  spotsRemaining: 7,
+  spotsRemaining: 5,
   priceLabel: "Deep Support Package",
   title: "4-Week Gut & Hormone Coaching",
   duration: "4 Weeks",

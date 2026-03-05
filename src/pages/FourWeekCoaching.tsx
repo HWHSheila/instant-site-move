@@ -82,7 +82,7 @@ export default function FourWeekCoaching() {
                 <span className="text-3xl font-display font-bold text-primary-foreground">$647</span>
               </div>
               <p className="text-sm text-primary-foreground/60 mt-1">
-                (Only 7 spots remaining)
+                (Only 5 spots remaining)
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function FourWeekCoaching() {
               <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$647</span>
             </div>
             <p className="text-sm font-medium text-wellness-gold mb-6">
-              (Only 7 spots remaining)
+              (Only 5 spots remaining)
             </p>
             <Button
               asChild
