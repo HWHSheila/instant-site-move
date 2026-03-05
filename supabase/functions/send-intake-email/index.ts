@@ -1,6 +1,9 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
+const MAILERLITE_API_BASE = "https://connect.mailerlite.com/api";
+const MAILERLITE_GROUP_NAME = "Strategy Call Intake Submitted";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
