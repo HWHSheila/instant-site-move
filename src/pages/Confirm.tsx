@@ -50,10 +50,10 @@ export default function Confirm() {
       <main className="flex-grow flex items-center justify-center pt-20 md:pt-24 pb-16 md:pb-20">
         <div className="container-wellness">
           <div className="max-w-xl mx-auto text-center">
-            <p className="section-label mb-4">Step 2 of 2</p>
+            <p className="section-label mb-4">30-DAY GUT RESET ROADMAP</p>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
-              Confirm Your Delivery Email
+              Confirm Your Email to Access the 30-Day Gut Reset Roadmap
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
