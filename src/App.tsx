@@ -42,6 +42,8 @@ import SixMonthCoachingThankYou from "./pages/SixMonthCoachingThankYou";
 import TwelveMonthCoaching from "./pages/TwelveMonthCoaching";
 import TwelveMonthCoachingConfirm from "./pages/TwelveMonthCoachingConfirm";
 import TwelveMonthCoachingThankYou from "./pages/TwelveMonthCoachingThankYou";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
