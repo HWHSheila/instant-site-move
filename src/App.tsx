@@ -45,7 +45,7 @@ import TwelveMonthCoachingThankYou from "./pages/TwelveMonthCoachingThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
-import SitemapRedirect from "./pages/SitemapRedirect";
+
 
 const queryClient = new QueryClient();
 
