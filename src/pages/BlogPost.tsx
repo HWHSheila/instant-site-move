@@ -125,6 +125,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
+  "how-short-term-stress-disrupts-gut-health-and-hormones": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "four-factors-that-influence-hormone-production": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-you-bloat-more-at-night-than-after-eating": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-blood-sugar-spikes-even-when-you-eat-healthy": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-digestion-slows-down-when-stressed": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {
