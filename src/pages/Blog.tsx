@@ -26,6 +26,7 @@ export default function Blog() {
       if (error) throw error;
       return data as BlogPost[];
     },
+    staleTime: 0,
   });
 
   return (
