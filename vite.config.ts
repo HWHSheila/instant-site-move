@@ -48,7 +48,7 @@ function sitemapPlugin() {
           }
         );
         if (res.ok) {
-          const posts = await res.json();
+          const posts = await res.json() as Array<{slug: string; updated_at: string | null; published_at: string | null}>;
           const today = new Date().toISOString().split("T")[0];
           for (const post of posts) {
             const lastmod = (post.updated_at || post.published_at || today).split("T")[0];
