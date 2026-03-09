@@ -69,6 +69,62 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Guide",
   },
+  "eating-less-is-not-the-answer": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "your-health-is-not-too-complicated": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-you-are-bloated-every-night": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "fat-is-not-ruining-your-digestion": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-fixing-insulin-resistance-makes-things-worse": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "your-morning-routine-is-backfiring": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-fasting-backfires-for-many-women": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "when-fasting-stops-working": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-caffeine-can-backfire-in-the-morning": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "i-gain-weight-when-i-restrict-carbs": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "supplements-help-at-first-and-then-stop-working": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "if-keto-does-not-work-just-try-harder": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "i-wake-up-tired-no-matter-what-i-do": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "gut-issues-only-happen-when-you-have-diarrhea-or-pain": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {
