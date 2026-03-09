@@ -18,7 +18,6 @@ interface BlogPostData {
 }
 
 function renderMarkdown(content: string) {
-  // Simple markdown-to-HTML for blog content
   const lines = content.split("\n");
   const html: string[] = [];
   let inList = false;
@@ -53,6 +52,25 @@ function renderMarkdown(content: string) {
   return html.join("\n");
 }
 
+const ctaConfig: Record<string, { href: string; label: string }> = {
+  "gut-health-hormonal-balance": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-healing-does-not-have-to-be-complicated": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "metabolic-signaling-explained": {
+    href: "/free-guide",
+    label: "Get the Free Guide",
+  },
+  "stress-digestive-health-connection": {
+    href: "/free-guide",
+    label: "Get the Free Guide",
+  },
+};
+
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
 
@@ -69,6 +87,8 @@ export default function BlogPost() {
     },
     enabled: !!slug,
   });
+
+  const cta = slug ? ctaConfig[slug] : undefined;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -138,6 +158,17 @@ export default function BlogPost() {
                   className="font-body"
                   dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
                 />
+
+                {cta && (
+                  <div className="mt-12 text-center">
+                    <Link
+                      to={cta.href}
+                      className="inline-block rounded-full px-8 py-4 text-base font-semibold transition-colors bg-accent text-accent-foreground hover:bg-accent/90"
+                    >
+                      {cta.label}
+                    </Link>
+                  </div>
+                )}
               </article>
             ) : (
               <div className="text-center py-20">
