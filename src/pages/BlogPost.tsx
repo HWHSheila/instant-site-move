@@ -309,6 +309,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
+  "embarrassed-by-bloating-puffiness": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "slow-heavy-delayed-digestion": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "women-weight-loss-different-than-men": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "heart-palpitations-blood-sugar-drops": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "cutting-fat-wont-fix-digestion": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
 };
 
 export default function BlogPost() {
