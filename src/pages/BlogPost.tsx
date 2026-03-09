@@ -265,6 +265,30 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
+  "cant-absorb-nutrients-eating-healthy": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "inflammation-is-not-just-normal-for-women": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "skin-flares-with-foods-or-stress": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "supplementing-more-wont-fix-absorption": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "crash-after-eating-healthy-food": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "healing-roadmap-without-extremes": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
 };
 
 export default function BlogPost() {
