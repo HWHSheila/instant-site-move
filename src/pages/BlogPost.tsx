@@ -289,6 +289,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
+  "protein-nausea-bloating-capacity": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "fatigue-is-not-about-effort": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "inconsistent-bowel-movements-regulation-signal": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "inflammation-is-not-just-aging": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "healing-without-restriction": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
 };
 
 export default function BlogPost() {
