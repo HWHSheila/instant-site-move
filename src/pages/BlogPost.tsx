@@ -185,6 +185,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
+  "carbs-are-not-the-enemy": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "more-caffeine-is-not-the-answer": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "every-protocol-ignores-gut-metabolism-hormone-patterns": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "energy-crashes-every-afternoon": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "cravings-get-worse-when-you-restrict": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {
