@@ -98,7 +98,7 @@ const App = () => (
           <Route path="/12month-coaching-thankyou" element={<TwelveMonthCoachingThankYou />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/sitemap.xml" element={<SitemapRedirect />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
