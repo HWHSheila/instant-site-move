@@ -145,6 +145,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
+  "metabolism-is-more-than-calories-in-vs-calories-out": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-metabolism-adapts-when-you-dont-eat-enough": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "why-your-cycle-gets-worse-when-routine-shifts": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "bloating-doesnt-mean-you-need-to-restrict-more": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "wellness-guidance-that-respects-womens-biology": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {
