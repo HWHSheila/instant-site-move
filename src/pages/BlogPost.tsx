@@ -261,7 +261,7 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "not-absorbing-nutrients-despite-eating-healthy": {
+  "felt-punished-for-trying-to-get-healthy": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
