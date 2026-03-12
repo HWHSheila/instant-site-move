@@ -333,15 +333,15 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "my-body-holds-onto-water-when-im-inflamed": {
+  "why-inflammation-causes-water-retention-in-women": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "blood-sugar-issues-are-rare-if-youre-not-diabetic": {
+  "why-blood-sugar-instability-is-not-just-a-diabetes-problem": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "i-cant-tolerate-high-fat-meals-anymore": {
+  "why-you-cant-digest-high-fat-meals-like-you-used-to": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
