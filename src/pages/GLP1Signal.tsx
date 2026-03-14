@@ -57,7 +57,7 @@ export default function GLP1Signal() {
     <div style={{ fontFamily: "'Montserrat', sans-serif", background: "#D9D1CB", minHeight: "100vh" }}>
       <Helmet>
         <title>Understanding GLP-1 Signaling | Her Wellness Harmony</title>
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
       <style>{`
