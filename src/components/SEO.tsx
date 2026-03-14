@@ -21,7 +21,7 @@ export function SEO({ title, description, noindex, ogImage, ogUrl }: SEOProps) {
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
       
       <meta property="og:title" content={title || pageTitle} />
       <meta property="og:description" content={pageDescription} />

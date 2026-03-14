@@ -9,7 +9,7 @@ export default function ThirtyDayRoadmap() {
       <SEO
         title="30-Day Gut Reset Roadmap"
         description="Get the 30-Day Gut Reset Roadmap — a structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
-        noindex
+        
       />
       <Header />
 
