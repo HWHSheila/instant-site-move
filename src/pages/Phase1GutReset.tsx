@@ -9,7 +9,7 @@ export default function Phase1GutReset() {
       <SEO
         title="Complete Phase 1 of Your 90-Day Protocol"
         description="Get the 30-Day Gut Reset Roadmap — Phase 1 of the 90-Day GLP-1 Optimization Protocol. A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
-        noindex
+        
       />
       <Header />
 

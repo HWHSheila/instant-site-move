@@ -5,7 +5,7 @@ export default function RootCauseFree() {
     <>
       <Helmet>
         <title>Root Cause Free Guide | Her Wellness Harmony</title>
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <iframe
         src="https://root-cause-free.lovable.app"

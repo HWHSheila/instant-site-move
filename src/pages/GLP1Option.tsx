@@ -10,7 +10,7 @@ export default function GLP1Option() {
       <SEO
         title="Get Your GLP-1 Guide"
         description="Choose the Understanding GLP-1 Signaling ebook on its own, or bundle it with the 30-Day Gut Reset Roadmap."
-        noindex
+        
       />
       <Header />
 

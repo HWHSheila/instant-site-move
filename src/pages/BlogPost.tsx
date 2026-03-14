@@ -345,6 +345,14 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
+  "why-poor-sleep-causes-puffiness-and-water-retention-in-women": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-thyroid-symptoms-are-not-always-a-thyroid-problem": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {

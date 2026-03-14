@@ -9,7 +9,7 @@ export default function GutRoadmap() {
     <>
       <Helmet>
         <title>30 Day Gut Reset Roadmap | Her Wellness Harmony</title>
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <iframe
         src="https://gutroadmap-herwellnessharmony.lovable.app"
