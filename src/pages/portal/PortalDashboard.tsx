@@ -6,7 +6,7 @@ const quickLinks = [
   { label: "Start Here", description: "Begin your root-cause journey", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", description: "Explore common body patterns", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", description: "Follow step-by-step coaching", to: "/portal/pathways", icon: Route },
-  { label: "AI Coaching", description: "Ask your coaching assistant", to: "/portal/ai-coaching", icon: Bot },
+  { label: "Ask the HWH Coach", description: "Ask your coaching assistant", to: "/portal/HWHcoach", icon: Bot },
 ];
 
 export default function PortalDashboard() {
