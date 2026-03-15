@@ -112,6 +112,7 @@ const App = () => (
           {/* Membership Portal */}
           <Route path="/portal" element={<PortalLayout />}>
             <Route index element={<PortalDashboard />} />
+            <Route path="dashboard" element={<PortalDashboard />} />
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="pathways" element={<PortalPathways />} />
