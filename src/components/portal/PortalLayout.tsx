@@ -22,7 +22,7 @@ const portalNav = [
   { label: "Start Here", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
-  { label: "AI Coaching", to: "/portal/ai-coaching", icon: Bot },
+  { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
   { label: "Community", to: "/portal/community", icon: Users },
   { label: "Upgrade", to: "/portal/upgrade", icon: ArrowUpCircle },
