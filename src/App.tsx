@@ -49,6 +49,7 @@ import { PortalLayout } from "./components/portal/PortalLayout";
 import PortalDashboard from "./pages/portal/PortalDashboard";
 import PortalStartHere from "./pages/portal/PortalStartHere";
 import PortalPatterns from "./pages/portal/PortalPatterns";
+import PortalPatternDetail from "./pages/portal/PortalPatternDetail";
 import PortalPathways from "./pages/portal/PortalPathways";
 import PortalAICoaching from "./pages/portal/PortalAICoaching";
 import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
