@@ -45,6 +45,16 @@ import TwelveMonthCoachingThankYou from "./pages/TwelveMonthCoachingThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { PortalLayout } from "./components/portal/PortalLayout";
+import PortalDashboard from "./pages/portal/PortalDashboard";
+import PortalStartHere from "./pages/portal/PortalStartHere";
+import PortalPatterns from "./pages/portal/PortalPatterns";
+import PortalPathways from "./pages/portal/PortalPathways";
+import PortalAICoaching from "./pages/portal/PortalAICoaching";
+import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
+import PortalCommunity from "./pages/portal/PortalCommunity";
+import PortalUpgrade from "./pages/portal/PortalUpgrade";
+import PortalAccount from "./pages/portal/PortalAccount";
 
 
 const queryClient = new QueryClient();
@@ -98,6 +108,19 @@ const App = () => (
           <Route path="/12month-coaching-thankyou" element={<TwelveMonthCoachingThankYou />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Membership Portal */}
+          <Route path="/portal" element={<PortalLayout />}>
+            <Route index element={<PortalDashboard />} />
+            <Route path="start-here" element={<PortalStartHere />} />
+            <Route path="patterns" element={<PortalPatterns />} />
+            <Route path="pathways" element={<PortalPathways />} />
+            <Route path="ai-coaching" element={<PortalAICoaching />} />
+            <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
+            <Route path="community" element={<PortalCommunity />} />
+            <Route path="upgrade" element={<PortalUpgrade />} />
+            <Route path="account" element={<PortalAccount />} />
+          </Route>
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
