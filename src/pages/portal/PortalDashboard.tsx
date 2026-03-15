@@ -32,7 +32,7 @@ export default function PortalDashboard() {
         </div>
 
         <div>
-          <h2 className="font-display text-lg font-medium text-foreground mb-4">Quick Access</h2>
+          <h2 className="font-display text-lg font-medium text-foreground mb-4">Start Your Coaching Journey</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {quickLinks.map((item) => (
               <Link
