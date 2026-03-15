@@ -45,6 +45,16 @@ import TwelveMonthCoachingThankYou from "./pages/TwelveMonthCoachingThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { PortalLayout } from "./components/portal/PortalLayout";
+import PortalDashboard from "./pages/portal/PortalDashboard";
+import PortalStartHere from "./pages/portal/PortalStartHere";
+import PortalPatterns from "./pages/portal/PortalPatterns";
+import PortalPathways from "./pages/portal/PortalPathways";
+import PortalAICoaching from "./pages/portal/PortalAICoaching";
+import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
+import PortalCommunity from "./pages/portal/PortalCommunity";
+import PortalUpgrade from "./pages/portal/PortalUpgrade";
+import PortalAccount from "./pages/portal/PortalAccount";
 
 
 const queryClient = new QueryClient();
