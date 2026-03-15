@@ -6,7 +6,7 @@ const quickLinks = [
   { label: "Start Here", description: "Begin your root-cause journey", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", description: "Explore common body patterns", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", description: "Follow step-by-step coaching", to: "/portal/pathways", icon: Route },
-  { label: "AI Coaching", description: "Ask your coaching assistant", to: "/portal/ai-coaching", icon: Bot },
+  { label: "Ask the HWH Coach", description: "Ask your coaching assistant", to: "/portal/HWHcoach", icon: Bot },
 ];
 
 export default function PortalDashboard() {
@@ -21,11 +21,14 @@ export default function PortalDashboard() {
           <p className="text-muted-foreground mt-1">Root-Cause Guided Coaching + Support</p>
         </div>
 
-        <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 md:p-6">
-          <p className="font-display text-lg font-medium text-foreground">Welcome back 👋</p>
-          <p className="text-sm text-muted-foreground mt-1">
-            Pick up where you left off or explore a new section of your coaching journey.
-          </p>
+        <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 md:p-6 space-y-3">
+          <p className="font-display text-lg font-medium text-foreground">Welcome to your coaching portal 👋</p>
+          <p className="text-sm text-muted-foreground">Here's how to get the most out of your membership:</p>
+          <ul className="text-sm text-muted-foreground space-y-2 list-none pl-0">
+            <li>🌿 <strong className="text-foreground">New here?</strong> Start with <strong>"Start Here"</strong> to understand the root-cause framework that guides everything inside this portal.</li>
+            <li>🔍 <strong className="text-foreground">Experiencing symptoms?</strong> Explore the <strong>"Pattern Library"</strong> to learn what your body may be signaling and why.</li>
+            <li>🛤️ <strong className="text-foreground">Ready to take action?</strong> Follow <strong>"Guided Pathways"</strong> to begin stabilizing your system step by step.</li>
+          </ul>
         </div>
 
         <div>

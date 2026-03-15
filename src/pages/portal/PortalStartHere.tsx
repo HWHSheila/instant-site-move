@@ -33,6 +33,15 @@ export default function PortalStartHere() {
           </p>
         </div>
 
+        <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
+          <p>
+            This portal is designed to help you understand how your digestion patterns, metabolic rhythm, stress signals, and hormone responses are all connected — and why addressing them in the right order matters.
+          </p>
+          <p>
+            Instead of chasing individual symptoms, you'll learn to read your body's patterns and follow a structured path toward stability. Everything inside this portal is built on that principle.
+          </p>
+        </div>
+
         <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 md:p-6 space-y-2">
           <p className="font-display text-lg font-medium text-foreground">The Root-Cause Framework</p>
           <p className="text-sm text-muted-foreground">
