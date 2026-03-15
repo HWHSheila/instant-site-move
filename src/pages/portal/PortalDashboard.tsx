@@ -22,12 +22,12 @@ export default function PortalDashboard() {
         </div>
 
         <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 md:p-6 space-y-3">
-          <p className="font-display text-lg font-medium text-foreground">Welcome to your coaching portal 👋</p>
+          <p className="font-display text-lg font-medium text-foreground">Welcome to the Her Wellness Harmony Portal</p>
           <p className="text-sm text-muted-foreground">Here's how to get the most out of your membership:</p>
           <ul className="text-sm text-muted-foreground space-y-2 list-none pl-0">
-            <li>🌿 <strong className="text-foreground">New here?</strong> Start with <strong>"Start Here"</strong> to understand the root-cause framework that guides everything inside this portal.</li>
-            <li>🔍 <strong className="text-foreground">Experiencing symptoms?</strong> Explore the <strong>"Pattern Library"</strong> to learn what your body may be signaling and why.</li>
-            <li>🛤️ <strong className="text-foreground">Ready to take action?</strong> Follow <strong>"Guided Pathways"</strong> to begin stabilizing your system step by step.</li>
+            <li><strong className="text-foreground">New here?</strong> Start with <strong>"Start Here"</strong> to understand the root-cause framework that guides everything inside this portal.</li>
+            <li><strong className="text-foreground">Experiencing symptoms?</strong> Explore the <strong>"Pattern Library"</strong> to learn what your body may be signaling and why.</li>
+            <li><strong className="text-foreground">Ready to take action?</strong> Follow <strong>"Guided Pathways"</strong> to begin stabilizing your system step by step.</li>
           </ul>
         </div>
 
