@@ -25,7 +25,7 @@ const portalNav = [
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
   { label: "Community", to: "/portal/community", icon: Users },
-  { label: "Upgrade", to: "/portal/upgrade", icon: ArrowUpCircle },
+  { label: "Deep Support Coaching", to: "/portal/coaching", icon: ArrowUpCircle },
   { label: "Account", to: "/portal/account", icon: UserCircle },
 ];
 

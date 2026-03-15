@@ -119,7 +119,7 @@ const App = () => (
             <Route path="HWHcoach" element={<PortalAICoaching />} />
             <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
             <Route path="community" element={<PortalCommunity />} />
-            <Route path="upgrade" element={<PortalUpgrade />} />
+            <Route path="coaching" element={<PortalUpgrade />} />
             <Route path="account" element={<PortalAccount />} />
           </Route>
           
