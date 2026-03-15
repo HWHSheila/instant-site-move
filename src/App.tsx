@@ -116,7 +116,7 @@ const App = () => (
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="pathways" element={<PortalPathways />} />
-            <Route path="ai-coaching" element={<PortalAICoaching />} />
+            <Route path="HWHcoach" element={<PortalAICoaching />} />
             <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
             <Route path="community" element={<PortalCommunity />} />
             <Route path="upgrade" element={<PortalUpgrade />} />
