@@ -108,6 +108,19 @@ const App = () => (
           <Route path="/12month-coaching-thankyou" element={<TwelveMonthCoachingThankYou />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Membership Portal */}
+          <Route path="/portal" element={<PortalLayout />}>
+            <Route index element={<PortalDashboard />} />
+            <Route path="start-here" element={<PortalStartHere />} />
+            <Route path="patterns" element={<PortalPatterns />} />
+            <Route path="pathways" element={<PortalPathways />} />
+            <Route path="ai-coaching" element={<PortalAICoaching />} />
+            <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
+            <Route path="community" element={<PortalCommunity />} />
+            <Route path="upgrade" element={<PortalUpgrade />} />
+            <Route path="account" element={<PortalAccount />} />
+          </Route>
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
