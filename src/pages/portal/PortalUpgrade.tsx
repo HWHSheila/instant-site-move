@@ -7,8 +7,8 @@ const tiers = [
     included: true,
   },
   {
-    name: "Strategy Call",
-    description: "A focused 1-on-1 session to review your patterns and create a personalized action plan.",
+    name: "Integrative Wellness Consultation",
+    description: "The best place to start. We'll explore your symptoms, gut patterns, stress load, hormone clues, and build a personalized plan with 3–5 simple steps you can begin immediately.",
     included: false,
   },
   {
@@ -21,15 +21,20 @@ const tiers = [
     description: "Deep, sustained coaching to address root-cause patterns across all body systems.",
     included: false,
   },
+  {
+    name: "12-Month Coaching",
+    description: "A full year of comprehensive root-cause coaching for lasting transformation across gut, metabolism, and hormone health.",
+    included: false,
+  },
 ];
 
 export default function PortalUpgrade() {
   return (
     <>
-      <SEO title="Upgrade Options" noindex />
+      <SEO title="Deep Support Coaching Options" noindex />
       <div className="space-y-8">
         <div>
-          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground">Upgrade Options</h1>
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground">Deep Support Coaching Options</h1>
           <p className="text-muted-foreground mt-1">
             Explore deeper coaching support beyond the membership portal.
           </p>
