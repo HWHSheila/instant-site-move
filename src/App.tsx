@@ -4,6 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import SignInPage from "./pages/SignIn";
+import SignUpPage from "./pages/SignUp";
 import Index from "./pages/Index";
 import FreeGuide from "./pages/FreeGuide";
 import FreeGuideThankYou from "./pages/FreeGuideThankYou";
@@ -56,6 +59,13 @@ import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
 import PortalCommunity from "./pages/portal/PortalCommunity";
 import PortalUpgrade from "./pages/portal/PortalUpgrade";
 import PortalAccount from "./pages/portal/PortalAccount";
+
+// Content Studio Pages
+import StudioDashboard from "./pages/portal/studio/StudioDashboard";
+import ScriptGenerator from "./pages/portal/studio/ScriptGenerator";
+import ContentLibrary from "./pages/portal/studio/ContentLibrary";
+import ContentCalendar from "./pages/portal/studio/ContentCalendar";
+import Campaigns from "./pages/portal/studio/Campaigns";
 
 
 const queryClient = new QueryClient();
@@ -110,10 +120,26 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
-          {/* Membership Portal */}
-          <Route path="/portal" element={<PortalLayout />}>
+          {/* Authentication Routes */}
+          <Route path="/sign-in/*" element={<SignInPage />} />
+          <Route path="/sign-up/*" element={<SignUpPage />} />
+
+          {/* Membership Portal (Protected) */}
+          <Route path="/portal" element={
+            <ProtectedRoute>
+              <PortalLayout />
+            </ProtectedRoute>
+          }>
             <Route index element={<PortalDashboard />} />
             <Route path="dashboard" element={<PortalDashboard />} />
+            
+            {/* Content Studio */}
+            <Route path="studio" element={<StudioDashboard />} />
+            <Route path="studio/generate" element={<ScriptGenerator />} />
+            <Route path="studio/library" element={<ContentLibrary />} />
+            <Route path="studio/calendar" element={<ContentCalendar />} />
+            <Route path="studio/campaigns" element={<Campaigns />} />
+            
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
