@@ -353,19 +353,19 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-cycle-shifts-after-dieting": {
+  "why-dieting-can-change-your-menstrual-cycle": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "water-retention-not-just-salt": {
+  "what-causes-water-retention-in-women-beyond-salt-intake": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-same-routine-doesnt-work-for-every-woman": {
+  "why-the-same-health-routine-produces-different-results": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "digestion-feels-slow-heavy-after-meals": {
+  "why-digestion-feels-slow-and-heavy-after-eating": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
