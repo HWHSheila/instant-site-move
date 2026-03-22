@@ -73,17 +73,13 @@ export default function FourWeekCoaching() {
                 size="lg"
                 className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
               >
-                <a href="https://buy.stripe.com/9B6eVe5uW7rS0La1th38404">
+                <a href="https://buy.stripe.com/6oU7sM3mOeUkbpOfk73840b">
                   Secure Your Spot
                 </a>
               </Button>
               <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="text-lg line-through text-primary-foreground/50">$1,000</span>
-                <span className="text-3xl font-display font-bold text-primary-foreground">$647</span>
+                <span className="text-3xl font-display font-bold text-primary-foreground">$1,000</span>
               </div>
-              <p className="text-sm text-primary-foreground/60 mt-1">
-                (Only 5 spots remaining)
-              </p>
             </div>
           </div>
 
