@@ -115,18 +115,14 @@ export default function FourWeekCoaching() {
           >
             <p className="section-label text-wellness-gold mb-4">Investment</p>
             <div className="flex items-baseline gap-4 mb-3">
-              <span className="text-xl line-through text-primary-foreground/50">$1,000</span>
-              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$647</span>
+              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$1,000</span>
             </div>
-            <p className="text-sm font-medium text-wellness-gold mb-6">
-              (Only 5 spots remaining)
-            </p>
             <Button
               asChild
               size="lg"
-              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
+              className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base mt-6"
             >
-              <a href="https://buy.stripe.com/9B6eVe5uW7rS0La1th38404">
+              <a href="https://buy.stripe.com/6oU7sM3mOeUkbpOfk73840b">
                 Secure Your Spot
               </a>
             </Button>

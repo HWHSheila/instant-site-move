@@ -97,9 +97,7 @@ const services: ServiceCardProps[] = [
   bookingLink: "/routine-blueprint"
 },
 {
-  price: "647",
-  originalPrice: "1,000",
-  spotsRemaining: 5,
+  price: "1,000",
   priceLabel: "Deep Support Package",
   title: "4-Week Gut & Hormone Coaching",
   duration: "4 Weeks",
