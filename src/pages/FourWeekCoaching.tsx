@@ -115,7 +115,7 @@ export default function FourWeekCoaching() {
           >
             <p className="section-label text-wellness-gold mb-4">Investment</p>
             <div className="flex items-baseline gap-4 mb-3">
-              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$1,000</span>
+              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$2,500</span>
             </div>
             <Button
               asChild
