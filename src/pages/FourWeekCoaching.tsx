@@ -78,7 +78,7 @@ export default function FourWeekCoaching() {
                 </a>
               </Button>
               <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="text-3xl font-display font-bold text-primary-foreground">$1,000</span>
+                <span className="text-3xl font-display font-bold text-primary-foreground">$2,500</span>
               </div>
             </div>
           </div>
