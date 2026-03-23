@@ -62,7 +62,7 @@ export default function TwelveMonthCoaching() {
                 size="lg"
                 className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
               >
-                <a href="https://buy.stripe.com/9B6dRa8H85jKeC00pd3840e">
+                <a href="https://buy.stripe.com/eVqfZibTk13ubpO8VJ3840i">
                   Secure Your Spot
                 </a>
               </Button>
