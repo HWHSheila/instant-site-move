@@ -62,7 +62,7 @@ export default function SixMonthCoaching() {
                 size="lg"
                 className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
               >
-                <a href="https://buy.stripe.com/fZu6oIe1s6nO2Tigob3840d">
+                <a href="https://buy.stripe.com/8x29AUe1sdQgdxWfk73840h">
                   Secure Your Spot
                 </a>
               </Button>
