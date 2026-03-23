@@ -65,7 +65,7 @@ export default function NinetyDayCoaching() {
                 size="lg"
                 className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
               >
-                <a href="https://buy.stripe.com/eVqbJ20aCdQg9hG7RF3840c">
+                <a href="https://buy.stripe.com/9B614o0aCaE4ctS9ZN3840g">
                   Secure Your Spot
                 </a>
               </Button>
