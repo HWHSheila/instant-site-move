@@ -134,7 +134,7 @@ export default function TwelveMonthCoaching() {
           >
             <p className="section-label text-wellness-gold mb-4">Investment</p>
             <div className="flex items-baseline gap-4 mb-6">
-              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$20,000</span>
+              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$18,000</span>
             </div>
             <Button
               asChild
