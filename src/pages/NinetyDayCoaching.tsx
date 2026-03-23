@@ -70,7 +70,7 @@ export default function NinetyDayCoaching() {
                 </a>
               </Button>
               <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="text-3xl font-display font-bold text-primary-foreground">$3,900</span>
+                <span className="text-3xl font-display font-bold text-primary-foreground">$5,500</span>
               </div>
             </div>
           </div>
