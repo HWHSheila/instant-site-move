@@ -67,7 +67,7 @@ export default function TwelveMonthCoaching() {
                 </a>
               </Button>
               <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="text-3xl font-display font-bold text-primary-foreground">$20,000</span>
+                <span className="text-3xl font-display font-bold text-primary-foreground">$18,000</span>
               </div>
             </div>
           </div>
