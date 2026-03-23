@@ -122,7 +122,7 @@ export default function FourWeekCoaching() {
               size="lg"
               className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base mt-6"
             >
-              <a href="https://buy.stripe.com/eVq9AU8H8cMcdxW9ZN3840f">
+              <a href="https://buy.stripe.com/6oU7sM3mOeUkbpOfk73840b">
                 Secure Your Spot
               </a>
             </Button>
