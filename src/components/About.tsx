@@ -28,7 +28,7 @@ export function About() {
               <img
                 src={sheilaPortrait}
                 alt="Sheila McFarland, founder of Her Wellness Harmony"
-                className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full shadow-lg border-4 border-border"
+                className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-2xl shadow-lg border-4 border-border"
               />
             </div>
           </div>
