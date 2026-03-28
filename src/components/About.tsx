@@ -20,15 +20,15 @@ export function About() {
 
         <div className="max-w-5xl mx-auto">
           {/* Two-column opener: text left, photo right */}
-          <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
+          <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
             <p className="text-lg text-foreground leading-relaxed">
               Her Wellness Harmony was born from one woman's unexpected detour into illness, burnout, and complete loss of control over her own body... and the fierce determination to take that power back. My name is <strong>Sheila McFarland</strong>. I am a wellness educator with over 20 years of scientific laboratory experience in root cause analysis, a chemistry degree, and a lived journey through metabolic crisis, gut dysfunction, and hormonal imbalance. I built this because I know what it feels like to be dismissed by a system focused only on surface-level numbers... while your body is screaming something deeper. I know what it feels like to have to figure it out yourself. And I know what it feels like when things finally start to shift. That is the experience I bring to every woman I work with.
             </p>
-            <div className="flex justify-center md:justify-end md:items-start">
+            <div className="flex justify-center md:justify-end">
               <img
                 src={sheilaPortrait}
                 alt="Sheila McFarland, founder of Her Wellness Harmony"
-                className="w-72 md:w-80 h-auto object-contain rounded-2xl shadow-lg border-4 border-border"
+                className="w-72 md:w-80 h-72 md:h-[420px] object-cover object-[center_25%] rounded-2xl shadow-lg border-4 border-border"
               />
             </div>
           </div>
