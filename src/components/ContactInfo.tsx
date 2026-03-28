@@ -18,7 +18,7 @@ export function ContactInfo() {
 
             </h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>• Questions about coaching services</li>
+              <li>• Questions about wellness education services</li>
               <li>• Help choosing the right session for you</li>
               <li>• Support with scheduling or rescheduling</li>
               <li>• Issues accessing your guide or emails</li>
