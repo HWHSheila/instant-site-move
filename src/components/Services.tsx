@@ -75,7 +75,7 @@ const services: ServiceCardProps[] = [
 {
   price: "99",
   priceLabel: "Returning Clients",
-  title: "Follow-Up Coaching Session",
+  title: "Follow-Up Wellness Session",
   duration: "45 minutes",
   description: "Continued support, guidance, and accountability. We'll review what's improving, what's shifting, and adjust supplements, food rhythm, and inflammation triggers.",
   bookingLink: "/follow-up-session"
@@ -99,7 +99,7 @@ const services: ServiceCardProps[] = [
 {
   price: "1,000",
   priceLabel: "Deep Support Package",
-  title: "4-Week Gut & Hormone Coaching",
+  title: "4-Week Gut & Hormone Wellness Education Program",
   duration: "4 Weeks",
   description: "A comprehensive package for women ready to commit to deeper root-cause healing with weekly sessions, personalized plans, and ongoing support.",
   bookingLink: "/4-week-coaching"
@@ -112,7 +112,7 @@ export function Services() {
       <div className="container-wellness">
         <div className="text-center mb-12">
           <p className="section-label mb-3">Services</p>
-          <h2 className="section-title mb-4">Personalized Coaching for Your Healing Path</h2>
+          <h2 className="section-title mb-4">Personalized Wellness Education for Your Healing Path</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Root-cause guidance designed to help women feel better in their bodies, without extremes, fear-based restrictions, or confusing protocols.
 
           </p>
