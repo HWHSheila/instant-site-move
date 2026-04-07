@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { UserButton } from "@clerk/clerk-react";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -14,11 +15,34 @@ import {
   Menu,
   X,
   ChevronLeft,
+  Video,
+  Calendar,
+  Library,
+  Sparkles,
+  Target,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const portalNav = [
+interface NavItem {
+  label: string;
+  to: string;
+  icon: React.ComponentType<{ className?: string }>;
+  end?: boolean;
+  section?: boolean;
+  indent?: boolean;
+}
+
+const portalNav: NavItem[] = [
   { label: "Dashboard", to: "/portal", icon: LayoutDashboard, end: true },
+  
+  // Content Studio Section
+  { label: "Content Studio", to: "/portal/studio", icon: Video, section: true },
+  { label: "Script Generator", to: "/portal/studio/generate", icon: Sparkles, indent: true },
+  { label: "Content Library", to: "/portal/studio/library", icon: Library, indent: true },
+  { label: "Content Calendar", to: "/portal/studio/calendar", icon: Calendar, indent: true },
+  { label: "Campaigns", to: "/portal/studio/campaigns", icon: Target, indent: true },
+  
+  // Original Portal Items
   { label: "Start Here", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
@@ -55,16 +79,22 @@ export function PortalLayout() {
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                   isActive
                     ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                  item.indent && "ml-4 text-xs",
+                  item.section && "font-semibold text-primary mt-4"
                 )
               }
             >
-              <item.icon className="w-5 h-5 shrink-0" />
+              <item.icon className={cn("shrink-0", item.indent ? "w-4 h-4" : "w-5 h-5")} />
               {item.label}
             </NavLink>
           ))}
         </nav>
-        <div className="p-4 border-t border-border">
+        <div className="p-4 border-t border-border space-y-3">
+          <div className="flex items-center gap-3">
+            <UserButton afterSignOutUrl="/" />
+            <span className="text-xs text-muted-foreground">Account</span>
+          </div>
           <button
             onClick={() => navigate("/")}
             className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -118,16 +148,22 @@ export function PortalLayout() {
                       "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                       isActive
                         ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                      item.indent && "ml-4 text-xs",
+                      item.section && "font-semibold text-primary mt-4"
                     )
                   }
                 >
-                  <item.icon className="w-5 h-5 shrink-0" />
+                  <item.icon className={cn("shrink-0", item.indent ? "w-4 h-4" : "w-5 h-5")} />
                   {item.label}
                 </NavLink>
               ))}
             </nav>
-            <div className="p-4 border-t border-border">
+            <div className="p-4 border-t border-border space-y-3">
+              <div className="flex items-center gap-3">
+                <UserButton afterSignOutUrl="/" />
+                <span className="text-xs text-muted-foreground">Account</span>
+              </div>
               <button
                 onClick={() => { setSidebarOpen(false); navigate("/"); }}
                 className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
