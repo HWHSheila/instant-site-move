@@ -1,4 +1,4 @@
-project_id = "npwitirccxyphbtxyfbs"
+project_id = "joxwjoboqkcenmphbtpi"
 
 [functions.systeme-subscribe]
 verify_jwt = false
@@ -10,4 +10,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.sitemap]
+verify_jwt = false
+
+[functions.generate-script]
 verify_jwt = false

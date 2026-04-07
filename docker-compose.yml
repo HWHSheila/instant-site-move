@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+      - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
+    command: npm run dev -- --host 0.0.0.0
+
+  # Local Supabase (optional - for isolated testing)
+  # Uncomment to run local Supabase instead of production
+  # db:
+  #   image: supabase/postgres:15.1.0.117
+  #   ports:
+  #     - "54322:5432"
+  #   environment:
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: postgres
+  #   volumes:
+  #     - supabase_data:/var/lib/postgresql/data
+  #     - ./sql:/docker-entrypoint-initdb.d
+
+# volumes:
+#   supabase_data:
