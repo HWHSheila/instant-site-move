@@ -4,6 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import SignInPage from "./pages/SignIn";
+import SignUpPage from "./pages/SignUp";
 import Index from "./pages/Index";
 import FreeGuide from "./pages/FreeGuide";
 import FreeGuideThankYou from "./pages/FreeGuideThankYou";
@@ -56,6 +59,21 @@ import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
 import PortalCommunity from "./pages/portal/PortalCommunity";
 import PortalUpgrade from "./pages/portal/PortalUpgrade";
 import PortalAccount from "./pages/portal/PortalAccount";
+import PortalIntake from "./pages/portal/PortalIntake";
+import PortalResults from "./pages/portal/PortalResults";
+
+// Content Studio Pages
+import StudioDashboard from "./pages/portal/studio/StudioDashboard";
+import ScriptGenerator from "./pages/portal/studio/ScriptGenerator";
+import ContentLibrary from "./pages/portal/studio/ContentLibrary";
+import ContentCalendar from "./pages/portal/studio/ContentCalendar";
+import Campaigns from "./pages/portal/studio/Campaigns";
+
+// Admin Pages
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminSubscribers from "./pages/admin/AdminSubscribers";
+import AdminContent from "./pages/admin/AdminContent";
 
 
 const queryClient = new QueryClient();
@@ -86,7 +104,6 @@ const App = () => (
             <Route path="/4-week-confirm" element={<FourWeekConfirm />} />
             <Route path="/4-week-thankyou" element={<FourWeekThankYou />} />
             <Route path="/confirm" element={<Confirm />} />
-          <Route path="/confirm" element={<Confirm />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
@@ -110,10 +127,28 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
-          {/* Membership Portal */}
-          <Route path="/portal" element={<PortalLayout />}>
+          {/* Authentication Routes */}
+          <Route path="/sign-in/*" element={<SignInPage />} />
+          <Route path="/sign-up/*" element={<SignUpPage />} />
+
+          {/* Membership Portal (Protected) */}
+          <Route path="/portal" element={
+            <ProtectedRoute>
+              <PortalLayout />
+            </ProtectedRoute>
+          }>
             <Route index element={<PortalDashboard />} />
             <Route path="dashboard" element={<PortalDashboard />} />
+            
+            {/* Content Studio */}
+            <Route path="studio" element={<StudioDashboard />} />
+            <Route path="studio/generate" element={<ScriptGenerator />} />
+            <Route path="studio/library" element={<ContentLibrary />} />
+            <Route path="studio/calendar" element={<ContentCalendar />} />
+            <Route path="studio/campaigns" element={<Campaigns />} />
+            
+            <Route path="intake" element={<PortalIntake />} />
+            <Route path="results" element={<PortalResults />} />
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
@@ -125,6 +160,18 @@ const App = () => (
             <Route path="account" element={<PortalAccount />} />
           </Route>
           
+          {/* Admin Panel (Protected) */}
+          <Route path="/admin" element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }>
+            <Route index element={<AdminDashboard />} />
+            <Route path="subscribers" element={<AdminSubscribers />} />
+            <Route path="content" element={<AdminContent />} />
+            <Route path="analytics" element={<AdminDashboard />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
