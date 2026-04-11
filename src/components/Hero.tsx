@@ -17,14 +17,14 @@ export function Hero() {
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
                 size="lg"
                 className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-lg px-8 py-6 text-base"
               >
                 <a href="/free-guide">
-                  Download Your Free Gut Reset Guide
+                  Download Your Free Guide
                 </a>
               </Button>
               <Button
