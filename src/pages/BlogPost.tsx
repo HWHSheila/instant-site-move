@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
-import { ArrowLeft } from "lucide-react";
+
 
 interface BlogPostData {
   id: string;
@@ -63,11 +63,11 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
   },
   "metabolic-signaling-explained": {
     href: "/free-guide",
-    label: "Get the Free Guide",
+    label: "Get the Free Root Cause Reset Guide",
   },
   "stress-digestive-health-connection": {
     href: "/free-guide",
-    label: "Get the Free Guide",
+    label: "Get the Free Root Cause Reset Guide",
   },
   "eating-less-is-not-the-answer": {
     href: "/30day-roadmap",
@@ -458,14 +458,6 @@ export default function BlogPost() {
 
         <main className="pt-32 pb-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8 text-sm font-semibold tracking-wide uppercase font-body"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
-            </Link>
-
             {isLoading ? (
               <div className="animate-pulse space-y-4">
                 <div className="h-8 bg-card/10 rounded w-3/4" />
