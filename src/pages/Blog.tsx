@@ -36,34 +36,18 @@ export default function Blog() {
         description="Insights on gut health, metabolism, hormones, and root-cause wellness for women."
       />
 
-      <div
-        className="flex-1 relative"
-        style={{
-          background: `
-            linear-gradient(
-              175deg,
-              hsl(150 40% 18%) 0%,
-              hsl(150 35% 24%) 12%,
-              hsl(150 28% 32%) 30%,
-              hsl(145 22% 42%) 50%,
-              hsl(145 20% 38%) 65%,
-              hsl(150 28% 28%) 80%,
-              hsl(150 38% 18%) 100%
-            )
-          `,
-        }}
-      >
+      <div className="flex-1 bg-background">
         <Header />
 
         <main className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero */}
             <div className="text-center mb-16">
-              <p className="section-label mb-4 text-accent">Blog</p>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground mb-6">
+              <p className="section-label mb-4">Blog</p>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-6">
                 Her Wellness Harmony Blog
               </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Insights on gut health, metabolism, hormones, and root-cause wellness for women.
               </p>
             </div>
@@ -72,7 +56,7 @@ export default function Blog() {
             {isLoading ? (
               <div className="grid gap-8 md:grid-cols-2">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="bg-card/10 backdrop-blur-sm rounded-xl p-6 animate-pulse h-64" />
+                  <div key={i} className="bg-muted rounded-xl p-6 animate-pulse h-64" />
                 ))}
               </div>
             ) : posts && posts.length > 0 ? (
@@ -81,7 +65,7 @@ export default function Blog() {
                   <Link
                     key={post.id}
                     to={`/blog/${post.slug}`}
-                    className="group bg-card/10 backdrop-blur-sm border border-primary-foreground/10 rounded-xl overflow-hidden hover:bg-card/20 transition-all duration-300"
+                    className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-all duration-300"
                   >
                     {post.featured_image && (
                       <div className="aspect-video overflow-hidden">
@@ -94,15 +78,15 @@ export default function Blog() {
                     )}
                     <div className="p-6">
                       {post.published_at && (
-                        <p className="text-sm text-accent/80 mb-2 font-body">
+                        <p className="text-sm text-muted-foreground mb-2 font-body">
                           {format(new Date(post.published_at), "MMMM d, yyyy")}
                         </p>
                       )}
-                      <h2 className="font-display text-xl font-medium text-primary-foreground mb-3 group-hover:text-accent transition-colors">
+                      <h2 className="font-display text-xl font-medium text-foreground mb-3 group-hover:text-accent transition-colors">
                         {post.title}
                       </h2>
                       {post.excerpt && (
-                        <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4 font-body">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4 font-body">
                           {post.excerpt}
                         </p>
                       )}
@@ -114,7 +98,7 @@ export default function Blog() {
                 ))}
               </div>
             ) : (
-              <p className="text-center text-primary-foreground/60 text-lg">
+              <p className="text-center text-muted-foreground text-lg">
                 No posts yet. Check back soon!
               </p>
             )}
