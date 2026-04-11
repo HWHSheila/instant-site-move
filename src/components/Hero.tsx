@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="pt-20 md:pt-24 bg-background">
       <div className="container-wellness py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           {/* Text */}
           <div>
             <p className="text-sm tracking-[0.2em] uppercase font-semibold text-wellness-gold mb-4">
