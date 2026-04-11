@@ -389,6 +389,26 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
+  "constant-busyness-and-chronic-stress-patterns-in-women": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "wired-at-night-exhausted-during-the-day-in-women": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "slow-digestion-and-heavy-feeling-after-eating": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "bloating-after-eating-healthy-foods": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "inconsistent-digestion-patterns": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
 };
 
 export default function BlogPost() {
