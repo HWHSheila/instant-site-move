@@ -369,59 +369,59 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-cortisol-stays-high-in-women-even-when-life-feels-normal": {
+  "the-hidden-reason-cortisol-stays-elevated-in-women": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "how-poor-sleep-keeps-cortisol-elevated-and-what-it-does": {
+  "poor-sleep-and-elevated-cortisol-the-connection-most-women-miss": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-stress-causes-bloating-and-slows-digestion-in-women": {
+  "stress-bloating-and-slow-digestion-in-women": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "can-too-much-exercise-raise-cortisol-and-stall-recovery": {
+  "when-exercise-raises-cortisol-instead-of-lowering-it": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-blood-sugar-crashes-trigger-cortisol-spikes-in-women": {
+  "blood-sugar-crashes-and-cortisol-spikes-in-women": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-being-busy-all-day-keeps-your-body-in-chronic-stress": {
+  "busy-all-day-but-never-recovering-the-chronic-stress-pattern": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-you-feel-wired-at-night-but-exhausted-during-the-day": {
+  "wired-at-night-exhausted-by-morning-and-stuck-in-a-loop": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-digestion-feels-heavy-and-slow-after-every-meal": {
+  "that-heavy-feeling-after-eating-is-not-about-the-food": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-you-bloat-after-eating-healthy-foods-and-what-it-means": {
+  "bloating-after-healthy-meals-the-missing-piece-most-women-overlook": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-your-digestion-changes-every-day-even-when-meals-stay-the-same": {
+  "same-meals-different-digestion-and-the-pattern-behind-it": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-you-suddenly-cant-tolerate-foods-you-used-to-eat": {
+  "sudden-food-sensitivities-that-seem-to-come-out-of-nowhere": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-urgency-after-eating-happens-on-some-days-and-not-others": {
+  "unpredictable-urgency-after-eating-and-the-real-trigger-behind-it": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-you-feel-full-after-a-few-bites-or-lose-your-appetite": {
+  "full-after-a-few-bites-or-no-appetite-at-all-a-stress-signal": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-you-feel-exhausted-after-every-meal-as-a-woman": {
+  "exhausted-after-every-meal-the-blood-sugar-pattern-behind-it": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
