@@ -8,6 +8,9 @@ export function Hero() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <div>
+            <p className="text-sm tracking-[0.2em] uppercase font-semibold text-wellness-gold mb-4">
+              Root-Cause Wellness For Women
+            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-foreground leading-tight mb-6">
               Healing Gut, Hormones & Metabolism
             </h1>
