@@ -409,19 +409,19 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "sudden-food-sensitivities-and-what-they-mean": {
+  "why-you-suddenly-cant-tolerate-foods-you-used-to-eat": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "urgency-after-eating-that-feels-unpredictable": {
+  "why-urgency-after-eating-happens-on-some-days-and-not-others": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "feeling-full-too-fast-or-no-appetite": {
+  "why-you-feel-full-after-a-few-bites-or-lose-your-appetite": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "energy-crashes-after-eating-in-women": {
+  "why-you-feel-exhausted-after-every-meal-as-a-woman": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
