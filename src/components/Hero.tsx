@@ -17,7 +17,7 @@ export function Hero() {
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
               <Button
                 asChild
                 size="lg"
