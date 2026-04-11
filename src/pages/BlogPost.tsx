@@ -369,43 +369,43 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "whats-quietly-driving-high-cortisol-in-women": {
+  "why-cortisol-stays-high-in-women-even-when-life-feels-normal": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "how-poor-sleep-keeps-cortisol-elevated-in-women": {
+  "how-poor-sleep-keeps-cortisol-elevated-and-what-it-does": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "why-stress-slows-digestion-in-women": {
+  "why-stress-causes-bloating-and-slows-digestion-in-women": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "how-overtraining-can-raise-cortisol": {
+  "can-too-much-exercise-raise-cortisol-and-stall-recovery": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "why-blood-sugar-swings-raise-cortisol": {
+  "why-blood-sugar-crashes-trigger-cortisol-spikes-in-women": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "constant-busyness-and-chronic-stress-patterns-in-women": {
+  "why-being-busy-all-day-keeps-your-body-in-chronic-stress": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "wired-at-night-exhausted-during-the-day-in-women": {
+  "why-you-feel-wired-at-night-but-exhausted-during-the-day": {
     href: "/30day-roadmap",
     label: "Get the 30-Day Gut Reset Roadmap",
   },
-  "slow-digestion-and-heavy-feeling-after-eating": {
+  "why-digestion-feels-heavy-and-slow-after-every-meal": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "bloating-after-eating-healthy-foods": {
+  "why-you-bloat-after-eating-healthy-foods-and-what-it-means": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
-  "inconsistent-digestion-patterns": {
+  "why-your-digestion-changes-every-day-even-when-meals-stay-the-same": {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
