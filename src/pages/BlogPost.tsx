@@ -27,24 +27,24 @@ function renderMarkdown(content: string) {
 
     if (trimmed.startsWith("## ")) {
       if (inList) { html.push("</ul>"); inList = false; }
-      html.push(`<h2 class="font-display text-2xl font-medium text-primary-foreground mt-10 mb-4">${trimmed.slice(3)}</h2>`);
+      html.push(`<h2 class="font-display text-2xl font-medium text-foreground mt-10 mb-4">${trimmed.slice(3)}</h2>`);
     } else if (trimmed.startsWith("### ")) {
       if (inList) { html.push("</ul>"); inList = false; }
-      html.push(`<h3 class="font-display text-xl font-medium text-primary-foreground mt-8 mb-3">${trimmed.slice(4)}</h3>`);
+      html.push(`<h3 class="font-display text-xl font-medium text-foreground mt-8 mb-3">${trimmed.slice(4)}</h3>`);
     } else if (trimmed.startsWith("- ")) {
-      if (!inList) { html.push('<ul class="list-disc list-inside space-y-2 mb-6 text-primary-foreground/80">'); inList = true; }
-      const itemContent = trimmed.slice(2).replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
+      if (!inList) { html.push('<ul class="list-disc list-inside space-y-2 mb-6 text-muted-foreground">'); inList = true; }
+      const itemContent = trimmed.slice(2).replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
       html.push(`<li>${itemContent}</li>`);
     } else if (trimmed.match(/^\d+\.\s/)) {
       if (inList) { html.push("</ul>"); inList = false; }
-      const itemContent = trimmed.replace(/^\d+\.\s/, "").replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
-      html.push(`<p class="text-primary-foreground/80 leading-relaxed mb-2 pl-4">${itemContent}</p>`);
+      const itemContent = trimmed.replace(/^\d+\.\s/, "").replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+      html.push(`<p class="text-muted-foreground leading-relaxed mb-2 pl-4">${itemContent}</p>`);
     } else if (trimmed === "") {
       if (inList) { html.push("</ul>"); inList = false; }
     } else {
       if (inList) { html.push("</ul>"); inList = false; }
-      const processed = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
-      html.push(`<p class="text-primary-foreground/80 leading-relaxed mb-4">${processed}</p>`);
+      const processed = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+      html.push(`<p class="text-muted-foreground leading-relaxed mb-4">${processed}</p>`);
     }
   }
   if (inList) html.push("</ul>");
@@ -419,12 +419,12 @@ export default function BlogPost() {
             ) : post ? (
               <article>
                 {post.published_at && (
-                  <p className="text-accent/80 text-sm mb-4 font-body">
+                  <p className="text-muted-foreground text-sm mb-4 font-body">
                     {format(new Date(post.published_at), "MMMM d, yyyy")}
                   </p>
                 )}
 
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground mb-8">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8">
                   {post.title}
                 </h1>
 
@@ -456,7 +456,7 @@ export default function BlogPost() {
               </article>
             ) : (
               <div className="text-center py-20">
-                <h1 className="font-display text-3xl text-primary-foreground mb-4">Post Not Found</h1>
+                <h1 className="font-display text-3xl text-foreground mb-4">Post Not Found</h1>
                 <Link to="/blog" className="text-accent hover:text-accent/80 transition-colors">
                   Return to Blog
                 </Link>
