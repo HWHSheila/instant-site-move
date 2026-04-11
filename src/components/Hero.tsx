@@ -45,7 +45,7 @@ export function Hero() {
             <img
               src={heroImage}
               alt="Wellness lifestyle - herbal tea with fresh ingredients"
-              className="rounded-2xl shadow-lg w-full max-w-lg object-cover aspect-[4/3]"
+              className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
             />
           </div>
         </div>
