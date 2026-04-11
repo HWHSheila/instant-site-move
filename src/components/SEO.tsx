@@ -10,7 +10,7 @@ interface SEOProps {
 
 const DEFAULT_TITLE = "Her Wellness Harmony | Root-Cause Wellness for Women";
 const DEFAULT_DESCRIPTION = "Simple functional lifestyle shifts that help you understand your body, restore your energy, and experience true healing — without pressure or confusion.";
-const OG_IMAGE = "https://instant-site-move.lovable.app/og-image.png";
+const OG_IMAGE = "https://www.herwellnessharmony.com/og-image.png";
 
 export function SEO({ title, description, noindex, ogImage, ogUrl }: SEOProps) {
   const pageTitle = title ? `${title} | Her Wellness Harmony` : DEFAULT_TITLE;
