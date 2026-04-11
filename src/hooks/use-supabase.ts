@@ -19,7 +19,7 @@ export function useSupabase() {
   const client = useMemo(() => {
     return createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
       global: {
-        fetch: async (url, options = {}) => {
+        fetch: async (url, options: RequestInit = {}) => {
           const clerkToken = await session?.getToken({
             template: "supabase",
           });

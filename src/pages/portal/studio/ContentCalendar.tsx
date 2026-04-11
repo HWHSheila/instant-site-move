@@ -45,7 +45,7 @@ export default function ContentCalendar() {
         .lte("scheduled_date", endDate)
         .order("scheduled_date");
       if (error) throw error;
-      return (data || []) as CalendarEntry[];
+      return (data || []) as unknown as CalendarEntry[];
     },
     enabled: !!userId,
   });
