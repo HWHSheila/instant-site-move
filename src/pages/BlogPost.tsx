@@ -397,23 +397,7 @@ export default function BlogPost() {
         description={post?.excerpt || "Insights on gut health, metabolism, hormones, and root-cause wellness for women."}
       />
 
-      <div
-        className="flex-1 relative"
-        style={{
-          background: `
-            linear-gradient(
-              175deg,
-              hsl(150 40% 18%) 0%,
-              hsl(150 35% 24%) 12%,
-              hsl(150 28% 32%) 30%,
-              hsl(145 22% 42%) 50%,
-              hsl(145 20% 38%) 65%,
-              hsl(150 28% 28%) 80%,
-              hsl(150 38% 18%) 100%
-            )
-          `,
-        }}
-      >
+      <div className="flex-1 bg-background">
         <Header />
 
         <main className="pt-32 pb-20">
