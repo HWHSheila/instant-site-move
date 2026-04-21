@@ -132,12 +132,19 @@ export default function GLP1Signal() {
           font-size: 0.85rem;
           line-height: 1.7;
           color: #3A3A3A;
-          padding-left: 1.25em;
+          padding-left: 1.5em;
           margin-bottom: 0.8em;
           margin-top: 0;
+          list-style-type: disc;
+          list-style-position: outside;
         }
         .ebook-doc-list li {
           margin-bottom: 0.3em;
+          display: list-item;
+          list-style-type: disc;
+        }
+        .ebook-doc-list li::marker {
+          color: #4B2E4C;
         }
         .ebook-doc-chapter-label {
           font-family: 'Montserrat', sans-serif;
