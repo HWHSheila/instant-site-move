@@ -257,24 +257,27 @@ export default function GLP1Signal() {
         }
         /* Wider variant for the metabolic chain diagram */
         .ebook-signal-flow.is-system {
-          gap: 0.7em;
+          gap: 0.35em;
           align-items: stretch;
         }
         .ebook-signal-flow.is-system .ebook-signal-node {
           flex: 1 1 0;
-          padding: 0.55em 0.9em;
+          padding: 0.55em 0.6em;
           min-height: 3.2em;
           aspect-ratio: auto;
         }
         .ebook-signal-flow.is-system .ebook-signal-node-sub {
           margin-bottom: 0.35em;
+          white-space: nowrap;
         }
         .ebook-signal-flow.is-system .ebook-signal-node-label {
           font-size: 0.7rem;
           line-height: 1.2;
+          white-space: nowrap;
         }
         .ebook-signal-flow.is-system .ebook-signal-connector {
           flex: 0 0 auto;
+          font-size: 0.7rem;
           margin: 0;
         }
         .ebook-doc-layers {
@@ -602,7 +605,7 @@ export default function GLP1Signal() {
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Process</div>
-              <div className="ebook-signal-node-label">Glucose<br />Uptake</div>
+              <div className="ebook-signal-node-label">Glucose Uptake</div>
             </div>
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
@@ -612,7 +615,7 @@ export default function GLP1Signal() {
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Outcome</div>
-              <div className="ebook-signal-node-label">Energy<br />Output</div>
+              <div className="ebook-signal-node-label">Energy Output</div>
             </div>
           </div>
         </div>
