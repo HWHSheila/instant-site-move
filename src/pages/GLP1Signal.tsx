@@ -546,9 +546,11 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Restoring a signal means improving the internal environment so that the body naturally produces and responds to GLP-1 effectively.</p>
         <p className="ebook-doc-body">Forcing a response means amplifying a signal regardless of whether the system underneath is stable.</p>
         <p className="ebook-doc-body">If gut function is impaired, inflammation is elevated, sleep is insufficient, or stress is chronic, the signaling network becomes distorted. In that environment, simply increasing GLP-1 activity does not necessarily repair the broader metabolic system.</p>
-        <p className="ebook-doc-body">It may reduce appetite.</p>
-        <p className="ebook-doc-body">It may improve blood sugar.</p>
-        <p className="ebook-doc-body">But it does not automatically rebuild the terrain.</p>
+        <ul className="ebook-doc-list" style={{ marginTop: "1.5em" }}>
+          <li>It may reduce appetite</li>
+          <li>It may improve blood sugar</li>
+          <li>But it does not automatically rebuild the terrain</li>
+        </ul>
         <PageFooter pageNum={6} />
       </div>
       <div className="ebook-spacer" />
@@ -558,6 +560,19 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>GLP-1 Works Within a System</h2>
         <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue influences glucose uptake. Glucose uptake influences mitochondrial energy production. Mitochondrial efficiency influences fatigue, hunger signaling, and metabolic flexibility.</p>
         <p className="ebook-doc-body">This is a chain.</p>
+        <div className="ebook-doc-flow" style={{ margin: "1.25em 0" }}>
+          <span className="ebook-doc-flow-step">GLP-1</span>
+          <span className="ebook-doc-flow-arrow">→</span>
+          <span className="ebook-doc-flow-step">Insulin</span>
+          <span className="ebook-doc-flow-arrow">→</span>
+          <span className="ebook-doc-flow-step">Muscle</span>
+          <span className="ebook-doc-flow-arrow">→</span>
+          <span className="ebook-doc-flow-step">Glucose uptake</span>
+          <span className="ebook-doc-flow-arrow">→</span>
+          <span className="ebook-doc-flow-step">Mitochondria</span>
+          <span className="ebook-doc-flow-arrow">→</span>
+          <span className="ebook-doc-flow-step">Energy output</span>
+        </div>
         <p className="ebook-doc-body">If one part of the chain is unstable, the overall outcome changes.</p>
         <p className="ebook-doc-body">Calling GLP-1 a fat-burning hormone oversimplifies a complex system.</p>
         <p className="ebook-doc-body">It reduces a communication network to a single outcome.</p>
@@ -566,9 +581,9 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
         <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
-        <p className="ebook-doc-body">The goal is no longer to force appetite suppression.</p>
-        <p className="ebook-doc-body">The goal becomes improving the signaling environment.</p>
-        <p className="ebook-doc-body">That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal is no longer to force appetite suppression.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal becomes improving the signaling environment.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
         <p className="ebook-doc-body">When signaling improves, regulation becomes smoother.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine why GLP-1 signaling breaks in the first place, and what disrupts the communication network that supports metabolic stability.</p>
         <PageFooter pageNum={7} />
