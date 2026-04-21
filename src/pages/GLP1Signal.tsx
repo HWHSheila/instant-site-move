@@ -560,18 +560,39 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>GLP-1 Works Within a System</h2>
         <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue influences glucose uptake. Glucose uptake influences mitochondrial energy production. Mitochondrial efficiency influences fatigue, hunger signaling, and metabolic flexibility.</p>
         <p className="ebook-doc-body">This is a chain.</p>
-        <div className="ebook-doc-flow" style={{ margin: "1.25em 0" }}>
-          <span className="ebook-doc-flow-step">GLP-1</span>
-          <span className="ebook-doc-flow-arrow">→</span>
-          <span className="ebook-doc-flow-step">Insulin</span>
-          <span className="ebook-doc-flow-arrow">→</span>
-          <span className="ebook-doc-flow-step">Muscle</span>
-          <span className="ebook-doc-flow-arrow">→</span>
-          <span className="ebook-doc-flow-step">Glucose uptake</span>
-          <span className="ebook-doc-flow-arrow">→</span>
-          <span className="ebook-doc-flow-step">Mitochondria</span>
-          <span className="ebook-doc-flow-arrow">→</span>
-          <span className="ebook-doc-flow-step">Energy output</span>
+        <div className="ebook-signal-diagram">
+          <div className="ebook-signal-caption">The Metabolic Chain</div>
+          <div className="ebook-signal-flow">
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Signal</div>
+              <div className="ebook-signal-node-label">GLP-1</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Hormone</div>
+              <div className="ebook-signal-node-label">Insulin</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Tissue</div>
+              <div className="ebook-signal-node-label">Muscle</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Process</div>
+              <div className="ebook-signal-node-label">Glucose<br />Uptake</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Engine</div>
+              <div className="ebook-signal-node-label">Mitochondria</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Outcome</div>
+              <div className="ebook-signal-node-label">Energy<br />Output</div>
+            </div>
+          </div>
         </div>
         <p className="ebook-doc-body">If one part of the chain is unstable, the overall outcome changes.</p>
         <p className="ebook-doc-body">Calling GLP-1 a fat-burning hormone oversimplifies a complex system.</p>
