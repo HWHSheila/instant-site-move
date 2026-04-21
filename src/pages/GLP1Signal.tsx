@@ -274,7 +274,11 @@ export default function GLP1Signal() {
           line-height: 1.2;
         }
         .ebook-signal-flow.is-system .ebook-signal-connector {
-          margin: 0 0.05em;
+          width: 0.9em;
+          flex: 0 0 0.9em;
+          overflow: hidden;
+          text-align: center;
+          margin: 0;
         }
         .ebook-doc-layers {
           display: flex;
