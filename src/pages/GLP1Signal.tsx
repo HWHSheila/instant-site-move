@@ -255,6 +255,23 @@ export default function GLP1Signal() {
           font-size: 0.85rem;
           line-height: 1;
         }
+        /* Wider variant for the metabolic chain diagram */
+        .ebook-signal-flow.is-system {
+          gap: 0.9em;
+        }
+        .ebook-signal-flow.is-system .ebook-signal-node {
+          padding: 1.1em 0.7em 1em;
+          min-height: 4.6em;
+        }
+        .ebook-signal-flow.is-system .ebook-signal-node-sub {
+          margin-bottom: 0.6em;
+        }
+        .ebook-signal-flow.is-system .ebook-signal-node-label {
+          font-size: 0.72rem;
+        }
+        .ebook-signal-flow.is-system .ebook-signal-connector {
+          margin: 0 0.1em;
+        }
         .ebook-doc-layers {
           display: flex;
           flex-direction: column;
@@ -562,7 +579,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This is a chain.</p>
         <div className="ebook-signal-diagram">
           <div className="ebook-signal-caption">The Metabolic Chain</div>
-          <div className="ebook-signal-flow">
+          <div className="ebook-signal-flow is-system">
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Signal</div>
               <div className="ebook-signal-node-label">GLP-1</div>
