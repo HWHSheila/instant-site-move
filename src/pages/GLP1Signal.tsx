@@ -257,20 +257,24 @@ export default function GLP1Signal() {
         }
         /* Wider variant for the metabolic chain diagram */
         .ebook-signal-flow.is-system {
-          gap: 0.9em;
+          gap: 0.7em;
+          align-items: stretch;
         }
         .ebook-signal-flow.is-system .ebook-signal-node {
-          padding: 1.1em 0.7em 1em;
-          min-height: 4.6em;
+          flex: 1 1 0;
+          padding: 0.55em 0.9em;
+          min-height: 3.2em;
+          aspect-ratio: auto;
         }
         .ebook-signal-flow.is-system .ebook-signal-node-sub {
-          margin-bottom: 0.6em;
+          margin-bottom: 0.35em;
         }
         .ebook-signal-flow.is-system .ebook-signal-node-label {
-          font-size: 0.72rem;
+          font-size: 0.7rem;
+          line-height: 1.2;
         }
         .ebook-signal-flow.is-system .ebook-signal-connector {
-          margin: 0 0.1em;
+          margin: 0 0.05em;
         }
         .ebook-doc-layers {
           display: flex;
