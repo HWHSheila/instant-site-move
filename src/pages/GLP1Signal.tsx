@@ -318,12 +318,12 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Introduction</div>
         <h1 className="ebook-doc-h1">Renewing Your Metabolism by Understanding the Chemistry Behind GLP-1</h1>
 
-        <p className="ebook-doc-body">Over the past few years, GLP-1 has moved from a relatively unknown metabolic hormone to a household term. Medications like semaglutide and tirzepatide have changed the conversation around weight loss, appetite, and metabolic health. Social media is filled with before and after photos, appetite suppression stories, and headlines describing these drugs as revolutionary.</p>
+        <p className="ebook-doc-body">Over the past few years, GLP-1 has moved from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health. Social media is filled with before and after photos, appetite suppression stories, and headlines describing these drugs as revolutionary.</p>
         <p className="ebook-doc-body">In many ways, they are.</p>
         <p className="ebook-doc-body">But the sudden attention on GLP-1 has also created confusion.</p>
         <p className="ebook-doc-body">GLP-1 is often described as a weight loss hormone or a fat burning accelerator. It is neither.</p>
-        <p className="ebook-doc-body">GLP-1 is a signal.</p>
-        <p className="ebook-doc-body">It is a hormone released in response to food. Its job is communication. It helps coordinate digestion, blood sugar regulation, insulin response, and satiety. It does not burn fat directly. It does not override physiology. It does not replace foundational metabolic health.</p>
+        <p className="ebook-doc-body">GLP-1 is a hormone your body uses for signaling.</p>
+        <p className="ebook-doc-body">Every time you eat, your gut releases GLP-1 as part of a signaling cascade that helps regulate digestion, blood sugar, insulin response, and satiety. It does not burn fat directly. It does not override physiology. It does not replace foundational metabolic health.</p>
         <p className="ebook-doc-body">What the popularity of GLP-1 medications has revealed is something deeper. Metabolism is chemical. It is coordinated. It responds to signaling, not just calories, willpower, or discipline.</p>
         <p className="ebook-doc-body">When GLP-1 signaling functions properly, the body responds efficiently to food. Blood sugar stabilizes more easily. Appetite cues feel appropriate. Energy regulation becomes smoother. When signaling breaks down, the system becomes dysregulated. Hunger increases. Blood sugar becomes erratic. Fat storage becomes easier. Energy feels inconsistent.</p>
         <p className="ebook-doc-body">Most conversations focus on how to increase GLP-1.</p>
