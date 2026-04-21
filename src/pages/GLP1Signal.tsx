@@ -186,6 +186,68 @@ export default function GLP1Signal() {
           font-size: 1rem;
           font-weight: bold;
         }
+        /* Refined Chapter 1 signaling diagram */
+        .ebook-signal-diagram {
+          background: linear-gradient(180deg, #FBF6F1 0%, #F4ECE3 100%);
+          border: 1px solid #E5DCD1;
+          border-radius: 14px;
+          padding: 1.6em 1.2em 1.4em;
+          margin: 1.4em 0;
+        }
+        .ebook-signal-caption {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.65rem;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #AE9297;
+          text-align: center;
+          margin-bottom: 1.1em;
+        }
+        .ebook-signal-flow {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          gap: 0.5em;
+          flex-wrap: nowrap;
+        }
+        .ebook-signal-node {
+          flex: 1 1 0;
+          min-width: 0;
+          background: #FFFFFF;
+          border: 1px solid #E5DCD1;
+          border-radius: 12px;
+          padding: 0.7em 0.4em 0.65em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: 0 1px 2px rgba(75, 46, 76, 0.04);
+        }
+        .ebook-signal-node-label {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          font-size: 0.7rem;
+          color: #4B2E4C;
+          line-height: 1.25;
+        }
+        .ebook-signal-node-sub {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 0.55rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #A3BFA8;
+          margin-bottom: 0.35em;
+        }
+        .ebook-signal-connector {
+          align-self: center;
+          flex: 0 0 auto;
+          color: #C9A646;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.85rem;
+          line-height: 1;
+        }
         .ebook-doc-layers {
           display: flex;
           flex-direction: column;
@@ -346,39 +408,55 @@ export default function GLP1Signal() {
         <img src={chapterOpener} alt="Wholesome meal preparation representing nourishment and gut health" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
         <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement. It is not a fat-burning hormone.</p>
-        <p className="ebook-doc-body">It is a signaling molecule.</p>
-        <p className="ebook-doc-body">GLP-1 is a peptide hormone produced primarily in the small intestine, specifically by specialized cells called L-cells. It is released after you eat, especially in response to carbohydrates and certain amino acids.</p>
-        <p className="ebook-doc-body">Its job is communication.</p>
+        <p className="ebook-doc-body">It is a hormone your body uses for signaling.</p>
+        <p className="ebook-doc-body">GLP-1 is made in the gut, specifically by specialized cells called L-cells. These cells respond when you eat and release GLP-1 as part of the body's signaling system. In simple terms, this is one of the ways your gut tells the rest of your body that food has arrived and it's time to respond.</p>
+        <p className="ebook-doc-body">Its role is to coordinate what happens next.</p>
         <p className="ebook-doc-body">GLP-1 tells your body that nutrients have arrived and it is time to respond appropriately.</p>
         <p className="ebook-doc-body">When GLP-1 is released, several important things happen:</p>
         <ul className="ebook-doc-list">
-          <li>The pancreas releases insulin in a glucose-dependent manner</li>
-          <li>Glucagon secretion decreases</li>
-          <li>Stomach emptying slows down</li>
-          <li>Appetite signals in the brain are influenced</li>
-          <li>Blood sugar remains more stable</li>
+          <li>Insulin is released in response to food</li>
+          <li>Glucagon levels decrease</li>
+          <li>Stomach emptying slows</li>
+          <li>Appetite signals in the brain shift</li>
+          <li>Blood sugar becomes more stable</li>
         </ul>
         <p className="ebook-doc-body">GLP-1 does not burn fat. It coordinates metabolic traffic.</p>
         <p className="ebook-doc-body">It helps your body decide what to do with incoming energy.</p>
 
-        <div className="ebook-doc-diagram">
-          <div className="ebook-doc-flow">
-            <span className="ebook-doc-flow-step">Small Intestine</span>
-            <span className="ebook-doc-flow-arrow">→</span>
-            <span className="ebook-doc-flow-step">GLP-1 Release</span>
-            <span className="ebook-doc-flow-arrow">→</span>
-            <span className="ebook-doc-flow-step">Pancreas</span>
-            <span className="ebook-doc-flow-arrow">→</span>
-            <span className="ebook-doc-flow-step">Insulin Release</span>
-            <span className="ebook-doc-flow-arrow">→</span>
-            <span className="ebook-doc-flow-step">Stable Blood Sugar</span>
+        <div className="ebook-signal-diagram">
+          <div className="ebook-signal-caption">The GLP-1 Signaling Pathway</div>
+          <div className="ebook-signal-flow">
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Origin</div>
+              <div className="ebook-signal-node-label">Gut</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Signal</div>
+              <div className="ebook-signal-node-label">GLP-1<br />Release</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Receiver</div>
+              <div className="ebook-signal-node-label">Pancreas</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Response</div>
+              <div className="ebook-signal-node-label">Insulin<br />Release</div>
+            </div>
+            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-node">
+              <div className="ebook-signal-node-sub">Outcome</div>
+              <div className="ebook-signal-node-label">Stable<br />Blood Sugar</div>
+            </div>
           </div>
         </div>
 
         <h2 className="ebook-doc-h2">GLP-1 Is Part of a Larger Conversation</h2>
         <p className="ebook-doc-body">GLP-1 does not work alone.</p>
         <p className="ebook-doc-body">It communicates with the pancreas, the liver, the brain, and even the vagus nerve. It interacts with insulin, glucagon, leptin, ghrelin, cortisol, and inflammatory signals.</p>
-        <p className="ebook-doc-body">It is part of a network.</p>
+        <p className="ebook-doc-body">It operates within a network.</p>
         <p className="ebook-doc-body">When that network is functioning well, you feel:</p>
         <ul className="ebook-doc-list">
           <li>Satisfied after meals</li>
@@ -393,7 +471,7 @@ export default function GLP1Signal() {
           <li>Energy crashes</li>
           <li>Difficulty losing weight despite effort</li>
         </ul>
-        <p className="ebook-doc-body">The issue is rarely that GLP-1 does not exist.</p>
+        <p className="ebook-doc-body">The issue is rarely that GLP-1 is absent.</p>
         <p className="ebook-doc-body">The issue is that the signaling environment has become distorted.</p>
         <PageFooter pageNum={4} />
       </div>
