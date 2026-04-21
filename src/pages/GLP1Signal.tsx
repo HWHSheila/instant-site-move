@@ -186,6 +186,68 @@ export default function GLP1Signal() {
           font-size: 1rem;
           font-weight: bold;
         }
+        /* Refined Chapter 1 signaling diagram */
+        .ebook-signal-diagram {
+          background: linear-gradient(180deg, #FBF6F1 0%, #F4ECE3 100%);
+          border: 1px solid #E5DCD1;
+          border-radius: 14px;
+          padding: 1.6em 1.2em 1.4em;
+          margin: 1.4em 0;
+        }
+        .ebook-signal-caption {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.65rem;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #AE9297;
+          text-align: center;
+          margin-bottom: 1.1em;
+        }
+        .ebook-signal-flow {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          gap: 0.5em;
+          flex-wrap: nowrap;
+        }
+        .ebook-signal-node {
+          flex: 1 1 0;
+          min-width: 0;
+          background: #FFFFFF;
+          border: 1px solid #E5DCD1;
+          border-radius: 12px;
+          padding: 0.7em 0.4em 0.65em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: 0 1px 2px rgba(75, 46, 76, 0.04);
+        }
+        .ebook-signal-node-label {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          font-size: 0.7rem;
+          color: #4B2E4C;
+          line-height: 1.25;
+        }
+        .ebook-signal-node-sub {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 0.55rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #A3BFA8;
+          margin-bottom: 0.35em;
+        }
+        .ebook-signal-connector {
+          align-self: center;
+          flex: 0 0 auto;
+          color: #C9A646;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.85rem;
+          line-height: 1;
+        }
         .ebook-doc-layers {
           display: flex;
           flex-direction: column;
