@@ -615,7 +615,7 @@ export default function GLP1Signal() {
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Outcome</div>
-              <div className="ebook-signal-node-label">Energy<br />Output</div>
+              <div className="ebook-signal-node-label">Energy Output</div>
             </div>
           </div>
         </div>
