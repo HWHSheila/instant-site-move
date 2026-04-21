@@ -546,9 +546,11 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Restoring a signal means improving the internal environment so that the body naturally produces and responds to GLP-1 effectively.</p>
         <p className="ebook-doc-body">Forcing a response means amplifying a signal regardless of whether the system underneath is stable.</p>
         <p className="ebook-doc-body">If gut function is impaired, inflammation is elevated, sleep is insufficient, or stress is chronic, the signaling network becomes distorted. In that environment, simply increasing GLP-1 activity does not necessarily repair the broader metabolic system.</p>
-        <p className="ebook-doc-body">It may reduce appetite.</p>
-        <p className="ebook-doc-body">It may improve blood sugar.</p>
-        <p className="ebook-doc-body">But it does not automatically rebuild the terrain.</p>
+        <ul className="ebook-doc-list" style={{ marginTop: "1.5em" }}>
+          <li>It may reduce appetite</li>
+          <li>It may improve blood sugar</li>
+          <li>But it does not automatically rebuild the terrain</li>
+        </ul>
         <PageFooter pageNum={6} />
       </div>
       <div className="ebook-spacer" />
