@@ -589,27 +589,27 @@ export default function GLP1Signal() {
               <div className="ebook-signal-node-sub">Signal</div>
               <div className="ebook-signal-node-label">GLP-1</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Hormone</div>
               <div className="ebook-signal-node-label">Insulin</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Tissue</div>
               <div className="ebook-signal-node-label">Muscle</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Process</div>
               <div className="ebook-signal-node-label">Glucose<br />Uptake</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Engine</div>
               <div className="ebook-signal-node-label">Mitochondria</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Outcome</div>
               <div className="ebook-signal-node-label">Energy<br />Output</div>
