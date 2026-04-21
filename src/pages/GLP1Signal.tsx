@@ -492,7 +492,14 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is amplifying a pathway that already exists.</p>
         <p className="ebook-doc-body">That distinction matters.</p>
         <p className="ebook-doc-body">If your internal signaling is supported, your body is capable of producing and responding to GLP-1 naturally.</p>
-        <p className="ebook-doc-body">If your internal chemistry is inflamed, stressed, sleep deprived, or metabolically strained, the signal may weaken.</p>
+        <p className="ebook-doc-body">If your internal chemistry is:</p>
+        <ul className="ebook-doc-list">
+          <li>Inflamed</li>
+          <li>Stressed</li>
+          <li>Sleep deprived</li>
+          <li>Metabolically strained</li>
+        </ul>
+        <p className="ebook-doc-body">the signal may weaken.</p>
         <p className="ebook-doc-body">GLP-1 is not magic.</p>
         <p className="ebook-doc-body">It is biology.</p>
 
