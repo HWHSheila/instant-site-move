@@ -605,7 +605,7 @@ export default function GLP1Signal() {
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Process</div>
-              <div className="ebook-signal-node-label">Glucose<br />Uptake</div>
+              <div className="ebook-signal-node-label">Glucose Uptake</div>
             </div>
             <div className="ebook-signal-connector">—</div>
             <div className="ebook-signal-node">
