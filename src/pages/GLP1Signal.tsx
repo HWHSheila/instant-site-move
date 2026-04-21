@@ -272,6 +272,7 @@ export default function GLP1Signal() {
         .ebook-signal-flow.is-system .ebook-signal-connector {
           margin: 0 0.1em;
         }
+        .ebook-doc-layers {
           display: flex;
           flex-direction: column;
           align-items: center;
