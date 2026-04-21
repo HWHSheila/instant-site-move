@@ -581,9 +581,9 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
         <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
-        <p className="ebook-doc-body">The goal is no longer to force appetite suppression.</p>
-        <p className="ebook-doc-body">The goal becomes improving the signaling environment.</p>
-        <p className="ebook-doc-body">That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal is no longer to force appetite suppression.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal becomes improving the signaling environment.</p>
+        <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
         <p className="ebook-doc-body">When signaling improves, regulation becomes smoother.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine why GLP-1 signaling breaks in the first place, and what disrupts the communication network that supports metabolic stability.</p>
         <PageFooter pageNum={7} />
