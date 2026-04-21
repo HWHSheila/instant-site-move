@@ -579,7 +579,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This is a chain.</p>
         <div className="ebook-signal-diagram">
           <div className="ebook-signal-caption">The Metabolic Chain</div>
-          <div className="ebook-signal-flow">
+          <div className="ebook-signal-flow is-system">
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Signal</div>
               <div className="ebook-signal-node-label">GLP-1</div>
