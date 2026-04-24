@@ -55,7 +55,7 @@ const ebooks: EBookCardProps[] = [
     title: "30-Day Gut Reset Roadmap — $37",
     description: "A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms — without restriction or burnout.",
     ctaText: "Get Your Copy",
-    ctaLink: "https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408",
+    ctaLink: "/30day-roadmap",
   },
   {
     image: ebookGlp1,
