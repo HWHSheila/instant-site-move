@@ -646,7 +646,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 does not disappear.</p>
         <p className="ebook-doc-body">In most cases, the body is still capable of producing it.</p>
         <p className="ebook-doc-body">The issue is not the existence of the hormone. The issue is the signaling environment.</p>
-        <p className="ebook-doc-body">GLP-1 functions inside a network. When that network becomes unstable, the signal weakens, distorts, or becomes less effective.</p>
+        <p className="ebook-doc-body">GLP-1 functions inside a network. When that network becomes unstable, the signal weakens, distorts, or becomes less effective. This is why you might feel hungry even after eating, or experience energy crashes a few hours later.</p>
         <p className="ebook-doc-body">To understand why GLP-1 signaling breaks, we need to look upstream.</p>
 
         <h2 className="ebook-doc-h2">Gut Dysfunction</h2>
@@ -661,8 +661,8 @@ export default function GLP1Signal() {
           <li>Poor sleep</li>
           <li>High inflammatory load</li>
         </ul>
-        <p className="ebook-doc-body">When the gut environment is unstable, hormone signaling becomes inconsistent.</p>
-        <p className="ebook-doc-body">The intestine is not just a digestive organ. It is an endocrine organ. If the terrain is disrupted, the signal may weaken.</p>
+        <p className="ebook-doc-body">When the gut environment is unstable, hormone signaling becomes inconsistent. This can show up as cravings, irregular hunger, or feeling like your body is not responding the way it used to.</p>
+        <p className="ebook-doc-body">The intestine is not just a digestive organ. It is an endocrine organ, meaning it produces and communicates important signals in the body. If the terrain is disrupted, the signal may weaken.</p>
 
         <div className="ebook-doc-diagram">
           <div className="ebook-doc-layers">
@@ -685,7 +685,7 @@ export default function GLP1Signal() {
           <li>Afternoon energy crashes</li>
           <li>Difficulty losing weight</li>
         </ul>
-        <p className="ebook-doc-body">The signal may still be present, but the response is altered.</p>
+        <p className="ebook-doc-body">The signal may still be present, but the response is altered. This is where you might feel stuck, doing all the right things but not seeing consistent results.</p>
         <PageFooter pageNum={8} />
       </div>
       <div className="ebook-spacer" />
@@ -694,7 +694,7 @@ export default function GLP1Signal() {
       <div className="ebook-doc-page ebook-content-page">
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Chronic Stress and Nervous System Dysregulation</h2>
         <p className="ebook-doc-body">The gut and brain communicate continuously through the vagus nerve and stress hormones.</p>
-        <p className="ebook-doc-body">Chronic stress elevates cortisol. Elevated cortisol influences blood sugar. Blood sugar instability influences insulin. Insulin interacts with GLP-1.</p>
+        <p className="ebook-doc-body">Chronic stress elevates cortisol. Elevated cortisol influences blood sugar. Blood sugar instability influences insulin. Insulin interacts with GLP-1. This is why stress can make your hunger feel less predictable and your energy harder to stabilize.</p>
         <p className="ebook-doc-body">Everything connects.</p>
         <p className="ebook-doc-body">If the nervous system is constantly in a heightened stress state, signaling patterns shift. Hunger cues can intensify. Appetite regulation becomes less predictable. Energy becomes less stable.</p>
         <p className="ebook-doc-body">This is not a willpower issue.</p>
