@@ -3,6 +3,13 @@ import { useEffect, useRef, useCallback } from "react";
 import coverBg from "@/assets/glp1-cover-bg.jpg";
 import chapterOpener from "@/assets/glp1-chapter-opener.jpg";
 import protocolTransition from "@/assets/glp1-protocol-transition.jpg";
+import proteinFoods from "@/assets/glp1-protein-foods.jpg";
+import fiberFoods from "@/assets/glp1-fiber-foods.jpg";
+import healthyFats from "@/assets/glp1-healthy-fats.jpg";
+import polyphenols from "@/assets/glp1-polyphenols.jpg";
+import teaIncretin from "@/assets/glp1-tea-incretin.jpg";
+import movementImage from "@/assets/glp1-movement.jpg";
+import sleepCalm from "@/assets/glp1-sleep-calm.jpg";
 
 function EbookScaler({ children }: { children: React.ReactNode }) {
   const outerRef = useRef<HTMLDivElement>(null);
@@ -88,7 +95,7 @@ export default function GLP1Signal() {
           }
         }
         .ebook-content-page {
-          padding: 0.78in 1in;
+          padding: 0.76in 0.95in;
         }
         .ebook-doc-h1 {
           font-family: 'Montserrat', sans-serif;
@@ -96,7 +103,7 @@ export default function GLP1Signal() {
           font-weight: 600;
           font-size: 1.72rem;
           line-height: 1.32;
-          margin-bottom: 0.85em;
+          margin-bottom: 0.95em;
           margin-top: 0;
         }
         .ebook-doc-h2 {
@@ -105,8 +112,8 @@ export default function GLP1Signal() {
           font-weight: 600;
           font-size: 1.2rem;
           line-height: 1.38;
-          margin-top: 1.9em;
-          margin-bottom: 0.7em;
+          margin-top: 2.05em;
+          margin-bottom: 0.82em;
         }
         .ebook-doc-h3 {
           font-family: 'Montserrat', sans-serif;
@@ -120,20 +127,20 @@ export default function GLP1Signal() {
         .ebook-doc-body {
           font-family: 'Montserrat', sans-serif;
           font-weight: 400;
-          font-size: 0.9rem;
-          line-height: 1.78;
+          font-size: 0.94rem;
+          line-height: 1.86;
           color: #3A3A3A;
-          margin-bottom: 1em;
+          margin-bottom: 1.12em;
           margin-top: 0;
         }
         .ebook-doc-list {
           font-family: 'Montserrat', sans-serif;
           font-weight: 400;
-          font-size: 0.9rem;
-          line-height: 1.72;
+          font-size: 0.92rem;
+          line-height: 1.82;
           color: #3A3A3A;
           padding-left: 1.45em;
-          margin-bottom: 1.1em;
+          margin-bottom: 1.25em;
           margin-top: 0.55em;
           list-style-type: disc;
           list-style-position: outside;
@@ -208,7 +215,7 @@ export default function GLP1Signal() {
           text-transform: uppercase;
           color: #AE9297;
           text-align: center;
-          margin-bottom: 1.1em;
+          margin-bottom: 1.25em;
         }
         .ebook-signal-flow {
           display: flex;
@@ -287,7 +294,7 @@ export default function GLP1Signal() {
           flex-direction: column;
           align-items: center;
           gap: 0;
-          margin: 1em 0;
+          margin: 1.12em 0 1.28em;
         }
         .ebook-doc-layer {
           width: 220px;
@@ -323,7 +330,7 @@ export default function GLP1Signal() {
           font-family: 'Montserrat', sans-serif;
           font-size: 0.92rem;
           color: #3A3A3A;
-          padding: 0.78em 0;
+          padding: 0.94em 0;
           border-bottom: none;
         }
         .ebook-doc-toc-chapter {
@@ -339,7 +346,7 @@ export default function GLP1Signal() {
         .ebook-doc-toc-title {
           color: #4B2E4C;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 1.03rem;
         }
         .ebook-doc-toc-section {
           color: #AE9297;
@@ -349,7 +356,7 @@ export default function GLP1Signal() {
           font-size: 0.82rem;
         }
         .ebook-image-placeholder {
-          border: 1px dashed #D9D1CB;
+          border: 1px solid #E5DCD1;
           background: #FBF6F1;
           color: #AE9297;
           border-radius: 8px;
@@ -358,14 +365,22 @@ export default function GLP1Signal() {
           letter-spacing: 0.08em;
           text-transform: uppercase;
           text-align: center;
-          padding: 0.85em;
-          margin: 0.85em 0 1.15em;
+          padding: 0;
+          margin: 1em 0 1.35em;
+          overflow: hidden;
+          height: 1.72in;
+        }
+        .ebook-image-placeholder img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
         .ebook-doc-image {
           width: 100%;
           height: auto;
           border-radius: 6px;
-          margin: 1em 0;
+          margin: 1.12em 0 1.28em;
           display: block;
         }
         .ebook-doc-footer {
@@ -387,6 +402,8 @@ export default function GLP1Signal() {
         backgroundImage: `url(${coverBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundBlendMode: "soft-light",
+        backgroundColor: "rgba(255,255,255,0.26)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -394,12 +411,12 @@ export default function GLP1Signal() {
         textAlign: "center",
         padding: "1in",
       }}>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#AE9297", marginBottom: "2.7em" }}>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#8F747B", marginBottom: "3em" }}>
           HER WELLNESS HARMONY
         </p>
-        <h1 style={{ fontFamily: "'Montserrat', sans-serif", color: "#4B2E4C", fontWeight: 700, lineHeight: 1.05, marginBottom: "0.55em" }}>
-          <span style={{ display: "block", fontSize: "1.65rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "0.22em" }}>Understanding</span>
-          <span style={{ display: "inline-block", fontSize: "3rem", textTransform: "uppercase", letterSpacing: "0.02em", background: "rgba(255,255,255,0.42)", borderRadius: "8px", padding: "0.08em 0.22em" }}>GLP-1 SIGNALING</span>
+        <h1 style={{ fontFamily: "'Montserrat', sans-serif", color: "#3F2441", fontWeight: 700, lineHeight: 1.02, marginBottom: "0.62em" }}>
+          <span style={{ display: "block", fontSize: "1.75rem", fontWeight: 600, letterSpacing: "0.01em", marginBottom: "0.26em" }}>Understanding</span>
+          <span style={{ display: "inline-block", fontSize: "3.25rem", textTransform: "none", letterSpacing: "0.01em", background: "rgba(255,255,255,0.58)", borderRadius: "6px", padding: "0.07em 0.2em", boxShadow: "0 8px 24px rgba(75,46,76,0.08)" }}>GLP-1 Signaling</span>
         </h1>
         <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.94rem", fontWeight: 400, color: "#383838", lineHeight: 1.68, maxWidth: "440px", marginBottom: "3em" }}>
           How gut health, blood sugar, and metabolic stress influence appetite and hormone balance
@@ -408,7 +425,7 @@ export default function GLP1Signal() {
         <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "1.35rem", fontWeight: 600, color: "#4B2E4C", marginBottom: "0" }}>
           Sheila McFarland
         </p>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "#AE9297", position: "absolute", bottom: "0.75in" }}>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.92rem", fontWeight: 600, color: "#8F747B", position: "absolute", bottom: "0.75in" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
       </div>
@@ -426,7 +443,7 @@ export default function GLP1Signal() {
           { ch: "Chapter 4", title: "GLP-1 Medications. What They Really Do" },
           { ch: "Chapter 5", title: "Supporting GLP-1 Naturally" },
           { ch: "Chapter 6", title: "Gut, Metabolism, and Hormones" },
-          { ch: "Chapter 7", title: "The 90-Day GLP-1 Optimization Protocol" },
+          { ch: "Chapter 7", title: "Introduction to the 90-Day GLP-1 Optimization Protocol" },
           { ch: "", title: "Next Steps" },
           { ch: "", title: "Appendix: References and Notes" },
         ].map((item, i) => (
@@ -819,63 +836,84 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Chapter 5</div>
         <h1 className="ebook-doc-h1">Supporting GLP-1 Naturally</h1>
 
-        <p className="ebook-doc-body">Supporting GLP-1 naturally means improving the environment in which the signal is produced and received. This is not about forcing more hormone output. It is about helping the body regulate with steadier inputs.</p>
-        <p className="ebook-doc-body">Food quality, meal rhythm, muscle activity, sleep, and stress all shape how clearly the signal is heard.</p>
+        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about forcing the body to produce more hormone. It is about improving the environment where the signal is made, received, and understood.</p>
+        <p className="ebook-doc-body">In most cases, GLP-1 dysfunction is downstream. It often reflects stress in the gut, blood sugar system, nervous system, sleep rhythm, muscle tissue, or inflammatory load.</p>
+        <p className="ebook-doc-body">The goal is to support the terrain upstream so appetite, energy, and hormone signaling can become more predictable.</p>
 
-        <h2 className="ebook-doc-h2">Protein</h2>
-        <p className="ebook-doc-body">Protein supports satiety, preserves lean muscle, and helps stabilize blood sugar after meals. A steady protein rhythm makes appetite cues easier to interpret and helps protect metabolism during weight change.</p>
-        <div className="ebook-image-placeholder">[Insert image: protein foods]</div>
+        <h2 className="ebook-doc-h2">Protein and satiety signaling</h2>
+        <p className="ebook-doc-body">Protein helps meals feel more satisfying. It also supports lean muscle, which is important for blood sugar regulation and metabolic resilience.</p>
+        <p className="ebook-doc-body">When protein is too low, hunger may return quickly and cravings can feel harder to manage. A steady protein rhythm gives the body a clearer satiety signal.</p>
+        <div className="ebook-image-placeholder"><img src={proteinFoods} alt="Whole food protein sources including salmon, eggs, yogurt, and legumes" loading="lazy" width={1024} height={768} /></div>
 
-        <h2 className="ebook-doc-h2">Fiber</h2>
-        <p className="ebook-doc-body">Fiber slows glucose absorption and feeds beneficial gut bacteria. Increasing fiber gradually through whole foods can support a smoother post-meal response and more stable hunger patterns.</p>
-        <div className="ebook-image-placeholder">[Insert image: fiber foods]</div>
-
-        <h2 className="ebook-doc-h2">Resistant Starch</h2>
-        <p className="ebook-doc-body">Resistant starch acts like a preferred fuel for parts of the gut microbiome. Foods such as cooled potatoes, green banana, oats, beans, and lentils can support fermentation and short chain fatty acid production.</p>
-        <div className="ebook-image-placeholder">[Insert image: resistant starch foods]</div>
-
-        <h2 className="ebook-doc-h2">Healthy Fats</h2>
-        <p className="ebook-doc-body">Healthy fats help meals feel satisfying and slow digestion in a supportive way. Olive oil, avocado, nuts, seeds, and fatty fish can help create a more balanced meal response.</p>
-        <div className="ebook-image-placeholder">[Insert image: healthy fats]</div>
+        <h2 className="ebook-doc-h2">Fiber and gut signaling</h2>
+        <p className="ebook-doc-body">Fiber slows the rise of blood sugar after meals and feeds beneficial gut bacteria. This helps create a steadier post-meal response.</p>
+        <p className="ebook-doc-body">Resistant starch is a special type of fiber that passes through the small intestine and becomes fuel for microbes in the colon. Cooled potatoes, oats, beans, lentils, and green banana are simple examples.</p>
         <PageFooter pageNum={12} />
       </div>
       <div className="ebook-spacer" />
 
       {/* ==================== CHAPTER 5 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
-        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Polyphenols</h2>
-        <p className="ebook-doc-body">Polyphenols are plant compounds found in colorful foods such as berries, herbs, spices, cocoa, olives, and deeply colored vegetables. They support the gut environment and help reduce oxidative stress.</p>
+        <div className="ebook-image-placeholder" style={{ marginTop: 0 }}><img src={fiberFoods} alt="Fiber-rich and resistant starch foods including oats, beans, green banana, and potatoes" loading="lazy" width={1024} height={768} /></div>
 
-        <h2 className="ebook-doc-h2">Gut Microbiome</h2>
-        <p className="ebook-doc-body">The gut microbiome influences the signaling environment. A diverse microbiome helps produce compounds that communicate with metabolism and appetite regulation. Akkermansia is one helpful microbe often discussed in gut health because it is associated with the mucus layer of the gut lining, but the goal is overall microbial balance rather than chasing one strain.</p>
+        <h2 className="ebook-doc-h2">Healthy fats and hormone signaling</h2>
+        <p className="ebook-doc-body">Healthy fats help meals feel complete. They slow digestion in a supportive way and can make appetite cues feel more stable.</p>
+        <p className="ebook-doc-body">Avocado, olive oil, nuts, seeds, and fatty fish can be helpful when they are used to balance a meal, not replace protein or fiber.</p>
+        <div className="ebook-image-placeholder"><img src={healthyFats} alt="Healthy fats including avocado, olive oil, nuts, and seeds" loading="lazy" width={1024} height={768} /></div>
 
-        <h2 className="ebook-doc-h2">Teas</h2>
-        <p className="ebook-doc-body">Green tea, matcha, and yerba mate provide polyphenols and gentle metabolic support for some people. They are not magic, but they can be part of a steady routine when tolerated well.</p>
-        <div className="ebook-image-placeholder">[Insert image: tea]</div>
-
-        <h2 className="ebook-doc-h2">Movement</h2>
-        <p className="ebook-doc-body">Movement helps move glucose into muscle and supports digestive rhythm. Walking after meals and consistent resistance training both improve the downstream response to metabolic signals.</p>
-        <div className="ebook-image-placeholder">[Insert image: walking or movement]</div>
-
-        <h2 className="ebook-doc-h2">Sleep, Stress, and Inflammatory Load</h2>
-        <p className="ebook-doc-body">Sleep, stress, and inflammation influence the entire network. Poor sleep and chronic stress can make hunger less predictable and energy less stable. Reducing inflammatory inputs does not require perfection. It requires consistency.</p>
-        <p className="ebook-doc-body">This is why energy can feel inconsistent when the system is under strain.</p>
+        <h2 className="ebook-doc-h2">Polyphenol-rich foods and metabolic signaling</h2>
+        <p className="ebook-doc-body">Polyphenols are plant compounds found in berries, greens, herbs, spices, olives, cocoa, and deeply colored foods. They help support the gut environment and reduce oxidative stress.</p>
+        <p className="ebook-doc-body">They do not act like medication. They are gentle inputs that support a healthier signaling environment over time.</p>
         <PageFooter pageNum={13} />
       </div>
       <div className="ebook-spacer" />
 
       {/* ==================== CHAPTER 5 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
-        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>When Additional Support May Be Needed</h2>
-        <p className="ebook-doc-body">Sometimes food, rhythm, and lifestyle support are not enough on their own. Supplements or medications may be useful tools when there are deeper imbalances, nutrient gaps, blood sugar concerns, digestive dysfunction, or medication-related needs.</p>
-        <p className="ebook-doc-body">The right support depends on the person. Testing, health history, symptoms, medications, and professional guidance matter. This is especially important if you are already using a GLP-1 medication, managing a medical condition, or experiencing significant digestive symptoms.</p>
-        <p className="ebook-doc-body">The goal is not to add more products. The goal is to understand what your body actually needs.</p>
+        <div className="ebook-image-placeholder" style={{ marginTop: 0 }}><img src={polyphenols} alt="Polyphenol-rich foods including berries, herbs, greens, olives, and cocoa nibs" loading="lazy" width={1024} height={768} /></div>
 
-        <h2 className="ebook-doc-h2">Supporting GLP-1</h2>
-        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about biohacking. It is about restoring predictability to digestion, blood sugar regulation, and energy distribution.</p>
-        <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel more appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
-        <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why restoring the gut and metabolic environment must come before expecting hormone signaling to normalize.</p>
+        <h2 className="ebook-doc-h2">Tea and the incretin effect</h2>
+        <p className="ebook-doc-body">The incretin effect describes how the gut helps signal insulin release after eating. GLP-1 is one of the hormones involved in this response.</p>
+        <p className="ebook-doc-body">Green tea, matcha, and yerba mate contain plant compounds that may gently support metabolic signaling for some people. They are optional, not required, and should be used only if tolerated well.</p>
+        <div className="ebook-image-placeholder"><img src={teaIncretin} alt="Green tea, matcha, and yerba mate arranged with herbs" loading="lazy" width={1024} height={768} /></div>
+
+        <h2 className="ebook-doc-h2">Gut microbiome support</h2>
+        <p className="ebook-doc-body">The gut microbiome helps shape the environment where GLP-1 signaling begins. A more diverse, stable microbiome can support better communication between digestion, metabolism, and appetite.</p>
+        <p className="ebook-doc-body">Akkermansia is one helpful microbe often discussed in gut health. In simple terms, it is associated with the protective mucus layer of the gut lining. The goal is not to chase one microbe, but to build a gut environment where beneficial microbes can thrive.</p>
         <PageFooter pageNum={14} />
+      </div>
+      <div className="ebook-spacer" />
+
+      {/* ==================== CHAPTER 5 continued ==================== */}
+      <div className="ebook-doc-page ebook-content-page">
+        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Movement and GLP-1 response</h2>
+        <p className="ebook-doc-body">Movement helps glucose move into muscle. This improves the downstream response to metabolic signals and can make energy feel more stable.</p>
+        <p className="ebook-doc-body">Walking after meals is one of the simplest ways to support blood sugar rhythm. Resistance training also matters because muscle tissue is a major site for glucose storage and use.</p>
+        <div className="ebook-image-placeholder"><img src={movementImage} alt="Woman walking outdoors in a peaceful garden setting" loading="lazy" width={1024} height={768} /></div>
+
+        <h2 className="ebook-doc-h2">Sleep and circadian rhythm</h2>
+        <p className="ebook-doc-body">Sleep influences hunger hormones, blood sugar regulation, cortisol rhythm, and appetite control. When sleep is short or inconsistent, the body may feel more reactive around food.</p>
+        <p className="ebook-doc-body">A steadier sleep rhythm supports the internal timing system that helps metabolism respond more predictably.</p>
+        <PageFooter pageNum={15} />
+      </div>
+      <div className="ebook-spacer" />
+
+      {/* ==================== CHAPTER 5 continued ==================== */}
+      <div className="ebook-doc-page ebook-content-page">
+        <div className="ebook-image-placeholder" style={{ marginTop: 0 }}><img src={sleepCalm} alt="Calming evening scene with linen bedding, tea, and a book" loading="lazy" width={1024} height={768} /></div>
+
+        <h2 className="ebook-doc-h2">Stress and nervous system regulation</h2>
+        <p className="ebook-doc-body">Chronic stress changes the chemistry of the body. Cortisol can affect blood sugar, cravings, digestion, sleep, and the way appetite cues are interpreted.</p>
+        <p className="ebook-doc-body">Nervous system regulation does not need to be complicated. Quiet meals, slow breathing, gentle walks, sunlight, consistent routines, and less over-scheduling can all support the signaling environment.</p>
+
+        <h2 className="ebook-doc-h2">When supplements or medications may be needed</h2>
+        <p className="ebook-doc-body">Supplements and medications can be useful tools, but they should not be the first guess. They should be introduced after proper testing, a careful review of symptoms and health history, and guidance from a qualified medical professional.</p>
+        <p className="ebook-doc-body">This is especially important if you are using a GLP-1 medication, managing blood sugar concerns, taking prescriptions, or experiencing significant digestive symptoms.</p>
+
+        <h2 className="ebook-doc-h2">The real goal</h2>
+        <p className="ebook-doc-body">Supporting GLP-1 naturally means rebuilding the system upstream. Food, movement, sleep, and stress regulation are not small details. They are the conditions that help the signal work better.</p>
+        <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why gut stability and metabolic chemistry come before expecting hormone signaling to normalize.</p>
+        <PageFooter pageNum={16} />
       </div>
       <div className="ebook-spacer" />
 
