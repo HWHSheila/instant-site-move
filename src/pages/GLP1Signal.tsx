@@ -3,7 +3,6 @@ import { useEffect, useRef, useCallback } from "react";
 import coverBg from "@/assets/glp1-cover-bg.jpg";
 import chapterOpener from "@/assets/glp1-chapter-opener.jpg";
 import protocolTransition from "@/assets/glp1-protocol-transition.jpg";
-import coachingImg from "@/assets/glp1-coaching.jpg";
 
 function EbookScaler({ children }: { children: React.ReactNode }) {
   const outerRef = useRef<HTMLDivElement>(null);
@@ -89,57 +88,58 @@ export default function GLP1Signal() {
           }
         }
         .ebook-content-page {
-          padding: 0.75in 1in;
+          padding: 0.78in 1in;
         }
         .ebook-doc-h1 {
           font-family: 'Montserrat', sans-serif;
           color: #4B2E4C;
           font-weight: 600;
-          font-size: 1.65rem;
-          line-height: 1.3;
-          margin-bottom: 0.75em;
+          font-size: 1.72rem;
+          line-height: 1.32;
+          margin-bottom: 0.85em;
           margin-top: 0;
         }
         .ebook-doc-h2 {
           font-family: 'Montserrat', sans-serif;
           color: #4B2E4C;
           font-weight: 600;
-          font-size: 1.15rem;
-          line-height: 1.35;
-          margin-top: 1.75em;
-          margin-bottom: 0.6em;
+          font-size: 1.2rem;
+          line-height: 1.38;
+          margin-top: 1.9em;
+          margin-bottom: 0.7em;
         }
         .ebook-doc-h3 {
           font-family: 'Montserrat', sans-serif;
           color: #4B2E4C;
           font-weight: 600;
-          font-size: 1rem;
-          margin-top: 1.5em;
-          margin-bottom: 0.4em;
+          font-size: 1.03rem;
+          line-height: 1.35;
+          margin-top: 1.45em;
+          margin-bottom: 0.45em;
         }
         .ebook-doc-body {
           font-family: 'Montserrat', sans-serif;
           font-weight: 400;
-          font-size: 0.85rem;
-          line-height: 1.7;
+          font-size: 0.9rem;
+          line-height: 1.78;
           color: #3A3A3A;
-          margin-bottom: 0.8em;
+          margin-bottom: 1em;
           margin-top: 0;
         }
         .ebook-doc-list {
           font-family: 'Montserrat', sans-serif;
           font-weight: 400;
-          font-size: 0.85rem;
-          line-height: 1.7;
+          font-size: 0.9rem;
+          line-height: 1.72;
           color: #3A3A3A;
-          padding-left: 1.5em;
-          margin-bottom: 0.8em;
-          margin-top: 0;
+          padding-left: 1.45em;
+          margin-bottom: 1.1em;
+          margin-top: 0.55em;
           list-style-type: disc;
           list-style-position: outside;
         }
         .ebook-doc-list li {
-          margin-bottom: 0.3em;
+          margin-bottom: 0.42em;
           display: list-item;
           list-style-type: disc;
         }
@@ -310,26 +310,56 @@ export default function GLP1Signal() {
           border-left: 4px solid #A3BFA8;
           border-radius: 0 6px 6px 0;
           padding: 1.25em;
-          margin: 1.25em 0;
+          margin: 1.35em 0;
         }
         .ebook-doc-phase-header {
           font-family: 'Montserrat', sans-serif;
           color: #4B2E4C;
           font-weight: 600;
-          font-size: 1rem;
-          margin-bottom: 0.4em;
+          font-size: 1.05rem;
+          margin-bottom: 0.45em;
         }
         .ebook-doc-toc-item {
           font-family: 'Montserrat', sans-serif;
-          font-size: 0.85rem;
+          font-size: 0.92rem;
           color: #3A3A3A;
-          padding: 0.45em 0;
-          border-bottom: 1px solid #D9D1CB;
+          padding: 0.78em 0;
+          border-bottom: none;
         }
         .ebook-doc-toc-chapter {
           font-family: 'Montserrat', sans-serif;
+          color: #AE9297;
+          font-weight: 400;
+          font-size: 0.78rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 0.18em;
+        }
+        .ebook-doc-toc-title {
           color: #4B2E4C;
           font-weight: 600;
+          font-size: 1rem;
+        }
+        .ebook-doc-toc-section {
+          color: #AE9297;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          font-size: 0.82rem;
+        }
+        .ebook-image-placeholder {
+          border: 1px dashed #D9D1CB;
+          background: #FBF6F1;
+          color: #AE9297;
+          border-radius: 8px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.72rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 0.85em;
+          margin: 0.85em 0 1.15em;
         }
         .ebook-doc-image {
           width: 100%;
@@ -364,21 +394,21 @@ export default function GLP1Signal() {
         textAlign: "center",
         padding: "1in",
       }}>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#AE9297", marginBottom: "3em" }}>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#AE9297", marginBottom: "2.7em" }}>
           HER WELLNESS HARMONY
         </p>
-        <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "2.4rem", color: "#4B2E4C", fontWeight: 700, lineHeight: 1.15, marginBottom: "0.5em" }}>
-          Understanding<br />GLP-1 Signaling
+        <h1 style={{ fontFamily: "'Montserrat', sans-serif", color: "#4B2E4C", fontWeight: 700, lineHeight: 1.05, marginBottom: "0.55em" }}>
+          <span style={{ display: "block", fontSize: "1.65rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "0.22em" }}>Understanding</span>
+          <span style={{ display: "inline-block", fontSize: "3rem", textTransform: "uppercase", letterSpacing: "0.02em", background: "rgba(255,255,255,0.42)", borderRadius: "8px", padding: "0.08em 0.22em" }}>GLP-1 SIGNALING</span>
         </h1>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.9rem", fontWeight: 400, color: "#383838", lineHeight: 1.6, maxWidth: "380px", marginBottom: "3em" }}>
-          How gut health, blood sugar, and metabolic stress influence appetite regulation and hormone balance.
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.94rem", fontWeight: 400, color: "#383838", lineHeight: 1.68, maxWidth: "440px", marginBottom: "3em" }}>
+          How gut health, blood sugar, and metabolic stress influence appetite and hormone balance
         </p>
-        <hr style={{ width: "50px", height: "2px", background: "#C9A646", border: "none", marginBottom: "2em" }} />
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.25em" }}>Written By</p>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "1.3rem", fontWeight: 600, color: "#4B2E4C", marginBottom: "0" }}>
+        <hr style={{ width: "50px", height: "2px", background: "#C9A646", border: "none", marginBottom: "1.8em" }} />
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "1.35rem", fontWeight: 600, color: "#4B2E4C", marginBottom: "0" }}>
           Sheila McFarland
         </p>
-        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", position: "absolute", bottom: "0.75in" }}>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "#AE9297", position: "absolute", bottom: "0.75in" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
       </div>
@@ -395,14 +425,14 @@ export default function GLP1Signal() {
           { ch: "Chapter 3", title: "Why GLP-1 Signaling Breaks" },
           { ch: "Chapter 4", title: "GLP-1 Medications. What They Really Do" },
           { ch: "Chapter 5", title: "Supporting GLP-1 Naturally" },
-          { ch: "Chapter 6", title: "Order of Operations. Gut → Metabolism → Hormones" },
+          { ch: "Chapter 6", title: "Gut, Metabolism, and Hormones" },
           { ch: "Chapter 7", title: "The 90-Day GLP-1 Optimization Protocol" },
           { ch: "", title: "Next Steps" },
           { ch: "", title: "Appendix: References and Notes" },
         ].map((item, i) => (
           <div key={i} className="ebook-doc-toc-item">
-            {item.ch && <span className="ebook-doc-toc-chapter">{item.ch} — </span>}
-            <span>{item.title}</span>
+            {item.ch ? <span className="ebook-doc-toc-chapter">{item.ch}</span> : null}
+            <span className={item.ch ? "ebook-doc-toc-title" : "ebook-doc-toc-section"}>{item.title}</span>
           </div>
         ))}
         <PageFooter pageNum={2} />
@@ -552,6 +582,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">When you eat, GLP-1 helps regulate how your body responds to incoming nutrients. It influences insulin release, slows gastric emptying, and communicates satiety to the brain. It helps stabilize blood sugar after meals. It contributes to appetite regulation.</p>
         <p className="ebook-doc-body">Those effects can support weight loss.</p>
         <p className="ebook-doc-body">But they are not the same thing as fat burning.</p>
+        <p className="ebook-doc-body">This is why appetite can change quickly while deeper metabolic repair still takes time.</p>
 
         <h2 className="ebook-doc-h2">Appetite Suppression Is Not Metabolic Repair</h2>
         <p className="ebook-doc-body">Many GLP-1 medications reduce appetite significantly. This often leads to lower calorie intake, which can result in weight loss.</p>
@@ -740,7 +771,13 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 medications have changed the landscape of metabolic care. Drugs such as semaglutide and tirzepatide were originally developed to support blood sugar control in type 2 diabetes. Over time, their impact on appetite regulation and body weight became widely recognized.</p>
         <p className="ebook-doc-body">To understand these medications clearly, it is important to return to physiology.</p>
         <p className="ebook-doc-body">These drugs do not create a new hormone. They mimic or amplify the action of GLP-1. In simple terms, they enhance a signal that already exists in the body.</p>
-        <p className="ebook-doc-body">When GLP-1 receptor activity increases, several predictable outcomes occur. Insulin secretion improves in response to glucose. Gastric emptying slows. Appetite signaling in the brain shifts. Many people feel full sooner and experience fewer cravings.</p>
+        <p className="ebook-doc-body">When GLP-1 receptor activity increases, several predictable outcomes occur:</p>
+        <ul className="ebook-doc-list">
+          <li>Insulin secretion improves in response to glucose</li>
+          <li>Gastric emptying slows</li>
+          <li>Appetite signaling in the brain shifts</li>
+          <li>Many people feel full sooner and experience fewer cravings</li>
+        </ul>
         <p className="ebook-doc-body">These effects can lead to meaningful weight loss and improved blood sugar regulation.</p>
         <p className="ebook-doc-body">However, the mechanism is amplification, not reconstruction.</p>
         <p className="ebook-doc-body">Semaglutide primarily acts as a GLP-1 receptor agonist. It binds to the GLP-1 receptor and activates it for a prolonged period of time. This sustained receptor activity contributes to appetite suppression and improved glycemic control.</p>
@@ -749,7 +786,13 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">The key distinction is this. These medications increase receptor activation. They do not repair gut barrier integrity. They do not automatically restore muscle mass. They do not correct sleep patterns. They do not eliminate chronic stress. They do not directly rebuild mitochondrial efficiency.</p>
         <p className="ebook-doc-body">For some individuals, medications create an opportunity. Appetite becomes manageable. Blood sugar stabilizes. Space is created to build healthier habits.</p>
         <p className="ebook-doc-body">For others, side effects emerge.</p>
-        <p className="ebook-doc-body">Nausea, digestive discomfort, gallbladder stress, fatigue, or muscle loss can occur. Reduced appetite without adequate protein intake may accelerate lean tissue loss. Rapid weight loss without resistance training can compromise metabolic resilience.</p>
+        <ul className="ebook-doc-list">
+          <li>Nausea or digestive discomfort</li>
+          <li>Gallbladder stress</li>
+          <li>Fatigue</li>
+          <li>Muscle loss</li>
+        </ul>
+        <p className="ebook-doc-body">Reduced appetite without adequate protein intake may accelerate lean tissue loss. Rapid weight loss without resistance training can compromise metabolic resilience.</p>
         <p className="ebook-doc-body">The outcome depends on the environment in which the medication is used.</p>
         <PageFooter pageNum={10} />
       </div>
@@ -776,36 +819,63 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Chapter 5</div>
         <h1 className="ebook-doc-h1">Supporting GLP-1 Naturally</h1>
 
-        <p className="ebook-doc-body">If GLP-1 is a signal, then supporting it naturally means improving the environment in which that signal is produced and received.</p>
-        <p className="ebook-doc-body">This is not about forcing more hormone output. It is about stabilizing the internal terrain so the body can regulate more effectively on its own.</p>
-        <p className="ebook-doc-body">GLP-1 is released in response to food. The quality, composition, and timing of that food influence how strong and stable the signal becomes.</p>
-        <p className="ebook-doc-body">Protein plays a critical role. Adequate protein intake supports satiety, preserves lean muscle mass, and stabilizes blood sugar. Amino acids stimulate incretin release and contribute to a more predictable metabolic response after meals. Consistently under-eating protein can weaken appetite regulation over time.</p>
-        <p className="ebook-doc-body">Fiber is equally important. Soluble fiber slows glucose absorption and supports microbial fermentation in the gut. Certain gut bacteria produce short chain fatty acids that influence incretin signaling. A low fiber diet can impair this communication pathway. Gradually increasing fiber through whole foods can improve signaling stability.</p>
-        <p className="ebook-doc-body">Carbohydrate quality matters more than carbohydrate elimination. Whole, minimally processed carbohydrates paired with protein and fat produce a different glycemic response than refined sugars eaten alone. Stable blood sugar supports coordinated hormone communication.</p>
-        <p className="ebook-doc-body">Meal timing influences signaling rhythm. Constant grazing can blunt hunger and satiety cues. Extended periods of chaotic eating can destabilize blood sugar. Regular meals with balanced macronutrients allow the signaling network to regain predictability.</p>
-        <p className="ebook-doc-body">Muscle tissue plays a central role in metabolic health. Resistance training improves insulin sensitivity and enhances glucose disposal. When muscle mass increases or is preserved, metabolic flexibility improves. This indirectly supports GLP-1 effectiveness because the downstream response becomes more efficient.</p>
+        <p className="ebook-doc-body">Supporting GLP-1 naturally means improving the environment in which the signal is produced and received. This is not about forcing more hormone output. It is about helping the body regulate with steadier inputs.</p>
+        <p className="ebook-doc-body">Food quality, meal rhythm, muscle activity, sleep, and stress all shape how clearly the signal is heard.</p>
+
+        <h2 className="ebook-doc-h2">Protein</h2>
+        <p className="ebook-doc-body">Protein supports satiety, preserves lean muscle, and helps stabilize blood sugar after meals. A steady protein rhythm makes appetite cues easier to interpret and helps protect metabolism during weight change.</p>
+        <div className="ebook-image-placeholder">[Insert image: protein foods]</div>
+
+        <h2 className="ebook-doc-h2">Fiber</h2>
+        <p className="ebook-doc-body">Fiber slows glucose absorption and feeds beneficial gut bacteria. Increasing fiber gradually through whole foods can support a smoother post-meal response and more stable hunger patterns.</p>
+        <div className="ebook-image-placeholder">[Insert image: fiber foods]</div>
+
+        <h2 className="ebook-doc-h2">Resistant Starch</h2>
+        <p className="ebook-doc-body">Resistant starch acts like a preferred fuel for parts of the gut microbiome. Foods such as cooled potatoes, green banana, oats, beans, and lentils can support fermentation and short chain fatty acid production.</p>
+        <div className="ebook-image-placeholder">[Insert image: resistant starch foods]</div>
+
+        <h2 className="ebook-doc-h2">Healthy Fats</h2>
+        <p className="ebook-doc-body">Healthy fats help meals feel satisfying and slow digestion in a supportive way. Olive oil, avocado, nuts, seeds, and fatty fish can help create a more balanced meal response.</p>
+        <div className="ebook-image-placeholder">[Insert image: healthy fats]</div>
         <PageFooter pageNum={12} />
       </div>
       <div className="ebook-spacer" />
 
       {/* ==================== CHAPTER 5 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
-        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Sleep and Metabolic Health</h2>
-        <p className="ebook-doc-body">Sleep is often underestimated. Inadequate sleep disrupts hunger hormones, increases cortisol, and destabilizes blood sugar regulation. Even one week of poor sleep can alter appetite signaling. Prioritizing consistent sleep is not optional in metabolic restoration. It is foundational.</p>
+        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Polyphenols</h2>
+        <p className="ebook-doc-body">Polyphenols are plant compounds found in colorful foods such as berries, herbs, spices, cocoa, olives, and deeply colored vegetables. They support the gut environment and help reduce oxidative stress.</p>
 
-        <h2 className="ebook-doc-h2">Stress Regulation</h2>
-        <p className="ebook-doc-body">Stress regulation also matters. Chronic stress elevates cortisol. Elevated cortisol influences glucose production and insulin sensitivity. When stress remains unmanaged, appetite regulation becomes less predictable. Supporting nervous system regulation through consistent routines, light exposure, movement, and intentional rest strengthens signaling stability.</p>
+        <h2 className="ebook-doc-h2">Gut Microbiome</h2>
+        <p className="ebook-doc-body">The gut microbiome influences the signaling environment. A diverse microbiome helps produce compounds that communicate with metabolism and appetite regulation. Akkermansia is one helpful microbe often discussed in gut health because it is associated with the mucus layer of the gut lining, but the goal is overall microbial balance rather than chasing one strain.</p>
 
-        <h2 className="ebook-doc-h2">Inflammatory Load</h2>
-        <p className="ebook-doc-body">Inflammatory load influences the entire metabolic network. Highly processed foods, sedentary behavior, and chronic sleep deprivation can increase systemic inflammation. Reducing inflammatory inputs does not require perfection. It requires consistency.</p>
-        <p className="ebook-doc-body">None of these strategies are extreme. They are foundational.</p>
+        <h2 className="ebook-doc-h2">Teas</h2>
+        <p className="ebook-doc-body">Green tea, matcha, and yerba mate provide polyphenols and gentle metabolic support for some people. They are not magic, but they can be part of a steady routine when tolerated well.</p>
+        <div className="ebook-image-placeholder">[Insert image: tea]</div>
+
+        <h2 className="ebook-doc-h2">Movement</h2>
+        <p className="ebook-doc-body">Movement helps move glucose into muscle and supports digestive rhythm. Walking after meals and consistent resistance training both improve the downstream response to metabolic signals.</p>
+        <div className="ebook-image-placeholder">[Insert image: walking or movement]</div>
+
+        <h2 className="ebook-doc-h2">Sleep, Stress, and Inflammatory Load</h2>
+        <p className="ebook-doc-body">Sleep, stress, and inflammation influence the entire network. Poor sleep and chronic stress can make hunger less predictable and energy less stable. Reducing inflammatory inputs does not require perfection. It requires consistency.</p>
+        <p className="ebook-doc-body">This is why energy can feel inconsistent when the system is under strain.</p>
+        <PageFooter pageNum={13} />
+      </div>
+      <div className="ebook-spacer" />
+
+      {/* ==================== CHAPTER 5 continued ==================== */}
+      <div className="ebook-doc-page ebook-content-page">
+        <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>When Additional Support May Be Needed</h2>
+        <p className="ebook-doc-body">Sometimes food, rhythm, and lifestyle support are not enough on their own. Supplements or medications may be useful tools when there are deeper imbalances, nutrient gaps, blood sugar concerns, digestive dysfunction, or medication-related needs.</p>
+        <p className="ebook-doc-body">The right support depends on the person. Testing, health history, symptoms, medications, and professional guidance matter. This is especially important if you are already using a GLP-1 medication, managing a medical condition, or experiencing significant digestive symptoms.</p>
+        <p className="ebook-doc-body">The goal is not to add more products. The goal is to understand what your body actually needs.</p>
 
         <h2 className="ebook-doc-h2">Supporting GLP-1</h2>
-        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about biohacking. It is about rebuilding rhythm. It is about restoring predictability to digestion, blood sugar regulation, and energy distribution.</p>
-        <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
-        <p className="ebook-doc-body">This is not a quick intervention. It is a systems approach.</p>
+        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about biohacking. It is about restoring predictability to digestion, blood sugar regulation, and energy distribution.</p>
+        <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel more appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why restoring the gut and metabolic environment must come before expecting hormone signaling to normalize.</p>
-        <PageFooter pageNum={13} />
+        <PageFooter pageNum={14} />
       </div>
       <div className="ebook-spacer" />
 
@@ -819,13 +889,13 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It exists downstream.</p>
         <p className="ebook-doc-body">GLP-1 is influenced by the environment in which it is produced and received. That environment begins in the gut, extends through metabolic chemistry, and ultimately influences broader hormonal balance.</p>
         <p className="ebook-doc-body">If you try to correct the bottom of the chain without stabilizing the top, progress may be inconsistent.</p>
-        <p className="ebook-doc-body">The first layer is the gut environment.</p>
+        <h2 className="ebook-doc-h2">Gut</h2>
         <p className="ebook-doc-body">GLP-1 is released from the small intestine. If the gut lining is irritated, inflamed, or functionally unstable, hormone signaling becomes less predictable. Digestive stress, microbial imbalance, and irregular meal patterns all affect the quality of the signal at its source.</p>
         <p className="ebook-doc-body">Restoring digestive stability creates the foundation for reliable signaling.</p>
-        <p className="ebook-doc-body">The second layer is metabolic chemistry.</p>
+        <h2 className="ebook-doc-h2">Metabolism</h2>
         <p className="ebook-doc-body">Blood sugar stability, insulin sensitivity, muscle mass, sleep quality, and inflammatory load all shape how the body responds to GLP-1. Even if the hormone is released appropriately, the downstream response depends on cellular health and metabolic flexibility.</p>
         <p className="ebook-doc-body">Improving metabolic chemistry strengthens the body's ability to respond to signals effectively.</p>
-        <p className="ebook-doc-body">The third layer is hormonal harmony.</p>
+        <h2 className="ebook-doc-h2">Hormones</h2>
         <p className="ebook-doc-body">When gut stability and metabolic chemistry improve, broader hormonal patterns begin to stabilize. Appetite regulation becomes more predictable. Energy becomes more consistent. Weight changes occur within a more regulated system rather than through force.</p>
         <p className="ebook-doc-body">Attempting to regulate hormones without addressing the layers beneath them can create temporary shifts, but rarely lasting stability.</p>
         <p className="ebook-doc-body">This is why order matters.</p>
@@ -860,17 +930,13 @@ export default function GLP1Signal() {
 
         <div className="ebook-doc-phase-box">
           <div className="ebook-doc-phase-header">Phase 1: Reset the Chemistry — Days 1-30</div>
-          <p className="ebook-doc-body" style={{ marginBottom: "0.4em" }}>If needed, follow the 30-Day Gut Reset Roadmap for detailed structure during this phase.</p>
-          <p className="ebook-doc-body">This phase establishes the foundation. The goal is to calm digestive stress, stabilize blood sugar, and restore rhythm.</p>
-          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Follow these steps:</p>
+          <p className="ebook-doc-body">This phase focuses on calming digestive stress, stabilizing blood sugar, and restoring meal rhythm.</p>
+          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
-            <li>Eat three structured meals per day. Avoid constant grazing. Allow hunger and satiety cues to reestablish rhythm.</li>
-            <li>Prioritize protein at every meal. Aim for a meaningful protein source such as eggs, poultry, fish, Greek yogurt, or lean red meat.</li>
-            <li>Increase fiber gradually through whole foods such as vegetables, berries, legumes, and resistant starch sources.</li>
-            <li>Remove obvious irritants. Reduce ultra-processed foods, excess alcohol, and highly refined sugars.</li>
-            <li>Hydrate consistently throughout the day.</li>
-            <li>Sleep seven to eight hours per night. Keep sleep and wake times consistent.</li>
-            <li>Walk daily. Gentle movement improves glucose handling and digestive motility.</li>
+            <li>Structured meals</li>
+            <li>Protein and fiber consistency</li>
+            <li>Reduced inflammatory inputs</li>
+            <li>Hydration, sleep rhythm, and gentle daily movement</li>
           </ul>
           <p className="ebook-doc-body">The objective is stability, not intensity. Appetite cues should begin to feel less chaotic. Energy should become more predictable.</p>
         </div>
@@ -882,32 +948,26 @@ export default function GLP1Signal() {
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#AE9297" }}>
           <div className="ebook-doc-phase-header">Phase 2: Restore the Metabolism — Days 31-60</div>
-          <p className="ebook-doc-body">With digestive rhythm improving, this phase strengthens metabolic responsiveness.</p>
-          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Follow these steps:</p>
+          <p className="ebook-doc-body">This phase focuses on strengthening metabolic responsiveness once digestive rhythm is improving.</p>
+          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
-            <li>Continue structured meals with adequate protein.</li>
-            <li>Begin or intensify resistance training at least three times per week. Preserve and build lean muscle mass.</li>
-            <li>Ensure total daily protein intake supports muscle preservation.</li>
-            <li>Maintain consistent sleep. Protect it as a metabolic intervention.</li>
-            <li>Monitor blood sugar response indirectly through energy stability and reduced crashes.</li>
-            <li>Incorporate stress regulation practices such as breath work, time outdoors, and screen reduction before bed.</li>
-            <li>Continue reducing inflammatory inputs.</li>
+            <li>Consistent protein intake</li>
+            <li>Resistance training and muscle preservation</li>
+            <li>Blood sugar stability</li>
+            <li>Sleep protection and stress regulation</li>
           </ul>
           <p className="ebook-doc-body">The objective is improved insulin sensitivity, stronger glucose disposal through muscle, and enhanced metabolic flexibility.</p>
         </div>
 
         <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#4B2E4C" }}>
           <div className="ebook-doc-phase-header">Phase 3: Reharmonize the System — Days 61-90</div>
-          <p className="ebook-doc-body">This phase integrates and personalizes.</p>
-          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Follow these steps:</p>
+          <p className="ebook-doc-body">This phase focuses on integration, personalization, and long-term sustainability.</p>
+          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
-            <li>Maintain resistance training and protein intake.</li>
-            <li>Evaluate hunger and satiety cues. Adjust portion sizes based on internal regulation rather than strict rules.</li>
-            <li>Refine carbohydrate intake based on activity level and energy response.</li>
-            <li>Continue fiber and whole food intake.</li>
-            <li>Maintain sleep consistency.</li>
-            <li>Assess stress load and adjust routines to preserve nervous system stability.</li>
-            <li>Introduce personalization only after consistency has been established.</li>
+            <li>Maintaining the foundations already built</li>
+            <li>Refining meals around hunger, activity, and energy response</li>
+            <li>Protecting sleep and nervous system stability</li>
+            <li>Personalizing only after consistency is established</li>
           </ul>
           <p className="ebook-doc-body">The objective is sustainability. Appetite should feel intuitive. Energy should feel stable. Metabolic regulation should feel less reactive.</p>
         </div>
@@ -925,61 +985,24 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Next Steps</div>
         <h1 className="ebook-doc-h1">Continuing Beyond 90 Days</h1>
 
-        <p className="ebook-doc-body">By the end of the 90-Day GLP-1 Optimization Protocol, you will have:</p>
+        <p className="ebook-doc-body">By the end of the 90-Day GLP-1 Optimization Protocol, you will have a clearer framework for how gut health, blood sugar, stress, muscle, and hormone signaling work together.</p>
+        <p className="ebook-doc-body">The next step is not to chase a stronger signal. The next step is to keep building a structured system that helps your body respond with more consistency.</p>
+        <p className="ebook-doc-body">A thoughtful 90-day system gives you time to observe patterns, make adjustments, and build foundations in the right order.</p>
+
+        <h2 className="ebook-doc-h2">A Structured 90-Day System Can Help You Focus On:</h2>
         <ul className="ebook-doc-list">
-          <li>Reset the chemistry of your gut and blood sugar</li>
-          <li>Stabilized metabolic signaling</li>
-          <li>Re-established rhythm between appetite, energy, and hormone balance</li>
-          <li>Built foundational habits that support long-term physiology</li>
+          <li>Digestive rhythm and gut stability</li>
+          <li>Protein, fiber, and balanced meal structure</li>
+          <li>Blood sugar steadiness and energy patterns</li>
+          <li>Muscle preservation and supportive movement</li>
+          <li>Stress regulation and sleep consistency</li>
+          <li>Personalization based on your real-life response</li>
         </ul>
-        <p className="ebook-doc-body">For many people, this is enough to continue independently.</p>
-        <p className="ebook-doc-body">For others, this is where deeper personalization becomes valuable.</p>
-        <p className="ebook-doc-body">If you would like guided support as you transition from structured protocol into sustainable lifestyle integration, the next step is private coaching.</p>
 
-        <hr className="ebook-doc-divider" />
-
-        <img src={coachingImg} alt="A supportive wellness coaching session" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
-
-        <h2 className="ebook-doc-h2">4-Week Gut and Hormone Support Coaching Package</h2>
-        <p className="ebook-doc-body" style={{ fontWeight: 600 }}>4 Weeks · $647</p>
-        <p className="ebook-doc-body">This package is designed to help you translate the framework in this ebook into your real life.</p>
-
-        <h3 className="ebook-doc-h3">Initial Session</h3>
-        <p className="ebook-doc-body" style={{ fontWeight: 600 }}>60 minutes</p>
-        <p className="ebook-doc-body">We begin with a comprehensive review of your current physiology and daily rhythms. Together, we explore:</p>
-        <ul className="ebook-doc-list">
-          <li>Gut patterns and digestion signals</li>
-          <li>Stress rhythm and nervous system load</li>
-          <li>Hydration and mineral balance</li>
-          <li>Metabolic cues</li>
-          <li>Sleep timing and quality</li>
-          <li>Supportive supplement or essential oil routines, if desired</li>
-        </ul>
-        <p className="ebook-doc-body">You will leave this session with a personalized 4-week starting plan aligned with your current capacity.</p>
-        <PageFooter pageNum={17} />
-      </div>
-      <div className="ebook-spacer" />
-
-      {/* ==================== NEXT STEPS continued ==================== */}
-      <div className="ebook-doc-page ebook-content-page">
-        <h3 className="ebook-doc-h3" style={{ marginTop: 0 }}>Weekly Follow-Up Sessions</h3>
-        <p className="ebook-doc-body" style={{ fontWeight: 600 }}>3 sessions · 45 minutes each</p>
-        <p className="ebook-doc-body">Each week, we assess how your body is responding and refine your plan accordingly. Adjustments are made based on real data from your lived experience.</p>
-        <p className="ebook-doc-body">Areas of support include:</p>
-        <ul className="ebook-doc-list">
-          <li>Gut repair progression</li>
-          <li>Nervous system regulation</li>
-          <li>Hormone-friendly meal timing</li>
-          <li>Hydration and mineral rhythm</li>
-          <li>Inflammation patterns</li>
-          <li>Morning versus nighttime adjustments</li>
-          <li>Supportive oils and supplements, if appropriate</li>
-          <li>Realistic habit building</li>
-        </ul>
-        <p className="ebook-doc-body">This coaching experience provides clarity, accountability, and refinement beyond what a static protocol can offer.</p>
-        <p className="ebook-doc-body">If you feel steady and confident after 90 days, continue building. If you feel ready for deeper personalization, this is your next step.</p>
-        <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>Coaching sessions are educational in nature and do not replace care from your licensed healthcare provider.</p>
-        <p className="ebook-doc-body">To inquire about availability, visit: <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a> and view services</p>
+        <p className="ebook-doc-body">For some people, this framework is enough to continue independently. For others, deeper personalization may be helpful, especially when symptoms, medications, labs, or complex health history are involved.</p>
+        <p className="ebook-doc-body">Professional guidance can help connect the dots between your symptoms, daily habits, testing, and long-term metabolic goals.</p>
+        <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>This ebook is educational in nature and does not replace care from your licensed healthcare provider.</p>
+        <p className="ebook-doc-body">To explore supportive resources, visit <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a>.</p>
         <PageFooter pageNum={18} />
       </div>
       <div className="ebook-spacer" />
@@ -1037,7 +1060,7 @@ export default function GLP1Signal() {
         <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", marginTop: "1.5em" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
-        <PageFooter pageNum={20} />
+        <PageFooter pageNum={19} />
       </div>
       </EbookScaler>
     </div>
