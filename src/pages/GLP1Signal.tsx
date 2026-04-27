@@ -958,89 +958,26 @@ export default function GLP1Signal() {
       {/* ==================== CHAPTER 7 ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-chapter-label">Chapter 7</div>
-        <h1 className="ebook-doc-h1">The 90-Day GLP-1 Optimization Protocol</h1>
+        <h1 className="ebook-doc-h1">Introduction to the 90-Day GLP-1 Optimization Protocol</h1>
 
         <img src={protocolTransition} alt="A woman walking peacefully in nature, representing the journey of metabolic restoration" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
-        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change requires structure and sequence.</p>
-        <p className="ebook-doc-body">This ninety-day protocol moves intentionally through the hierarchy of gut stability, metabolic chemistry, and hormone regulation. Each phase builds on the previous one. Progression follows stability, not impatience.</p>
-        <p className="ebook-doc-body">If a phase does not feel complete, remain there longer before advancing.</p>
+        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
+        <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
+        <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
 
         <div className="ebook-doc-phase-box">
           <div className="ebook-doc-phase-header">Phase 1: Reset the Chemistry - Days 1-30</div>
           <p className="ebook-doc-body">This phase focuses on calming digestive stress, stabilizing blood sugar, and restoring meal rhythm.</p>
           <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
-            <li>Structured meals</li>
-            <li>Protein and fiber consistency</li>
-            <li>Reduced inflammatory inputs</li>
-            <li>Hydration, sleep rhythm, and gentle daily movement</li>
+            <li>Consistent meals with protein and fiber</li>
+            <li>Gentle support for digestion and hydration</li>
+            <li>Reducing obvious inflammatory inputs</li>
+            <li>Simple sleep and movement rhythms</li>
           </ul>
-          <p className="ebook-doc-body">The objective is stability, not intensity. Appetite cues should begin to feel less chaotic. Energy should become more predictable.</p>
+          <p className="ebook-doc-body">The focus is stability, not intensity.</p>
         </div>
-        <PageFooter pageNum={16} />
-      </div>
-      <div className="ebook-spacer" />
-
-      {/* ==================== CHAPTER 7 continued ==================== */}
-      <div className="ebook-doc-page ebook-content-page">
-        <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#AE9297" }}>
-          <div className="ebook-doc-phase-header">Phase 2: Restore the Metabolism - Days 31-60</div>
-          <p className="ebook-doc-body">This phase focuses on strengthening metabolic responsiveness once digestive rhythm is improving.</p>
-          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
-          <ul className="ebook-doc-list">
-            <li>Consistent protein intake</li>
-            <li>Resistance training and muscle preservation</li>
-            <li>Blood sugar stability</li>
-            <li>Sleep protection and stress regulation</li>
-          </ul>
-          <p className="ebook-doc-body">The objective is improved insulin sensitivity, stronger glucose disposal through muscle, and enhanced metabolic flexibility.</p>
-        </div>
-
-        <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#4B2E4C" }}>
-          <div className="ebook-doc-phase-header">Phase 3: Reharmonize the System - Days 61-90</div>
-          <p className="ebook-doc-body">This phase focuses on integration, personalization, and long-term sustainability.</p>
-          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
-          <ul className="ebook-doc-list">
-            <li>Maintaining the foundations already built</li>
-            <li>Refining meals around hunger, activity, and energy response</li>
-            <li>Protecting sleep and nervous system stability</li>
-            <li>Personalizing only after consistency is established</li>
-          </ul>
-          <p className="ebook-doc-body">The objective is sustainability. Appetite should feel intuitive. Energy should feel stable. Metabolic regulation should feel less reactive.</p>
-        </div>
-
-        <p className="ebook-doc-body">This ninety-day structure does not force outcomes. It restores order.</p>
-        <p className="ebook-doc-body">GLP-1 signaling improves when the environment supports it. When gut stability, muscle mass, sleep, and stress regulation are aligned, hormone communication becomes more efficient.</p>
-        <p className="ebook-doc-body">The body responds to sequence.</p>
-        <p className="ebook-doc-body">When you respect order of operations, the system stabilizes.</p>
-        <PageFooter pageNum={17} />
-      </div>
-      <div className="ebook-spacer" />
-
-      {/* ==================== NEXT STEPS ==================== */}
-      <div className="ebook-doc-page ebook-content-page">
-        <div className="ebook-doc-chapter-label">Next Steps</div>
-        <h1 className="ebook-doc-h1">Continuing Beyond 90 Days</h1>
-
-        <p className="ebook-doc-body">By the end of the 90-Day GLP-1 Optimization Protocol, you will have a clearer framework for how gut health, blood sugar, stress, muscle, and hormone signaling work together.</p>
-        <p className="ebook-doc-body">The next step is not to chase a stronger signal. The next step is to keep building a structured system that helps your body respond with more consistency.</p>
-        <p className="ebook-doc-body">A thoughtful 90-day system gives you time to observe patterns, make adjustments, and build foundations in the right order.</p>
-
-        <h2 className="ebook-doc-h2">A Structured 90-Day System Can Help You Focus On:</h2>
-        <ul className="ebook-doc-list">
-          <li>Digestive rhythm and gut stability</li>
-          <li>Protein, fiber, and balanced meal structure</li>
-          <li>Blood sugar steadiness and energy patterns</li>
-          <li>Muscle preservation and supportive movement</li>
-          <li>Stress regulation and sleep consistency</li>
-          <li>Personalization based on your real-life response</li>
-        </ul>
-
-        <p className="ebook-doc-body">For some people, this framework is enough to continue independently. For others, deeper personalization may be helpful, especially when symptoms, medications, labs, or complex health history are involved.</p>
-        <p className="ebook-doc-body">Professional guidance can help connect the dots between your symptoms, daily habits, testing, and long-term metabolic goals.</p>
-        <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>This ebook is educational in nature and does not replace care from your licensed healthcare provider.</p>
-        <p className="ebook-doc-body">To explore supportive resources, visit <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a>.</p>
         <PageFooter pageNum={18} />
       </div>
       <div className="ebook-spacer" />
