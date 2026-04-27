@@ -951,7 +951,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Gut stability supports metabolic chemistry. Metabolic chemistry supports hormone signaling. Hormone signaling influences appetite, energy, and body composition.</p>
         <p className="ebook-doc-body">When you respect the hierarchy, you work with the system rather than against it.</p>
         <p className="ebook-doc-body">In the next chapter, we will bring this framework together in a structured 90-day approach that moves through these layers intentionally and progressively.</p>
-        <PageFooter pageNum={15} />
+        <PageFooter pageNum={17} />
       </div>
       <div className="ebook-spacer" />
 
@@ -982,6 +982,63 @@ export default function GLP1Signal() {
       </div>
       <div className="ebook-spacer" />
 
+      {/* ==================== CHAPTER 7 continued ==================== */}
+      <div className="ebook-doc-page ebook-content-page">
+        <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#AE9297", marginTop: 0 }}>
+          <div className="ebook-doc-phase-header">Phase 2: Restore the Metabolism - Days 31-60</div>
+          <p className="ebook-doc-body">This phase focuses on strengthening metabolic responsiveness once the foundation is steadier.</p>
+          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
+          <ul className="ebook-doc-list">
+            <li>Muscle preservation and supportive movement</li>
+            <li>Blood sugar steadiness</li>
+            <li>Sleep protection</li>
+            <li>Stress regulation that fits real life</li>
+          </ul>
+        </div>
+
+        <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#4B2E4C" }}>
+          <div className="ebook-doc-phase-header">Phase 3: Reharmonize the System - Days 61-90</div>
+          <p className="ebook-doc-body">This phase focuses on integration and personalization after consistency is established.</p>
+          <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
+          <ul className="ebook-doc-list">
+            <li>Refining meals around hunger, energy, and activity</li>
+            <li>Maintaining gut and metabolic foundations</li>
+            <li>Watching patterns instead of forcing outcomes</li>
+            <li>Personalizing only after the basics are stable</li>
+          </ul>
+        </div>
+
+        <p className="ebook-doc-body">This overview is meant to orient you to the structure. The deeper work is learning how to apply the sequence to your own body, symptoms, labs, medications, stress load, and daily life.</p>
+        <p className="ebook-doc-body">GLP-1 signaling improves when the environment supports it. The body responds best when the system is approached in order.</p>
+        <PageFooter pageNum={19} />
+      </div>
+      <div className="ebook-spacer" />
+
+      {/* ==================== NEXT STEPS ==================== */}
+      <div className="ebook-doc-page ebook-content-page">
+        <div className="ebook-doc-chapter-label">Next Steps</div>
+        <h1 className="ebook-doc-h1">Continuing the Work</h1>
+
+        <p className="ebook-doc-body">This ebook gives you the foundation for understanding GLP-1 as part of a larger system. The next step is not to chase a stronger signal. It is to build the conditions that help the signal work more clearly.</p>
+        <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is the natural continuation of this framework. It takes the ideas introduced here and organizes them into a more structured pathway.</p>
+        <p className="ebook-doc-body">Rather than trying to change everything at once, the pathway moves in sequence: gut stability first, metabolic support second, hormone signaling refinement third.</p>
+
+        <h2 className="ebook-doc-h2">A structured continuation can help you focus on:</h2>
+        <ul className="ebook-doc-list">
+          <li>Understanding which upstream factors may be affecting your GLP-1 response</li>
+          <li>Building meal rhythm around protein, fiber, and blood sugar stability</li>
+          <li>Supporting digestion, muscle, movement, sleep, and stress regulation</li>
+          <li>Observing your real-life response before adding more complexity</li>
+          <li>Personalizing support with testing and professional guidance when needed</li>
+        </ul>
+
+        <p className="ebook-doc-body">If this ebook helped you see your symptoms through a more connected lens, the next layer is learning how to apply the sequence with more structure and clarity.</p>
+        <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>This ebook is educational in nature and does not replace care from your licensed healthcare provider.</p>
+        <p className="ebook-doc-body">To explore supportive resources, visit <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a>.</p>
+        <PageFooter pageNum={20} />
+      </div>
+      <div className="ebook-spacer" />
+
       {/* ==================== APPENDIX ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-chapter-label">Appendix</div>
@@ -998,7 +1055,7 @@ export default function GLP1Signal() {
           <li style={{ marginBottom: "0.8em" }}>Chaudhri, O.B., et al. (2008). The role of gut hormones in appetite regulation. <em>Gastroenterology</em>, 135(6), 2030-2042. Describes how gut-derived hormones, including GLP-1, influence satiety and energy intake.</li>
           <li style={{ marginBottom: "0.8em" }}>Lean, M.E.J., et al. (2021). The role of GLP-1 receptor agonists in weight management. <em>Nature Reviews Endocrinology</em>, 17, 593-606. Reviews pharmaceutical GLP-1 agonists and their effects on weight, appetite, and metabolic regulation.</li>
         </ul>
-        <PageFooter pageNum={19} />
+        <PageFooter pageNum={21} />
       </div>
       <div className="ebook-spacer" />
 
@@ -1035,7 +1092,7 @@ export default function GLP1Signal() {
         <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", marginTop: "1.5em" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
-        <PageFooter pageNum={20} />
+        <PageFooter pageNum={22} />
       </div>
       </EbookScaler>
     </div>
