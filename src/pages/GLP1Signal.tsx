@@ -875,7 +875,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Supporting GLP-1 naturally is not about biohacking. It is about restoring predictability to digestion, blood sugar regulation, and energy distribution.</p>
         <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel more appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why restoring the gut and metabolic environment must come before expecting hormone signaling to normalize.</p>
-        <PageFooter pageNum={15} />
+        <PageFooter pageNum={14} />
       </div>
       <div className="ebook-spacer" />
 
@@ -913,7 +913,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Gut stability supports metabolic chemistry. Metabolic chemistry supports hormone signaling. Hormone signaling influences appetite, energy, and body composition.</p>
         <p className="ebook-doc-body">When you respect the hierarchy, you work with the system rather than against it.</p>
         <p className="ebook-doc-body">In the next chapter, we will bring this framework together in a structured 90-day approach that moves through these layers intentionally and progressively.</p>
-        <PageFooter pageNum={14} />
+        <PageFooter pageNum={15} />
       </div>
       <div className="ebook-spacer" />
 
@@ -1023,7 +1023,7 @@ export default function GLP1Signal() {
           <li style={{ marginBottom: "0.8em" }}>Chaudhri, O.B., et al. (2008). The role of gut hormones in appetite regulation. <em>Gastroenterology</em>, 135(6), 2030-2042. Describes how gut-derived hormones, including GLP-1, influence satiety and energy intake.</li>
           <li style={{ marginBottom: "0.8em" }}>Lean, M.E.J., et al. (2021). The role of GLP-1 receptor agonists in weight management. <em>Nature Reviews Endocrinology</em>, 17, 593-606. Reviews pharmaceutical GLP-1 agonists and their effects on weight, appetite, and metabolic regulation.</li>
         </ul>
-        <PageFooter pageNum={20} />
+        <PageFooter pageNum={19} />
       </div>
       <div className="ebook-spacer" />
 
@@ -1060,7 +1060,7 @@ export default function GLP1Signal() {
         <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", marginTop: "1.5em" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
         </p>
-        <PageFooter pageNum={19} />
+        <PageFooter pageNum={20} />
       </div>
       </EbookScaler>
     </div>
