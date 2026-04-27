@@ -875,7 +875,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Supporting GLP-1 naturally is not about biohacking. It is about restoring predictability to digestion, blood sugar regulation, and energy distribution.</p>
         <p className="ebook-doc-body">When the internal environment stabilizes, signaling becomes clearer. Hunger cues feel more appropriate. Energy becomes more reliable. Appetite regulation feels less chaotic.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why restoring the gut and metabolic environment must come before expecting hormone signaling to normalize.</p>
-        <PageFooter pageNum={14} />
+        <PageFooter pageNum={15} />
       </div>
       <div className="ebook-spacer" />
 
@@ -929,7 +929,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">If a phase does not feel complete, remain there longer before advancing.</p>
 
         <div className="ebook-doc-phase-box">
-          <div className="ebook-doc-phase-header">Phase 1: Reset the Chemistry — Days 1-30</div>
+          <div className="ebook-doc-phase-header">Phase 1: Reset the Chemistry - Days 1-30</div>
           <p className="ebook-doc-body">This phase focuses on calming digestive stress, stabilizing blood sugar, and restoring meal rhythm.</p>
           <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
@@ -940,14 +940,14 @@ export default function GLP1Signal() {
           </ul>
           <p className="ebook-doc-body">The objective is stability, not intensity. Appetite cues should begin to feel less chaotic. Energy should become more predictable.</p>
         </div>
-        <PageFooter pageNum={15} />
+        <PageFooter pageNum={16} />
       </div>
       <div className="ebook-spacer" />
 
       {/* ==================== CHAPTER 7 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#AE9297" }}>
-          <div className="ebook-doc-phase-header">Phase 2: Restore the Metabolism — Days 31-60</div>
+          <div className="ebook-doc-phase-header">Phase 2: Restore the Metabolism - Days 31-60</div>
           <p className="ebook-doc-body">This phase focuses on strengthening metabolic responsiveness once digestive rhythm is improving.</p>
           <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
@@ -960,7 +960,7 @@ export default function GLP1Signal() {
         </div>
 
         <div className="ebook-doc-phase-box" style={{ borderLeftColor: "#4B2E4C" }}>
-          <div className="ebook-doc-phase-header">Phase 3: Reharmonize the System — Days 61-90</div>
+          <div className="ebook-doc-phase-header">Phase 3: Reharmonize the System - Days 61-90</div>
           <p className="ebook-doc-body">This phase focuses on integration, personalization, and long-term sustainability.</p>
           <p className="ebook-doc-body" style={{ fontWeight: 600 }}>Key priorities include:</p>
           <ul className="ebook-doc-list">
@@ -976,7 +976,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 signaling improves when the environment supports it. When gut stability, muscle mass, sleep, and stress regulation are aligned, hormone communication becomes more efficient.</p>
         <p className="ebook-doc-body">The body responds to sequence.</p>
         <p className="ebook-doc-body">When you respect order of operations, the system stabilizes.</p>
-        <PageFooter pageNum={16} />
+        <PageFooter pageNum={17} />
       </div>
       <div className="ebook-spacer" />
 
@@ -1023,7 +1023,7 @@ export default function GLP1Signal() {
           <li style={{ marginBottom: "0.8em" }}>Chaudhri, O.B., et al. (2008). The role of gut hormones in appetite regulation. <em>Gastroenterology</em>, 135(6), 2030-2042. Describes how gut-derived hormones, including GLP-1, influence satiety and energy intake.</li>
           <li style={{ marginBottom: "0.8em" }}>Lean, M.E.J., et al. (2021). The role of GLP-1 receptor agonists in weight management. <em>Nature Reviews Endocrinology</em>, 17, 593-606. Reviews pharmaceutical GLP-1 agonists and their effects on weight, appetite, and metabolic regulation.</li>
         </ul>
-        <PageFooter pageNum={19} />
+        <PageFooter pageNum={20} />
       </div>
       <div className="ebook-spacer" />
 
