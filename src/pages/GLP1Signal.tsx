@@ -456,7 +456,7 @@ export default function GLP1Signal() {
           { ch: "Chapter 1", title: "What GLP-1 Actually Is" },
           { ch: "Chapter 2", title: "GLP-1 Is a Signal, Not a Fat Burner" },
           { ch: "Chapter 3", title: "Why GLP-1 Signaling Breaks" },
-          { ch: "Chapter 4", title: "GLP-1 Medications. What They Really Do" },
+          { ch: "Chapter 4", title: "GLP-1 Medications. What They Do" },
           { ch: "Chapter 5", title: "Supporting GLP-1 Naturally" },
           { ch: "Chapter 6", title: "Gut, Metabolism, and Hormones" },
           { ch: "Chapter 7", title: "Introduction to the 90-Day GLP-1 Optimization Protocol" },
@@ -483,7 +483,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Your body is not broken.</p>
         <p className="ebook-doc-body">And this is not random.</p>
         <p className="ebook-doc-body">Over the past few years, GLP-1 has gone from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health.</p>
-        <p className="ebook-doc-body">In many ways, they have created results that feel almost immediate.</p>
+        <p className="ebook-doc-body">They have created results that feel almost immediate.</p>
         <p className="ebook-doc-body">But they have also created confusion.</p>
         <p className="ebook-doc-body">GLP-1 is often described as a weight loss hormone or a fat-burning accelerator. It is neither.</p>
         <p className="ebook-doc-body">GLP-1 is a signaling hormone.</p>
@@ -606,8 +606,8 @@ export default function GLP1Signal() {
           <li>Metabolically strained</li>
         </ul>
         <p className="ebook-doc-body">the signal may weaken.</p>
-        <p className="ebook-doc-body">GLP-1 is not magic.</p>
-        <p className="ebook-doc-body">It is biology.</p>
+        <p className="ebook-doc-body">GLP-1 isn’t magic.</p>
+        <p className="ebook-doc-body">It’s predictable biology.</p>
 
         <h2 className="ebook-doc-h2">The Real Takeaway</h2>
         <p className="ebook-doc-body">GLP-1 is not a weight loss trick.</p>
