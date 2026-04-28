@@ -477,6 +477,10 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Introduction</div>
         <h1 className="ebook-doc-h1">Renewing Your Metabolism by Understanding the Chemistry Behind GLP-1</h1>
 
+        <p className="ebook-doc-body">If your hunger doesn’t make sense…</p>
+        <p className="ebook-doc-body">If you can eat and still feel unsatisfied…</p>
+        <p className="ebook-doc-body">If your energy crashes even when you’re trying to do everything right…</p>
+        <p className="ebook-doc-body">This isn’t random.</p>
         <p className="ebook-doc-body">Over the past few years, GLP-1 has moved from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health. Social media is filled with before and after photos, appetite suppression stories, and headlines describing these drugs as revolutionary.</p>
         <p className="ebook-doc-body">In many ways, they are.</p>
         <p className="ebook-doc-body">But the sudden attention on GLP-1 has also created confusion.</p>
@@ -519,6 +523,14 @@ export default function GLP1Signal() {
         </ul>
         <p className="ebook-doc-body">GLP-1 does not burn fat. It coordinates metabolic traffic.</p>
         <p className="ebook-doc-body">It helps your body decide what to do with incoming energy.</p>
+        <p className="ebook-doc-body">This is where a lot of women get confused.</p>
+        <p className="ebook-doc-body">You’re told your hunger is the problem…</p>
+        <p className="ebook-doc-body">Your weight is the problem…</p>
+        <p className="ebook-doc-body">Your willpower is the problem…</p>
+        <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
+        <p className="ebook-doc-body">It’s a signaling system.</p>
+        <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
+        <p className="ebook-doc-body">your appetite, energy, and cravings can start to feel unpredictable too.</p>
         <p className="ebook-doc-body">This is where a lot of women get confused.</p>
         <p className="ebook-doc-body">You’re told your hunger is the problem...</p>
         <p className="ebook-doc-body">Your weight is the problem...</p>
@@ -698,6 +710,11 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It reduces a communication network to a single outcome.</p>
         <p className="ebook-doc-body">GLP-1 helps regulate energy distribution and appetite cues. It supports coordination between digestion, blood sugar control, and satiety.</p>
         <p className="ebook-doc-body">It does not replace foundational physiology.</p>
+        <p className="ebook-doc-body">This is why things can feel inconsistent.</p>
+        <p className="ebook-doc-body">Some days your appetite feels normal…</p>
+        <p className="ebook-doc-body">other days it doesn’t make sense.</p>
+        <p className="ebook-doc-body">It’s not randomness.</p>
+        <p className="ebook-doc-body">It’s signaling.</p>
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
         <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
@@ -797,6 +814,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 signaling rarely breaks in isolation.</p>
         <p className="ebook-doc-body">It is usually part of a broader pattern of metabolic strain.</p>
         <p className="ebook-doc-body">The body is not malfunctioning. It is adapting.</p>
+        <p className="ebook-doc-body">It is responding to the environment it has been given…</p>
+        <p className="ebook-doc-body">not failing you.</p>
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
         <p className="ebook-doc-body">This is why understanding upstream factors matters.</p>
         <p className="ebook-doc-body">In the next chapter, we will look at GLP-1 medications and examine what they actually do within this signaling network.</p>
@@ -856,6 +875,12 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Medication can influence the signal.</p>
         <p className="ebook-doc-body">It does not automatically restore the system.</p>
         <p className="ebook-doc-body">Understanding what these drugs do allows you to make informed decisions. Whether you choose to use medication, avoid it, or use it temporarily, the same foundational principles apply. Gut stability, metabolic support, muscle preservation, stress regulation, and inflammatory control remain essential.</p>
+        <p className="ebook-doc-body">This is why some people feel great while using these medications…</p>
+        <p className="ebook-doc-body">but struggle once they stop.</p>
+        <p className="ebook-doc-body">The signal was being amplified…</p>
+        <p className="ebook-doc-body">But the system underneath it was never fully rebuilt.</p>
+        <p className="ebook-doc-body">And without that foundation…</p>
+        <p className="ebook-doc-body">the same patterns can return.</p>
         <p className="ebook-doc-body">In the next chapter, we will shift toward how GLP-1 signaling can be supported naturally by improving the terrain in which the signal operates.</p>
         <PageFooter pageNum={11} />
       </div>
@@ -866,6 +891,8 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Chapter 5</div>
         <h1 className="ebook-doc-h1">Supporting GLP-1 Naturally</h1>
 
+        <p className="ebook-doc-body">These are not random health tips…</p>
+        <p className="ebook-doc-body">they are inputs that stabilize the signaling environment.</p>
         <p className="ebook-doc-body">Supporting GLP-1 isn’t about forcing your body to do more.</p>
         <p className="ebook-doc-body">It’s about improving the environment where the signal is created and received.</p>
         <p className="ebook-doc-body">Because when the environment becomes more stable...</p>
@@ -878,6 +905,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Protein helps meals feel more satisfying. It also supports lean muscle, which is important for blood sugar regulation and metabolic resilience.</p>
         <p className="ebook-doc-body">When protein is too low, hunger may return quickly and cravings can feel harder to manage. A steady protein rhythm gives the body a clearer satiety signal.</p>
         <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
+        <p className="ebook-doc-body">You may feel full for a short period…</p>
+        <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
+        <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
         <p className="ebook-doc-body">You may feel full for a short period...</p>
         <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
         <div className="ebook-image-placeholder"><img src={proteinFoods} alt="Whole food protein sources including salmon, eggs, yogurt, and legumes" loading="lazy" width={1024} height={768} /></div>
@@ -885,6 +915,9 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2">Fiber and gut signaling</h2>
         <p className="ebook-doc-body">Fiber slows the rise of blood sugar after meals and feeds beneficial gut bacteria. This helps create a steadier post-meal response.</p>
         <p className="ebook-doc-body">Resistant starch is a special type of fiber that passes through the small intestine and becomes fuel for microbes in the colon. Cooled potatoes, oats, beans, lentils, and green banana are simple examples.</p>
+        <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals…</p>
+        <p className="ebook-doc-body">and drop just as fast.</p>
+        <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
         <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals...</p>
         <p className="ebook-doc-body">and drop just as fast.</p>
         <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
@@ -934,6 +967,9 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2">Sleep and circadian rhythm</h2>
         <p className="ebook-doc-body">Sleep influences hunger hormones, blood sugar regulation, cortisol rhythm, and appetite control. When sleep is short or inconsistent, the body may feel more reactive around food.</p>
         <p className="ebook-doc-body">A steadier sleep rhythm supports the internal timing system that helps metabolism respond more predictably.</p>
+        <p className="ebook-doc-body">When sleep is inconsistent, hunger and stress signaling can shift.</p>
+        <p className="ebook-doc-body">This can make appetite feel stronger…</p>
+        <p className="ebook-doc-body">even if your food intake hasn’t changed.</p>
         <p className="ebook-doc-body">When sleep is inconsistent, hunger and stress signaling can shift.</p>
         <p className="ebook-doc-body">This can make appetite feel stronger...</p>
         <p className="ebook-doc-body">even if your food intake hasn’t changed.</p>
@@ -1008,6 +1044,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
+        <p className="ebook-doc-body">Understanding the system is the first step.</p>
+        <p className="ebook-doc-body">But understanding alone does not create change.</p>
+        <p className="ebook-doc-body">Structure is what allows the body to actually shift.</p>
         <p className="ebook-doc-body">What you’re seeing here is the structure.</p>
         <p className="ebook-doc-body">This ebook is designed to help you understand how the system works...</p>
         <p className="ebook-doc-body">But it does not walk you step-by-step through how to apply each phase in real life.</p>
@@ -1057,6 +1096,8 @@ export default function GLP1Signal() {
 
         <p className="ebook-doc-body">Understanding the system is the first step.</p>
         <p className="ebook-doc-body">Applying it consistently is what creates change.</p>
+        <p className="ebook-doc-body">This ebook gives you the framework.</p>
+        <p className="ebook-doc-body">The full protocol shows you how to apply it step by step.</p>
         <p className="ebook-doc-body">If you’re ready to follow the full 90-Day GLP-1 Optimization Protocol with structure and guidance...</p>
         <p className="ebook-doc-body">You can access it here:</p>
         <a href="/90day-protocol" className="ebook-doc-cta">Get the Full 90-Day Protocol</a>
@@ -1083,6 +1124,18 @@ export default function GLP1Signal() {
         </ul>
 
         <p className="ebook-doc-body">If this ebook helped you see your symptoms through a more connected lens, the next layer is learning how to apply the sequence with more structure and clarity.</p>
+        <p className="ebook-doc-body">This next step is for you if:</p>
+        <ul className="ebook-doc-list">
+          <li>You feel hungry again not long after eating</li>
+          <li>Your energy drops throughout the day</li>
+          <li>Your body feels inconsistent no matter what you try</li>
+        </ul>
+        <p className="ebook-doc-body">It may not be the right time if:</p>
+        <ul className="ebook-doc-list">
+          <li>You’re looking for a quick fix</li>
+          <li>You’re not ready to change your routines</li>
+          <li>You want results without structure</li>
+        </ul>
         <h2 className="ebook-doc-h2">Is this next step right for you?</h2>
         <p className="ebook-doc-body">This next step is for you if:</p>
         <ul className="ebook-doc-list">
