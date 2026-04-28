@@ -70,7 +70,7 @@ export default function Phase1GutReset() {
                   className="text-2xl md:text-3xl font-display font-medium mb-4 leading-snug"
                   style={{ color: "#4B2E39" }}
                 >
-                  30-Day Gut Reset Roadmap — $37
+                  30-Day Gut Reset Roadmap — $29
                 </h2>
 
                 <p
@@ -101,13 +101,13 @@ export default function Phase1GutReset() {
 
                 {/* Price + CTA */}
                 <a
-                  href="https://buy.stripe.com/8x2dRa3mOaE43Xm4Ft38408"
+                  href="https://buy.stripe.com/8x24gAaPg9A0fG46NB3840k"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center font-semibold rounded-full px-8 py-4 text-base transition-colors"
                   style={{ background: "#8FA89E", color: "#FFFFFF" }}
                 >
-                  Get the Roadmap
+                  Get Your Ebook & Roadmap
                 </a>
               </div>
             </div>
