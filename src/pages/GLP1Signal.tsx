@@ -875,35 +875,21 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Chapter 5</div>
         <h1 className="ebook-doc-h1">Supporting GLP-1 Naturally</h1>
 
-        <p className="ebook-doc-body">These are not random health tips…</p>
-        <p className="ebook-doc-body">they are inputs that stabilize the signaling environment.</p>
-        <p className="ebook-doc-body">Supporting GLP-1 isn’t about forcing your body to do more.</p>
-        <p className="ebook-doc-body">It’s about improving the environment where the signal is created and received.</p>
-        <p className="ebook-doc-body">Because when the environment becomes more stable...</p>
-        <p className="ebook-doc-body">the signal often becomes more reliable too.</p>
-        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about forcing the body to produce more hormone. It is about improving the environment where the signal is made, received, and understood.</p>
+        <p className="ebook-doc-body">These are not random health tips. They are inputs that stabilize the signaling environment, helping the body create, receive, and respond to GLP-1 more reliably.</p>
+        <p className="ebook-doc-body">Supporting GLP-1 naturally is not about forcing your body to produce more hormone.</p>
         <p className="ebook-doc-body">In most cases, GLP-1 dysfunction is downstream. It often reflects stress in the gut, blood sugar system, nervous system, sleep rhythm, muscle tissue, or inflammatory load.</p>
         <p className="ebook-doc-body">The goal is to support the terrain upstream so appetite, energy, and hormone signaling can become more predictable.</p>
 
         <h2 className="ebook-doc-h2">Protein and satiety signaling</h2>
         <p className="ebook-doc-body">Protein helps meals feel more satisfying. It also supports lean muscle, which is important for blood sugar regulation and metabolic resilience.</p>
         <p className="ebook-doc-body">When protein is too low, hunger may return quickly and cravings can feel harder to manage. A steady protein rhythm gives the body a clearer satiety signal.</p>
-        <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
-        <p className="ebook-doc-body">You may feel full for a short period…</p>
-        <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
-        <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
-        <p className="ebook-doc-body">You may feel full for a short period...</p>
-        <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
+        <p className="ebook-doc-body">You may feel full for a short period, but the signal does not stay steady for long.</p>
         <div className="ebook-image-placeholder"><img src={proteinFoods} alt="Whole food protein sources including salmon, eggs, yogurt, and legumes" loading="lazy" width={1024} height={768} /></div>
 
         <h2 className="ebook-doc-h2">Fiber and gut signaling</h2>
         <p className="ebook-doc-body">Fiber slows the rise of blood sugar after meals and feeds beneficial gut bacteria. This helps create a steadier post-meal response.</p>
         <p className="ebook-doc-body">Resistant starch is a special type of fiber that passes through the small intestine and becomes fuel for microbes in the colon. Cooled potatoes, oats, beans, lentils, and green banana are simple examples.</p>
-        <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals…</p>
-        <p className="ebook-doc-body">and drop just as fast.</p>
-        <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
-        <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals...</p>
-        <p className="ebook-doc-body">and drop just as fast.</p>
+        <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals and drop just as fast.</p>
         <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
         <PageFooter pageNum={12} />
       </div>
