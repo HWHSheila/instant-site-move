@@ -1081,18 +1081,6 @@ export default function GLP1Signal() {
         </ul>
 
         <p className="ebook-doc-body">If this ebook helped you see your symptoms through a more connected lens, the next layer is learning how to apply the sequence with more structure and clarity.</p>
-        <p className="ebook-doc-body">This next step is for you if:</p>
-        <ul className="ebook-doc-list">
-          <li>You feel hungry again not long after eating</li>
-          <li>Your energy drops throughout the day</li>
-          <li>Your body feels inconsistent no matter what you try</li>
-        </ul>
-        <p className="ebook-doc-body">It may not be the right time if:</p>
-        <ul className="ebook-doc-list">
-          <li>You’re looking for a quick fix</li>
-          <li>You’re not ready to change your routines</li>
-          <li>You want results without structure</li>
-        </ul>
         <h2 className="ebook-doc-h2">Is this next step right for you?</h2>
         <p className="ebook-doc-body">This next step is for you if:</p>
         <ul className="ebook-doc-list">
