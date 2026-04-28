@@ -492,7 +492,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">And it does not replace foundational metabolic health.</p>
         <p className="ebook-doc-body">What the rise of GLP-1 medications has revealed is something deeper.</p>
         <p className="ebook-doc-body">Your metabolism is not just about calories.</p>
-        <p className="ebook-doc-body">It is about communication.</p>
+        <p className="ebook-doc-body">It is about how your body communicates.</p>
         <p className="ebook-doc-body">When that communication is stable, your body responds appropriately to food.</p>
         <p className="ebook-doc-body">When it is disrupted, everything starts to feel inconsistent.</p>
         <p className="ebook-doc-body">This book will help you understand that system.</p>
@@ -515,7 +515,6 @@ export default function GLP1Signal() {
 
         <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement.</p>
         <p className="ebook-doc-body">GLP-1 is made in the gut, specifically by specialized cells called L-cells. These cells respond when you eat and release GLP-1 as part of the body's signaling system. In simple terms, this is one of the ways your gut tells the rest of your body that food has arrived and it's time to respond.</p>
-        <p className="ebook-doc-body">Its role is to coordinate what happens next.</p>
         <p className="ebook-doc-body">GLP-1 tells your body that nutrients have arrived and it is time to respond appropriately.</p>
         <p className="ebook-doc-body">When GLP-1 is released, several important things happen:</p>
         <ul className="ebook-doc-list">
@@ -529,9 +528,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It tells your body what to do with incoming energy.</p>
         <p className="ebook-doc-body">This is where a lot of women get confused.</p>
         <p className="ebook-doc-body">You’re told your hunger is the problem…</p>
-        <p className="ebook-doc-body">This is where most advice goes wrong.</p>
         <p className="ebook-doc-body">Your weight is the problem…</p>
         <p className="ebook-doc-body">Your willpower is the problem…</p>
+        <p className="ebook-doc-body">This is where most advice goes wrong.</p>
         <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
         <p className="ebook-doc-body">You don’t have a hunger problem. You have a signaling problem.</p>
         <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
