@@ -456,7 +456,7 @@ export default function GLP1Signal() {
           { ch: "Chapter 1", title: "What GLP-1 Actually Is" },
           { ch: "Chapter 2", title: "GLP-1 Is a Signal, Not a Fat Burner" },
           { ch: "Chapter 3", title: "Why GLP-1 Signaling Breaks" },
-          { ch: "Chapter 4", title: "GLP-1 Medications. What They Really Do" },
+          { ch: "Chapter 4", title: "GLP-1 Medications. What They Do" },
           { ch: "Chapter 5", title: "Supporting GLP-1 Naturally" },
           { ch: "Chapter 6", title: "Gut, Metabolism, and Hormones" },
           { ch: "Chapter 7", title: "Introduction to the 90-Day GLP-1 Optimization Protocol" },
@@ -483,7 +483,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Your body is not broken.</p>
         <p className="ebook-doc-body">And this is not random.</p>
         <p className="ebook-doc-body">Over the past few years, GLP-1 has gone from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health.</p>
-        <p className="ebook-doc-body">In many ways, they have created results that feel almost immediate.</p>
+        <p className="ebook-doc-body">They have created results that feel almost immediate.</p>
         <p className="ebook-doc-body">But they have also created confusion.</p>
         <p className="ebook-doc-body">GLP-1 is often described as a weight loss hormone or a fat-burning accelerator. It is neither.</p>
         <p className="ebook-doc-body">GLP-1 is a signaling hormone.</p>
@@ -606,8 +606,8 @@ export default function GLP1Signal() {
           <li>Metabolically strained</li>
         </ul>
         <p className="ebook-doc-body">the signal may weaken.</p>
-        <p className="ebook-doc-body">GLP-1 is not magic.</p>
-        <p className="ebook-doc-body">It is biology.</p>
+        <p className="ebook-doc-body">GLP-1 isn’t magic.</p>
+        <p className="ebook-doc-body">It’s predictable biology.</p>
 
         <h2 className="ebook-doc-h2">The Real Takeaway</h2>
         <p className="ebook-doc-body">GLP-1 is not a weight loss trick.</p>
@@ -730,7 +730,7 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">Gut Dysfunction</h2>
         <p className="ebook-doc-body">GLP-1 is produced in the small intestine.</p>
-        <p className="ebook-doc-body">If the gut lining is inflamed, irritated, or compromised, signaling can be affected at the source.</p>
+        <p className="ebook-doc-body">If the gut lining is inflamed, irritated, or compromised, signaling is affected at the source.</p>
         <p className="ebook-doc-body">Common contributors include:</p>
         <ul className="ebook-doc-list">
           <li>Chronic stress</li>
@@ -816,7 +816,7 @@ export default function GLP1Signal() {
       {/* ==================== CHAPTER 4 ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-chapter-label">Chapter 4</div>
-        <h1 className="ebook-doc-h1">GLP-1 Medications. What They Really Do</h1>
+        <h1 className="ebook-doc-h1">GLP-1 Medications. What They Do</h1>
 
         <p className="ebook-doc-body">GLP-1 medications have changed the landscape of metabolic care. Drugs such as semaglutide and tirzepatide were originally developed to support blood sugar control in type 2 diabetes. Over time, their impact on appetite regulation and body weight became widely recognized.</p>
         <p className="ebook-doc-body">To understand these medications clearly, it is important to return to physiology.</p>
@@ -918,7 +918,7 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">Gut microbiome support</h2>
         <p className="ebook-doc-body">The gut microbiome helps shape the environment where GLP-1 signaling begins. A more diverse, stable microbiome can support better communication between digestion, metabolism, and appetite.</p>
-        <p className="ebook-doc-body">Akkermansia is one helpful microbe often discussed in gut health. In simple terms, it is associated with the protective mucus layer of the gut lining. The goal is not to chase one microbe, but to build a gut environment where beneficial microbes can thrive.</p>
+        <p className="ebook-doc-body">Akkermansia is one helpful microbe often discussed in gut health. It is associated with the protective mucus layer of the gut lining. The goal is not to chase one microbe, but to build a gut environment where beneficial microbes can thrive.</p>
         <PageFooter pageNum={14} />
       </div>
       <div className="ebook-spacer" />
@@ -1010,7 +1010,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
         <p className="ebook-doc-body">This ebook gives you the framework for understanding how the system works, but understanding alone does not create change.</p>
-        <p className="ebook-doc-body">Structure is what allows the body to actually shift.</p>
+        <p className="ebook-doc-body">Structure is what allows your body to actually change.</p>
         <p className="ebook-doc-body">The full protocol is designed to walk you step by step through how to apply each phase in real life.</p>
 
         <div className="ebook-doc-phase-box">
@@ -1135,7 +1135,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This guide integrates research on incretin biology with clinical observations in metabolic health, gut physiology, and hormone regulation.</p>
 
         <h2 className="ebook-doc-h2">Notes on Natural GLP-1 Support</h2>
-        <p className="ebook-doc-body">Emerging research suggests that GLP-1 secretion may be influenced by:</p>
+        <p className="ebook-doc-body">Emerging research suggests that GLP-1 secretion is influenced by:</p>
         <ul className="ebook-doc-list">
           <li>Dietary fiber and short-chain fatty acid production</li>
           <li>Protein intake and amino acid signaling</li>
