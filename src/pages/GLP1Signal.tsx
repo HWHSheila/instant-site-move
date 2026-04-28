@@ -477,6 +477,10 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Introduction</div>
         <h1 className="ebook-doc-h1">Renewing Your Metabolism by Understanding the Chemistry Behind GLP-1</h1>
 
+        <p className="ebook-doc-body">If your hunger doesn’t make sense…</p>
+        <p className="ebook-doc-body">If you can eat and still feel unsatisfied…</p>
+        <p className="ebook-doc-body">If your energy crashes even when you’re trying to do everything right…</p>
+        <p className="ebook-doc-body">This isn’t random.</p>
         <p className="ebook-doc-body">Over the past few years, GLP-1 has moved from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health. Social media is filled with before and after photos, appetite suppression stories, and headlines describing these drugs as revolutionary.</p>
         <p className="ebook-doc-body">In many ways, they are.</p>
         <p className="ebook-doc-body">But the sudden attention on GLP-1 has also created confusion.</p>
@@ -519,6 +523,14 @@ export default function GLP1Signal() {
         </ul>
         <p className="ebook-doc-body">GLP-1 does not burn fat. It coordinates metabolic traffic.</p>
         <p className="ebook-doc-body">It helps your body decide what to do with incoming energy.</p>
+        <p className="ebook-doc-body">This is where a lot of women get confused.</p>
+        <p className="ebook-doc-body">You’re told your hunger is the problem…</p>
+        <p className="ebook-doc-body">Your weight is the problem…</p>
+        <p className="ebook-doc-body">Your willpower is the problem…</p>
+        <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
+        <p className="ebook-doc-body">It’s a signaling system.</p>
+        <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
+        <p className="ebook-doc-body">your appetite, energy, and cravings can start to feel unpredictable too.</p>
         <p className="ebook-doc-body">This is where a lot of women get confused.</p>
         <p className="ebook-doc-body">You’re told your hunger is the problem...</p>
         <p className="ebook-doc-body">Your weight is the problem...</p>
@@ -698,6 +710,11 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It reduces a communication network to a single outcome.</p>
         <p className="ebook-doc-body">GLP-1 helps regulate energy distribution and appetite cues. It supports coordination between digestion, blood sugar control, and satiety.</p>
         <p className="ebook-doc-body">It does not replace foundational physiology.</p>
+        <p className="ebook-doc-body">This is why things can feel inconsistent.</p>
+        <p className="ebook-doc-body">Some days your appetite feels normal…</p>
+        <p className="ebook-doc-body">other days it doesn’t make sense.</p>
+        <p className="ebook-doc-body">It’s not randomness.</p>
+        <p className="ebook-doc-body">It’s signaling.</p>
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
         <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
@@ -797,6 +814,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 signaling rarely breaks in isolation.</p>
         <p className="ebook-doc-body">It is usually part of a broader pattern of metabolic strain.</p>
         <p className="ebook-doc-body">The body is not malfunctioning. It is adapting.</p>
+        <p className="ebook-doc-body">It is responding to the environment it has been given…</p>
+        <p className="ebook-doc-body">not failing you.</p>
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
         <p className="ebook-doc-body">This is why understanding upstream factors matters.</p>
         <p className="ebook-doc-body">In the next chapter, we will look at GLP-1 medications and examine what they actually do within this signaling network.</p>
