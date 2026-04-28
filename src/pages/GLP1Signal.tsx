@@ -730,7 +730,7 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">Gut Dysfunction</h2>
         <p className="ebook-doc-body">GLP-1 is produced in the small intestine.</p>
-        <p className="ebook-doc-body">If the gut lining is inflamed, irritated, or compromised, signaling can be affected at the source.</p>
+        <p className="ebook-doc-body">If the gut lining is inflamed, irritated, or compromised, signaling is affected at the source.</p>
         <p className="ebook-doc-body">Common contributors include:</p>
         <ul className="ebook-doc-list">
           <li>Chronic stress</li>
@@ -816,7 +816,7 @@ export default function GLP1Signal() {
       {/* ==================== CHAPTER 4 ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <div className="ebook-doc-chapter-label">Chapter 4</div>
-        <h1 className="ebook-doc-h1">GLP-1 Medications. What They Really Do</h1>
+        <h1 className="ebook-doc-h1">GLP-1 Medications. What They Do</h1>
 
         <p className="ebook-doc-body">GLP-1 medications have changed the landscape of metabolic care. Drugs such as semaglutide and tirzepatide were originally developed to support blood sugar control in type 2 diabetes. Over time, their impact on appetite regulation and body weight became widely recognized.</p>
         <p className="ebook-doc-body">To understand these medications clearly, it is important to return to physiology.</p>
@@ -918,7 +918,7 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">Gut microbiome support</h2>
         <p className="ebook-doc-body">The gut microbiome helps shape the environment where GLP-1 signaling begins. A more diverse, stable microbiome can support better communication between digestion, metabolism, and appetite.</p>
-        <p className="ebook-doc-body">Akkermansia is one helpful microbe often discussed in gut health. In simple terms, it is associated with the protective mucus layer of the gut lining. The goal is not to chase one microbe, but to build a gut environment where beneficial microbes can thrive.</p>
+        <p className="ebook-doc-body">Akkermansia is one helpful microbe often discussed in gut health. It is associated with the protective mucus layer of the gut lining. The goal is not to chase one microbe, but to build a gut environment where beneficial microbes can thrive.</p>
         <PageFooter pageNum={14} />
       </div>
       <div className="ebook-spacer" />
