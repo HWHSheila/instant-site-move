@@ -612,8 +612,8 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The Real Takeaway</h2>
         <p className="ebook-doc-body">GLP-1 is not a weight loss trick.</p>
-        <p className="ebook-doc-body">It is a signal that coordinates energy distribution, appetite, and glucose balance.</p>
-        <p className="ebook-doc-body">If you understand that it is a messenger rather than a fat burner, everything else in this book will make more sense.</p>
+        <p className="ebook-doc-body">It is a signal your body uses to coordinate energy distribution, appetite, and glucose balance.</p>
+        <p className="ebook-doc-body">If you understand that it is a messenger, everything else in this book will make more sense.</p>
         <p className="ebook-doc-body">In the next chapter, we will look more closely at why this distinction matters for appetite, energy, and long-term metabolic stability.</p>
         <PageFooter pageNum={5} />
       </div>
@@ -629,9 +629,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 does not directly burn fat tissue. It does not increase metabolic rate in a dramatic way. It does not force the body to lose weight.</p>
         <p className="ebook-doc-body">GLP-1 is a signal your body uses to coordinate what happens after you eat.</p>
         <p className="ebook-doc-body">Its role is coordination.</p>
-        <p className="ebook-doc-body">When you eat, GLP-1 coordinates how your body responds to incoming nutrients. It signals insulin release, slows gastric emptying, and communicates satiety to the brain. It helps stabilize blood sugar after meals. It contributes to appetite regulation.</p>
-        <p className="ebook-doc-body">Those effects can support weight loss.</p>
-        <p className="ebook-doc-body">But they are not the same thing as fat burning.</p>
+        <p className="ebook-doc-body">When you eat, GLP-1 tells your body how to respond to incoming nutrients. It signals insulin release, slows gastric emptying, communicates satiety to the brain, and supports steadier blood sugar after meals.</p>
+        <p className="ebook-doc-body">Those effects can support weight loss, but the deeper mechanism is communication.</p>
         <p className="ebook-doc-body">This is why appetite can change quickly while deeper metabolic repair still takes time.</p>
 
         <h2 className="ebook-doc-h2">Appetite Suppression Is Not Metabolic Repair</h2>
@@ -666,7 +665,7 @@ export default function GLP1Signal() {
       {/* ==================== CHAPTER 2 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>GLP-1 Works Within a System</h2>
-        <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue signals glucose uptake. Glucose uptake signals mitochondrial energy production. Mitochondrial efficiency signals fatigue, hunger signaling, and metabolic flexibility.</p>
+        <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue shapes glucose uptake. Glucose uptake affects mitochondrial energy production. Mitochondrial efficiency affects fatigue, hunger signaling, and metabolic flexibility.</p>
         <p className="ebook-doc-body">This is a chain.</p>
         <div className="ebook-signal-diagram">
           <div className="ebook-signal-caption">The Metabolic Chain</div>
@@ -703,9 +702,8 @@ export default function GLP1Signal() {
           </div>
         </div>
         <p className="ebook-doc-body">If one part of the chain is unstable, the overall outcome changes.</p>
-        <p className="ebook-doc-body">Calling GLP-1 a fat-burning hormone oversimplifies a complex system.</p>
-        <p className="ebook-doc-body">It reduces a communication network to a single outcome.</p>
-        <p className="ebook-doc-body">GLP-1 coordinates energy distribution and appetite cues. It supports coordination between digestion, blood sugar control, and satiety.</p>
+        <p className="ebook-doc-body">Reducing GLP-1 to weight loss oversimplifies a complex communication network.</p>
+        <p className="ebook-doc-body">GLP-1 coordinates energy distribution and appetite cues. It supports communication between digestion, blood sugar control, and satiety.</p>
         <p className="ebook-doc-body">It does not replace foundational physiology.</p>
         <p className="ebook-doc-body">This is why things can feel inconsistent.</p>
         <p className="ebook-doc-body">Some days your appetite feels normal…</p>
@@ -714,7 +712,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It’s signaling.</p>
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
-        <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
+        <p className="ebook-doc-body">When GLP-1 is understood as a signal, the goal changes.</p>
         <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal is no longer to force appetite suppression.</p>
         <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal becomes improving the signaling environment.</p>
         <p className="ebook-doc-body">The goal is not to force the signal. It’s to stabilize the environment the signal depends on.</p>
