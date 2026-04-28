@@ -968,6 +968,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Sleep influences hunger hormones, blood sugar regulation, cortisol rhythm, and appetite control. When sleep is short or inconsistent, the body may feel more reactive around food.</p>
         <p className="ebook-doc-body">A steadier sleep rhythm supports the internal timing system that helps metabolism respond more predictably.</p>
         <p className="ebook-doc-body">When sleep is inconsistent, hunger and stress signaling can shift.</p>
+        <p className="ebook-doc-body">This can make appetite feel stronger…</p>
+        <p className="ebook-doc-body">even if your food intake hasn’t changed.</p>
+        <p className="ebook-doc-body">When sleep is inconsistent, hunger and stress signaling can shift.</p>
         <p className="ebook-doc-body">This can make appetite feel stronger...</p>
         <p className="ebook-doc-body">even if your food intake hasn’t changed.</p>
         <PageFooter pageNum={15} />
@@ -1041,6 +1044,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
+        <p className="ebook-doc-body">Understanding the system is the first step.</p>
+        <p className="ebook-doc-body">But understanding alone does not create change.</p>
+        <p className="ebook-doc-body">Structure is what allows the body to actually shift.</p>
         <p className="ebook-doc-body">What you’re seeing here is the structure.</p>
         <p className="ebook-doc-body">This ebook is designed to help you understand how the system works...</p>
         <p className="ebook-doc-body">But it does not walk you step-by-step through how to apply each phase in real life.</p>
@@ -1090,6 +1096,8 @@ export default function GLP1Signal() {
 
         <p className="ebook-doc-body">Understanding the system is the first step.</p>
         <p className="ebook-doc-body">Applying it consistently is what creates change.</p>
+        <p className="ebook-doc-body">This ebook gives you the framework.</p>
+        <p className="ebook-doc-body">The full protocol shows you how to apply it step by step.</p>
         <p className="ebook-doc-body">If you’re ready to follow the full 90-Day GLP-1 Optimization Protocol with structure and guidance...</p>
         <p className="ebook-doc-body">You can access it here:</p>
         <a href="/90day-protocol" className="ebook-doc-cta">Get the Full 90-Day Protocol</a>
@@ -1116,6 +1124,18 @@ export default function GLP1Signal() {
         </ul>
 
         <p className="ebook-doc-body">If this ebook helped you see your symptoms through a more connected lens, the next layer is learning how to apply the sequence with more structure and clarity.</p>
+        <p className="ebook-doc-body">This next step is for you if:</p>
+        <ul className="ebook-doc-list">
+          <li>You feel hungry again not long after eating</li>
+          <li>Your energy drops throughout the day</li>
+          <li>Your body feels inconsistent no matter what you try</li>
+        </ul>
+        <p className="ebook-doc-body">It may not be the right time if:</p>
+        <ul className="ebook-doc-list">
+          <li>You’re looking for a quick fix</li>
+          <li>You’re not ready to change your routines</li>
+          <li>You want results without structure</li>
+        </ul>
         <h2 className="ebook-doc-h2">Is this next step right for you?</h2>
         <p className="ebook-doc-body">This next step is for you if:</p>
         <ul className="ebook-doc-list">
