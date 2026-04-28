@@ -806,7 +806,6 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is usually part of a broader pattern of metabolic strain.</p>
         <p className="ebook-doc-body">The body is not malfunctioning. It is adapting.</p>
         <p className="ebook-doc-body">Your body isn’t working against you. It’s responding to the environment it’s in.</p>
-        <p className="ebook-doc-body">It is responding to the environment it has been given, not failing you.</p>
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
         <p className="ebook-doc-body">This is why understanding upstream factors matters.</p>
         <p className="ebook-doc-body">In the next chapter, we will look at GLP-1 medications and examine what they actually do within this signaling network.</p>
@@ -857,8 +856,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">They are not failure. They are not shortcuts in a moral sense. They are tools that amplify a signal, not rebuild the system underneath it.</p>
         <p className="ebook-doc-body">The more important question is whether the signaling environment underneath is being supported.</p>
         <p className="ebook-doc-body">If appetite is reduced but protein intake is insufficient, muscle mass may decline. If blood sugar improves but sleep remains disrupted, stress signaling may continue to interfere with regulation. If weight decreases but resistance training is absent, metabolic flexibility may not improve.</p>
-        <p className="ebook-doc-body">Medication can signal a shift in appetite and blood sugar.</p>
-        <p className="ebook-doc-body">It does not automatically restore the system.</p>
+        <p className="ebook-doc-body">Medication can shift appetite and blood sugar.</p>
+        <p className="ebook-doc-body">It does not restore the system underneath it.</p>
         <p className="ebook-doc-body">Understanding what these drugs do allows you to make informed decisions. Whether you choose to use medication, avoid it, or use it temporarily, the same foundational principles apply. Gut stability, metabolic support, muscle preservation, stress regulation, and inflammatory control remain essential.</p>
         <p className="ebook-doc-body">This is why some people feel great while using these medications…</p>
         <p className="ebook-doc-body">but struggle once they stop.</p>
