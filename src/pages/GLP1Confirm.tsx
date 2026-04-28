@@ -18,11 +18,11 @@ export default function GLP1Confirm() {
 
     try {
       const { data, error: fnError } = await supabase.functions.invoke(
-        "systeme-subscribe",
+        "mailerlite-subscribe",
         {
           body: {
             email,
-            tagName: "HWH - GLP-1 Signaling Guide",
+            groupName: "glp1-ebook",
           },
         }
       );
