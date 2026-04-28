@@ -1010,7 +1010,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
         <p className="ebook-doc-body">This ebook gives you the framework for understanding how the system works, but understanding alone does not create change.</p>
-        <p className="ebook-doc-body">Structure is what allows the body to actually shift.</p>
+        <p className="ebook-doc-body">Structure is what allows your body to actually change.</p>
         <p className="ebook-doc-body">The full protocol is designed to walk you step by step through how to apply each phase in real life.</p>
 
         <div className="ebook-doc-phase-box">
@@ -1135,7 +1135,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">This guide integrates research on incretin biology with clinical observations in metabolic health, gut physiology, and hormone regulation.</p>
 
         <h2 className="ebook-doc-h2">Notes on Natural GLP-1 Support</h2>
-        <p className="ebook-doc-body">Emerging research suggests that GLP-1 secretion may be influenced by:</p>
+        <p className="ebook-doc-body">Emerging research suggests that GLP-1 secretion is influenced by:</p>
         <ul className="ebook-doc-list">
           <li>Dietary fiber and short-chain fatty acid production</li>
           <li>Protein intake and amino acid signaling</li>
