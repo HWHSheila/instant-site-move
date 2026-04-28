@@ -96,7 +96,7 @@ const App = () => (
           <Route path="/glp1-confirm" element={<GLP1Confirm />} />
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/glp1-option" element={<GLP1Option />} />
-          <Route path="/90day-phase1" element={<Phase1GutReset />} />
+          <Route path="/glp1-roadmap-addon" element={<Phase1GutReset />} />
             <Route path="/30day-roadmap" element={<ThirtyDayRoadmap />} />
             <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
             <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
