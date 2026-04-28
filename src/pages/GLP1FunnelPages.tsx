@@ -101,8 +101,8 @@ function OptInPage({
     setLoading(true);
 
     try {
-      const { data, error: fnError } = await supabase.functions.invoke("systeme-subscribe", {
-        body: { email, tagName },
+      const { data, error: fnError } = await supabase.functions.invoke("mailerlite-subscribe", {
+        body: { email, groupName: tagName },
       });
 
       if (fnError) throw fnError;
@@ -293,7 +293,7 @@ export function NinetyDayProtocol() {
 }
 
 export function GLP1EbookProtocolConfirm() {
-  return <OptInPage title="Confirm Your Email to Access the Ebook + Protocol" description="Enter your email below to receive the Understanding GLP-1 Signaling ebook and protocol access details." eyebrow="Ebook + Protocol" buttonLabel="Access Ebook + Protocol" redirectTo="/glp1-ebook-protocol-thankyou" tagName="HWH - GLP-1 Ebook + Protocol" seoTitle="Confirm Ebook + Protocol" />;
+  return <OptInPage title="Confirm Your Email to Access the Ebook + Protocol" description="Enter your email below to receive the Understanding GLP-1 Signaling ebook and protocol access details." eyebrow="Ebook + Protocol" buttonLabel="Access Ebook + Protocol" redirectTo="/glp1-ebook-protocol-thankyou" tagName="glp1-protocol" seoTitle="Confirm Ebook + Protocol" />;
 }
 
 export function GLP1EbookProtocolThankYou() {
@@ -301,7 +301,7 @@ export function GLP1EbookProtocolThankYou() {
 }
 
 export function GLP1RoadmapConfirm() {
-  return <OptInPage title="Confirm Your Email to Access the Ebook + Roadmap" description="Enter your email below to receive the Understanding GLP-1 Signaling ebook and roadmap access details." eyebrow="Ebook + Roadmap" buttonLabel="Access Ebook + Roadmap" redirectTo="/glp1-roadmap-thankyou" tagName="HWH - GLP-1 Ebook + Roadmap" seoTitle="Confirm Ebook + Roadmap" />;
+  return <OptInPage title="Confirm Your Email to Access the Ebook + Roadmap" description="Enter your email below to receive the Understanding GLP-1 Signaling ebook and roadmap access details." eyebrow="Ebook + Roadmap" buttonLabel="Access Ebook + Roadmap" redirectTo="/glp1-roadmap-thankyou" tagName="glp1-roadmap" seoTitle="Confirm Ebook + Roadmap" />;
 }
 
 export function GLP1RoadmapThankYou() {
@@ -309,7 +309,7 @@ export function GLP1RoadmapThankYou() {
 }
 
 export function NinetyDayProtocolConfirm() {
-  return <OptInPage title="Confirm Your Email to Access the 90-Day Protocol" description="Enter your email below to receive access details for the full 90-Day GLP-1 Optimization Protocol." eyebrow="90-Day Protocol" buttonLabel="Access the Protocol" redirectTo="/90day-protocol-thankyou" tagName="HWH - 90-Day GLP-1 Protocol" seoTitle="Confirm 90-Day Protocol" />;
+  return <OptInPage title="Confirm Your Email to Access the 90-Day Protocol" description="Enter your email below to receive access details for the full 90-Day GLP-1 Optimization Protocol." eyebrow="90-Day Protocol" buttonLabel="Access the Protocol" redirectTo="/90day-protocol-thankyou" tagName="90day-protocol" seoTitle="Confirm 90-Day Protocol" />;
 }
 
 export function NinetyDayProtocolThankYou() {
