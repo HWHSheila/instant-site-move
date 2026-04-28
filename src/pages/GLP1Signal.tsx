@@ -492,7 +492,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">And it does not replace foundational metabolic health.</p>
         <p className="ebook-doc-body">What the rise of GLP-1 medications has revealed is something deeper.</p>
         <p className="ebook-doc-body">Your metabolism is not just about calories.</p>
-        <p className="ebook-doc-body">It is about communication.</p>
+        <p className="ebook-doc-body">It is about how your body communicates.</p>
         <p className="ebook-doc-body">When that communication is stable, your body responds appropriately to food.</p>
         <p className="ebook-doc-body">When it is disrupted, everything starts to feel inconsistent.</p>
         <p className="ebook-doc-body">This book will help you understand that system.</p>
@@ -515,7 +515,6 @@ export default function GLP1Signal() {
 
         <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement.</p>
         <p className="ebook-doc-body">GLP-1 is made in the gut, specifically by specialized cells called L-cells. These cells respond when you eat and release GLP-1 as part of the body's signaling system. In simple terms, this is one of the ways your gut tells the rest of your body that food has arrived and it's time to respond.</p>
-        <p className="ebook-doc-body">Its role is to coordinate what happens next.</p>
         <p className="ebook-doc-body">GLP-1 tells your body that nutrients have arrived and it is time to respond appropriately.</p>
         <p className="ebook-doc-body">When GLP-1 is released, several important things happen:</p>
         <ul className="ebook-doc-list">
@@ -529,9 +528,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It tells your body what to do with incoming energy.</p>
         <p className="ebook-doc-body">This is where a lot of women get confused.</p>
         <p className="ebook-doc-body">You’re told your hunger is the problem…</p>
-        <p className="ebook-doc-body">This is where most advice goes wrong.</p>
         <p className="ebook-doc-body">Your weight is the problem…</p>
         <p className="ebook-doc-body">Your willpower is the problem…</p>
+        <p className="ebook-doc-body">This is where most advice goes wrong.</p>
         <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
         <p className="ebook-doc-body">You don’t have a hunger problem. You have a signaling problem.</p>
         <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
@@ -628,7 +627,6 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is not.</p>
         <p className="ebook-doc-body">GLP-1 does not directly burn fat tissue, dramatically increase metabolic rate, or force the body to lose weight.</p>
         <p className="ebook-doc-body">GLP-1 is a signal your body uses to coordinate what happens after you eat.</p>
-        <p className="ebook-doc-body">Its role is coordination.</p>
         <p className="ebook-doc-body">When you eat, GLP-1 tells your body how to respond to incoming nutrients. It signals insulin release, slows gastric emptying, communicates satiety to the brain, and supports steadier blood sugar after meals.</p>
         <p className="ebook-doc-body">Those effects can support weight loss, but the mechanism is not fat burning. It’s coordination.</p>
         <p className="ebook-doc-body">This is why appetite can change quickly while deeper metabolic repair still takes time.</p>
@@ -656,7 +654,7 @@ export default function GLP1Signal() {
         <ul className="ebook-doc-list" style={{ marginTop: "1.5em" }}>
           <li>It may reduce appetite</li>
           <li>It may improve blood sugar</li>
-          <li>But it does not automatically rebuild the terrain</li>
+          <li>But it does not automatically rebuild the system underneath it</li>
         </ul>
         <PageFooter pageNum={6} />
       </div>
@@ -808,7 +806,6 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is usually part of a broader pattern of metabolic strain.</p>
         <p className="ebook-doc-body">The body is not malfunctioning. It is adapting.</p>
         <p className="ebook-doc-body">Your body isn’t working against you. It’s responding to the environment it’s in.</p>
-        <p className="ebook-doc-body">It is responding to the environment it has been given, not failing you.</p>
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
         <p className="ebook-doc-body">This is why understanding upstream factors matters.</p>
         <p className="ebook-doc-body">In the next chapter, we will look at GLP-1 medications and examine what they actually do within this signaling network.</p>
@@ -859,8 +856,8 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">They are not failure. They are not shortcuts in a moral sense. They are tools that amplify a signal, not rebuild the system underneath it.</p>
         <p className="ebook-doc-body">The more important question is whether the signaling environment underneath is being supported.</p>
         <p className="ebook-doc-body">If appetite is reduced but protein intake is insufficient, muscle mass may decline. If blood sugar improves but sleep remains disrupted, stress signaling may continue to interfere with regulation. If weight decreases but resistance training is absent, metabolic flexibility may not improve.</p>
-        <p className="ebook-doc-body">Medication can signal a shift in appetite and blood sugar.</p>
-        <p className="ebook-doc-body">It does not automatically restore the system.</p>
+        <p className="ebook-doc-body">Medication can shift appetite and blood sugar.</p>
+        <p className="ebook-doc-body">It does not restore the system underneath it.</p>
         <p className="ebook-doc-body">Understanding what these drugs do allows you to make informed decisions. Whether you choose to use medication, avoid it, or use it temporarily, the same foundational principles apply. Gut stability, metabolic support, muscle preservation, stress regulation, and inflammatory control remain essential.</p>
         <p className="ebook-doc-body">This is why some people feel great while using these medications…</p>
         <p className="ebook-doc-body">but struggle once they stop.</p>
@@ -954,7 +951,6 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The real goal</h2>
         <p className="ebook-doc-body">Supporting GLP-1 naturally means rebuilding the system upstream. Food, movement, sleep, and stress regulation are not small details. They are the conditions that help the signal work better.</p>
-        <p className="ebook-doc-body">None of these inputs work in isolation.</p>
         <p className="ebook-doc-body">They work together to stabilize the signaling environment your body depends on.</p>
         <p className="ebook-doc-body">When that environment becomes more stable, appetite, energy, and metabolic responses begin to feel more predictable again.</p>
         <p className="ebook-doc-body">This is not about doing everything perfectly.</p>
@@ -1010,7 +1006,7 @@ export default function GLP1Signal() {
 
         <img src={protocolTransition} alt="A woman walking peacefully in nature, representing the journey of metabolic restoration" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
-        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
+        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting how it functions in your body is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
         <p className="ebook-doc-body">This ebook gives you the framework for understanding how the system works, but understanding alone does not create change.</p>
@@ -1062,7 +1058,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">If your hunger feels inconsistent…</p>
         <p className="ebook-doc-body">If your energy doesn’t match what you’re doing…</p>
         <p className="ebook-doc-body">If you feel like you’re trying, but your body isn’t responding…</p>
-        <p className="ebook-doc-body">This is where structure matters.</p>
+        <p className="ebook-doc-body">This is where structure starts to matter.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol gives you a clear, step-by-step way to stabilize the system underneath those symptoms… not just manage them temporarily.</p>
         <a href="/90day-protocol" className="ebook-doc-cta">Get the Full 90-Day GLP-1 Optimization Protocol</a>
         <PageFooter pageNum={19} />
