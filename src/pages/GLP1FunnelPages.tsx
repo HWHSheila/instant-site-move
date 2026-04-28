@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FormEvent, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -17,7 +18,7 @@ const palette = {
   gold: "#C9A646",
 };
 
-function PageShell({ children }: { children: React.ReactNode }) {
+function PageShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: palette.page }}>
       <Header />
@@ -27,7 +28,7 @@ function PageShell({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: palette.sage }}>
       {children}
@@ -35,7 +36,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) {
+function PrimaryButton({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
@@ -47,7 +48,7 @@ function PrimaryButton({ href, children }: { href: string; children: React.React
   );
 }
 
-function SecondaryButton({ href, children }: { href: string; children: React.ReactNode }) {
+function SecondaryButton({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
