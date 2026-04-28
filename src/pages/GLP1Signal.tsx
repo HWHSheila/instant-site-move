@@ -875,6 +875,12 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Medication can influence the signal.</p>
         <p className="ebook-doc-body">It does not automatically restore the system.</p>
         <p className="ebook-doc-body">Understanding what these drugs do allows you to make informed decisions. Whether you choose to use medication, avoid it, or use it temporarily, the same foundational principles apply. Gut stability, metabolic support, muscle preservation, stress regulation, and inflammatory control remain essential.</p>
+        <p className="ebook-doc-body">This is why some people feel great while using these medications…</p>
+        <p className="ebook-doc-body">but struggle once they stop.</p>
+        <p className="ebook-doc-body">The signal was being amplified…</p>
+        <p className="ebook-doc-body">But the system underneath it was never fully rebuilt.</p>
+        <p className="ebook-doc-body">And without that foundation…</p>
+        <p className="ebook-doc-body">the same patterns can return.</p>
         <p className="ebook-doc-body">In the next chapter, we will shift toward how GLP-1 signaling can be supported naturally by improving the terrain in which the signal operates.</p>
         <PageFooter pageNum={11} />
       </div>
@@ -885,6 +891,8 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Chapter 5</div>
         <h1 className="ebook-doc-h1">Supporting GLP-1 Naturally</h1>
 
+        <p className="ebook-doc-body">These are not random health tips…</p>
+        <p className="ebook-doc-body">they are inputs that stabilize the signaling environment.</p>
         <p className="ebook-doc-body">Supporting GLP-1 isn’t about forcing your body to do more.</p>
         <p className="ebook-doc-body">It’s about improving the environment where the signal is created and received.</p>
         <p className="ebook-doc-body">Because when the environment becomes more stable...</p>
@@ -897,6 +905,9 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Protein helps meals feel more satisfying. It also supports lean muscle, which is important for blood sugar regulation and metabolic resilience.</p>
         <p className="ebook-doc-body">When protein is too low, hunger may return quickly and cravings can feel harder to manage. A steady protein rhythm gives the body a clearer satiety signal.</p>
         <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
+        <p className="ebook-doc-body">You may feel full for a short period…</p>
+        <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
+        <p className="ebook-doc-body">When protein intake is too low, hunger often returns quickly.</p>
         <p className="ebook-doc-body">You may feel full for a short period...</p>
         <p className="ebook-doc-body">but the signal doesn’t stay stable for long.</p>
         <div className="ebook-image-placeholder"><img src={proteinFoods} alt="Whole food protein sources including salmon, eggs, yogurt, and legumes" loading="lazy" width={1024} height={768} /></div>
@@ -904,6 +915,9 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2">Fiber and gut signaling</h2>
         <p className="ebook-doc-body">Fiber slows the rise of blood sugar after meals and feeds beneficial gut bacteria. This helps create a steadier post-meal response.</p>
         <p className="ebook-doc-body">Resistant starch is a special type of fiber that passes through the small intestine and becomes fuel for microbes in the colon. Cooled potatoes, oats, beans, lentils, and green banana are simple examples.</p>
+        <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals…</p>
+        <p className="ebook-doc-body">and drop just as fast.</p>
+        <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
         <p className="ebook-doc-body">Without enough fiber, blood sugar can rise quickly after meals...</p>
         <p className="ebook-doc-body">and drop just as fast.</p>
         <p className="ebook-doc-body">That drop is often what drives cravings, energy crashes, and the feeling of needing to eat again soon after.</p>
