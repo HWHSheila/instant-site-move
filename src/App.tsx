@@ -21,6 +21,17 @@ import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
 import Phase1GutReset from "./pages/Phase1GutReset";
 import ThirtyDayRoadmap from "./pages/ThirtyDayRoadmap";
+import {
+  GLP1Ebook,
+  GLP1ProtocolAddon,
+  GLP1EbookProtocolConfirm,
+  GLP1EbookProtocolThankYou,
+  GLP1RoadmapConfirm,
+  GLP1RoadmapThankYou,
+  NinetyDayProtocol,
+  NinetyDayProtocolConfirm,
+  NinetyDayProtocolThankYou,
+} from "./pages/GLP1FunnelPages";
 import FourWeekCoaching from "./pages/FourWeekCoaching";
 import FourWeekConfirm from "./pages/FourWeekConfirm";
 import FourWeekThankYou from "./pages/FourWeekThankYou";
@@ -97,6 +108,15 @@ const App = () => (
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/glp1-option" element={<GLP1Option />} />
           <Route path="/glp1-roadmap-addon" element={<Phase1GutReset />} />
+          <Route path="/glp1-ebook" element={<GLP1Ebook />} />
+          <Route path="/glp1-protocol-addon" element={<GLP1ProtocolAddon />} />
+          <Route path="/glp1-ebook-protocol-confirm" element={<GLP1EbookProtocolConfirm />} />
+          <Route path="/glp1-ebook-protocol-thankyou" element={<GLP1EbookProtocolThankYou />} />
+          <Route path="/glp1-roadmap-confirm" element={<GLP1RoadmapConfirm />} />
+          <Route path="/glp1-roadmap-thankyou" element={<GLP1RoadmapThankYou />} />
+          <Route path="/90day-protocol" element={<NinetyDayProtocol />} />
+          <Route path="/90day-protocol-confirm" element={<NinetyDayProtocolConfirm />} />
+          <Route path="/90day-protocol-thankyou" element={<NinetyDayProtocolThankYou />} />
             <Route path="/30day-roadmap" element={<ThirtyDayRoadmap />} />
             <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
             <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
