@@ -951,7 +951,6 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The real goal</h2>
         <p className="ebook-doc-body">Supporting GLP-1 naturally means rebuilding the system upstream. Food, movement, sleep, and stress regulation are not small details. They are the conditions that help the signal work better.</p>
-        <p className="ebook-doc-body">None of these inputs work in isolation.</p>
         <p className="ebook-doc-body">They work together to stabilize the signaling environment your body depends on.</p>
         <p className="ebook-doc-body">When that environment becomes more stable, appetite, energy, and metabolic responses begin to feel more predictable again.</p>
         <p className="ebook-doc-body">This is not about doing everything perfectly.</p>
@@ -1007,7 +1006,7 @@ export default function GLP1Signal() {
 
         <img src={protocolTransition} alt="A woman walking peacefully in nature, representing the journey of metabolic restoration" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
-        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting the signal is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
+        <p className="ebook-doc-body">Understanding GLP-1 is important. Supporting how it functions in your body is essential. But lasting metabolic change usually requires structure, sequence, and enough time to observe what your body is communicating.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol is introduced here as a next layer of support, not as a full protocol included inside this ebook.</p>
         <p className="ebook-doc-body">The purpose is to show the order of operations: stabilize the gut, support metabolic chemistry, then refine hormone signaling.</p>
         <p className="ebook-doc-body">This ebook gives you the framework for understanding how the system works, but understanding alone does not create change.</p>
@@ -1059,7 +1058,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">If your hunger feels inconsistent…</p>
         <p className="ebook-doc-body">If your energy doesn’t match what you’re doing…</p>
         <p className="ebook-doc-body">If you feel like you’re trying, but your body isn’t responding…</p>
-        <p className="ebook-doc-body">This is where structure matters.</p>
+        <p className="ebook-doc-body">This is where structure starts to matter.</p>
         <p className="ebook-doc-body">The 90-Day GLP-1 Optimization Protocol gives you a clear, step-by-step way to stabilize the system underneath those symptoms… not just manage them temporarily.</p>
         <a href="/90day-protocol" className="ebook-doc-cta">Get the Full 90-Day GLP-1 Optimization Protocol</a>
         <PageFooter pageNum={19} />
