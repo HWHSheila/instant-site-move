@@ -627,7 +627,6 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It is not.</p>
         <p className="ebook-doc-body">GLP-1 does not directly burn fat tissue, dramatically increase metabolic rate, or force the body to lose weight.</p>
         <p className="ebook-doc-body">GLP-1 is a signal your body uses to coordinate what happens after you eat.</p>
-        <p className="ebook-doc-body">Its role is coordination.</p>
         <p className="ebook-doc-body">When you eat, GLP-1 tells your body how to respond to incoming nutrients. It signals insulin release, slows gastric emptying, communicates satiety to the brain, and supports steadier blood sugar after meals.</p>
         <p className="ebook-doc-body">Those effects can support weight loss, but the mechanism is not fat burning. It’s coordination.</p>
         <p className="ebook-doc-body">This is why appetite can change quickly while deeper metabolic repair still takes time.</p>
@@ -655,7 +654,7 @@ export default function GLP1Signal() {
         <ul className="ebook-doc-list" style={{ marginTop: "1.5em" }}>
           <li>It may reduce appetite</li>
           <li>It may improve blood sugar</li>
-          <li>But it does not automatically rebuild the terrain</li>
+          <li>But it does not automatically rebuild the system underneath it</li>
         </ul>
         <PageFooter pageNum={6} />
       </div>
