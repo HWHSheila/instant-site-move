@@ -56,7 +56,7 @@ export default function GLP1Confirm() {
             </p>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium mb-6 leading-tight" style={{ color: "#4B2E39" }}>
-              Confirm Your Email to Access the GLP-1 Signaling Guide
+              Confirm Your Email to Access the Understanding GLP-1 Signaling Guide
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed mb-10" style={{ color: "#333333" }}>
