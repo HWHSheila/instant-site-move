@@ -477,22 +477,28 @@ export default function GLP1Signal() {
         <div className="ebook-doc-chapter-label">Introduction</div>
         <h1 className="ebook-doc-h1">Renewing Your Metabolism by Understanding the Chemistry Behind GLP-1</h1>
 
-        <p className="ebook-doc-body">If your hunger doesn’t make sense…</p>
-        <p className="ebook-doc-body">If you can eat and still feel unsatisfied…</p>
+        <p className="ebook-doc-body">If your hunger makes no sense…</p>
+        <p className="ebook-doc-body">If you’re eating and still thinking about food…</p>
         <p className="ebook-doc-body">If your energy crashes even when you’re trying to do everything right…</p>
-        <p className="ebook-doc-body">This isn’t random.</p>
-        <p className="ebook-doc-body">Over the past few years, GLP-1 has moved from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health. Social media is filled with before and after photos, appetite suppression stories, and headlines describing these drugs as revolutionary.</p>
-        <p className="ebook-doc-body">In many ways, they are.</p>
-        <p className="ebook-doc-body">But the sudden attention on GLP-1 has also created confusion.</p>
-        <p className="ebook-doc-body">GLP-1 is often described as a weight loss hormone or a fat burning accelerator. It is neither.</p>
-        <p className="ebook-doc-body">GLP-1 is a hormone your body uses for signaling.</p>
-        <p className="ebook-doc-body">Every time you eat, your gut releases GLP-1 as part of a signaling cascade that helps regulate digestion, blood sugar, insulin response, and satiety. It does not burn fat directly. It does not override physiology. It does not replace foundational metabolic health.</p>
-        <p className="ebook-doc-body">What the popularity of GLP-1 medications has revealed is something deeper. Metabolism is chemical. It is coordinated. It responds to signaling, not just calories, willpower, or discipline.</p>
-        <p className="ebook-doc-body">When GLP-1 signaling functions properly, the body responds efficiently to food. Blood sugar stabilizes more easily. Appetite cues feel appropriate. Energy regulation becomes smoother. When signaling breaks down, the system becomes dysregulated. Hunger increases. Blood sugar becomes erratic. Fat storage becomes easier. Energy feels inconsistent.</p>
-        <p className="ebook-doc-body">Most conversations focus on how to increase GLP-1.</p>
-        <p className="ebook-doc-body">This book focuses on understanding it.</p>
-        <p className="ebook-doc-body">Inside these pages, you will learn what GLP-1 actually is, how it functions as a signaling hormone, why signaling breaks down, what medications truly do inside the body, and how to support GLP-1 naturally by restoring the chemistry upstream.</p>
-        <p className="ebook-doc-body">GLP-1 does not operate in isolation. It sits within a larger metabolic hierarchy that begins in the gut, extends through insulin sensitivity and energy metabolism, and ultimately influences hormones and body composition.</p>
+        <p className="ebook-doc-body">Your body is not broken.</p>
+        <p className="ebook-doc-body">And this is not random.</p>
+        <p className="ebook-doc-body">Over the past few years, GLP-1 has gone from a relatively unknown metabolic hormone to a household term. Medications like semaglutide, tirzepatide, and retatrutide have changed the conversation around weight loss, appetite, and metabolic health.</p>
+        <p className="ebook-doc-body">In many ways, they have created results that feel almost immediate.</p>
+        <p className="ebook-doc-body">But they have also created confusion.</p>
+        <p className="ebook-doc-body">GLP-1 is often described as a weight loss hormone or a fat-burning accelerator. It is neither.</p>
+        <p className="ebook-doc-body">GLP-1 is a signaling hormone.</p>
+        <p className="ebook-doc-body">Every time you eat, your gut releases GLP-1 as part of a signaling cascade that coordinates digestion, blood sugar, insulin response, and satiety.</p>
+        <p className="ebook-doc-body">It does not burn fat directly.</p>
+        <p className="ebook-doc-body">It does not override your physiology.</p>
+        <p className="ebook-doc-body">And it does not replace foundational metabolic health.</p>
+        <p className="ebook-doc-body">What the rise of GLP-1 medications has revealed is something deeper.</p>
+        <p className="ebook-doc-body">Your metabolism is not just about calories.</p>
+        <p className="ebook-doc-body">It is about communication.</p>
+        <p className="ebook-doc-body">When that communication is stable, your body responds appropriately to food.</p>
+        <p className="ebook-doc-body">When it is disrupted, everything starts to feel inconsistent.</p>
+        <p className="ebook-doc-body">This book will help you understand that system.</p>
+        <p className="ebook-doc-body">Inside these pages, you will learn what GLP-1 actually is, how it functions inside the signaling environment, why that communication breaks down, what medications truly do inside the body, and how to support GLP-1 naturally by restoring the chemistry upstream.</p>
+        <p className="ebook-doc-body">GLP-1 does not operate in isolation. It sits within a larger metabolic hierarchy that begins in the gut, extends through insulin sensitivity and energy metabolism, and ultimately coordinates hormones and body composition.</p>
         <p className="ebook-doc-body">You cannot force the bottom of the chain without stabilizing the top.</p>
         <p className="ebook-doc-body">This book is not anti-medication. It is not a quick fix. It is not a restrictive diet strategy. It is a physiology first framework for understanding how GLP-1 fits into the broader picture of metabolic renewal, and how to work with the body instead of against it.</p>
         <p className="ebook-doc-body">If you understand the signal, you understand the system.</p>
@@ -508,7 +514,7 @@ export default function GLP1Signal() {
 
         <img src={chapterOpener} alt="Wholesome meal preparation representing nourishment and gut health" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
-        <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement. It is not a fat-burning hormone.</p>
+        <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement.</p>
         <p className="ebook-doc-body">GLP-1 is made in the gut, specifically by specialized cells called L-cells. These cells respond when you eat and release GLP-1 as part of the body's signaling system. In simple terms, this is one of the ways your gut tells the rest of your body that food has arrived and it's time to respond.</p>
         <p className="ebook-doc-body">Its role is to coordinate what happens next.</p>
         <p className="ebook-doc-body">GLP-1 tells your body that nutrients have arrived and it is time to respond appropriately.</p>
@@ -520,13 +526,14 @@ export default function GLP1Signal() {
           <li>Appetite signals in the brain shift</li>
           <li>Blood sugar becomes more stable</li>
         </ul>
-        <p className="ebook-doc-body">GLP-1 does not burn fat. It coordinates metabolic traffic.</p>
-        <p className="ebook-doc-body">It helps your body decide what to do with incoming energy.</p>
+        <p className="ebook-doc-body">GLP-1 coordinates metabolic traffic.</p>
+        <p className="ebook-doc-body">It tells your body what to do with incoming energy.</p>
         <p className="ebook-doc-body">This is where a lot of women get confused.</p>
         <p className="ebook-doc-body">You’re told your hunger is the problem…</p>
         <p className="ebook-doc-body">Your weight is the problem…</p>
         <p className="ebook-doc-body">Your willpower is the problem…</p>
         <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
+        <p className="ebook-doc-body">You don’t have a hunger problem. You have a signaling problem.</p>
         <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
         <p className="ebook-doc-body">your appetite, energy, and cravings can start to feel unpredictable too.</p>
 
@@ -605,9 +612,9 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The Real Takeaway</h2>
         <p className="ebook-doc-body">GLP-1 is not a weight loss trick.</p>
-        <p className="ebook-doc-body">It is a signal that helps regulate energy distribution, appetite, and glucose balance.</p>
-        <p className="ebook-doc-body">If you understand that it is a messenger rather than a fat burner, everything else in this book will make more sense.</p>
-        <p className="ebook-doc-body">In the next chapter, we will look more closely at why calling GLP-1 a fat-burning hormone is not only inaccurate, but misleading.</p>
+        <p className="ebook-doc-body">It is a signal your body uses to coordinate energy distribution, appetite, and glucose balance.</p>
+        <p className="ebook-doc-body">If you understand that it is a messenger, everything else in this book will make more sense.</p>
+        <p className="ebook-doc-body">In the next chapter, we will look more closely at why this distinction matters for appetite, energy, and long-term metabolic stability.</p>
         <PageFooter pageNum={5} />
       </div>
       <div className="ebook-spacer" />
@@ -620,11 +627,10 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">One of the most common misunderstandings about GLP-1 is that it is a fat-burning hormone.</p>
         <p className="ebook-doc-body">It is not.</p>
         <p className="ebook-doc-body">GLP-1 does not directly burn fat tissue. It does not increase metabolic rate in a dramatic way. It does not force the body to lose weight.</p>
-        <p className="ebook-doc-body">GLP-1 is a signaling hormone.</p>
+        <p className="ebook-doc-body">GLP-1 is a signal your body uses to coordinate what happens after you eat.</p>
         <p className="ebook-doc-body">Its role is coordination.</p>
-        <p className="ebook-doc-body">When you eat, GLP-1 helps regulate how your body responds to incoming nutrients. It influences insulin release, slows gastric emptying, and communicates satiety to the brain. It helps stabilize blood sugar after meals. It contributes to appetite regulation.</p>
-        <p className="ebook-doc-body">Those effects can support weight loss.</p>
-        <p className="ebook-doc-body">But they are not the same thing as fat burning.</p>
+        <p className="ebook-doc-body">When you eat, GLP-1 tells your body how to respond to incoming nutrients. It signals insulin release, slows gastric emptying, communicates satiety to the brain, and supports steadier blood sugar after meals.</p>
+        <p className="ebook-doc-body">Those effects can support weight loss, but the deeper mechanism is communication.</p>
         <p className="ebook-doc-body">This is why appetite can change quickly while deeper metabolic repair still takes time.</p>
 
         <h2 className="ebook-doc-h2">Appetite Suppression Is Not Metabolic Repair</h2>
@@ -659,7 +665,7 @@ export default function GLP1Signal() {
       {/* ==================== CHAPTER 2 continued ==================== */}
       <div className="ebook-doc-page ebook-content-page">
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>GLP-1 Works Within a System</h2>
-        <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue influences glucose uptake. Glucose uptake influences mitochondrial energy production. Mitochondrial efficiency influences fatigue, hunger signaling, and metabolic flexibility.</p>
+        <p className="ebook-doc-body">GLP-1 interacts with insulin. Insulin interacts with muscle tissue. Muscle tissue shapes glucose uptake. Glucose uptake affects mitochondrial energy production. Mitochondrial efficiency affects fatigue, hunger signaling, and metabolic flexibility.</p>
         <p className="ebook-doc-body">This is a chain.</p>
         <div className="ebook-signal-diagram">
           <div className="ebook-signal-caption">The Metabolic Chain</div>
@@ -696,9 +702,8 @@ export default function GLP1Signal() {
           </div>
         </div>
         <p className="ebook-doc-body">If one part of the chain is unstable, the overall outcome changes.</p>
-        <p className="ebook-doc-body">Calling GLP-1 a fat-burning hormone oversimplifies a complex system.</p>
-        <p className="ebook-doc-body">It reduces a communication network to a single outcome.</p>
-        <p className="ebook-doc-body">GLP-1 helps regulate energy distribution and appetite cues. It supports coordination between digestion, blood sugar control, and satiety.</p>
+        <p className="ebook-doc-body">Reducing GLP-1 to weight loss oversimplifies a complex communication network.</p>
+        <p className="ebook-doc-body">GLP-1 coordinates energy distribution and appetite cues. It supports communication between digestion, blood sugar control, and satiety.</p>
         <p className="ebook-doc-body">It does not replace foundational physiology.</p>
         <p className="ebook-doc-body">This is why things can feel inconsistent.</p>
         <p className="ebook-doc-body">Some days your appetite feels normal…</p>
@@ -707,9 +712,10 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">It’s signaling.</p>
 
         <h2 className="ebook-doc-h2">The Shift in Perspective</h2>
-        <p className="ebook-doc-body">If GLP-1 is a signal rather than a fat burner, the goal changes.</p>
+        <p className="ebook-doc-body">When GLP-1 is understood as a signal, the goal changes.</p>
         <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal is no longer to force appetite suppression.</p>
         <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>The goal becomes improving the signaling environment.</p>
+        <p className="ebook-doc-body">The goal is not to force the signal. It’s to stabilize the environment the signal depends on.</p>
         <p className="ebook-doc-body" style={{ marginTop: "1.25em", marginBottom: "1.25em" }}>That means supporting gut health, stabilizing blood sugar, preserving muscle, improving sleep quality, and reducing inflammatory load.</p>
         <p className="ebook-doc-body">When signaling improves, regulation becomes smoother.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine why GLP-1 signaling breaks in the first place, and what disrupts the communication network that supports metabolic stability.</p>
@@ -773,10 +779,11 @@ export default function GLP1Signal() {
       <div className="ebook-doc-page ebook-content-page">
         <h2 className="ebook-doc-h2" style={{ marginTop: 0 }}>Chronic Stress and Nervous System Dysregulation</h2>
         <p className="ebook-doc-body">The gut and brain communicate continuously through the vagus nerve and stress hormones.</p>
-        <p className="ebook-doc-body">Chronic stress elevates cortisol. Elevated cortisol influences blood sugar. Blood sugar instability influences insulin. Insulin interacts with GLP-1. This is why stress can make your hunger feel less predictable and your energy harder to stabilize.</p>
+        <p className="ebook-doc-body">Chronic stress elevates cortisol. Elevated cortisol signals blood sugar. Blood sugar instability signals insulin. Insulin interacts with GLP-1. This is why stress can make your hunger feel less predictable and your energy harder to stabilize.</p>
         <p className="ebook-doc-body">Everything connects.</p>
         <p className="ebook-doc-body">If the nervous system is constantly in a heightened stress state, signaling patterns shift. Hunger cues can intensify. Appetite regulation becomes less predictable. Energy becomes less stable.</p>
         <p className="ebook-doc-body">This is not a willpower issue.</p>
+        <p className="ebook-doc-body">You can’t out-discipline unstable chemistry.</p>
         <p className="ebook-doc-body">It is a regulatory issue.</p>
 
         <h2 className="ebook-doc-h2">Loss of Muscle Mass</h2>
@@ -788,7 +795,7 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">Inflammation</h2>
         <p className="ebook-doc-body">Low-grade systemic inflammation can interfere with hormonal communication.</p>
-        <p className="ebook-doc-body">Inflammatory signals influence insulin sensitivity, appetite regulation, and energy production.</p>
+        <p className="ebook-doc-body">Inflammatory signals affect insulin sensitivity, appetite regulation, and energy production.</p>
         <p className="ebook-doc-body">Inflammation can stem from:</p>
         <ul className="ebook-doc-list">
           <li>Poor gut barrier integrity</li>
@@ -804,6 +811,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 signaling rarely breaks in isolation.</p>
         <p className="ebook-doc-body">It is usually part of a broader pattern of metabolic strain.</p>
         <p className="ebook-doc-body">The body is not malfunctioning. It is adapting.</p>
+        <p className="ebook-doc-body">Your body isn’t working against you. It’s responding to the environment it’s in.</p>
         <p className="ebook-doc-body">It is responding to the environment it has been given…</p>
         <p className="ebook-doc-body">not failing you.</p>
         <p className="ebook-doc-body">If energy regulation has become unstable, the goal is not to overpower the system. The goal is to restore the environment that supports stable signaling.</p>
@@ -935,7 +943,7 @@ export default function GLP1Signal() {
         <div className="ebook-image-placeholder"><img src={movementImage} alt="Woman walking outdoors in a peaceful garden setting" loading="lazy" width={1024} height={768} /></div>
 
         <h2 className="ebook-doc-h2">Sleep and circadian rhythm</h2>
-        <p className="ebook-doc-body">Sleep influences hunger hormones, blood sugar regulation, cortisol rhythm, and appetite control. When sleep is short or inconsistent, the body may feel more reactive around food.</p>
+        <p className="ebook-doc-body">Sleep signals hunger hormones, blood sugar regulation, cortisol rhythm, and appetite control. When sleep is short or inconsistent, the body may feel more reactive around food.</p>
         <p className="ebook-doc-body">A steadier sleep rhythm supports the internal timing system that helps metabolism respond more predictably.</p>
         <p className="ebook-doc-body">When sleep is inconsistent, hunger and stress signaling can shift, making appetite feel stronger even if your food intake has not changed.</p>
         <PageFooter pageNum={15} />
@@ -956,6 +964,11 @@ export default function GLP1Signal() {
 
         <h2 className="ebook-doc-h2">The real goal</h2>
         <p className="ebook-doc-body">Supporting GLP-1 naturally means rebuilding the system upstream. Food, movement, sleep, and stress regulation are not small details. They are the conditions that help the signal work better.</p>
+        <p className="ebook-doc-body">None of these inputs work in isolation.</p>
+        <p className="ebook-doc-body">They work together to stabilize the signaling environment your body depends on.</p>
+        <p className="ebook-doc-body">When that environment becomes more stable, appetite, energy, and metabolic responses begin to feel more predictable again.</p>
+        <p className="ebook-doc-body">This is not about doing everything perfectly.</p>
+        <p className="ebook-doc-body">It is about creating enough consistency for your body to respond differently over time.</p>
         <p className="ebook-doc-body">In the next chapter, we will examine order of operations and why gut stability and metabolic chemistry come before expecting hormone signaling to normalize.</p>
         <PageFooter pageNum={16} />
       </div>
@@ -969,7 +982,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">When metabolic regulation becomes unstable, the instinct is often to intervene at the level of appetite or body weight.</p>
         <p className="ebook-doc-body">But hormone signaling does not exist at the top of the hierarchy.</p>
         <p className="ebook-doc-body">It exists downstream.</p>
-        <p className="ebook-doc-body">GLP-1 is influenced by the environment in which it is produced and received. That environment begins in the gut, extends through metabolic chemistry, and ultimately influences broader hormonal balance.</p>
+        <p className="ebook-doc-body">GLP-1 is influenced by the environment in which it is produced and received. That environment begins in the gut, extends through metabolic chemistry, and ultimately signals broader hormonal balance.</p>
         <p className="ebook-doc-body">If you try to correct the bottom of the chain without stabilizing the top, progress may be inconsistent.</p>
         <h2 className="ebook-doc-h2">Gut</h2>
         <p className="ebook-doc-body">GLP-1 is released from the small intestine. If the gut lining is irritated, inflamed, or functionally unstable, hormone signaling becomes less predictable. Digestive stress, microbial imbalance, and irregular meal patterns all affect the quality of the signal at its source.</p>
@@ -992,7 +1005,7 @@ export default function GLP1Signal() {
           </div>
         </div>
 
-        <p className="ebook-doc-body">Gut stability supports metabolic chemistry. Metabolic chemistry supports hormone signaling. Hormone signaling influences appetite, energy, and body composition.</p>
+        <p className="ebook-doc-body">Gut stability supports metabolic chemistry. Metabolic chemistry supports hormone signaling. Hormone signaling signals appetite, energy, and body composition.</p>
         <p className="ebook-doc-body">When you respect the hierarchy, you work with the system rather than against it.</p>
         <p className="ebook-doc-body">In the next chapter, we will bring this framework together in a structured 90-day approach that moves through these layers intentionally and progressively.</p>
         <PageFooter pageNum={17} />
@@ -1055,8 +1068,10 @@ export default function GLP1Signal() {
           </ul>
         </div>
 
-        <p className="ebook-doc-body">If you’re ready to follow the full 90-Day GLP-1 Optimization Protocol with structure, guidance, and a clear step-by-step path…</p>
-        <p className="ebook-doc-body">You can access it here:</p>
+        <p className="ebook-doc-body">If you’re tired of guessing what your body needs…</p>
+        <p className="ebook-doc-body">If your hunger, energy, and cravings feel inconsistent…</p>
+        <p className="ebook-doc-body">And you want a clear, structured way to actually stabilize your metabolism…</p>
+        <p className="ebook-doc-body">The full 90-Day GLP-1 Optimization Protocol walks you through exactly how to do that step by step.</p>
         <a href="/90day-protocol" className="ebook-doc-cta">Get the Full 90-Day GLP-1 Optimization Protocol</a>
         <PageFooter pageNum={19} />
       </div>
@@ -1084,16 +1099,14 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2">Is this next step right for you?</h2>
         <p className="ebook-doc-body">This next step is for you if:</p>
         <ul className="ebook-doc-list">
-          <li>You feel hungry again not long after eating</li>
+          <li>You feel like you’re doing everything right, but your body isn’t responding</li>
+          <li>Your hunger doesn’t match what you’re eating</li>
           <li>Your energy drops throughout the day</li>
-          <li>Your body feels inconsistent no matter what you try</li>
+          <li>Your cravings feel unpredictable or hard to control</li>
         </ul>
-        <p className="ebook-doc-body">It may not be the right time if:</p>
-        <ul className="ebook-doc-list">
-          <li>You’re looking for a quick fix</li>
-          <li>You’re not ready to change your routines</li>
-          <li>You want results without structure</li>
-        </ul>
+        <p className="ebook-doc-body">If you recognized yourself in these patterns, it’s not because you lack discipline.</p>
+        <p className="ebook-doc-body">It’s because your signaling environment hasn’t been supported yet.</p>
+        <p className="ebook-doc-body">And that is something that can be rebuilt.</p>
         <p className="ebook-doc-body" style={{ fontStyle: "italic", color: "#AE9297" }}>This ebook is educational in nature and does not replace care from your licensed healthcare provider.</p>
         <p className="ebook-doc-body">To explore supportive resources, visit <a href="https://www.herwellnessharmony.com" style={{ color: "#4B2E4C", textDecoration: "underline" }}>www.herwellnessharmony.com</a>.</p>
         <PageFooter pageNum={20} />
@@ -1126,7 +1139,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">The framework presented in this ebook, Gut → Metabolism → Hormones, reflects a physiology-based systems approach. While simplified for clarity, it aligns with the understanding that:</p>
         <ul className="ebook-doc-list">
           <li>Gut integrity and nutrient signaling influence incretin hormone release</li>
-          <li>Blood sugar stability influences insulin and GLP-1 signaling dynamics</li>
+          <li>Blood sugar stability signals insulin and GLP-1 signaling dynamics</li>
           <li>Chronic metabolic stress alters downstream hormonal balance</li>
         </ul>
         <p className="ebook-doc-body">This guide integrates research on incretin biology with clinical observations in metabolic health, gut physiology, and hormone regulation.</p>
@@ -1147,7 +1160,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">GLP-1 receptor agonists such as semaglutide, tirzepatide, and retatrutide are pharmaceutical agents that activate GLP-1 receptors. These medications do not "create" natural GLP-1 production but mimic or amplify receptor signaling. Their long-term metabolic impact depends on the broader physiological environment in which they are used.</p>
 
         <h2 className="ebook-doc-h2">Final Note</h2>
-        <p className="ebook-doc-body">Understanding GLP-1 as a signaling hormone rather than a fat-loss shortcut allows for a more sustainable and systems-based approach to metabolism.</p>
+        <p className="ebook-doc-body">Understanding GLP-1 as a signal rather than a fat-loss shortcut allows for a more sustainable and systems-based approach to metabolism.</p>
 
         <PageFooter pageNum={22} />
       </div>
