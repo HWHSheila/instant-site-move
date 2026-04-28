@@ -1149,10 +1149,6 @@ export default function GLP1Signal() {
         <h2 className="ebook-doc-h2">Final Note</h2>
         <p className="ebook-doc-body">Understanding GLP-1 as a signaling hormone rather than a fat-loss shortcut allows for a more sustainable and systems-based approach to metabolism.</p>
 
-        <hr className="ebook-doc-divider" />
-        <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.7rem", color: "#AE9297", marginTop: "1.5em" }}>
-          <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
-        </p>
         <PageFooter pageNum={22} />
       </div>
       </EbookScaler>
