@@ -509,7 +509,6 @@ export default function GLP1Signal() {
         <img src={chapterOpener} alt="Wholesome meal preparation representing nourishment and gut health" className="ebook-doc-image" style={{ maxHeight: "2.5in", objectFit: "cover" }} />
 
         <p className="ebook-doc-body">GLP-1 stands for glucagon-like peptide-1. It is not a drug. It is not a supplement. It is not a fat-burning hormone.</p>
-        <p className="ebook-doc-body">It is a hormone your body uses for signaling.</p>
         <p className="ebook-doc-body">GLP-1 is made in the gut, specifically by specialized cells called L-cells. These cells respond when you eat and release GLP-1 as part of the body's signaling system. In simple terms, this is one of the ways your gut tells the rest of your body that food has arrived and it's time to respond.</p>
         <p className="ebook-doc-body">Its role is to coordinate what happens next.</p>
         <p className="ebook-doc-body">GLP-1 tells your body that nutrients have arrived and it is time to respond appropriately.</p>
@@ -528,16 +527,7 @@ export default function GLP1Signal() {
         <p className="ebook-doc-body">Your weight is the problem…</p>
         <p className="ebook-doc-body">Your willpower is the problem…</p>
         <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
-        <p className="ebook-doc-body">It’s a signaling system.</p>
         <p className="ebook-doc-body">And when that signal becomes inconsistent…</p>
-        <p className="ebook-doc-body">your appetite, energy, and cravings can start to feel unpredictable too.</p>
-        <p className="ebook-doc-body">This is where a lot of women get confused.</p>
-        <p className="ebook-doc-body">You’re told your hunger is the problem...</p>
-        <p className="ebook-doc-body">Your weight is the problem...</p>
-        <p className="ebook-doc-body">Your willpower is the problem...</p>
-        <p className="ebook-doc-body">But GLP-1 isn’t about force.</p>
-        <p className="ebook-doc-body">It’s a signaling system.</p>
-        <p className="ebook-doc-body">And when that signal becomes inconsistent...</p>
         <p className="ebook-doc-body">your appetite, energy, and cravings can start to feel unpredictable too.</p>
 
         <div className="ebook-signal-diagram">
@@ -854,12 +844,6 @@ export default function GLP1Signal() {
         </ul>
         <p className="ebook-doc-body">Reduced appetite without adequate protein intake may accelerate lean tissue loss. Rapid weight loss without resistance training can compromise metabolic resilience.</p>
         <p className="ebook-doc-body">The outcome depends on the environment in which the medication is used.</p>
-        <p className="ebook-doc-body">This is why some people feel great while using these medications...</p>
-        <p className="ebook-doc-body">but struggle once they stop.</p>
-        <p className="ebook-doc-body">The signal was being amplified...</p>
-        <p className="ebook-doc-body">But the system underneath it was never fully rebuilt.</p>
-        <p className="ebook-doc-body">And without that foundation...</p>
-        <p className="ebook-doc-body">the same patterns can return.</p>
         <PageFooter pageNum={10} />
       </div>
       <div className="ebook-spacer" />
