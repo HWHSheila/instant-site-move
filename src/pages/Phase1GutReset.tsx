@@ -50,12 +50,21 @@ export default function Phase1GutReset() {
                   paddingBottom: "40px",
                 }}
               >
-                <img
-                  src={gutRoadmapCover}
-                  alt="30-Day Gut Reset Roadmap Cover"
-                  className="object-contain rounded shadow-lg"
-                  style={{ maxHeight: "420px" }}
-                />
+                <div
+                  className="rounded-xl"
+                  style={{
+                    background: "#FFFFFF",
+                    padding: "24px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                  }}
+                >
+                  <img
+                    src={gutRoadmapCover}
+                    alt="30-Day Gut Reset Roadmap Cover"
+                    className="object-contain rounded shadow-lg"
+                    style={{ maxHeight: "420px" }}
+                  />
+                </div>
               </div>
 
               {/* Details */}
