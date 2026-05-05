@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import ebookGutReset from "@/assets/ebook-gut-reset-cover.jpg";
+import ebookGutReset from "@/assets/ebook-cover-faded.png";
 import ebookGlp1 from "@/assets/ebook-glp1.jpg";
 import ebookGutEnvironment from "@/assets/ebook-gut-environment.jpg";
 
@@ -20,6 +20,7 @@ function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: 
           src={image}
           alt={title}
           className="w-full h-full object-cover"
+          style={{ opacity: 0.3 }}
           loading="lazy"
         />
       </div>
