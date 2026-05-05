@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { CheckCircle } from "lucide-react";
+import ebookGlp1Cover from "@/assets/ebook-glp1-signaling.png";
 
 const palette = {
   page: "#F4EFEA",
