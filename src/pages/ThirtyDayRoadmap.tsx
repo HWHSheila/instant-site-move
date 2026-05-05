@@ -22,7 +22,7 @@ export default function ThirtyDayRoadmap() {
               <div
                 className="flex items-center justify-center overflow-hidden"
                 style={{
-                  background: "#D1E0D8",
+                  background: "#E8F1EC",
                   paddingTop: "48px",
                   paddingBottom: "48px",
                 }}

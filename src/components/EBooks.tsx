@@ -15,7 +15,7 @@ interface EBookCardProps {
 function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: EBookCardProps) {
   return (
     <div className="flex flex-col h-full">
-      <div className="relative aspect-[3/4] overflow-hidden rounded-xl mb-4" style={{ background: "#D1E0D8" }}>
+      <div className="relative aspect-[3/4] overflow-hidden rounded-xl mb-4" style={{ background: "#E8F1EC" }}>
         <img
           src={image}
           alt={title}
