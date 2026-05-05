@@ -207,7 +207,7 @@ export function GLP1Ebook() {
           />
         </div>
         <div className="flex justify-center mb-24 md:mb-32">
-          <PrimaryButton href="/glp1-ebook-protocol-confirm">Get the Ebook</PrimaryButton>
+          <PrimaryButton href="https://buy.stripe.com/3cIaEY5uWbI851q7RF3840l">Get the Ebook</PrimaryButton>
         </div>
         <div className="rounded-2xl p-6 md:p-8 mt-8" style={{ background: palette.cream, border: `1px solid ${palette.border}` }}>
           <h2 className="text-2xl md:text-3xl font-display font-medium mb-5" style={{ color: palette.ink }}>
