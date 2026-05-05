@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import gutRoadmapCover from "@/assets/gut-roadmap-phase1.png";
+import gutRoadmapCover from "@/assets/ebook-cover-faded.png";
 
 export default function Phase1GutReset() {
   return (
@@ -54,7 +54,7 @@ export default function Phase1GutReset() {
                   src={gutRoadmapCover}
                   alt="30-Day Gut Reset Roadmap Cover"
                   className="object-contain rounded shadow-lg"
-                  style={{ maxHeight: "420px" }}
+                  style={{ maxHeight: "420px", opacity: 0.3 }}
                 />
               </div>
 
