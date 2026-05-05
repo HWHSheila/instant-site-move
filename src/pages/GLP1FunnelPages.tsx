@@ -189,8 +189,16 @@ export function GLP1Ebook() {
         description="Learn how gut health, blood sugar, and metabolic stress influence appetite and hormone balance."
       />
       <section className="container-wellness">
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
+            <img
+              src={ebookGlp1Cover}
+              alt="Understanding GLP-1 Signaling ebook cover"
+              className="w-full max-w-sm md:max-w-md h-auto rounded-lg"
+              style={{ boxShadow: "0 25px 50px -12px rgba(75, 46, 57, 0.25)" }}
+            />
+          </div>
+          <div className="order-2 lg:order-2 max-w-xl">
             <Eyebrow>Understanding GLP-1 Signaling</Eyebrow>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight mb-6" style={{ color: palette.ink }}>
               Make sense of hunger, cravings, and metabolic signals.
@@ -200,19 +208,19 @@ export function GLP1Ebook() {
             </p>
             <PrimaryButton href="/glp1-ebook-protocol-confirm">Get the Ebook</PrimaryButton>
           </div>
-          <div className="rounded-2xl p-6 md:p-8" style={{ background: palette.cream, border: `1px solid ${palette.border}` }}>
-            <h2 className="text-2xl md:text-3xl font-display font-medium mb-5" style={{ color: palette.ink }}>
-              What you will learn
-            </h2>
-            <FeatureList
-              items={[
-                "What GLP-1 actually is and why it matters",
-                "How blood sugar and stress can change appetite signaling",
-                "Why medications amplify a signal rather than rebuild the whole system",
-                "How protein, fiber, sleep, movement, and gut health support the environment underneath",
-              ]}
-            />
-          </div>
+        </div>
+        <div className="rounded-2xl p-6 md:p-8 mt-14" style={{ background: palette.cream, border: `1px solid ${palette.border}` }}>
+          <h2 className="text-2xl md:text-3xl font-display font-medium mb-5" style={{ color: palette.ink }}>
+            What you will learn
+          </h2>
+          <FeatureList
+            items={[
+              "What GLP-1 actually is and why it matters",
+              "How blood sugar and stress can change appetite signaling",
+              "Why medications amplify a signal rather than rebuild the whole system",
+              "How protein, fiber, sleep, movement, and gut health support the environment underneath",
+            ]}
+          />
         </div>
         <div className="grid md:grid-cols-2 gap-8 mt-14">
           <section>
