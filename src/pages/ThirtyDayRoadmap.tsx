@@ -31,7 +31,7 @@ export default function ThirtyDayRoadmap() {
                   src={gutRoadmapCover}
                   alt="30-Day Gut Reset Roadmap Cover"
                   className="object-contain rounded shadow-lg"
-                  style={{ maxHeight: "520px", opacity: 0.3 }}
+                  style={{ maxHeight: "520px" }}
                 />
               </div>
 
