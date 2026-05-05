@@ -18,7 +18,7 @@ function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: 
       <div className="mb-4" style={{ background: "#E8F1EC", padding: "20px" }}>
         <div
           className="relative aspect-[3/4] overflow-hidden rounded-xl"
-          style={{ background: "#F8F6F2", padding: "14px", boxShadow: "0 8px 32px rgba(0,0,0,0.04)" }}
+          style={{ background: "#F8F6F2", padding: "14px", boxShadow: "0 8px 32px rgba(0,0,0,0.04)", border: "1px solid #E6E2DA" }}
         >
           <img
             src={image}
