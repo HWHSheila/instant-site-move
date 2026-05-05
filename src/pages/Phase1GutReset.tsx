@@ -45,9 +45,8 @@ export default function Phase1GutReset() {
               <div
                 className="flex items-center justify-center overflow-hidden"
                 style={{
-                  background: "#E8F1EC",
-                  paddingTop: "40px",
-                  paddingBottom: "40px",
+                  paddingTop: "72px",
+                  paddingBottom: "72px",
                 }}
               >
                 <div
