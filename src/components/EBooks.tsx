@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ebookGutReset from "@/assets/ebook-cover-faded.png";
-import ebookGlp1 from "@/assets/ebook-glp1.jpg";
+import ebookGlp1 from "@/assets/ebook-glp1-signaling.png";
 import ebookGutEnvironment from "@/assets/ebook-gut-environment.jpg";
 
 interface EBookCardProps {
