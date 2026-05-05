@@ -20,7 +20,6 @@ function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: 
           src={image}
           alt={title}
           className="w-full h-full object-cover"
-          style={{ opacity: 0.3 }}
           loading="lazy"
         />
       </div>
