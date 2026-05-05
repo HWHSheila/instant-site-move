@@ -189,27 +189,27 @@ export function GLP1Ebook() {
         description="Learn how gut health, blood sugar, and metabolic stress influence appetite and hormone balance."
       />
       <section className="container-wellness">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
-            <img
-              src={ebookGlp1Cover}
-              alt="Understanding GLP-1 Signaling ebook cover"
-              className="w-full max-w-sm md:max-w-md h-auto rounded-lg"
-              style={{ boxShadow: "0 25px 50px -12px rgba(75, 46, 57, 0.25)" }}
-            />
-          </div>
-          <div className="order-2 lg:order-2 max-w-xl">
-            <Eyebrow>Understanding GLP-1 Signaling</Eyebrow>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight mb-6" style={{ color: palette.ink }}>
-              Make sense of hunger, cravings, and metabolic signals.
-            </h1>
-            <p className="text-lg md:text-xl leading-relaxed mb-8" style={{ color: palette.text }}>
-              This ebook helps you understand how gut health, blood sugar, and metabolic stress influence appetite and hormone balance without turning your body into a willpower problem.
-            </p>
-            <PrimaryButton href="/glp1-ebook-protocol-confirm">Get the Ebook</PrimaryButton>
-          </div>
+        <div className="max-w-3xl mx-auto text-center pt-8 md:pt-12">
+          <Eyebrow>Understanding GLP-1 Signaling</Eyebrow>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight mb-4 max-w-2xl mx-auto" style={{ color: palette.ink }}>
+            Make sense of hunger, cravings, and metabolic signals.
+          </h1>
+          <p className="text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto" style={{ color: palette.text }}>
+            This ebook helps you understand how gut health, blood sugar, and metabolic stress influence appetite and hormone balance without turning your body into a willpower problem.
+          </p>
         </div>
-        <div className="rounded-2xl p-6 md:p-8 mt-14" style={{ background: palette.cream, border: `1px solid ${palette.border}` }}>
+        <div className="flex justify-center mt-4 mb-8">
+          <img
+            src={ebookGlp1Cover}
+            alt="Understanding GLP-1 Signaling ebook cover"
+            className="w-full max-w-xl lg:max-w-2xl h-auto rounded-lg"
+            style={{ boxShadow: "0 25px 50px -12px rgba(75, 46, 57, 0.25)" }}
+          />
+        </div>
+        <div className="flex justify-center mb-24 md:mb-32">
+          <PrimaryButton href="/glp1-ebook-protocol-confirm">Get the Ebook</PrimaryButton>
+        </div>
+        <div className="rounded-2xl p-6 md:p-8 mt-8" style={{ background: palette.cream, border: `1px solid ${palette.border}` }}>
           <h2 className="text-2xl md:text-3xl font-display font-medium mb-5" style={{ color: palette.ink }}>
             What you will learn
           </h2>
