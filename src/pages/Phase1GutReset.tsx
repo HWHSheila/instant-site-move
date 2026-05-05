@@ -39,34 +39,21 @@ export default function Phase1GutReset() {
               </p>
             </div>
 
-            {/* Product card */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm max-w-2xl mx-auto">
-              {/* Image */}
-              <div
-                className="flex items-center justify-center overflow-hidden"
+            {/* Image (standalone, no background container) */}
+            <div className="flex items-center justify-center mb-12 md:mb-14 max-w-2xl mx-auto">
+              <img
+                src={gutRoadmapCover}
+                alt="30-Day Gut Reset Roadmap Cover"
+                className="object-contain rounded-xl shadow-lg"
                 style={{
-                  paddingTop: "72px",
-                  paddingBottom: "72px",
+                  maxHeight: "420px",
+                  border: "1px solid #E6E2DA",
                 }}
-              >
-                <div
-                  className="rounded-xl"
-                  style={{
-                    background: "#F8F6F2",
-                    padding: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
-                    border: "1px solid #E6E2DA",
-                  }}
-                >
-                  <img
-                    src={gutRoadmapCover}
-                    alt="30-Day Gut Reset Roadmap Cover"
-                    className="object-contain rounded shadow-lg"
-                    style={{ maxHeight: "420px" }}
-                  />
-                </div>
-              </div>
+              />
+            </div>
 
+            {/* Content card */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm max-w-2xl mx-auto">
               {/* Details */}
               <div className="p-8 md:p-10">
                 <p
