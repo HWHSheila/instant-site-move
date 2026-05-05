@@ -56,6 +56,7 @@ export default function Phase1GutReset() {
                     background: "#F8F6F2",
                     padding: "16px",
                     boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
+                    border: "1px solid #E6E2DA",
                   }}
                 >
                   <img
