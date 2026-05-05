@@ -54,7 +54,7 @@ export default function Phase1GutReset() {
                   src={gutRoadmapCover}
                   alt="30-Day Gut Reset Roadmap Cover"
                   className="object-contain rounded shadow-lg"
-                  style={{ maxHeight: "420px", opacity: 0.3 }}
+                  style={{ maxHeight: "420px" }}
                 />
               </div>
 
