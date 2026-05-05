@@ -15,10 +15,10 @@ interface EBookCardProps {
 function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: EBookCardProps) {
   return (
     <div className="flex flex-col h-full">
-      <div className="mb-4" style={{ background: "#E8F1EC", padding: "24px" }}>
+      <div className="mb-4" style={{ background: "#E8F1EC", padding: "20px" }}>
         <div
           className="relative aspect-[3/4] overflow-hidden rounded-xl"
-          style={{ background: "#FFFFFF", padding: "20px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}
+          style={{ background: "#F8F6F2", padding: "14px", boxShadow: "0 8px 32px rgba(0,0,0,0.04)" }}
         >
           <img
             src={image}

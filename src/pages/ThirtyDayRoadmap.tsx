@@ -30,9 +30,9 @@ export default function ThirtyDayRoadmap() {
                 <div
                   className="rounded-xl"
                   style={{
-                    background: "#FFFFFF",
-                    padding: "24px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                    background: "#F8F6F2",
+                    padding: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
                   }}
                 >
                   <img
