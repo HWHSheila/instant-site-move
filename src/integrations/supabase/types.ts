@@ -14,6 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
+      baseline_submissions: {
+        Row: {
+          bloating: number
+          bowel_regularity: number
+          brain_fog: number
+          cravings: number
+          created_at: string
+          digestion: number
+          email: string
+          energy: number
+          first_name: string
+          id: string
+          joint_pain: number
+          last_name: string
+          mood: number
+          muscle_body_aches: number
+          sleep: number
+          stress_level: number
+          top_3_symptoms: string | null
+        }
+        Insert: {
+          bloating: number
+          bowel_regularity: number
+          brain_fog: number
+          cravings: number
+          created_at?: string
+          digestion: number
+          email: string
+          energy: number
+          first_name: string
+          id?: string
+          joint_pain: number
+          last_name: string
+          mood: number
+          muscle_body_aches: number
+          sleep: number
+          stress_level: number
+          top_3_symptoms?: string | null
+        }
+        Update: {
+          bloating?: number
+          bowel_regularity?: number
+          brain_fog?: number
+          cravings?: number
+          created_at?: string
+          digestion?: number
+          email?: string
+          energy?: number
+          first_name?: string
+          id?: string
+          joint_pain?: number
+          last_name?: string
+          mood?: number
+          muscle_body_aches?: number
+          sleep?: number
+          stress_level?: number
+          top_3_symptoms?: string | null
+        }
+        Relationships: []
+      }
       blog_posts: {
         Row: {
           content: string
