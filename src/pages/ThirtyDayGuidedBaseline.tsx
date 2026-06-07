@@ -112,6 +112,9 @@ export default function ThirtyDayGuidedBaseline() {
                 There are no wrong answers. This is your baseline and we will come back to these numbers throughout
                 the reset so you can see exactly how far you have come.
               </p>
+              <p style={{ color: BRAND.primaryText, fontSize: "1.0625rem", lineHeight: 1.7, marginTop: "1rem" }}>
+                For all ratings below: 1 = Low, 10 = High
+              </p>
             </section>
 
             <form onSubmit={onSubmit} className="space-y-7">
