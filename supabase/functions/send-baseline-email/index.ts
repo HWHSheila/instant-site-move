@@ -25,64 +25,46 @@ serve(async (req) => {
 
   try {
     const data = await req.json();
-    const subject = `HWH Gut Reset Baseline — ${data.first_name ?? ""} ${data.last_name ?? ""}`.trim();
 
-    const ratingsBlock = RATINGS.map(
-      (r) => `${r.label.padEnd(24, " ")}: ${data[r.key] ?? "—"} / 10`
-    ).join("\n");
+    const ratings = RATINGS.map((r) => ({
+      label: r.label,
+      value: data[r.key] ?? "—",
+    }));
 
-    const body = `
-HWH 30-DAY GUT RESET — BASELINE SUBMISSION
-===========================================
+    const templateData = {
+      firstName: data.first_name ?? "",
+      lastName: data.last_name ?? "",
+      email: data.email ?? "",
+      ratings,
+      topSymptoms: data.top_3_symptoms || "Not provided",
+      submittedAt: new Date().toISOString(),
+    };
 
-First Name: ${data.first_name ?? ""}
-Last Name:  ${data.last_name ?? ""}
-Email:      ${data.email ?? ""}
+    const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+    const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/send-transactional-email`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SERVICE_KEY}`,
+      },
+      body: JSON.stringify({
+        templateName: "baseline-notification",
+        idempotencyKey: `baseline-${data.email ?? "unknown"}-${Date.now()}`,
+        templateData,
+      }),
+    });
 
-RATINGS (1–10)
----------------
-${ratingsBlock}
-
-TOP 3 SYMPTOMS
----------------
-${data.top_3_symptoms || "Not provided"}
-
-Submitted: ${new Date().toISOString()}
-    `.trim();
-
-    // Try Lovable's transactional email pipeline if it has been set up.
-    // Falls back to logging if the function is not available yet.
-    try {
-      const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-      const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/send-transactional-email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SERVICE_KEY}`,
-        },
-        body: JSON.stringify({
-          to: "support@herwellnessharmony.com",
-          subject,
-          text: body,
-        }),
-      });
-      if (!res.ok) {
-        console.warn(
-          "send-transactional-email not available or failed:",
-          res.status,
-          await res.text().catch(() => "")
-        );
-      }
-    } catch (e) {
-      console.warn("Email send skipped:", e);
+    const responseText = await res.text().catch(() => "");
+    if (!res.ok) {
+      console.error("send-transactional-email failed:", res.status, responseText);
+      return new Response(
+        JSON.stringify({ success: false, error: `Email send failed: ${res.status}` }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
-    console.log("=== BASELINE SUBMISSION ===");
-    console.log("Subject:", subject);
-    console.log(body);
-    console.log("=== END BASELINE ===");
-
+    console.log("Baseline notification enqueued:", responseText);
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
