@@ -9,6 +9,9 @@ verify_jwt = false
 [functions.send-intake-email]
 verify_jwt = false
 
+[functions.send-baseline-email]
+verify_jwt = false
+
 [functions.sitemap]
 verify_jwt = false
 

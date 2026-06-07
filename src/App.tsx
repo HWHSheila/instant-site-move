@@ -21,6 +21,7 @@ import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
 import Phase1GutReset from "./pages/Phase1GutReset";
 import ThirtyDayRoadmap from "./pages/ThirtyDayRoadmap";
+import ThirtyDayGuidedBaseline from "./pages/ThirtyDayGuidedBaseline";
 import {
   GLP1Ebook,
   GLP1ProtocolAddon,
@@ -118,6 +119,7 @@ const App = () => (
           <Route path="/90day-protocol-confirm" element={<NinetyDayProtocolConfirm />} />
           <Route path="/90day-protocol-thankyou" element={<NinetyDayProtocolThankYou />} />
             <Route path="/30day-roadmap" element={<ThirtyDayRoadmap />} />
+            <Route path="/30day-guided-baseline" element={<ThirtyDayGuidedBaseline />} />
             <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
             <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
             <Route path="/4-week-coaching" element={<FourWeekCoaching />} />
