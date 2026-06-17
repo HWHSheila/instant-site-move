@@ -19,8 +19,13 @@ function handleExternalLink(e: React.MouseEvent<HTMLAnchorElement>, url: string)
 
 export function EssentialOils() {
   return (
-    <section id="essential-oils" className="py-20 md:py-28 bg-background">
+    <section id="essential-oils" className="py-10 md:py-14 bg-background">
       <div className="container-wellness">
+        <div className="mb-6">
+          <p className="section-label mb-3">Essential Oils</p>
+          <h2 className="section-title">Not All Essential Oils Are Created Equal</h2>
+        </div>
+
         {/* Full-width image */}
         <div className="mb-10">
           <img
@@ -29,11 +34,6 @@ export function EssentialOils() {
             className="w-full aspect-[16/9] object-cover rounded-2xl"
             loading="lazy"
           />
-        </div>
-
-        <div className="mb-6">
-          <p className="section-label mb-3">Essential Oils</p>
-          <h2 className="section-title">Not All Essential Oils Are Created Equal</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
