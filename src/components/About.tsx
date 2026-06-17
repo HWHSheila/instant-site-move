@@ -74,10 +74,10 @@ const workingWithItems = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-background">
+    <section id="about" className="py-12 md:py-16 bg-background">
       <div className="container-wellness">
         {/* Opener: Photo left, sage card right */}
-        <div className="grid md:grid-cols-[auto_1fr] gap-0 mb-20">
+        <div className="grid md:grid-cols-[auto_1fr] gap-0 mb-10">
           <div className="flex justify-center md:justify-start">
             <img
               src={sheilaPortrait}
@@ -98,7 +98,7 @@ export function About() {
         </div>
 
         {/* My Journey — Timeline */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className="text-center mb-10">
             <p className="section-label mb-3">My Journey</p>
             <h2 className="section-title">From Crisis to Root-Cause Clarity</h2>
@@ -148,7 +148,7 @@ export function About() {
         </div>
 
         {/* My Philosophy */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className="text-center mb-6">
             <p className="section-label mb-3">My Philosophy</p>
             <h2 className="section-title mb-4">Healing From the Inside Out</h2>

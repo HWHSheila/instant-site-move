@@ -77,7 +77,7 @@ const ebooks: EBookCardProps[] = [
 
 export function EBooks() {
   return (
-    <section id="ebooks" className="py-20 md:py-28 bg-background">
+    <section id="ebooks" className="py-10 md:py-14 bg-background">
       <div className="container-wellness">
         <div className="mb-10">
           <p className="section-label mb-3">Resources</p>
