@@ -1,6 +1,6 @@
 export function ContactInfo() {
   return (
-    <section id="contact-info" className="py-10 md:py-14 bg-card">
+    <section id="contact-info" className="py-5 md:py-6 bg-card">
       <div className="container-wellness">
         <div className="mb-10">
           <p className="section-label mb-4">Get In Touch</p>

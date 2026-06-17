@@ -3,7 +3,7 @@ import contactImage from "@/assets/contact-cta-image.jpg";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-10 md:py-14 bg-background">
+    <section id="contact" className="py-5 md:py-6 bg-background">
       <div className="container-wellness">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
