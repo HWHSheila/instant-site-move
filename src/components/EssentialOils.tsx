@@ -1,14 +1,18 @@
 import { Button } from "@/components/ui/button";
 import essentialOilsImg from "@/assets/essential-oils-display.jpg";
+import { Leaf } from "lucide-react";
 
-const supportCategories = [
+const leftItems = [
   "Gut Motility Support",
-  "Nervous System Calm",
   "Hormone Balance",
-  "Mood & Emotional Wellness",
   "TCM Meridian Support",
-  "Metabolic & Mitochondrial Function",
   "Sleep & Circadian Rhythm",
+];
+
+const rightItems = [
+  "Nervous System Calm",
+  "Mood & Emotional Wellness",
+  "Metabolic & Mitochondrial Function",
   "Inflammation Reduction",
 ];
 
@@ -36,8 +40,7 @@ export function EssentialOils() {
           />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Left: text */}
+        <div className="max-w-4xl">
           <div className="bg-card rounded-xl border border-border p-8">
             <div className="text-muted-foreground leading-relaxed space-y-4">
               <p>
@@ -50,10 +53,34 @@ export function EssentialOils() {
                 With my chemistry background, I value oils used intentionally and with high standards. Better oils can mean a more reliable experience and a more consistent wellness tool.
               </p>
             </div>
+
+            <h3 className="text-xl font-display font-medium text-foreground mt-8 mb-5">
+              Essential oils are commonly used to support:
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-3">
+              <ul className="space-y-3">
+                {leftItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Leaf className="w-4 h-4 text-wellness-forest mt-1 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-foreground font-display font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {rightItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Leaf className="w-4 h-4 text-wellness-forest mt-1 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-foreground font-display font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <Button
               asChild
               size="lg"
-              className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-lg px-8 py-6 text-base mt-6"
+              className="bg-wellness-forest hover:bg-wellness-forest-dark text-primary-foreground font-semibold rounded-lg px-8 py-6 text-base mt-8"
             >
               <a
                 href="https://www.doterra.com/US/en/site/herwellnessharmony"
@@ -62,18 +89,6 @@ export function EssentialOils() {
                 Order or Book a Call
               </a>
             </Button>
-          </div>
-
-          {/* Right: categories grid */}
-          <div className="bg-wellness-sage/30 rounded-xl p-8">
-            <div className="grid grid-cols-2 gap-4">
-              {supportCategories.map((cat) => (
-                <div key={cat} className="flex items-start gap-3">
-                  <div className="w-1 h-full min-h-[2rem] bg-wellness-forest rounded-full flex-shrink-0 mt-1" />
-                  <span className="text-lg font-display font-medium text-foreground">{cat}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
