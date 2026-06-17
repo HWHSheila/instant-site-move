@@ -19,7 +19,7 @@ function handleExternalLink(e: React.MouseEvent<HTMLAnchorElement>, url: string)
 
 export function EssentialOils() {
   return (
-    <section id="essential-oils" className="py-10 md:py-14 bg-background">
+    <section id="essential-oils" className="py-5 md:py-6 bg-background">
       <div className="container-wellness">
         <div className="mb-6">
           <p className="section-label mb-3">Essential Oils</p>
