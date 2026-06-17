@@ -69,7 +69,7 @@ const services: ServiceItemProps[] = [
 
 export function Services() {
   return (
-    <section id="services" className="py-10 md:py-14 bg-background">
+    <section id="services" className="py-5 md:py-6 bg-background">
       <div className="container-wellness">
         <div className="mb-10">
           <p className="section-label mb-3">Services</p>

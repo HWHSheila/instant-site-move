@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-image.jpg";
 export function Hero() {
   return (
     <section className="pt-20 md:pt-24 bg-background">
-      <div className="container-wellness py-16 md:py-24">
+      <div className="container-wellness py-5 md:py-6">
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           {/* Text */}
           <div>
