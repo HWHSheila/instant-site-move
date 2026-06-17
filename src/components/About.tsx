@@ -180,7 +180,7 @@ export function About() {
 
 export function WorkingWith() {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-10 md:py-14 bg-background">
       <div className="container-wellness">
         <div className="text-center mb-12">
           <p className="section-label mb-3">Working With Sheila</p>
