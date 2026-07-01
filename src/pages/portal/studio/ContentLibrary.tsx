@@ -272,28 +272,28 @@ export default function ContentLibrary() {
           </DialogHeader>
           {previewItem && (
             <div className="space-y-4 text-sm">
-              {previewItem.hook && (
+              {previewItem.script_hook && (
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-1">HOOK</p>
-                  <p>{previewItem.hook}</p>
+                  <p>{previewItem.script_hook}</p>
                 </div>
               )}
-              {previewItem.bridge && (
+              {previewItem.script_bridge && (
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-1">BRIDGE</p>
-                  <p>{previewItem.bridge}</p>
+                  <p>{previewItem.script_bridge}</p>
                 </div>
               )}
-              {previewItem.education && (
+              {previewItem.script_education && (
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-1">EDUCATION</p>
-                  <p>{previewItem.education}</p>
+                  <p>{previewItem.script_education}</p>
                 </div>
               )}
-              {previewItem.cta && (
+              {previewItem.script_cta && (
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-1">CTA</p>
-                  <p className="font-medium">{previewItem.cta}</p>
+                  <p className="font-medium">{previewItem.script_cta}</p>
                 </div>
               )}
               {previewItem.caption && (

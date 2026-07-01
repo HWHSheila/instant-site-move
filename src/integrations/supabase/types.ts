@@ -25,23 +25,22 @@ export type Database = {
           pain_point: string | null
           post_type: "authority" | "sales" | "engagement" | null
           hook_style: string | null
-          strength: string | null
+          primary_strength: string | null
           content_lane: "attract" | "member"
-          content_format: "script" | "video" | "carousel" | "article"
+          content_format: string
           status: "draft" | "ready" | "scheduled" | "posted"
           review_status: "pending" | "approved" | "rejected"
           portal_published: boolean
           full_script: string | null
-          hook: string | null
-          bridge: string | null
-          authority_anchor: string | null
-          education: string | null
-          pattern_expansion: string | null
-          cta: string | null
+          script_hook: string | null
+          script_bridge: string | null
+          script_authority_anchor: string | null
+          script_education: string | null
+          script_pattern_expansion: string | null
+          script_cta: string | null
           caption: string | null
           hashtags: string[] | null
           scheduled_date: string | null
-          scheduled_time: string | null
           posted_at: string | null
         }
         Insert: {
@@ -54,23 +53,22 @@ export type Database = {
           pain_point?: string | null
           post_type?: "authority" | "sales" | "engagement" | null
           hook_style?: string | null
-          strength?: string | null
+          primary_strength?: string | null
           content_lane?: "attract" | "member"
-          content_format?: "script" | "video" | "carousel" | "article"
+          content_format?: string
           status?: "draft" | "ready" | "scheduled" | "posted"
           review_status?: "pending" | "approved" | "rejected"
           portal_published?: boolean
           full_script?: string | null
-          hook?: string | null
-          bridge?: string | null
-          authority_anchor?: string | null
-          education?: string | null
-          pattern_expansion?: string | null
-          cta?: string | null
+          script_hook?: string | null
+          script_bridge?: string | null
+          script_authority_anchor?: string | null
+          script_education?: string | null
+          script_pattern_expansion?: string | null
+          script_cta?: string | null
           caption?: string | null
           hashtags?: string[] | null
           scheduled_date?: string | null
-          scheduled_time?: string | null
           posted_at?: string | null
         }
         Update: {
@@ -83,23 +81,22 @@ export type Database = {
           pain_point?: string | null
           post_type?: "authority" | "sales" | "engagement" | null
           hook_style?: string | null
-          strength?: string | null
+          primary_strength?: string | null
           content_lane?: "attract" | "member"
-          content_format?: "script" | "video" | "carousel" | "article"
+          content_format?: string
           status?: "draft" | "ready" | "scheduled" | "posted"
           review_status?: "pending" | "approved" | "rejected"
           portal_published?: boolean
           full_script?: string | null
-          hook?: string | null
-          bridge?: string | null
-          authority_anchor?: string | null
-          education?: string | null
-          pattern_expansion?: string | null
-          cta?: string | null
+          script_hook?: string | null
+          script_bridge?: string | null
+          script_authority_anchor?: string | null
+          script_education?: string | null
+          script_pattern_expansion?: string | null
+          script_cta?: string | null
           caption?: string | null
           hashtags?: string[] | null
           scheduled_date?: string | null
-          scheduled_time?: string | null
           posted_at?: string | null
         }
         Relationships: []
