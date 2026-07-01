@@ -7,8 +7,8 @@ export default function FreeGuideThankYou() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
-        title="You're In! - Free Gut Repair Guide" 
-        description="Thank you for requesting the Free Gut Repair Guide. Check your email for the download link."
+        title="You're In! - Root-Cause Reset Guide" 
+        description="Thank you for requesting the Root-Cause Reset Guide. Check your email for the download link."
       />
       <Header />
       
@@ -30,7 +30,7 @@ export default function FreeGuideThankYou() {
             
             {/* Supporting Text */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Check your email for the Free Gut Repair Guide. If you don't see it within a few minutes, please check your spam or promotions folder.
+              Check your email for the Root-Cause Reset Guide. If you don't see it within a few minutes, please check your spam or promotions folder.
             </p>
             
             {/* Additional Info */}

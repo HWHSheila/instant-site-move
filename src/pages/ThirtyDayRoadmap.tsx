@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import gutRoadmapCover from "@/assets/gut-roadmap-phase1.png";
+import gutRoadmapCover from "@/assets/ebook-cover-faded.png";
 
 export default function ThirtyDayRoadmap() {
   return (
@@ -16,25 +16,21 @@ export default function ThirtyDayRoadmap() {
       <main className="flex-grow pt-20 md:pt-24 pb-16 md:pb-20">
         <div className="container-wellness">
           <div className="max-w-3xl mx-auto">
-            {/* Product card */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-              {/* Image */}
-              <div
-                className="flex items-center justify-center overflow-hidden"
+            {/* Image (standalone, no background container) */}
+            <div className="flex items-center justify-center mb-12 md:mb-14">
+              <img
+                src={gutRoadmapCover}
+                alt="30-Day Gut Reset Roadmap Cover"
+                className="object-contain rounded-xl shadow-lg"
                 style={{
-                  background: "#D8CFC4",
-                  paddingTop: "48px",
-                  paddingBottom: "48px",
+                  maxHeight: "520px",
+                  border: "1px solid #E6E2DA",
                 }}
-              >
-                <img
-                  src={gutRoadmapCover}
-                  alt="30-Day Gut Reset Roadmap Cover"
-                  className="object-contain rounded shadow-lg"
-                  style={{ maxHeight: "520px" }}
-                />
-              </div>
+              />
+            </div>
 
+            {/* Content card */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
               {/* Details */}
               <div className="p-10 md:p-14">
                 <p

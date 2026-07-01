@@ -95,8 +95,11 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-sm text-primary-foreground/60 text-center">
+        <p className="text-sm text-primary-foreground/60 text-center mb-4">
           © {currentYear} Her Wellness Harmony. All rights reserved.
+        </p>
+        <p className="text-xs text-primary-foreground/40 text-center max-w-2xl mx-auto">
+          All information provided by Her Wellness Harmony is for educational purposes only and is not medical advice, diagnosis, or treatment. Always consult a qualified medical provider before making changes to your health.
         </p>
       </div>
     </footer>

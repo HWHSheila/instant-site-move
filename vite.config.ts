@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-const SUPABASE_URL = "https://npwitirccxyphbtxyfbs.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wd2l0aXJjY3h5cGhidHh5ZmJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNzI4NjQsImV4cCI6MjA4NjY0ODg2NH0.iavpl8XB94bkMTMRSnyIGtvLrUDj8jFbPtpEiazl-pQ";
+const SUPABASE_URL = "https://joxwjoboqkcenmphbtpi.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpveHdqb2JvcWtjZW5tcGhidHBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzE1OTEsImV4cCI6MjA5MTE0NzU5MX0.IAZYn_HM4JpV1OKRLhA30MiA7cEqjPCVtg5gocoAjRQ";
 const SITE_URL = "https://www.herwellnessharmony.com";
 
 function sitemapPlugin() {

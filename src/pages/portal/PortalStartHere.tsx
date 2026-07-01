@@ -1,4 +1,9 @@
 import { SEO } from "@/components/SEO";
+import { useNavigate } from "react-router-dom";
+import { useSubscriber, useJourneyProgress } from "@/hooks/use-subscriber";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, ClipboardList, CalendarDays } from "lucide-react";
 
 const pillars = [
   {
@@ -21,7 +26,23 @@ const pillars = [
   },
 ];
 
+const PHASE_LABELS: Record<string, string> = {
+  clarity: "Immediate Clarity (Days 1-5)",
+  pattern_recognition: "Pattern Recognition (Days 6-12)",
+  friction: "Understanding Your Patterns (Days 13-17)",
+  guided_preview: "Guided Experience Preview (Days 18-21)",
+  complete: "Journey Complete",
+};
+
 export default function PortalStartHere() {
+  const navigate = useNavigate();
+  const { subscriber, isLoading } = useSubscriber();
+  const { data: progress } = useJourneyProgress(subscriber?.id);
+
+  const hasIntake = subscriber?.intake_completed;
+  const dayNumber = progress?.day_number;
+  const phase = progress?.current_phase;
+
   return (
     <>
       <SEO title="Start Here" noindex />
@@ -32,6 +53,53 @@ export default function PortalStartHere() {
             The core framework behind everything inside this portal.
           </p>
         </div>
+
+        {/* Journey Entry Point */}
+        {!isLoading && !hasIntake && (
+          <Card className="border-primary border-2 bg-primary/5">
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <ClipboardList className="w-6 h-6 text-primary" />
+                </div>
+                <div className="space-y-2 flex-1">
+                  <h2 className="font-display text-lg font-semibold">
+                    Your First Step: Take the Wellness Assessment
+                  </h2>
+                  <p className="text-sm text-muted-foreground">
+                    Before diving into the framework below, let's identify <em>your</em> unique patterns.
+                    The AI-powered assessment takes about 5 minutes and creates a personalized roadmap
+                    based on your symptoms and history.
+                  </p>
+                  <Button onClick={() => navigate("/portal/intake")}>
+                    Start Assessment
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Journey Progress */}
+        {hasIntake && dayNumber != null && dayNumber > 0 && dayNumber <= 21 && (
+          <Card className="border-primary/30 bg-primary/5">
+            <CardContent className="pt-5 space-y-3">
+              <div className="flex items-start gap-3">
+                <CalendarDays className="w-5 h-5 text-primary mt-0.5" />
+                <div>
+                  <p className="font-semibold">
+                    Day {dayNumber} — {PHASE_LABELS[phase || ""] || phase}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Your 21-day journey is designed to help you move from awareness to action.
+                    Each phase builds on the last.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
           <p>

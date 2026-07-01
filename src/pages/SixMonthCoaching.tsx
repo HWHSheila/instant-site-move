@@ -62,12 +62,12 @@ export default function SixMonthCoaching() {
                 size="lg"
                 className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
               >
-                <a href="https://buy.stripe.com/fZu6oIe1s6nO2Tigob3840d">
+                <a href="https://buy.stripe.com/8x29AUe1sdQgdxWfk73840h">
                   Secure Your Spot
                 </a>
               </Button>
               <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="text-3xl font-display font-bold text-primary-foreground">$9,000</span>
+                <span className="text-3xl font-display font-bold text-primary-foreground">$10,000</span>
               </div>
             </div>
           </div>
@@ -134,14 +134,14 @@ export default function SixMonthCoaching() {
           >
             <p className="section-label text-wellness-gold mb-4">Investment</p>
             <div className="flex items-baseline gap-4 mb-6">
-              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$9,000</span>
+              <span className="text-4xl md:text-5xl font-display font-semibold text-primary-foreground">$10,000</span>
             </div>
             <Button
               asChild
               size="lg"
               className="bg-wellness-gold hover:bg-wellness-gold-light text-wellness-forest-dark font-semibold rounded-full px-10 py-6 text-base"
             >
-              <a href="https://buy.stripe.com/fZu6oIe1s6nO2Tigob3840d">
+              <a href="https://buy.stripe.com/8x29AUe1sdQgdxWfk73840h">
                 Secure Your Spot
               </a>
             </Button>

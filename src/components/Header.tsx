@@ -9,6 +9,7 @@ const navLinks = [
   { label: "About", href: "/#about", isRoute: false },
   { label: "Services", href: "/#services", isRoute: false },
   { label: "E-Books", href: "/#ebooks", isRoute: false },
+  { label: "Essential Oils", href: "/#essential-oils", isRoute: false },
   { label: "Contact", href: "/#contact-info", isRoute: false },
 ];
 
