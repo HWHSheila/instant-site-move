@@ -32,6 +32,8 @@ export type Database = {
           review_status: "pending" | "approved" | "rejected"
           portal_published: boolean
           full_script: string | null
+          video_url: string | null
+          video_status: "pending" | "uploaded" | "published" | null
           script_hook: string | null
           script_bridge: string | null
           script_authority_anchor: string | null
@@ -60,6 +62,8 @@ export type Database = {
           review_status?: "pending" | "approved" | "rejected"
           portal_published?: boolean
           full_script?: string | null
+          video_url?: string | null
+          video_status?: "pending" | "uploaded" | "published" | null
           script_hook?: string | null
           script_bridge?: string | null
           script_authority_anchor?: string | null
@@ -88,6 +92,8 @@ export type Database = {
           review_status?: "pending" | "approved" | "rejected"
           portal_published?: boolean
           full_script?: string | null
+          video_url?: string | null
+          video_status?: "pending" | "uploaded" | "published" | null
           script_hook?: string | null
           script_bridge?: string | null
           script_authority_anchor?: string | null

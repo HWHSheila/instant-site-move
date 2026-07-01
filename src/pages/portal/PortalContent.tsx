@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Search, BookOpen, Loader2 } from "lucide-react";
+import { Search, BookOpen, Loader2, PlayCircle, Video } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
@@ -120,7 +120,10 @@ export default function PortalContent() {
                         <Badge variant="outline" className="capitalize">{item.post_type}</Badge>
                       )}
                     </div>
-                    <CardTitle className="text-base leading-snug">{item.title}</CardTitle>
+                    <CardTitle className="text-base leading-snug flex items-center gap-2">
+                      {item.title}
+                      {item.video_url && <Video className="w-4 h-4 text-orange-500 shrink-0" />}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     {item.caption && (
@@ -147,6 +150,25 @@ export default function PortalContent() {
           </DialogHeader>
           {selected && (
             <div className="space-y-5 text-sm leading-relaxed">
+              {selected.video_url && (
+                <div className="aspect-video rounded-lg overflow-hidden border bg-black">
+                  {selected.video_url.includes("youtube") ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${selected.video_url.match(/(?:watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/)?.[1]}`}
+                      className="w-full h-full"
+                      allowFullScreen
+                    />
+                  ) : selected.video_url.includes("vimeo") ? (
+                    <iframe
+                      src={`https://player.vimeo.com/video/${selected.video_url.match(/vimeo\.com\/(\d+)/)?.[1]}`}
+                      className="w-full h-full"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <video src={selected.video_url} controls className="w-full h-full" />
+                  )}
+                </div>
+              )}
               {selected.script_hook && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Opening</p>
