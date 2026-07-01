@@ -14,6 +14,137 @@ export type Database = {
   }
   public: {
     Tables: {
+      content_pieces: {
+        Row: {
+          id: string
+          created_at: string
+          updated_at: string
+          title: string
+          pillar_id: string | null
+          pillar_name: string | null
+          pain_point: string | null
+          post_type: "authority" | "sales" | "engagement" | null
+          hook_style: string | null
+          strength: string | null
+          content_lane: "attract" | "member"
+          content_format: "script" | "video" | "carousel" | "article"
+          status: "draft" | "ready" | "scheduled" | "posted"
+          review_status: "pending" | "approved" | "rejected"
+          portal_published: boolean
+          full_script: string | null
+          hook: string | null
+          bridge: string | null
+          authority_anchor: string | null
+          education: string | null
+          pattern_expansion: string | null
+          cta: string | null
+          caption: string | null
+          hashtags: string[] | null
+          scheduled_date: string | null
+          scheduled_time: string | null
+          posted_at: string | null
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          updated_at?: string
+          title?: string
+          pillar_id?: string | null
+          pillar_name?: string | null
+          pain_point?: string | null
+          post_type?: "authority" | "sales" | "engagement" | null
+          hook_style?: string | null
+          strength?: string | null
+          content_lane?: "attract" | "member"
+          content_format?: "script" | "video" | "carousel" | "article"
+          status?: "draft" | "ready" | "scheduled" | "posted"
+          review_status?: "pending" | "approved" | "rejected"
+          portal_published?: boolean
+          full_script?: string | null
+          hook?: string | null
+          bridge?: string | null
+          authority_anchor?: string | null
+          education?: string | null
+          pattern_expansion?: string | null
+          cta?: string | null
+          caption?: string | null
+          hashtags?: string[] | null
+          scheduled_date?: string | null
+          scheduled_time?: string | null
+          posted_at?: string | null
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          updated_at?: string
+          title?: string
+          pillar_id?: string | null
+          pillar_name?: string | null
+          pain_point?: string | null
+          post_type?: "authority" | "sales" | "engagement" | null
+          hook_style?: string | null
+          strength?: string | null
+          content_lane?: "attract" | "member"
+          content_format?: "script" | "video" | "carousel" | "article"
+          status?: "draft" | "ready" | "scheduled" | "posted"
+          review_status?: "pending" | "approved" | "rejected"
+          portal_published?: boolean
+          full_script?: string | null
+          hook?: string | null
+          bridge?: string | null
+          authority_anchor?: string | null
+          education?: string | null
+          pattern_expansion?: string | null
+          cta?: string | null
+          caption?: string | null
+          hashtags?: string[] | null
+          scheduled_date?: string | null
+          scheduled_time?: string | null
+          posted_at?: string | null
+        }
+        Relationships: []
+      }
+      calendar_entries: {
+        Row: {
+          id: string
+          created_at: string
+          content_piece_id: string | null
+          scheduled_date: string
+          scheduled_time: string | null
+          platform: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at: string | null
+          status: "scheduled" | "posted" | "cancelled"
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          content_piece_id?: string | null
+          scheduled_date: string
+          scheduled_time?: string | null
+          platform?: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at?: string | null
+          status?: "scheduled" | "posted" | "cancelled"
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          content_piece_id?: string | null
+          scheduled_date?: string
+          scheduled_time?: string | null
+          platform?: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at?: string | null
+          status?: "scheduled" | "posted" | "cancelled"
+        }
+        Relationships: [
+          {
+            foreignKeyName: "calendar_entries_content_piece_id_fkey"
+            columns: ["content_piece_id"]
+            isOneToOne: false
+            referencedRelation: "content_pieces"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       blog_posts: {
         Row: {
           content: string

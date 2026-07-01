@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 // Blueprint Data (from Appendix A)
 const PILLARS = [
@@ -82,6 +83,8 @@ export default function ScriptGenerator() {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState<WizardStep>("pillar");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [savedId, setSavedId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   
   const [selections, setSelections] = useState({
@@ -164,6 +167,49 @@ export default function ScriptGenerator() {
       await navigator.clipboard.writeText(generatedScript.full_script);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const saveScript = async () => {
+    if (!generatedScript) return;
+    setIsSaving(true);
+    try {
+      const title = generatedScript.hook.slice(0, 80) || "Untitled script";
+      const { data, error } = await supabase
+        .from("content_pieces")
+        .insert({
+          title,
+          pillar_id: selections.pillar?.id ?? null,
+          pillar_name: selections.pillar?.name ?? null,
+          pain_point: selections.customPainPoint || selections.painPoint || null,
+          post_type: selections.postType?.id as "authority" | "sales" | "engagement" | null,
+          hook_style: selections.hookStyle?.id ?? null,
+          strength: selections.strength?.name ?? null,
+          content_lane: "attract",
+          content_format: "script",
+          status: "draft",
+          review_status: "pending",
+          full_script: generatedScript.full_script,
+          hook: generatedScript.hook,
+          bridge: generatedScript.bridge,
+          authority_anchor: generatedScript.authority_anchor,
+          education: generatedScript.education,
+          pattern_expansion: generatedScript.pattern_expansion,
+          cta: generatedScript.cta,
+          caption: generatedScript.caption,
+          hashtags: generatedScript.hashtags,
+        })
+        .select("id")
+        .single();
+
+      if (error) throw error;
+      setSavedId(data.id);
+      toast.success("Script saved to library");
+    } catch (err) {
+      console.error("Save error:", err);
+      toast.error("Failed to save script");
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -428,9 +474,18 @@ export default function ScriptGenerator() {
                           </>
                         )}
                       </Button>
-                      <Button variant="outline" size="sm">
-                        <Save className="w-4 h-4 mr-1" />
-                        Save
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={saveScript}
+                        disabled={isSaving || !!savedId}
+                      >
+                        {isSaving ? (
+                          <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                        ) : (
+                          <Save className="w-4 h-4 mr-1" />
+                        )}
+                        {savedId ? "Saved" : "Save"}
                       </Button>
                     </div>
                   </div>
@@ -475,7 +530,7 @@ export default function ScriptGenerator() {
                     ))}
                   </div>
 
-                  <Button onClick={generateScript} variant="outline" className="w-full">
+                  <Button onClick={() => { setGeneratedScript(null); setSavedId(null); generateScript(); }} variant="outline" className="w-full">
                     <Sparkles className="w-4 h-4 mr-2" />
                     Regenerate
                   </Button>

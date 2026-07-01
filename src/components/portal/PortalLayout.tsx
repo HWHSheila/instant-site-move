@@ -43,6 +43,7 @@ const portalNav: NavItem[] = [
   { label: "Campaigns", to: "/portal/studio/campaigns", icon: Target, indent: true },
   
   // Original Portal Items
+  { label: "Member Content", to: "/portal/content", icon: BookOpen },
   { label: "Start Here", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
