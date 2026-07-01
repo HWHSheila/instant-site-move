@@ -1,4 +1,4 @@
-project_id = "npwitirccxyphbtxyfbs"
+project_id = "joxwjoboqkcenmphbtpi"
 
 [functions.systeme-subscribe]
 verify_jwt = false
@@ -9,8 +9,26 @@ verify_jwt = false
 [functions.send-intake-email]
 verify_jwt = false
 
+[functions.send-baseline-email]
+verify_jwt = false
+
 [functions.sitemap]
 verify_jwt = false
 
 [functions.generate-script]
+verify_jwt = false
+
+[functions.process-email-queue]
+verify_jwt = true
+
+[functions.send-transactional-email]
+verify_jwt = true
+
+[functions.preview-transactional-email]
+verify_jwt = false
+
+[functions.handle-email-unsubscribe]
+verify_jwt = false
+
+[functions.handle-email-suppression]
 verify_jwt = false

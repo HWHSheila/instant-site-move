@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
-import { ArrowLeft } from "lucide-react";
+
 
 interface BlogPostData {
   id: string;
@@ -27,24 +27,24 @@ function renderMarkdown(content: string) {
 
     if (trimmed.startsWith("## ")) {
       if (inList) { html.push("</ul>"); inList = false; }
-      html.push(`<h2 class="font-display text-2xl font-medium text-primary-foreground mt-10 mb-4">${trimmed.slice(3)}</h2>`);
+      html.push(`<h2 class="font-display text-2xl font-medium text-foreground mt-10 mb-4">${trimmed.slice(3)}</h2>`);
     } else if (trimmed.startsWith("### ")) {
       if (inList) { html.push("</ul>"); inList = false; }
-      html.push(`<h3 class="font-display text-xl font-medium text-primary-foreground mt-8 mb-3">${trimmed.slice(4)}</h3>`);
+      html.push(`<h3 class="font-display text-xl font-medium text-foreground mt-8 mb-3">${trimmed.slice(4)}</h3>`);
     } else if (trimmed.startsWith("- ")) {
-      if (!inList) { html.push('<ul class="list-disc list-inside space-y-2 mb-6 text-primary-foreground/80">'); inList = true; }
-      const itemContent = trimmed.slice(2).replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
+      if (!inList) { html.push('<ul class="list-disc list-inside space-y-2 mb-6 text-muted-foreground">'); inList = true; }
+      const itemContent = trimmed.slice(2).replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
       html.push(`<li>${itemContent}</li>`);
     } else if (trimmed.match(/^\d+\.\s/)) {
       if (inList) { html.push("</ul>"); inList = false; }
-      const itemContent = trimmed.replace(/^\d+\.\s/, "").replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
-      html.push(`<p class="text-primary-foreground/80 leading-relaxed mb-2 pl-4">${itemContent}</p>`);
+      const itemContent = trimmed.replace(/^\d+\.\s/, "").replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+      html.push(`<p class="text-muted-foreground leading-relaxed mb-2 pl-4">${itemContent}</p>`);
     } else if (trimmed === "") {
       if (inList) { html.push("</ul>"); inList = false; }
     } else {
       if (inList) { html.push("</ul>"); inList = false; }
-      const processed = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong class="text-primary-foreground">$1</strong>');
-      html.push(`<p class="text-primary-foreground/80 leading-relaxed mb-4">${processed}</p>`);
+      const processed = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+      html.push(`<p class="text-muted-foreground leading-relaxed mb-4">${processed}</p>`);
     }
   }
   if (inList) html.push("</ul>");
@@ -63,11 +63,11 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
   },
   "metabolic-signaling-explained": {
     href: "/free-guide",
-    label: "Get the Free Guide",
+    label: "Get the Free Root Cause Reset Guide",
   },
   "stress-digestive-health-connection": {
     href: "/free-guide",
-    label: "Get the Free Guide",
+    label: "Get the Free Root Cause Reset Guide",
   },
   "eating-less-is-not-the-answer": {
     href: "/30day-roadmap",
@@ -353,6 +353,78 @@ const ctaConfig: Record<string, { href: string; label: string }> = {
     href: "/free-guide",
     label: "Get the Free Root Cause Reset Guide",
   },
+  "why-dieting-can-change-your-menstrual-cycle": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "what-causes-water-retention-in-women-beyond-salt-intake": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-the-same-health-routine-produces-different-results": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "why-digestion-feels-slow-and-heavy-after-eating": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "the-hidden-reason-cortisol-stays-elevated-in-women": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "poor-sleep-and-elevated-cortisol-the-connection-most-women-miss": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "stress-bloating-and-slow-digestion-in-women": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "when-exercise-raises-cortisol-instead-of-lowering-it": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "blood-sugar-crashes-and-cortisol-spikes-in-women": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "busy-all-day-but-never-recovering-the-chronic-stress-pattern": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "wired-at-night-exhausted-by-morning-and-stuck-in-a-loop": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "that-heavy-feeling-after-eating-is-not-about-the-food": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "bloating-after-healthy-meals-the-missing-piece-most-women-overlook": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "same-meals-different-digestion-and-the-pattern-behind-it": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "sudden-food-sensitivities-that-seem-to-come-out-of-nowhere": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "unpredictable-urgency-after-eating-and-the-real-trigger-behind-it": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
+  "full-after-a-few-bites-or-no-appetite-at-all-a-stress-signal": {
+    href: "/free-guide",
+    label: "Get the Free Root Cause Reset Guide",
+  },
+  "exhausted-after-every-meal-the-blood-sugar-pattern-behind-it": {
+    href: "/30day-roadmap",
+    label: "Get the 30-Day Gut Reset Roadmap",
+  },
 };
 
 export default function BlogPost() {
@@ -381,35 +453,11 @@ export default function BlogPost() {
         description={post?.excerpt || "Insights on gut health, metabolism, hormones, and root-cause wellness for women."}
       />
 
-      <div
-        className="flex-1 relative"
-        style={{
-          background: `
-            linear-gradient(
-              175deg,
-              hsl(150 40% 18%) 0%,
-              hsl(150 35% 24%) 12%,
-              hsl(150 28% 32%) 30%,
-              hsl(145 22% 42%) 50%,
-              hsl(145 20% 38%) 65%,
-              hsl(150 28% 28%) 80%,
-              hsl(150 38% 18%) 100%
-            )
-          `,
-        }}
-      >
+      <div className="flex-1 bg-background">
         <Header />
 
         <main className="pt-32 pb-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8 text-sm font-semibold tracking-wide uppercase font-body"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
-            </Link>
-
             {isLoading ? (
               <div className="animate-pulse space-y-4">
                 <div className="h-8 bg-card/10 rounded w-3/4" />
@@ -419,12 +467,12 @@ export default function BlogPost() {
             ) : post ? (
               <article>
                 {post.published_at && (
-                  <p className="text-accent/80 text-sm mb-4 font-body">
+                  <p className="text-muted-foreground text-sm mb-4 font-body">
                     {format(new Date(post.published_at), "MMMM d, yyyy")}
                   </p>
                 )}
 
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground mb-8">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8">
                   {post.title}
                 </h1>
 
@@ -456,7 +504,7 @@ export default function BlogPost() {
               </article>
             ) : (
               <div className="text-center py-20">
-                <h1 className="font-display text-3xl text-primary-foreground mb-4">Post Not Found</h1>
+                <h1 className="font-display text-3xl text-foreground mb-4">Post Not Found</h1>
                 <Link to="/blog" className="text-accent hover:text-accent/80 transition-colors">
                   Return to Blog
                 </Link>
