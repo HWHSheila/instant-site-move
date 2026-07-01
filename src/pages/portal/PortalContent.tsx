@@ -147,40 +147,40 @@ export default function PortalContent() {
           </DialogHeader>
           {selected && (
             <div className="space-y-5 text-sm leading-relaxed">
-              {selected.hook && (
+              {selected.script_hook && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Opening</p>
-                  <p className="font-medium">{selected.hook}</p>
+                  <p className="font-medium">{selected.script_hook}</p>
                 </div>
               )}
-              {selected.bridge && (
+              {selected.script_bridge && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Context</p>
-                  <p>{selected.bridge}</p>
+                  <p>{selected.script_bridge}</p>
                 </div>
               )}
-              {selected.authority_anchor && (
+              {selected.script_authority_anchor && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Why This Matters</p>
-                  <p className="italic text-muted-foreground">{selected.authority_anchor}</p>
+                  <p className="italic text-muted-foreground">{selected.script_authority_anchor}</p>
                 </div>
               )}
-              {selected.education && (
+              {selected.script_education && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Education</p>
-                  <p>{selected.education}</p>
+                  <p>{selected.script_education}</p>
                 </div>
               )}
-              {selected.pattern_expansion && (
+              {selected.script_pattern_expansion && (
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Pattern</p>
-                  <p>{selected.pattern_expansion}</p>
+                  <p>{selected.script_pattern_expansion}</p>
                 </div>
               )}
-              {selected.cta && (
+              {selected.script_cta && (
                 <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
                   <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Next Step</p>
-                  <p className="font-medium">{selected.cta}</p>
+                  <p className="font-medium">{selected.script_cta}</p>
                 </div>
               )}
               {selected.hashtags && selected.hashtags.length > 0 && (
