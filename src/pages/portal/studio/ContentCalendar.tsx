@@ -1,11 +1,28 @@
-import { useState, useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Plus, Loader2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Plus,
+  Loader2,
+  CheckCircle,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { useSupabase, useClerkUserId } from "@/hooks/use-supabase";
+import { supabase } from "@/integrations/supabase/client";
+import { Tables } from "@/integrations/supabase/types";
+import { toast } from "sonner";
+
+type ContentPiece = Tables<"content_pieces">;
+
+interface CalendarDay {
+  date: Date;
+  items: ContentPiece[];
+  isCurrentMonth: boolean;
+  isToday: boolean;
+}
 
 const postTypeColors: Record<string, string> = {
   authority: "bg-blue-500",
@@ -13,120 +30,90 @@ const postTypeColors: Record<string, string> = {
   engagement: "bg-purple-500",
 };
 
-interface CalendarEntry {
-  id: string;
-  scheduled_date: string;
-  scheduled_time: string | null;
-  platform: string | null;
-  content_pieces: {
-    title: string;
-    post_type: string;
-  } | null;
-}
-
 export default function ContentCalendar() {
-  const supabase = useSupabase();
-  const userId = useClerkUserId();
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [viewMode, setViewMode] = useState<"month" | "week">("month");
+  const [scheduled, setScheduled] = useState<ContentPiece[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const { data: entries = [], isLoading } = useQuery({
-    queryKey: ["calendar-entries", userId, currentDate.getMonth(), currentDate.getFullYear()],
-    queryFn: async () => {
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
-      const startDate = new Date(year, month - 1, 1).toISOString().split("T")[0];
-      const endDate = new Date(year, month + 2, 0).toISOString().split("T")[0];
+  const fetchScheduled = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("content_pieces")
+      .select("*")
+      .not("scheduled_date", "is", null)
+      .order("scheduled_date", { ascending: true });
 
-      const { data, error } = await supabase
-        .from("calendar_entries")
-        .select("id, scheduled_date, scheduled_time, platform, content_pieces(title, post_type)")
-        .gte("scheduled_date", startDate)
-        .lte("scheduled_date", endDate)
-        .order("scheduled_date");
-      if (error) throw error;
-      return (data || []) as unknown as CalendarEntry[];
-    },
-    enabled: !!userId,
-  });
-
-  const { data: weekStats = { authority: 0, sales: 0, engagement: 0 } } = useQuery({
-    queryKey: ["content-week-stats", userId],
-    queryFn: async () => {
-      const now = new Date();
-      const monday = new Date(now);
-      monday.setDate(now.getDate() - now.getDay() + 1);
-      const sunday = new Date(monday);
-      sunday.setDate(monday.getDate() + 6);
-
-      const { data, error } = await supabase
-        .from("content_pieces")
-        .select("post_type")
-        .gte("scheduled_date", monday.toISOString().split("T")[0])
-        .lte("scheduled_date", sunday.toISOString().split("T")[0]);
-
-      if (error) return { authority: 0, sales: 0, engagement: 0 };
-      const counts = { authority: 0, sales: 0, engagement: 0 };
-      (data || []).forEach((p: { post_type: string }) => {
-        if (p.post_type in counts) counts[p.post_type as keyof typeof counts]++;
-      });
-      return counts;
-    },
-    enabled: !!userId,
-  });
-
-  const entriesByDate = useMemo(() => {
-    const map: Record<string, CalendarEntry[]> = {};
-    entries.forEach((e) => {
-      if (!map[e.scheduled_date]) map[e.scheduled_date] = [];
-      map[e.scheduled_date].push(e);
-    });
-    return map;
-  }, [entries]);
-
-  const navigateMonth = (direction: "prev" | "next") => {
-    setCurrentDate((prev) => {
-      const d = new Date(prev);
-      d.setMonth(prev.getMonth() + (direction === "next" ? 1 : -1));
-      return d;
-    });
+    if (error) {
+      toast.error("Failed to load calendar");
+    } else {
+      setScheduled(data ?? []);
+    }
+    setLoading(false);
   };
 
-  const getMonthDays = () => {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+  useEffect(() => { fetchScheduled(); }, []);
+
+  const markPosted = async (id: string) => {
+    const now = new Date().toISOString();
+    const { error } = await supabase
+      .from("content_pieces")
+      .update({ status: "posted", posted_at: now })
+      .eq("id", id);
+    if (error) { toast.error("Update failed"); return; }
+    toast.success("Marked as posted");
+    setScheduled(prev => prev.map(p => p.id === id ? { ...p, status: "posted", posted_at: now } : p));
+  };
+
+  const getMonthDays = (date: Date): CalendarDay[] => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
     const today = new Date();
-    const days: Array<{ date: Date; isCurrentMonth: boolean; isToday: boolean; content: CalendarEntry[] }> = [];
+    const days: CalendarDay[] = [];
 
     const startDayOfWeek = firstDay.getDay();
     for (let i = startDayOfWeek - 1; i >= 0; i--) {
-      const d = new Date(year, month, -i);
-      days.push({ date: d, isCurrentMonth: false, isToday: false, content: [] });
+      days.push({ date: new Date(year, month, -i), items: [], isCurrentMonth: false, isToday: false });
     }
 
     for (let i = 1; i <= lastDay.getDate(); i++) {
-      const d = new Date(year, month, i);
-      const dateKey = d.toISOString().split("T")[0];
+      const dayDate = new Date(year, month, i);
+      const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`;
       days.push({
-        date: d,
+        date: dayDate,
+        items: scheduled.filter(p => p.scheduled_date === dateKey),
         isCurrentMonth: true,
-        isToday: d.toDateString() === today.toDateString(),
-        content: entriesByDate[dateKey] || [],
+        isToday: dayDate.toDateString() === today.toDateString(),
       });
     }
 
     const remaining = 42 - days.length;
     for (let i = 1; i <= remaining; i++) {
-      const d = new Date(year, month + 1, i);
-      days.push({ date: d, isCurrentMonth: false, isToday: false, content: [] });
+      days.push({ date: new Date(year, month + 1, i), items: [], isCurrentMonth: false, isToday: false });
     }
+
     return days;
   };
 
-  const days = getMonthDays();
+  const navigateMonth = (dir: "prev" | "next") => {
+    setCurrentDate(prev => {
+      const d = new Date(prev);
+      d.setMonth(prev.getMonth() + (dir === "next" ? 1 : -1));
+      return d;
+    });
+  };
+
+  const days = getMonthDays(currentDate);
   const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const weekStats = scheduled.reduce(
+    (acc, p) => {
+      if (p.post_type) acc[p.post_type] = (acc[p.post_type] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>
+  );
 
   return (
     <div className="space-y-6">
@@ -136,33 +123,42 @@ export default function ContentCalendar() {
           <p className="text-muted-foreground">Plan and schedule your content for optimal engagement</p>
         </div>
         <Link to="/portal/studio/generate">
-          <Button><Plus className="w-4 h-4 mr-2" />Schedule Content</Button>
+          <Button>
+            <Plus className="w-4 h-4 mr-2" />
+            New Script
+          </Button>
         </Link>
       </div>
 
+      {/* Mix tracker */}
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium">This Week's Mix</CardTitle>
-          <CardDescription>Target: 50% Authority - 30% Sales - 20% Engagement</CardDescription>
+          <CardTitle className="text-sm font-medium">Scheduled Mix</CardTitle>
+          <CardDescription>Target: 50% Authority · 30% Sales · 20% Engagement</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-blue-500" />
-              <span className="text-sm">Authority: {weekStats.authority}</span>
+          {loading ? (
+            <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+          ) : (
+            <div className="flex gap-4 flex-wrap">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500" />
+                <span className="text-sm">Authority: {weekStats.authority ?? 0}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="text-sm">Sales: {weekStats.sales ?? 0}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-purple-500" />
+                <span className="text-sm">Engagement: {weekStats.engagement ?? 0}</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-sm">Sales: {weekStats.sales}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-purple-500" />
-              <span className="text-sm">Engagement: {weekStats.engagement}</span>
-            </div>
-          </div>
+          )}
         </CardContent>
       </Card>
 
+      {/* Calendar grid */}
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -177,56 +173,66 @@ export default function ContentCalendar() {
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
-            <div className="flex gap-2">
-              <Button variant={viewMode === "week" ? "secondary" : "outline"} size="sm" onClick={() => setViewMode("week")}>Week</Button>
-              <Button variant={viewMode === "month" ? "secondary" : "outline"} size="sm" onClick={() => setViewMode("month")}>Month</Button>
-            </div>
           </div>
         </CardHeader>
         <CardContent>
-          {isLoading ? (
-            <div className="flex items-center justify-center py-12">
+          <div className="grid grid-cols-7 mb-2">
+            {weekDays.map(d => (
+              <div key={d} className="text-center text-sm font-medium text-muted-foreground py-2">{d}</div>
+            ))}
+          </div>
+
+          {loading ? (
+            <div className="flex justify-center py-12">
               <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
             </div>
           ) : (
-            <>
-              <div className="grid grid-cols-7 mb-2">
-                {weekDays.map((day) => (
-                  <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">{day}</div>
-                ))}
-              </div>
-              <div className="grid grid-cols-7 gap-1">
-                {days.map((day, index) => (
-                  <div key={index} className={cn(
+            <div className="grid grid-cols-7 gap-1">
+              {days.map((day, index) => (
+                <div
+                  key={index}
+                  className={cn(
                     "min-h-[100px] p-2 border rounded-lg",
                     day.isCurrentMonth ? "bg-background" : "bg-muted/30",
                     day.isToday && "border-primary"
+                  )}
+                >
+                  <div className={cn(
+                    "text-sm font-medium mb-1",
+                    !day.isCurrentMonth && "text-muted-foreground",
+                    day.isToday && "text-primary"
                   )}>
-                    <div className={cn(
-                      "text-sm font-medium mb-1",
-                      !day.isCurrentMonth && "text-muted-foreground",
-                      day.isToday && "text-primary"
-                    )}>
-                      {day.date.getDate()}
-                    </div>
-                    <div className="space-y-1">
-                      {day.content.slice(0, 3).map((item) => (
-                        <div key={item.id} className={cn(
-                          "text-xs p-1 rounded truncate text-white",
-                          postTypeColors[item.content_pieces?.post_type || "authority"]
-                        )} title={item.content_pieces?.title}>
-                          {item.scheduled_time && <span className="font-medium">{item.scheduled_time} </span>}
-                          {item.content_pieces?.title || "Untitled"}
-                        </div>
-                      ))}
-                      {day.content.length > 3 && (
-                        <div className="text-xs text-muted-foreground">+{day.content.length - 3} more</div>
-                      )}
-                    </div>
+                    {day.date.getDate()}
                   </div>
-                ))}
-              </div>
-            </>
+                  <div className="space-y-1">
+                    {day.items.slice(0, 3).map(item => (
+                      <div
+                        key={item.id}
+                        className={cn(
+                          "text-xs p-1 rounded truncate text-white group relative",
+                          item.post_type ? postTypeColors[item.post_type] : "bg-gray-400"
+                        )}
+                        title={item.title}
+                      >
+                        <span>{item.scheduled_time && `${item.scheduled_time} `}{item.title}</span>
+                        {item.status !== "posted" && (
+                          <button
+                            className="hidden group-hover:inline-flex ml-1 opacity-80 hover:opacity-100"
+                            onClick={() => markPosted(item.id)}
+                            title="Mark as posted"
+                          >
+                            <CheckCircle className="w-3 h-3" />
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                    {day.items.length > 3 && (
+                      <div className="text-xs text-muted-foreground">+{day.items.length - 3} more</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </CardContent>
       </Card>
