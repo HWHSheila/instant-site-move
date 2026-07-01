@@ -59,6 +59,7 @@ import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
 import PortalCommunity from "./pages/portal/PortalCommunity";
 import PortalUpgrade from "./pages/portal/PortalUpgrade";
 import PortalAccount from "./pages/portal/PortalAccount";
+import PortalContent from "./pages/portal/PortalContent";
 
 // Content Studio Pages
 import StudioDashboard from "./pages/portal/studio/StudioDashboard";
@@ -140,6 +141,7 @@ const App = () => (
             <Route path="studio/calendar" element={<ContentCalendar />} />
             <Route path="studio/campaigns" element={<Campaigns />} />
             
+            <Route path="content" element={<PortalContent />} />
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
