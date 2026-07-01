@@ -21,18 +21,6 @@ import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
 import Phase1GutReset from "./pages/Phase1GutReset";
 import ThirtyDayRoadmap from "./pages/ThirtyDayRoadmap";
-import ThirtyDayGuidedBaseline from "./pages/ThirtyDayGuidedBaseline";
-import {
-  GLP1Ebook,
-  GLP1ProtocolAddon,
-  GLP1EbookProtocolConfirm,
-  GLP1EbookProtocolThankYou,
-  GLP1RoadmapConfirm,
-  GLP1RoadmapThankYou,
-  NinetyDayProtocol,
-  NinetyDayProtocolConfirm,
-  NinetyDayProtocolThankYou,
-} from "./pages/GLP1FunnelPages";
 import FourWeekCoaching from "./pages/FourWeekCoaching";
 import FourWeekConfirm from "./pages/FourWeekConfirm";
 import FourWeekThankYou from "./pages/FourWeekThankYou";
@@ -71,8 +59,7 @@ import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
 import PortalCommunity from "./pages/portal/PortalCommunity";
 import PortalUpgrade from "./pages/portal/PortalUpgrade";
 import PortalAccount from "./pages/portal/PortalAccount";
-import PortalIntake from "./pages/portal/PortalIntake";
-import PortalResults from "./pages/portal/PortalResults";
+import PortalContent from "./pages/portal/PortalContent";
 
 // Content Studio Pages
 import StudioDashboard from "./pages/portal/studio/StudioDashboard";
@@ -80,12 +67,6 @@ import ScriptGenerator from "./pages/portal/studio/ScriptGenerator";
 import ContentLibrary from "./pages/portal/studio/ContentLibrary";
 import ContentCalendar from "./pages/portal/studio/ContentCalendar";
 import Campaigns from "./pages/portal/studio/Campaigns";
-
-// Admin Pages
-import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AdminSubscribers from "./pages/admin/AdminSubscribers";
-import AdminContent from "./pages/admin/AdminContent";
 
 
 const queryClient = new QueryClient();
@@ -108,24 +89,15 @@ const App = () => (
           <Route path="/glp1-confirm" element={<GLP1Confirm />} />
           <Route path="/glp1-thankyou" element={<GLP1ThankYou />} />
           <Route path="/glp1-option" element={<GLP1Option />} />
-          <Route path="/glp1-roadmap-addon" element={<Phase1GutReset />} />
-          <Route path="/glp1-ebook" element={<GLP1Ebook />} />
-          <Route path="/glp1-protocol-addon" element={<GLP1ProtocolAddon />} />
-          <Route path="/glp1-ebook-protocol-confirm" element={<GLP1EbookProtocolConfirm />} />
-          <Route path="/glp1-ebook-protocol-thankyou" element={<GLP1EbookProtocolThankYou />} />
-          <Route path="/glp1-roadmap-confirm" element={<GLP1RoadmapConfirm />} />
-          <Route path="/glp1-roadmap-thankyou" element={<GLP1RoadmapThankYou />} />
-          <Route path="/90day-protocol" element={<NinetyDayProtocol />} />
-          <Route path="/90day-protocol-confirm" element={<NinetyDayProtocolConfirm />} />
-          <Route path="/90day-protocol-thankyou" element={<NinetyDayProtocolThankYou />} />
+          <Route path="/90day-phase1" element={<Phase1GutReset />} />
             <Route path="/30day-roadmap" element={<ThirtyDayRoadmap />} />
-            <Route path="/30day-guided-baseline" element={<ThirtyDayGuidedBaseline />} />
             <Route path="/glp1-bundle-confirm" element={<GLP1BundleConfirm />} />
             <Route path="/glp1-bundle-thankyou" element={<GLP1BundleThankYou />} />
             <Route path="/4-week-coaching" element={<FourWeekCoaching />} />
             <Route path="/4-week-confirm" element={<FourWeekConfirm />} />
             <Route path="/4-week-thankyou" element={<FourWeekThankYou />} />
             <Route path="/confirm" element={<Confirm />} />
+          <Route path="/confirm" element={<Confirm />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
@@ -169,8 +141,7 @@ const App = () => (
             <Route path="studio/calendar" element={<ContentCalendar />} />
             <Route path="studio/campaigns" element={<Campaigns />} />
             
-            <Route path="intake" element={<PortalIntake />} />
-            <Route path="results" element={<PortalResults />} />
+            <Route path="content" element={<PortalContent />} />
             <Route path="start-here" element={<PortalStartHere />} />
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
@@ -182,18 +153,6 @@ const App = () => (
             <Route path="account" element={<PortalAccount />} />
           </Route>
           
-          {/* Admin Panel (Protected) */}
-          <Route path="/admin" element={
-            <ProtectedRoute>
-              <AdminLayout />
-            </ProtectedRoute>
-          }>
-            <Route index element={<AdminDashboard />} />
-            <Route path="subscribers" element={<AdminSubscribers />} />
-            <Route path="content" element={<AdminContent />} />
-            <Route path="analytics" element={<AdminDashboard />} />
-          </Route>
-
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

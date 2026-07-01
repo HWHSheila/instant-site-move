@@ -14,65 +14,133 @@ export type Database = {
   }
   public: {
     Tables: {
-      baseline_submissions: {
+      content_pieces: {
         Row: {
-          bloating: number
-          bowel_regularity: number
-          brain_fog: number
-          cravings: number
-          created_at: string
-          digestion: number
-          email: string
-          energy: number
-          first_name: string
           id: string
-          joint_pain: number
-          last_name: string
-          mood: number
-          muscle_body_aches: number
-          sleep: number
-          stress_level: number
-          top_3_symptoms: string | null
+          created_at: string
+          updated_at: string
+          title: string
+          pillar_id: string | null
+          pillar_name: string | null
+          pain_point: string | null
+          post_type: "authority" | "sales" | "engagement" | null
+          hook_style: string | null
+          primary_strength: string | null
+          content_lane: "attract" | "member"
+          content_format: string
+          status: "draft" | "ready" | "scheduled" | "posted"
+          review_status: "pending" | "approved" | "rejected"
+          portal_published: boolean
+          full_script: string | null
+          script_hook: string | null
+          script_bridge: string | null
+          script_authority_anchor: string | null
+          script_education: string | null
+          script_pattern_expansion: string | null
+          script_cta: string | null
+          caption: string | null
+          hashtags: string[] | null
+          scheduled_date: string | null
+          posted_at: string | null
         }
         Insert: {
-          bloating: number
-          bowel_regularity: number
-          brain_fog: number
-          cravings: number
-          created_at?: string
-          digestion: number
-          email: string
-          energy: number
-          first_name: string
           id?: string
-          joint_pain: number
-          last_name: string
-          mood: number
-          muscle_body_aches: number
-          sleep: number
-          stress_level: number
-          top_3_symptoms?: string | null
+          created_at?: string
+          updated_at?: string
+          title?: string
+          pillar_id?: string | null
+          pillar_name?: string | null
+          pain_point?: string | null
+          post_type?: "authority" | "sales" | "engagement" | null
+          hook_style?: string | null
+          primary_strength?: string | null
+          content_lane?: "attract" | "member"
+          content_format?: string
+          status?: "draft" | "ready" | "scheduled" | "posted"
+          review_status?: "pending" | "approved" | "rejected"
+          portal_published?: boolean
+          full_script?: string | null
+          script_hook?: string | null
+          script_bridge?: string | null
+          script_authority_anchor?: string | null
+          script_education?: string | null
+          script_pattern_expansion?: string | null
+          script_cta?: string | null
+          caption?: string | null
+          hashtags?: string[] | null
+          scheduled_date?: string | null
+          posted_at?: string | null
         }
         Update: {
-          bloating?: number
-          bowel_regularity?: number
-          brain_fog?: number
-          cravings?: number
-          created_at?: string
-          digestion?: number
-          email?: string
-          energy?: number
-          first_name?: string
           id?: string
-          joint_pain?: number
-          last_name?: string
-          mood?: number
-          muscle_body_aches?: number
-          sleep?: number
-          stress_level?: number
-          top_3_symptoms?: string | null
+          created_at?: string
+          updated_at?: string
+          title?: string
+          pillar_id?: string | null
+          pillar_name?: string | null
+          pain_point?: string | null
+          post_type?: "authority" | "sales" | "engagement" | null
+          hook_style?: string | null
+          primary_strength?: string | null
+          content_lane?: "attract" | "member"
+          content_format?: string
+          status?: "draft" | "ready" | "scheduled" | "posted"
+          review_status?: "pending" | "approved" | "rejected"
+          portal_published?: boolean
+          full_script?: string | null
+          script_hook?: string | null
+          script_bridge?: string | null
+          script_authority_anchor?: string | null
+          script_education?: string | null
+          script_pattern_expansion?: string | null
+          script_cta?: string | null
+          caption?: string | null
+          hashtags?: string[] | null
+          scheduled_date?: string | null
+          posted_at?: string | null
         }
         Relationships: []
+      }
+      calendar_entries: {
+        Row: {
+          id: string
+          created_at: string
+          content_piece_id: string | null
+          scheduled_date: string
+          scheduled_time: string | null
+          platform: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at: string | null
+          status: "scheduled" | "posted" | "cancelled"
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          content_piece_id?: string | null
+          scheduled_date: string
+          scheduled_time?: string | null
+          platform?: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at?: string | null
+          status?: "scheduled" | "posted" | "cancelled"
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          content_piece_id?: string | null
+          scheduled_date?: string
+          scheduled_time?: string | null
+          platform?: "instagram" | "facebook" | "tiktok" | "youtube" | "email"
+          posted_at?: string | null
+          status?: "scheduled" | "posted" | "cancelled"
+        }
+        Relationships: [
+          {
+            foreignKeyName: "calendar_entries_content_piece_id_fkey"
+            columns: ["content_piece_id"]
+            isOneToOne: false
+            referencedRelation: "content_pieces"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       blog_posts: {
         Row: {
@@ -107,93 +175,6 @@ export type Database = {
           slug?: string
           title?: string
           updated_at?: string | null
-        }
-        Relationships: []
-      }
-      email_send_log: {
-        Row: {
-          created_at: string
-          error_message: string | null
-          id: string
-          message_id: string | null
-          metadata: Json | null
-          recipient_email: string
-          status: string
-          template_name: string
-        }
-        Insert: {
-          created_at?: string
-          error_message?: string | null
-          id?: string
-          message_id?: string | null
-          metadata?: Json | null
-          recipient_email: string
-          status: string
-          template_name: string
-        }
-        Update: {
-          created_at?: string
-          error_message?: string | null
-          id?: string
-          message_id?: string | null
-          metadata?: Json | null
-          recipient_email?: string
-          status?: string
-          template_name?: string
-        }
-        Relationships: []
-      }
-      email_send_state: {
-        Row: {
-          auth_email_ttl_minutes: number
-          batch_size: number
-          id: number
-          retry_after_until: string | null
-          send_delay_ms: number
-          transactional_email_ttl_minutes: number
-          updated_at: string
-        }
-        Insert: {
-          auth_email_ttl_minutes?: number
-          batch_size?: number
-          id?: number
-          retry_after_until?: string | null
-          send_delay_ms?: number
-          transactional_email_ttl_minutes?: number
-          updated_at?: string
-        }
-        Update: {
-          auth_email_ttl_minutes?: number
-          batch_size?: number
-          id?: number
-          retry_after_until?: string | null
-          send_delay_ms?: number
-          transactional_email_ttl_minutes?: number
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      email_unsubscribe_tokens: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          token: string
-          used_at: string | null
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          token: string
-          used_at?: string | null
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          token?: string
-          used_at?: string | null
         }
         Relationships: []
       }
@@ -296,60 +277,12 @@ export type Database = {
         }
         Relationships: []
       }
-      suppressed_emails: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          metadata: Json | null
-          reason: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          metadata?: Json | null
-          reason: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          metadata?: Json | null
-          reason?: string
-        }
-        Relationships: []
-      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      delete_email: {
-        Args: { message_id: number; queue_name: string }
-        Returns: boolean
-      }
-      enqueue_email: {
-        Args: { payload: Json; queue_name: string }
-        Returns: number
-      }
-      move_to_dlq: {
-        Args: {
-          dlq_name: string
-          message_id: number
-          payload: Json
-          source_queue: string
-        }
-        Returns: number
-      }
-      read_email_batch: {
-        Args: { batch_size: number; queue_name: string; vt: number }
-        Returns: {
-          message: Json
-          msg_id: number
-          read_ct: number
-        }[]
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
