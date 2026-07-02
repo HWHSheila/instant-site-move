@@ -10,6 +10,7 @@ import {
   Sparkles, 
   Copy, 
   Check,
+  CheckCircle,
   Loader2,
   Save
 } from "lucide-react";
@@ -265,11 +266,11 @@ export default function ScriptGenerator() {
         <CardHeader>
           <CardTitle>{STEPS[currentStepIndex].title}</CardTitle>
           <CardDescription>
-            {currentStep === "pillar" && "Select the content pillar for your script"}
-            {currentStep === "painPoint" && "Choose or describe the pain point to address"}
-            {currentStep === "postType" && "What type of post is this?"}
-            {currentStep === "strength" && "Select your primary Gallup strength for tone"}
-            {currentStep === "hookStyle" && "How do you want to open the script?"}
+            {currentStep === "pillar" && "Click a card below to select your content pillar"}
+            {currentStep === "painPoint" && "Click a card below, or type your own at the bottom"}
+            {currentStep === "postType" && "Click a card below to choose your post type"}
+            {currentStep === "strength" && "Click a card below to pick your primary Gallup strength"}
+            {currentStep === "hookStyle" && "Click a card below to choose your opening style"}
             {currentStep === "generate" && "Review your selections and generate the script"}
           </CardDescription>
         </CardHeader>
@@ -277,27 +278,33 @@ export default function ScriptGenerator() {
           {/* Step 1: Pillar */}
           {currentStep === "pillar" && (
             <div className="grid gap-3 md:grid-cols-2">
-              {PILLARS.map((pillar) => (
-                <button
-                  key={pillar.id}
-                  onClick={() => setSelections({ ...selections, pillar })}
-                  className={cn(
-                    "p-4 rounded-lg border text-left transition-all",
-                    selections.pillar?.id === pillar.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/50"
-                  )}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: pillar.color }}
-                    />
-                    <span className="font-medium">{pillar.name}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-1">{pillar.description}</p>
-                </button>
-              ))}
+              {PILLARS.map((pillar) => {
+                const selected = selections.pillar?.id === pillar.id;
+                return (
+                  <button
+                    key={pillar.id}
+                    onClick={() => setSelections({ ...selections, pillar })}
+                    className={cn(
+                      "p-4 rounded-lg border-2 text-left transition-all cursor-pointer",
+                      selected
+                        ? "border-primary bg-primary/10"
+                        : "border-border hover:border-primary/50 hover:bg-muted/30"
+                    )}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-3 h-3 rounded-full"
+                          style={{ backgroundColor: pillar.color }}
+                        />
+                        <span className="font-medium">{pillar.name}</span>
+                      </div>
+                      {selected && <CheckCircle className="w-5 h-5 text-primary shrink-0" />}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1">{pillar.description}</p>
+                  </button>
+                );
+              })}
             </div>
           )}
 
@@ -305,20 +312,24 @@ export default function ScriptGenerator() {
           {currentStep === "painPoint" && (
             <div className="space-y-4">
               <div className="grid gap-2 md:grid-cols-2">
-                {PAIN_POINTS.map((point) => (
-                  <button
-                    key={point}
-                    onClick={() => setSelections({ ...selections, painPoint: point, customPainPoint: "" })}
-                    className={cn(
-                      "p-3 rounded-lg border text-left text-sm transition-all",
-                      selections.painPoint === point
-                        ? "border-primary bg-primary/5"
-                        : "border-border hover:border-primary/50"
-                    )}
-                  >
-                    {point}
-                  </button>
-                ))}
+                {PAIN_POINTS.map((point) => {
+                  const selected = selections.painPoint === point;
+                  return (
+                    <button
+                      key={point}
+                      onClick={() => setSelections({ ...selections, painPoint: point, customPainPoint: "" })}
+                      className={cn(
+                        "p-3 rounded-lg border-2 text-left text-sm transition-all cursor-pointer flex items-center justify-between gap-2",
+                        selected
+                          ? "border-primary bg-primary/10"
+                          : "border-border hover:border-primary/50 hover:bg-muted/30"
+                      )}
+                    >
+                      <span>{point}</span>
+                      {selected && <CheckCircle className="w-4 h-4 text-primary shrink-0" />}
+                    </button>
+                  );
+                })}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium">Or describe your own:</label>
@@ -335,27 +346,33 @@ export default function ScriptGenerator() {
           {/* Step 3: Post Type */}
           {currentStep === "postType" && (
             <div className="grid gap-3 md:grid-cols-3">
-              {POST_TYPES.map((type) => (
-                <button
-                  key={type.id}
-                  onClick={() => setSelections({ ...selections, postType: type })}
-                  className={cn(
-                    "p-4 rounded-lg border text-left transition-all",
-                    selections.postType?.id === type.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/50"
-                  )}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: type.color }}
-                    />
-                    <span className="font-medium">{type.name}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-1">{type.description}</p>
-                </button>
-              ))}
+              {POST_TYPES.map((type) => {
+                const selected = selections.postType?.id === type.id;
+                return (
+                  <button
+                    key={type.id}
+                    onClick={() => setSelections({ ...selections, postType: type })}
+                    className={cn(
+                      "p-4 rounded-lg border-2 text-left transition-all cursor-pointer",
+                      selected
+                        ? "border-primary bg-primary/10"
+                        : "border-border hover:border-primary/50 hover:bg-muted/30"
+                    )}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-3 h-3 rounded-full"
+                          style={{ backgroundColor: type.color }}
+                        />
+                        <span className="font-medium">{type.name}</span>
+                      </div>
+                      {selected && <CheckCircle className="w-5 h-5 text-primary shrink-0" />}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1">{type.description}</p>
+                  </button>
+                );
+              })}
             </div>
           )}
 
@@ -366,37 +383,44 @@ export default function ScriptGenerator() {
                 Recommended for {selections.postType?.name} posts:
               </p>
               <div className="grid gap-2 md:grid-cols-3">
-                {recommendedStrengths.map((strength) => (
-                  <button
-                    key={strength.name}
-                    onClick={() => setSelections({ ...selections, strength })}
-                    className={cn(
-                      "p-3 rounded-lg border text-left transition-all",
-                      selections.strength?.name === strength.name
-                        ? "border-primary bg-primary/5"
-                        : "border-border hover:border-primary/50"
-                    )}
-                  >
-                    <span className="font-medium">{strength.name}</span>
-                  </button>
-                ))}
+                {recommendedStrengths.map((strength) => {
+                  const selected = selections.strength?.name === strength.name;
+                  return (
+                    <button
+                      key={strength.name}
+                      onClick={() => setSelections({ ...selections, strength })}
+                      className={cn(
+                        "p-3 rounded-lg border-2 text-left transition-all cursor-pointer flex items-center justify-between gap-2",
+                        selected
+                          ? "border-primary bg-primary/10"
+                          : "border-border hover:border-primary/50 hover:bg-muted/30"
+                      )}
+                    >
+                      <span className="font-medium">{strength.name}</span>
+                      {selected && <CheckCircle className="w-4 h-4 text-primary shrink-0" />}
+                    </button>
+                  );
+                })}
               </div>
               <p className="text-sm text-muted-foreground mt-4">All strengths:</p>
               <div className="flex flex-wrap gap-2">
-                {GALLUP_STRENGTHS.filter(s => !recommendedStrengths.includes(s)).map((strength) => (
-                  <button
-                    key={strength.name}
-                    onClick={() => setSelections({ ...selections, strength })}
-                    className={cn(
-                      "px-3 py-1.5 rounded-full border text-sm transition-all",
-                      selections.strength?.name === strength.name
-                        ? "border-primary bg-primary/5"
-                        : "border-border hover:border-primary/50"
-                    )}
-                  >
-                    {strength.name}
-                  </button>
-                ))}
+                {GALLUP_STRENGTHS.filter(s => !recommendedStrengths.includes(s)).map((strength) => {
+                  const selected = selections.strength?.name === strength.name;
+                  return (
+                    <button
+                      key={strength.name}
+                      onClick={() => setSelections({ ...selections, strength })}
+                      className={cn(
+                        "px-3 py-1.5 rounded-full border-2 text-sm transition-all cursor-pointer",
+                        selected
+                          ? "border-primary bg-primary/10"
+                          : "border-border hover:border-primary/50 hover:bg-muted/30"
+                      )}
+                    >
+                      {strength.name}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -404,21 +428,27 @@ export default function ScriptGenerator() {
           {/* Step 5: Hook Style */}
           {currentStep === "hookStyle" && (
             <div className="space-y-3">
-              {HOOK_STYLES.map((hook) => (
-                <button
-                  key={hook.id}
-                  onClick={() => setSelections({ ...selections, hookStyle: hook })}
-                  className={cn(
-                    "w-full p-4 rounded-lg border text-left transition-all",
-                    selections.hookStyle?.id === hook.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/50"
-                  )}
-                >
-                  <span className="font-medium">{hook.name}</span>
-                  <p className="text-sm text-muted-foreground mt-1 italic">"{hook.example}"</p>
-                </button>
-              ))}
+              {HOOK_STYLES.map((hook) => {
+                const selected = selections.hookStyle?.id === hook.id;
+                return (
+                  <button
+                    key={hook.id}
+                    onClick={() => setSelections({ ...selections, hookStyle: hook })}
+                    className={cn(
+                      "w-full p-4 rounded-lg border-2 text-left transition-all cursor-pointer",
+                      selected
+                        ? "border-primary bg-primary/10"
+                        : "border-border hover:border-primary/50 hover:bg-muted/30"
+                    )}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium">{hook.name}</span>
+                      {selected && <CheckCircle className="w-5 h-5 text-primary shrink-0" />}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1 italic">"{hook.example}"</p>
+                  </button>
+                );
+              })}
             </div>
           )}
 

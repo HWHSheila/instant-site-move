@@ -92,6 +92,15 @@ export function Header() {
                 Free Guide
               </a>
             </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full px-6"
+            >
+              <a href="/portal">
+                Member Login
+              </a>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -127,6 +136,15 @@ export function Header() {
               >
                 <a href="/free-guide">
                   Free Guide
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full w-full"
+              >
+                <a href="/portal">
+                  Member Login
                 </a>
               </Button>
             </nav>
