@@ -14,7 +14,7 @@ import {
   Save
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useSupabase } from "@/hooks/use-supabase";
+import { useSupabase, useClerkUserId } from "@/hooks/use-supabase";
 import { toast } from "sonner";
 
 // Blueprint Data (from Appendix A)
@@ -82,6 +82,7 @@ const STEPS: { id: WizardStep; title: string }[] = [
 export default function ScriptGenerator() {
   const navigate = useNavigate();
   const supabase = useSupabase();
+  const clerkUserId = useClerkUserId();
   const [currentStep, setCurrentStep] = useState<WizardStep>("pillar");
   const [isGenerating, setIsGenerating] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -180,6 +181,7 @@ export default function ScriptGenerator() {
         .from("content_pieces")
         .insert({
           title,
+          user_id: clerkUserId,
           pillar_name: selections.pillar?.name ?? null,
           pain_point: selections.customPainPoint || selections.painPoint || null,
           post_type: selections.postType?.id as "authority" | "sales" | "engagement" | null,
