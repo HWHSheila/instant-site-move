@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, BookOpen, Loader2, PlayCircle, Video } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { useSupabase } from "@/hooks/use-supabase";
+import { usePreviewTier } from "@/components/portal/PortalLayout";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 import {
@@ -24,7 +25,19 @@ const pillarColors: Record<string, string> = {
   "Chronic Fatigue": "bg-blue-100 text-blue-700",
 };
 
+// Tier access map — what each tier can see (cumulative up the stack)
+const TIER_ACCESS: Record<string, string[]> = {
+  admin: ["awareness", "foundation", "guided", "restoration", "integration"],
+  integration: ["awareness", "foundation", "guided", "restoration", "integration"],
+  restoration: ["awareness", "foundation", "guided", "restoration"],
+  guided: ["awareness", "foundation", "guided"],
+  foundation: ["awareness", "foundation"],
+  awareness: ["awareness"],
+};
+
 export default function PortalContent() {
+  const supabase = useSupabase();
+  const { previewTier, isAdmin } = usePreviewTier();
   const [content, setContent] = useState<ContentPiece[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,7 +61,9 @@ export default function PortalContent() {
       setLoading(false);
     };
     fetchContent();
-  }, []);
+  }, [supabase]);
+
+  const allowedTiers = TIER_ACCESS[previewTier] ?? TIER_ACCESS["admin"];
 
   const pillars = Array.from(new Set(content.map(c => c.pillar_name).filter(Boolean))) as string[];
 
@@ -57,7 +72,9 @@ export default function PortalContent() {
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.caption ?? "").toLowerCase().includes(searchQuery.toLowerCase());
     const matchesPillar = activeTab === "all" || item.pillar_name === activeTab;
-    return matchesSearch && matchesPillar;
+    // When admin is previewing a specific tier, apply tier access filter
+    const matchesTier = !isAdmin || previewTier === "admin" || allowedTiers.includes(item.content_lane ?? "awareness");
+    return matchesSearch && matchesPillar && matchesTier;
   });
 
   return (

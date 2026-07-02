@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { useSupabase } from "@/hooks/use-supabase";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 
@@ -31,6 +31,7 @@ const postTypeColors: Record<string, string> = {
 };
 
 export default function ContentCalendar() {
+  const supabase = useSupabase();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [scheduled, setScheduled] = useState<ContentPiece[]>([]);
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,7 @@ export default function ContentCalendar() {
     setLoading(false);
   };
 
-  useEffect(() => { fetchScheduled(); }, []);
+  useEffect(() => { fetchScheduled(); }, [supabase]);
 
   const markPosted = async (id: string) => {
     const now = new Date().toISOString();

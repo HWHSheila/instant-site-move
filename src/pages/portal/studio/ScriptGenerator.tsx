@@ -14,7 +14,7 @@ import {
   Save
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
+import { useSupabase } from "@/hooks/use-supabase";
 import { toast } from "sonner";
 
 // Blueprint Data (from Appendix A)
@@ -81,6 +81,7 @@ const STEPS: { id: WizardStep; title: string }[] = [
 
 export default function ScriptGenerator() {
   const navigate = useNavigate();
+  const supabase = useSupabase();
   const [currentStep, setCurrentStep] = useState<WizardStep>("pillar");
   const [isGenerating, setIsGenerating] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
