@@ -20,11 +20,11 @@ import { toast } from "sonner";
 
 // Blueprint Data (from Appendix A)
 const PILLARS = [
-  { id: "P1", name: "Gut Function", description: "Digestive health and microbiome", color: "#8B5CF6" },
-  { id: "P2", name: "Blood Sugar", description: "Glucose regulation and energy", color: "#F59E0B" },
-  { id: "P3", name: "Inflammation", description: "Immune response and recovery", color: "#EF4444" },
-  { id: "P4", name: "Metabolic Instability", description: "Metabolic signaling and adaptation", color: "#10B981" },
-  { id: "P5", name: "Chronic Fatigue", description: "Energy patterns and recovery", color: "#3B82F6" },
+  { id: "P1", name: "Root Cause Education", description: "Teach physiology — blood sugar, digestion, metabolic adaptation", color: "#8B5CF6" },
+  { id: "P2", name: "Personal Story & Validation", description: "Emotional connection — feeling broken, dismissed, confused", color: "#F59E0B" },
+  { id: "P3", name: "Practical Support", description: "Daily behaviors — meal timing, sleep, stress regulation", color: "#10B981" },
+  { id: "P4", name: "Myth Busting", description: "Correct misinformation — diet culture lies, medical myths", color: "#EF4444" },
+  { id: "P5", name: "Coaching & Guidance", description: "Position your offer — need for roadmap, structured support", color: "#3B82F6" },
 ];
 
 const POST_TYPES = [
@@ -57,16 +57,13 @@ const GALLUP_STRENGTHS = [
 ];
 
 const PAIN_POINTS = [
-  "Weight fluctuates despite consistent eating",
-  "Afternoon energy crashes",
-  "Bloating after most meals",
-  "Brain fog that won't lift",
-  "Sleep issues despite feeling exhausted",
-  "Feeling cold all the time",
-  "Stubborn belly fat",
-  "Mood swings before period",
-  "Cravings that feel uncontrollable",
-  "Feeling puffy or inflamed",
+  "Bloating every night",
+  "Energy crashes mid-day",
+  "Cycle symptoms shifting wildly",
+  "Water retention / inflammation",
+  "Hair shedding, sleep disruption",
+  "Feeling dismissed by doctors",
+  "\"I've tried everything\"",
 ];
 
 type WizardStep = "pillar" | "painPoint" | "postType" | "strength" | "hookStyle" | "generate";
