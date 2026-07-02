@@ -36,7 +36,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { useSupabase } from "@/hooks/use-supabase";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 
@@ -66,6 +66,7 @@ function getEmbedUrl(url: string): string | null {
 }
 
 export default function ContentLibrary() {
+  const supabase = useSupabase();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [content, setContent] = useState<ContentPiece[]>([]);
@@ -87,7 +88,7 @@ export default function ContentLibrary() {
     setLoading(false);
   };
 
-  useEffect(() => { fetchContent(); }, []);
+  useEffect(() => { fetchContent(); }, [supabase]);
 
   const filteredContent = content.filter((item) => {
     const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase());
