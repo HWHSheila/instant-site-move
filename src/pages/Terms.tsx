@@ -63,7 +63,7 @@ export default function Terms() {
               <section className="space-y-4">
                 <h2 className="text-xl font-display font-medium text-foreground">6. Payment and Refunds</h2>
                 <p>
-                  All payments are processed securely through our payment providers. Due to the digital nature of our products, refunds are handled on a case-by-case basis. Please contact us within 14 days of purchase if you have concerns about your order.
+                  Due to the digital nature of our products and services, Her Wellness Harmony does not offer refunds under any circumstances. Once access to portal content, courses, guides, or any digital product has been granted, that access constitutes full delivery of the product. By completing any purchase you agree to this no-refund policy. If you experience a verified technical failure on the part of Her Wellness Harmony that prevented you from accessing any content during your paid period, please contact us and the matter will be reviewed at the sole discretion of Her Wellness Harmony.
                 </p>
               </section>
 
