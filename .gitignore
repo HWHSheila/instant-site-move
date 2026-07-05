@@ -31,3 +31,16 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Credentials and secrets
+*.key
+*.pem
+*.p12
+credentials.*
+secrets.*
+
+# Local agent rules and skills (never commit)
+.cursor/
+
+# Supabase local state
+supabase/.temp/

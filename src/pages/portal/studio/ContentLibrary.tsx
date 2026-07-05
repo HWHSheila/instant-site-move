@@ -15,7 +15,6 @@ import {
   Trash2,
   Calendar as CalendarIcon,
   CheckCircle,
-  Globe,
   Loader2,
   Video,
   Upload,
@@ -101,18 +100,6 @@ export default function ContentLibrary() {
     if (error) { toast.error("Update failed"); return; }
     toast.success(`Marked as ${status}`);
     setContent(prev => prev.map(p => p.id === id ? { ...p, status } : p));
-  };
-
-  const togglePortalPublish = async (item: ContentPiece) => {
-    const next = !item.portal_published;
-    const { error } = await supabase
-      .from("content_pieces" as any)
-      .update({ portal_published: next, content_lane: next ? "member" : "attract" })
-      .eq("id", item.id);
-    if (error) { toast.error("Update failed"); return; }
-    toast.success(next ? "Published to member portal" : "Removed from portal");
-    setContent(prev => prev.map(p => p.id === item.id
-      ? { ...p, portal_published: next, content_lane: next ? "member" : "attract" } : p));
   };
 
   const deleteItem = async (id: string) => {
@@ -224,11 +211,6 @@ export default function ContentLibrary() {
                               <Video className="w-3 h-3 mr-1" />Video
                             </Badge>
                           )}
-                          {item.portal_published && (
-                            <Badge className="bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400">
-                              <Globe className="w-3 h-3 mr-1" />Portal
-                            </Badge>
-                          )}
                         </div>
                         <h3 className="font-medium text-foreground truncate">{item.title}</h3>
                         <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground flex-wrap">
@@ -266,9 +248,6 @@ export default function ContentLibrary() {
                               <CheckCircle className="w-4 h-4 mr-2 text-green-600" />Mark Posted
                             </DropdownMenuItem>
                           )}
-                          <DropdownMenuItem onClick={() => togglePortalPublish(item)}>
-                            <Globe className="w-4 h-4 mr-2" />{item.portal_published ? "Remove from Portal" : "Publish to Portal"}
-                          </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem className="text-destructive" onClick={() => deleteItem(item.id)}>
                             <Trash2 className="w-4 h-4 mr-2" />Delete

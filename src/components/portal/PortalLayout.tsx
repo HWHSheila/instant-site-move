@@ -9,7 +9,6 @@ import {
   Route,
   Bot,
   FileText,
-  Users,
   ArrowUpCircle,
   UserCircle,
   Menu,
@@ -59,12 +58,17 @@ interface NavItem {
 const portalNav: NavItem[] = [
   { label: "Dashboard", to: "/portal", icon: LayoutDashboard, end: true },
 
-  // Content Studio — admin only
-  { label: "Content Studio", to: "/portal/studio", icon: Video, section: true, adminOnly: true },
+  // Social Studio — admin only
+  { label: "Social Studio", to: "/portal/studio", icon: Video, section: true, adminOnly: true },
   { label: "Script Generator", to: "/portal/studio/generate", icon: Sparkles, indent: true, adminOnly: true },
   { label: "Content Library", to: "/portal/studio/library", icon: Library, indent: true, adminOnly: true },
   { label: "Content Calendar", to: "/portal/studio/calendar", icon: Calendar, indent: true, adminOnly: true },
   { label: "Campaigns", to: "/portal/studio/campaigns", icon: Target, indent: true, adminOnly: true },
+
+  // Portal Studio — admin only
+  { label: "Portal Studio", to: "/portal/studio/portal-library", icon: BookOpen, section: true, adminOnly: true },
+  { label: "Portal Script Generator", to: "/portal/studio/portal-generate", icon: Sparkles, indent: true, adminOnly: true },
+  { label: "Portal Video Library", to: "/portal/studio/portal-library", icon: Library, indent: true, adminOnly: true },
 
   // Member nav
   { label: "Member Content", to: "/portal/content", icon: BookOpen },
@@ -73,7 +77,6 @@ const portalNav: NavItem[] = [
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
-  { label: "Community", to: "/portal/community", icon: Users },
   { label: "Deep Support Coaching", to: "/portal/coaching", icon: ArrowUpCircle },
   { label: "Account", to: "/portal/account", icon: UserCircle },
 ];

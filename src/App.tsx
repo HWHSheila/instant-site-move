@@ -69,6 +69,8 @@ import ScriptGenerator from "./pages/portal/studio/ScriptGenerator";
 import ContentLibrary from "./pages/portal/studio/ContentLibrary";
 import ContentCalendar from "./pages/portal/studio/ContentCalendar";
 import Campaigns from "./pages/portal/studio/Campaigns";
+import PortalVideoLibrary from "./pages/portal/studio/PortalVideoLibrary";
+import PortalScriptGenerator from "./pages/portal/studio/PortalScriptGenerator";
 
 
 const queryClient = new QueryClient();
@@ -142,6 +144,8 @@ const App = () => (
             <Route path="studio/library" element={<ContentLibrary />} />
             <Route path="studio/calendar" element={<ContentCalendar />} />
             <Route path="studio/campaigns" element={<Campaigns />} />
+            <Route path="studio/portal-library" element={<PortalVideoLibrary />} />
+            <Route path="studio/portal-generate" element={<PortalScriptGenerator />} />
             
             <Route path="content" element={<PortalContent />} />
             <Route path="intake" element={<PortalIntake />} />

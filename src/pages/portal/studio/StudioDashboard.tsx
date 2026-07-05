@@ -49,9 +49,9 @@ export default function StudioDashboard() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-display font-bold text-foreground">Content Studio</h1>
+        <h1 className="text-3xl font-display font-bold text-foreground">Social Studio</h1>
         <p className="text-muted-foreground mt-2">
-          Create, manage, and schedule your content with AI-powered script generation.
+          Create, manage, and schedule your social media content with AI-powered script generation.
         </p>
       </div>
 

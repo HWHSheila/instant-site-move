@@ -320,6 +320,113 @@ export type Database = {
         }
         Relationships: []
       }
+      portal_videos: {
+        Row: {
+          id: string
+          video_code: string
+          title: string
+          phase: string
+          sub_category: string
+          sequence_order: number
+          is_foundation_layer: boolean
+          production_status: string
+          secondary_strength: string | null
+          video_url: string | null
+          supabase_storage_path: string | null
+          published_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          video_code: string
+          title: string
+          phase: string
+          sub_category: string
+          sequence_order?: number
+          is_foundation_layer?: boolean
+          production_status?: string
+          secondary_strength?: string | null
+          video_url?: string | null
+          supabase_storage_path?: string | null
+          published_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          video_code?: string
+          title?: string
+          phase?: string
+          sub_category?: string
+          sequence_order?: number
+          is_foundation_layer?: boolean
+          production_status?: string
+          secondary_strength?: string | null
+          video_url?: string | null
+          supabase_storage_path?: string | null
+          published_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      portal_video_scripts: {
+        Row: {
+          id: string
+          video_code: string
+          learning_objective: string | null
+          introduction: string | null
+          core_educational_content: string | null
+          practical_application: string | null
+          gmh_cascade_connection: string | null
+          transition: string | null
+          action_items: Json
+          reflection_prompt: string | null
+          generated_at: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          video_code: string
+          learning_objective?: string | null
+          introduction?: string | null
+          core_educational_content?: string | null
+          practical_application?: string | null
+          gmh_cascade_connection?: string | null
+          transition?: string | null
+          action_items?: Json
+          reflection_prompt?: string | null
+          generated_at?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          video_code?: string
+          learning_objective?: string | null
+          introduction?: string | null
+          core_educational_content?: string | null
+          practical_application?: string | null
+          gmh_cascade_connection?: string | null
+          transition?: string | null
+          action_items?: Json
+          reflection_prompt?: string | null
+          generated_at?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "portal_video_scripts_video_code_fkey"
+            columns: ["video_code"]
+            isOneToOne: true
+            referencedRelation: "portal_videos"
+            referencedColumns: ["video_code"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
