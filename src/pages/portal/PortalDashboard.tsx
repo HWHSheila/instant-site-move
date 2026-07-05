@@ -15,6 +15,7 @@ import { useSubscriber, usePatternMap, useJourneyProgress } from "@/hooks/use-su
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ProgressOverviewWidget } from "@/components/portal/ProgressOverviewWidget";
 
 const quickLinks = [
   { label: "Start Here", description: "Begin your root-cause journey", to: "/portal/start-here", icon: Compass },
@@ -171,6 +172,9 @@ export default function PortalDashboard() {
             watchArea={patternMap.watch_area}
           />
         )}
+
+        {/* Progress overview (if assessment completed) */}
+        {hasIntake && <ProgressOverviewWidget />}
 
         {/* Upgrade Prompt (for lower tiers) */}
         {hasIntake && tier === "awareness" && (

@@ -63,6 +63,9 @@ import PortalAccount from "./pages/portal/PortalAccount";
 import PortalContent from "./pages/portal/PortalContent";
 import PortalIntake from "./pages/portal/PortalIntake";
 import PortalResults from "./pages/portal/PortalResults";
+import PortalSymptomLog from "./pages/portal/PortalSymptomLog";
+import PortalMiniAssessment from "./pages/portal/PortalMiniAssessment";
+import PortalProgress from "./pages/portal/PortalProgress";
 
 // Content Studio Pages
 import StudioDashboard from "./pages/portal/studio/StudioDashboard";
@@ -156,6 +159,9 @@ const App = () => (
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
             <Route path="pathways" element={<PortalPathways />} />
             <Route path="pathways/lesson/:videoCode" element={<PortalLesson />} />
+            <Route path="symptom-log" element={<PortalSymptomLog />} />
+            <Route path="mini-assessment" element={<PortalMiniAssessment />} />
+            <Route path="progress" element={<PortalProgress />} />
             <Route path="HWHcoach" element={<PortalAICoaching />} />
             <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
             <Route path="community" element={<PortalCommunity />} />

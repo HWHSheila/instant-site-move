@@ -21,6 +21,8 @@ import {
   Target,
   Eye,
   ChevronDown,
+  TrendingUp,
+  NotebookPen,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useSupabase, useClerkUserId } from "@/hooks/use-supabase";
@@ -75,6 +77,8 @@ const portalNav: NavItem[] = [
   { label: "Start Here", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", to: "/portal/patterns", icon: BookOpen },
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
+  { label: "My Progress", to: "/portal/progress", icon: TrendingUp },
+  { label: "Symptom Log", to: "/portal/symptom-log", icon: NotebookPen },
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
   { label: "Deep Support Coaching", to: "/portal/start-here", icon: ArrowUpCircle },
