@@ -15,7 +15,7 @@ import { useSupabase } from "@/hooks/use-supabase";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 
-type ContentPiece = Tables<"content_pieces">;
+type ContentPiece = any;
 
 interface CalendarDay {
   date: Date;
@@ -39,7 +39,7 @@ export default function ContentCalendar() {
   const fetchScheduled = async () => {
     setLoading(true);
     const { data, error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .select("*")
       .not("scheduled_date", "is", null)
       .order("scheduled_date", { ascending: true });
@@ -57,7 +57,7 @@ export default function ContentCalendar() {
   const markPosted = async (id: string) => {
     const now = new Date().toISOString();
     const { error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .update({ status: "posted", posted_at: now })
       .eq("id", id);
     if (error) { toast.error("Update failed"); return; }
