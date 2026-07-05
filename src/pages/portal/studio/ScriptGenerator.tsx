@@ -176,7 +176,7 @@ export default function ScriptGenerator() {
     try {
       const title = generatedScript.hook.slice(0, 80) || "Untitled script";
       const { data, error } = await supabase
-        .from("content_pieces")
+        .from("content_pieces" as any)
         .insert({
           title,
           user_id: clerkUserId,

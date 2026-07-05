@@ -40,7 +40,7 @@ import { useSupabase } from "@/hooks/use-supabase";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 
-type ContentPiece = Tables<"content_pieces">;
+type ContentPiece = any;
 
 const postTypeColors: Record<string, string> = {
   authority: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
@@ -80,7 +80,7 @@ export default function ContentLibrary() {
   const fetchContent = async () => {
     setLoading(true);
     const { data, error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .select("*")
       .order("created_at", { ascending: false });
     if (error) { toast.error("Failed to load content"); }
@@ -97,7 +97,7 @@ export default function ContentLibrary() {
   });
 
   const updateStatus = async (id: string, status: ContentPiece["status"]) => {
-    const { error } = await supabase.from("content_pieces").update({ status }).eq("id", id);
+    const { error } = await supabase.from("content_pieces" as any).update({ status }).eq("id", id);
     if (error) { toast.error("Update failed"); return; }
     toast.success(`Marked as ${status}`);
     setContent(prev => prev.map(p => p.id === id ? { ...p, status } : p));
@@ -106,7 +106,7 @@ export default function ContentLibrary() {
   const togglePortalPublish = async (item: ContentPiece) => {
     const next = !item.portal_published;
     const { error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .update({ portal_published: next, content_lane: next ? "member" : "attract" })
       .eq("id", item.id);
     if (error) { toast.error("Update failed"); return; }
@@ -116,7 +116,7 @@ export default function ContentLibrary() {
   };
 
   const deleteItem = async (id: string) => {
-    const { error } = await supabase.from("content_pieces").delete().eq("id", id);
+    const { error } = await supabase.from("content_pieces" as any).delete().eq("id", id);
     if (error) { toast.error("Delete failed"); return; }
     toast.success("Deleted");
     setContent(prev => prev.filter(p => p.id !== id));
@@ -130,7 +130,7 @@ export default function ContentLibrary() {
   const saveVideoUrl = async () => {
     if (!videoItem) return;
     const { error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .update({ video_url: videoUrl || null, video_status: videoUrl ? "uploaded" : null })
       .eq("id", videoItem.id);
     if (error) { toast.error("Failed to save video"); return; }
@@ -151,7 +151,7 @@ export default function ContentLibrary() {
     const url = data.publicUrl;
     setVideoUrl(url);
     const { error } = await supabase
-      .from("content_pieces")
+      .from("content_pieces" as any)
       .update({ video_url: url, video_status: "uploaded" })
       .eq("id", videoItem.id);
     if (error) { toast.error("Failed to save video URL"); setUploading(false); return; }

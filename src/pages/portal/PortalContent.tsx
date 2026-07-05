@@ -15,7 +15,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-type ContentPiece = Tables<"content_pieces">;
+type ContentPiece = any;
 
 const pillarColors: Record<string, string> = {
   "Gut Function": "bg-violet-100 text-violet-700",
@@ -47,7 +47,7 @@ export default function PortalContent() {
   useEffect(() => {
     const fetchContent = async () => {
       const { data, error } = await supabase
-        .from("content_pieces")
+        .from("content_pieces" as any)
         .select("*")
         .eq("portal_published", true)
         .eq("content_lane", "member")
