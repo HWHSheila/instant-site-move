@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSubscriber, usePatternMap } from "@/hooks/use-subscriber";
+import { useMemberRoadmap } from "@/hooks/use-member-roadmap";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ import {
   Shield,
   Sparkles,
   TrendingUp,
+  Route,
 } from "lucide-react";
 
 const TIER_INFO: Record<
@@ -118,10 +120,34 @@ export default function PortalResults() {
   const location = useLocation();
   const { subscriber } = useSubscriber();
   const { data: savedMap } = usePatternMap(subscriber?.id);
+  const { data: savedRoadmap } = useMemberRoadmap(subscriber?.id);
 
-  const patternResult = location.state?.patternResult || savedMap;
+  const state = location.state as {
+    patternResult?: any;
+    roadmap?: any;
+    tierRec?: any;
+    slotting?: any;
+  } | null;
 
-  if (!patternResult) {
+  const patternResult = state?.patternResult || savedMap;
+  const roadmap = state?.roadmap || savedRoadmap;
+
+  const recommended =
+    roadmap?.recommended_tier ||
+    state?.tierRec?.recommended_tier ||
+    patternResult?.recommended_tier ||
+    "foundation";
+  const tier = TIER_INFO[recommended] || TIER_INFO.foundation;
+
+  const atmReasoning =
+    roadmap?.atm_reasoning ||
+    state?.slotting?.atm_reasoning ||
+    patternResult?.ai_reasoning;
+
+  const tierReasoning =
+    roadmap?.tier_reasoning || state?.tierRec?.tier_reasoning;
+
+  if (!roadmap && !patternResult) {
     return (
       <div className="space-y-6 text-center">
         <h1 className="text-2xl font-display font-bold">No Results Found</h1>
@@ -133,24 +159,18 @@ export default function PortalResults() {
     );
   }
 
-  const recommended = patternResult.recommended_tier || "awareness";
-  const tier = TIER_INFO[recommended] || TIER_INFO.awareness;
-
   return (
     <div className="space-y-8 max-w-2xl mx-auto">
       <div className="text-center space-y-3">
-        <Badge
-          variant="secondary"
-          className="text-xs uppercase tracking-wider"
-        >
-          Your Personalized Analysis
+        <Badge variant="secondary" className="text-xs uppercase tracking-wider">
+          Your Personalized Roadmap
         </Badge>
         <h1 className="text-3xl font-display font-bold">
           Your Body Is Telling a Story
         </h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
           Based on your assessment, we've identified the patterns your body is
-          communicating. These aren't random symptoms -- they're connected
+          communicating. These aren't random symptoms — they're connected
           signals.
         </p>
       </div>
@@ -169,7 +189,7 @@ export default function PortalResults() {
                   Primary Focus
                 </p>
                 <p className="font-semibold text-lg">
-                  {patternResult.primary_focus}
+                  {roadmap?.primary_pattern || patternResult?.primary_focus || "Gut Function"}
                 </p>
               </div>
             </div>
@@ -180,61 +200,75 @@ export default function PortalResults() {
                   Secondary Focus
                 </p>
                 <p className="font-semibold">
-                  {patternResult.secondary_focus}
+                  {roadmap?.secondary_pattern || patternResult?.secondary_focus || "Metabolic Repair"}
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <Eye className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
-              <div>
-                <p className="text-xs font-medium text-muted-foreground uppercase">
-                  Watch Area
-                </p>
-                <p className="font-medium text-muted-foreground">
-                  {patternResult.watch_area}
-                </p>
+            {roadmap?.current_subcategory && (
+              <div className="flex items-start gap-3">
+                <Route className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase">
+                    Starting With
+                  </p>
+                  <p className="font-semibold">{roadmap.current_subcategory}</p>
+                </div>
               </div>
-            </div>
+            )}
+            {patternResult?.watch_area && (
+              <div className="flex items-start gap-3">
+                <Eye className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase">
+                    Watch Area
+                  </p>
+                  <p className="font-medium text-muted-foreground">
+                    {patternResult.watch_area}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
 
-      {/* Pattern Details */}
-      <div className="space-y-4">
-        <h2 className="font-semibold text-lg">Identified Patterns</h2>
-        <PatternSection
-          title="Gut Patterns"
-          icon={Sparkles}
-          patterns={patternResult.gut_patterns}
-          color="text-purple-600"
-        />
-        <PatternSection
-          title="Metabolic Patterns"
-          icon={TrendingUp}
-          patterns={patternResult.metabolic_patterns}
-          color="text-amber-600"
-        />
-        <PatternSection
-          title="Hormonal Patterns"
-          icon={Shield}
-          patterns={patternResult.hormonal_patterns}
-          color="text-pink-600"
-        />
-      </div>
+      {/* Pattern Details (from AI if available) */}
+      {patternResult && (
+        <div className="space-y-4">
+          <h2 className="font-semibold text-lg">Identified Patterns</h2>
+          <PatternSection
+            title="Gut Patterns"
+            icon={Sparkles}
+            patterns={patternResult.gut_patterns}
+            color="text-purple-600"
+          />
+          <PatternSection
+            title="Metabolic Patterns"
+            icon={TrendingUp}
+            patterns={patternResult.metabolic_patterns}
+            color="text-amber-600"
+          />
+          <PatternSection
+            title="Hormonal Patterns"
+            icon={Shield}
+            patterns={patternResult.hormonal_patterns}
+            color="text-pink-600"
+          />
+        </div>
+      )}
 
       {/* Roadmap Explanation */}
       <Card>
         <CardContent className="pt-6 space-y-3">
           <h3 className="font-semibold">Why This Order Matters</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {patternResult.ai_reasoning}
+            {atmReasoning}
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Her Wellness Harmony follows a{" "}
             <strong>Gut → Metabolism → Hormones</strong> framework because gut
-            health is foundational. When the gut signals are addressed first,
-            metabolic and hormonal patterns often improve as downstream effects
-            resolve.
+            health is foundational. Nervous System Foundation runs in parallel
+            from Day 1.
           </p>
         </CardContent>
       </Card>
@@ -242,7 +276,7 @@ export default function PortalResults() {
       {/* Tier Recommendation */}
       <div className="space-y-4">
         <h2 className="font-semibold text-lg text-center">
-          Your Recommended Path
+          Your Recommended Membership
         </h2>
 
         <Card className="border-primary border-2">
@@ -257,12 +291,16 @@ export default function PortalResults() {
               </div>
               <div className="text-right">
                 <p className="text-2xl font-bold text-primary">{tier.price}</p>
-                <p className="text-xs text-muted-foreground">21-day free trial</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">{tier.description}</p>
+            {tierReasoning && (
+              <p className="text-sm text-muted-foreground border-l-2 border-primary pl-3">
+                {tierReasoning}
+              </p>
+            )}
             <Button className="w-full" size="lg" onClick={() => navigate("/portal/coaching")}>
-              Start at {tier.name}
+              Start Your 21-Day Trial — $19
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </CardContent>
@@ -273,9 +311,7 @@ export default function PortalResults() {
             <CardContent className="pt-6 space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-semibold">
-                    {TIER_INFO.awareness.name}
-                  </h3>
+                  <h3 className="font-semibold">{TIER_INFO.awareness.name}</h3>
                   <p className="text-sm text-muted-foreground italic">
                     "{TIER_INFO.awareness.tagline}"
                   </p>
@@ -297,9 +333,18 @@ export default function PortalResults() {
         )}
       </div>
 
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Button variant="outline" className="flex-1" onClick={() => navigate("/portal/pathways")}>
+          View My Roadmap
+        </Button>
+        <Button className="flex-1" onClick={() => navigate("/portal/coaching")}>
+          Choose Membership
+        </Button>
+      </div>
+
       <p className="text-xs text-center text-muted-foreground">
-        All tiers include a 21-day free trial. You can upgrade or change your
-        tier at any time.
+        After your 21-day trial, you will be automatically billed $29/month for
+        the Foundation tier unless you cancel or select a different tier before Day 22.
       </p>
     </div>
   );

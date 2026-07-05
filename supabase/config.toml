@@ -21,6 +21,9 @@ verify_jwt = false
 [functions.generate-portal-script]
 verify_jwt = false
 
+[functions.finalize-assessment]
+verify_jwt = true
+
 [functions.process-email-queue]
 verify_jwt = true
 

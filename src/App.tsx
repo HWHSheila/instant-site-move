@@ -54,6 +54,7 @@ import PortalStartHere from "./pages/portal/PortalStartHere";
 import PortalPatterns from "./pages/portal/PortalPatterns";
 import PortalPatternDetail from "./pages/portal/PortalPatternDetail";
 import PortalPathways from "./pages/portal/PortalPathways";
+import PortalLesson from "./pages/portal/PortalLesson";
 import PortalAICoaching from "./pages/portal/PortalAICoaching";
 import PortalWeeklyNotes from "./pages/portal/PortalWeeklyNotes";
 import PortalCommunity from "./pages/portal/PortalCommunity";
@@ -154,6 +155,7 @@ const App = () => (
             <Route path="patterns" element={<PortalPatterns />} />
             <Route path="patterns/:slug" element={<PortalPatternDetail />} />
             <Route path="pathways" element={<PortalPathways />} />
+            <Route path="pathways/lesson/:videoCode" element={<PortalLesson />} />
             <Route path="HWHcoach" element={<PortalAICoaching />} />
             <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
             <Route path="community" element={<PortalCommunity />} />

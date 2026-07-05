@@ -25,6 +25,13 @@ import {
   MOVEMENT_BARRIERS,
   BASELINE_RATING_ITEMS,
 } from "@/lib/assessment-data";
+import { slotAssessment, countRoadmapSubcategories } from "@/lib/atm-slotting";
+import { recommendTier } from "@/lib/tier-recommendation";
+import {
+  buildOrderedLessonList,
+  buildInitialProgressRows,
+  getInitialUnlockedCodes,
+} from "@/lib/content-locking";
 
 const TOTAL_STEPS = 13;
 
@@ -401,10 +408,79 @@ export default function PortalIntake() {
 
       if (insertErr) throw insertErr;
 
+      const assessmentId = (assessment as any).id;
+
+      // ATM slotting + tier recommendation
+      const slotting = slotAssessment({
+        symptoms_gut: symptomsToArray(form.symptoms_gut),
+        symptoms_metabolic: symptomsToArray(form.symptoms_metabolic),
+        symptoms_hormonal: symptomsToArray(form.symptoms_hormonal),
+        past_diagnoses: form.past_diagnoses,
+        chronic_conditions: form.chronic_conditions,
+        lab_fasting_insulin: form.lab_fasting_insulin,
+        lab_hba1c: form.lab_hba1c,
+        lab_fasting_glucose: form.lab_fasting_glucose,
+      });
+
+      const tierRec = recommendTier(
+        countRoadmapSubcategories(slotting.included_subcategories),
+        form.baseline_ratings
+      );
+
+      // Initialize sequential content progress (videos fetched for ordering)
+      const { data: allVideos, error: videosErr } = await supabase
+        .from("portal_videos" as any)
+        .select("video_code, title, phase, sub_category, sequence_order, is_foundation_layer, video_url, production_status")
+        .order("sequence_order", { ascending: true });
+
+      if (videosErr) throw videosErr;
+
+      const orderedLessons = buildOrderedLessonList(
+        (allVideos ?? []) as any[],
+        slotting.included_subcategories
+      );
+      const unlockedCodes = getInitialUnlockedCodes(orderedLessons);
+      const progressRows = buildInitialProgressRows(orderedLessons, unlockedCodes).map((row) => ({
+        subscriber_id: subscriber.id,
+        ...row,
+      }));
+
+      const { data: roadmap, error: roadmapErr } = await supabase
+        .from("member_roadmaps" as any)
+        .insert({
+          subscriber_id: subscriber.id,
+          assessment_id: assessmentId,
+          phase_sequence: slotting.phase_sequence,
+          included_subcategories: slotting.included_subcategories,
+          primary_pattern: slotting.primary_pattern,
+          secondary_pattern: slotting.secondary_pattern,
+          atm_reasoning: slotting.atm_reasoning,
+          recommended_tier: tierRec.recommended_tier,
+          tier_reasoning: tierRec.tier_reasoning,
+          current_phase: slotting.current_phase,
+          current_subcategory: slotting.current_subcategory,
+        } as any)
+        .select()
+        .single();
+
+      if (roadmapErr) {
+        console.error("Roadmap creation failed:", roadmapErr);
+        throw roadmapErr;
+      }
+
+      if (progressRows.length > 0) {
+        const { error: progressErr } = await supabase
+          .from("member_content_progress" as any)
+          .upsert(progressRows as any, { onConflict: "subscriber_id,video_code,content_type" });
+        if (progressErr) {
+          console.error("Progress init failed:", progressErr);
+        }
+      }
+
       // Log consent
       await supabase.from("assessment_consents" as any).insert({
         subscriber_id: subscriber.id,
-        assessment_id: (assessment as any).id,
+        assessment_id: assessmentId,
         consent_text: CONSENT_TEXT,
       } as any);
 
@@ -452,7 +528,14 @@ export default function PortalIntake() {
         body: { subscriber_id: subscriber.id, intake_response_id: (assessment as any).id },
       });
 
-      navigate("/portal/results", { state: { patternResult: patternResult?.data } });
+      navigate("/portal/results", {
+        state: {
+          patternResult: patternResult?.data,
+          roadmap,
+          tierRec,
+          slotting,
+        },
+      });
     } catch (err) {
       console.error("Assessment submission failed:", err);
       toast.error("Failed to submit assessment. Please try again.");
@@ -461,7 +544,7 @@ export default function PortalIntake() {
     }
   }
 
-  if (subscriber?.intake_completed || subscriber?.assessment_completed) {
+  if (subscriber?.assessment_completed || subscriber?.intake_completed) {
     return (
       <div className="space-y-6">
         <Card>

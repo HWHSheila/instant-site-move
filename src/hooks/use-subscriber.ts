@@ -9,6 +9,8 @@ export interface Subscriber {
   tier: string | null;
   track: string | null;
   intake_completed: boolean;
+  assessment_completed?: boolean;
+  assessment_completed_at?: string | null;
   payment_status: string;
   trial_start_date: string | null;
   trial_end_date: string | null;
