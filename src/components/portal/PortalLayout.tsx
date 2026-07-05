@@ -77,7 +77,7 @@ const portalNav: NavItem[] = [
   { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
-  { label: "Deep Support Coaching", to: "/portal/coaching", icon: ArrowUpCircle },
+  { label: "Deep Support Coaching", to: "/portal/start-here", icon: ArrowUpCircle },
   { label: "Account", to: "/portal/account", icon: UserCircle },
 ];
 

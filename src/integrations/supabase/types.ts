@@ -427,6 +427,335 @@ export type Database = {
           }
         ]
       }
+      wellness_assessments: {
+        Row: {
+          id: string
+          subscriber_id: string
+          status: string
+          current_step: number
+          first_name: string | null
+          age: number | null
+          location: string | null
+          primary_health_goal: string | null
+          why_now: string | null
+          past_diagnoses: Json
+          past_diagnoses_other: string | null
+          surgeries_hospitalizations: boolean | null
+          surgeries_detail: string | null
+          chronic_conditions: Json
+          chronic_conditions_other: string | null
+          pregnancy_count: number | null
+          delivery_count: number | null
+          miscarriage_count: number | null
+          head_injury_history: boolean | null
+          current_rx: string | null
+          current_otc: string | null
+          current_supplements: string | null
+          past_rx: string | null
+          past_otc: string | null
+          past_supplements: string | null
+          childhood_antibiotics: string | null
+          adult_antibiotics: string | null
+          adult_antibiotics_detail: string | null
+          ppi_history: string | null
+          hormonal_contraceptive_history: boolean | null
+          hormonal_contraceptive_detail: string | null
+          family_conditions: Json
+          family_autoimmune: string | null
+          family_thyroid: string | null
+          family_metabolic: string | null
+          birth_type: string | null
+          infant_feeding: string | null
+          childhood_antibiotics_early: string | null
+          childhood_illness: boolean | null
+          childhood_illness_detail: string | null
+          childhood_trauma: boolean | null
+          childhood_trauma_detail: string | null
+          symptoms_gut: Json
+          symptoms_metabolic: Json
+          symptoms_hormonal: Json
+          symptoms_neuro: Json
+          symptoms_skin: Json
+          symptoms_cardio: Json
+          symptoms_sexual: Json
+          symptoms_systemic: Json
+          meals_per_day: string | null
+          meal_timing: string | null
+          water_intake: string | null
+          caffeine_intake: string | null
+          alcohol_intake: string | null
+          food_sensitivities: string | null
+          diets_tried: Json
+          food_relationship: string | null
+          eating_causes_symptoms: string | null
+          avg_bedtime: string | null
+          avg_wake_time: string | null
+          avg_sleep_hours: string | null
+          sleep_quality: string | null
+          trouble_falling_asleep: string | null
+          trouble_staying_asleep: string | null
+          wake_to_urinate: string | null
+          feel_rested: string | null
+          shift_work: boolean | null
+          stress_level: number | null
+          stress_sources: Json
+          anxiety_depression_history: string | null
+          trauma_history: string | null
+          coping_mechanisms: Json
+          support_system: string | null
+          sense_of_purpose: string | null
+          activity_level: string | null
+          exercise_type: string | null
+          exercise_frequency: string | null
+          sitting_hours: string | null
+          movement_barriers: Json
+          mold_exposure: string | null
+          chemical_exposure: boolean | null
+          water_source: string | null
+          personal_care: string | null
+          travel_exposure: boolean | null
+          lab_tsh: string | null
+          lab_free_t3: string | null
+          lab_free_t4: string | null
+          lab_tpo_antibodies: string | null
+          lab_thyroid_diagnosis: string | null
+          lab_fasting_glucose: string | null
+          lab_fasting_insulin: string | null
+          lab_hba1c: string | null
+          lab_triglycerides: string | null
+          lab_hdl: string | null
+          lab_alt_ast: string | null
+          lab_estrogen: string | null
+          lab_progesterone: string | null
+          lab_cortisol: string | null
+          lab_dheas: string | null
+          lab_testosterone: string | null
+          lab_crp: string | null
+          lab_esr: string | null
+          lab_homocysteine: string | null
+          lab_gi_map: string | null
+          lab_sibo: string | null
+          lab_food_sensitivity: string | null
+          lab_ferritin: string | null
+          lab_vitamin_d: string | null
+          lab_b12: string | null
+          lab_magnesium: string | null
+          lab_other: string | null
+          baseline_ratings: Json
+          baseline_open_text: Json
+          started_at: string
+          completed_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          status?: string
+          current_step?: number
+          [key: string]: any
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      assessment_consents: {
+        Row: {
+          id: string
+          subscriber_id: string
+          assessment_id: string
+          consent_text: string
+          consented_at: string
+          ip_address: string | null
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          assessment_id: string
+          consent_text: string
+          consented_at?: string
+          ip_address?: string | null
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      member_roadmaps: {
+        Row: {
+          id: string
+          subscriber_id: string
+          assessment_id: string | null
+          phase_sequence: Json
+          included_subcategories: Json
+          primary_pattern: string | null
+          secondary_pattern: string | null
+          atm_reasoning: string | null
+          recommended_tier: string | null
+          tier_reasoning: string | null
+          current_phase: string | null
+          current_subcategory: string | null
+          started_at: string
+          completed_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          [key: string]: any
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      member_content_progress: {
+        Row: {
+          id: string
+          subscriber_id: string
+          video_code: string
+          content_type: string
+          status: string
+          completed_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          video_code: string
+          content_type?: string
+          status?: string
+          completed_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          subscriber_id?: string
+          video_code?: string
+          content_type?: string
+          status?: string
+          completed_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      mini_assessments: {
+        Row: {
+          id: string
+          subscriber_id: string
+          assessment_type: string
+          day_number: number | null
+          ratings: Json
+          open_text_improved: string | null
+          open_text_challenging: string | null
+          open_text_note_to_sheila: string | null
+          completed_at: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          assessment_type: string
+          day_number?: number | null
+          ratings?: Json
+          open_text_improved?: string | null
+          open_text_challenging?: string | null
+          open_text_note_to_sheila?: string | null
+          completed_at?: string
+          created_at?: string
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      symptom_logs: {
+        Row: {
+          id: string
+          subscriber_id: string
+          log_text: string
+          logged_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          log_text: string
+          logged_at?: string
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      ai_coach_usage: {
+        Row: {
+          id: string
+          subscriber_id: string
+          question: string
+          response: string | null
+          billing_month: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          question: string
+          response?: string | null
+          billing_month: string
+          created_at?: string
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      priority_support_messages: {
+        Row: {
+          id: string
+          subscriber_id: string
+          direction: string
+          message_text: string
+          billing_month: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          direction: string
+          message_text: string
+          billing_month: string
+          created_at?: string
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
+      mailer_lite_trigger_log: {
+        Row: {
+          id: string
+          subscriber_id: string
+          trigger_name: string
+          trigger_data: Json
+          fired_at: string
+        }
+        Insert: {
+          id?: string
+          subscriber_id: string
+          trigger_name: string
+          trigger_data?: Json
+          fired_at?: string
+        }
+        Update: {
+          [key: string]: any
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

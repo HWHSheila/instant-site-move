@@ -68,7 +68,7 @@ export default function PortalStartHere() {
                   </h2>
                   <p className="text-sm text-muted-foreground">
                     Before diving into the framework below, let's identify <em>your</em> unique patterns.
-                    The AI-powered assessment takes about 5 minutes and creates a personalized roadmap
+                    The assessment takes approximately 30 minutes and creates a personalized roadmap
                     based on your symptoms and history.
                   </p>
                   <Button onClick={() => navigate("/portal/intake")}>
