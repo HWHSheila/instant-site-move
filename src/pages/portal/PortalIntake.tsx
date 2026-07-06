@@ -250,7 +250,7 @@ export default function PortalIntake() {
     lab_crp: "", lab_esr: "", lab_homocysteine: "",
     lab_gi_map: "", lab_sibo: "", lab_food_sensitivity: "",
     lab_ferritin: "", lab_vitamin_d: "", lab_b12: "", lab_magnesium: "", lab_other: "",
-    // Step 13 — baseline ratings (initialized to 5 for all 26 items)
+    // Step 13 — baseline ratings (initialized to 5 for all 29 items)
     baseline_ratings: Object.fromEntries(
       BASELINE_RATING_ITEMS.flatMap((cat) => cat.items.map((item) => [item.key, 5]))
     ),
@@ -415,11 +415,25 @@ export default function PortalIntake() {
         symptoms_gut: symptomsToArray(form.symptoms_gut),
         symptoms_metabolic: symptomsToArray(form.symptoms_metabolic),
         symptoms_hormonal: symptomsToArray(form.symptoms_hormonal),
+        symptoms_neuro: symptomsToArray(form.symptoms_neuro),
+        symptoms_systemic: symptomsToArray(form.symptoms_systemic),
         past_diagnoses: form.past_diagnoses,
         chronic_conditions: form.chronic_conditions,
+        family_conditions: form.family_conditions,
+        baseline_ratings: form.baseline_ratings,
         lab_fasting_insulin: form.lab_fasting_insulin,
         lab_hba1c: form.lab_hba1c,
         lab_fasting_glucose: form.lab_fasting_glucose,
+        lab_sibo: form.lab_sibo,
+        lab_gi_map: form.lab_gi_map,
+        lab_tsh: form.lab_tsh,
+        lab_free_t3: form.lab_free_t3,
+        lab_cortisol: form.lab_cortisol,
+        early_antibiotic_use:
+          form.childhood_antibiotics === "yes" ||
+          form.adult_antibiotics === "yes" ||
+          form.childhood_antibiotics_early === "yes",
+        chronic_stress_history: form.stress_level >= 7,
       });
 
       const tierRec = recommendTier(
@@ -748,7 +762,7 @@ export default function PortalIntake() {
                 <RadioSelect name="family_thyroid" value={form.family_thyroid} onChange={(v) => set("family_thyroid", v)} options={[{value:"yes",label:"Yes"},{value:"no",label:"No"},{value:"unknown",label:"Unknown"}]} />
               </div>
               <div>
-                <FieldLabel>Family history of metabolic conditions (diabetes, PCOS, obesity)</FieldLabel>
+                <FieldLabel>Family history of metabolic conditions (diabetes, PMOS, obesity)</FieldLabel>
                 <RadioSelect name="family_metabolic" value={form.family_metabolic} onChange={(v) => set("family_metabolic", v)} options={[{value:"yes",label:"Yes"},{value:"no",label:"No"},{value:"unknown",label:"Unknown"}]} />
               </div>
             </div>

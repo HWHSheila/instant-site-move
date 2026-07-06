@@ -1,70 +1,99 @@
 /**
  * Assessment data constants for the 13-step Wellness Assessment.
  *
- * PLUGGABLE SEAMS for Sheila's answers:
- *   Q4 → MEDICAL_CONDITIONS (swap this array when she provides her list)
- *   Q5 → BASELINE_RATING_ITEMS (currently 26 items from spec; trim if she confirms 23)
- *   Q6 → Roadmap logic lives in the ATM slotting Edge Function, not here
- *   Q7 → AI Coach system prompt lives in the AI coach Edge Function, not here
+ * Updated from Sheila's planning responses (HWH_Planning_Questions_For_Sheila_COMPLETED.md):
+ *   Q4 → MEDICAL_CONDITIONS
+ *   Q5 → BASELINE_RATING_ITEMS (29 items)
  */
 
-// ── Q4 SEAM: Medical conditions list (dev-proposed, awaiting Sheila) ──
-export const MEDICAL_CONDITIONS = [
-  "IBS (Irritable Bowel Syndrome)",
-  "IBD (Inflammatory Bowel Disease)",
-  "Crohn's Disease",
-  "Celiac Disease",
-  "GERD / Acid Reflux",
-  "SIBO",
-  "Leaky Gut (diagnosed or suspected)",
-  "PCOS (Polycystic Ovary Syndrome)",
-  "PMOS (Polycystic Metabolic Ovary Syndrome)",
-  "Endometriosis",
-  "Fibroids",
-  "Hashimoto's Thyroiditis",
-  "Hypothyroidism",
-  "Hyperthyroidism",
-  "Graves' Disease",
-  "Type 2 Diabetes",
-  "Pre-diabetes / Insulin Resistance",
-  "Type 1 Diabetes",
-  "Metabolic Syndrome",
-  "Anxiety Disorder",
-  "Depression",
-  "PTSD",
-  "ADHD",
-  "Bipolar Disorder",
-  "Autoimmune condition (other)",
-  "Rheumatoid Arthritis",
-  "Lupus (SLE)",
-  "Multiple Sclerosis",
-  "Psoriasis",
-  "Eczema / Atopic Dermatitis",
-  "Fibromyalgia",
-  "Chronic Fatigue Syndrome",
-  "Lyme Disease",
-  "Mold Illness / CIRS",
-  "Anemia / Iron Deficiency",
-  "Vitamin D Deficiency",
-  "B12 Deficiency",
-  "Osteoporosis / Osteopenia",
-  "High Blood Pressure",
-  "High Cholesterol",
-  "Heart Disease",
-  "Stroke",
-  "Cancer (any type)",
-  "Eating Disorder (past or current)",
-  "Infertility",
-  "Recurrent Miscarriage",
-  "Gestational Diabetes",
-  "Preeclampsia",
-  "Postpartum Depression",
-  "Migraines",
-  "Seizure Disorder / Epilepsy",
-  "Sleep Apnea",
-  "Asthma",
-  "Allergies (environmental)",
-];
+// ── Q4: Medical conditions checklist (Sheila-approved, May 2026) ──
+export const MEDICAL_CONDITIONS_BY_CATEGORY = [
+  {
+    category: "Digestive / Gut",
+    conditions: [
+      "IBS",
+      "IBD (Crohn's or Ulcerative Colitis)",
+      "Celiac disease",
+      "SIBO",
+      "GERD / acid reflux",
+      "Gallbladder disease or removal",
+      "Diverticulitis",
+    ],
+  },
+  {
+    category: "Metabolic / Blood Sugar",
+    conditions: [
+      "Type 2 diabetes",
+      "Type 1 diabetes",
+      "Pre-diabetes / insulin resistance",
+      "Metabolic syndrome",
+      "Non-alcoholic fatty liver disease",
+    ],
+  },
+  {
+    category: "Thyroid",
+    conditions: [
+      "Hashimoto's thyroiditis",
+      "Hypothyroidism",
+      "Hyperthyroidism / Graves' disease",
+      "Thyroid nodules or goiter",
+    ],
+  },
+  {
+    category: "Hormonal / Reproductive",
+    conditions: [
+      "PMOS (Polyendocrine Metabolic Ovarian Syndrome)",
+      "Endometriosis",
+      "Uterine fibroids",
+      "Infertility",
+      "Perimenopause / menopause related conditions",
+      "Premenstrual Dysphoric Disorder (PMDD)",
+    ],
+  },
+  {
+    category: "Autoimmune",
+    conditions: [
+      "Rheumatoid arthritis",
+      "Lupus",
+      "Psoriasis / psoriatic arthritis",
+      "Multiple sclerosis",
+    ],
+  },
+  {
+    category: "Mental Health / Nervous System",
+    conditions: [
+      "Anxiety",
+      "Depression",
+      "ADHD",
+      "Chronic stress / burnout diagnosis",
+    ],
+  },
+  {
+    category: "Chronic Pain / Fatigue",
+    conditions: [
+      "Fibromyalgia",
+      "Chronic fatigue syndrome / ME",
+      "Chronic migraines",
+    ],
+  },
+  {
+    category: "Cardiovascular / Other",
+    conditions: [
+      "High blood pressure",
+      "High cholesterol",
+      "Anemia",
+      "Sleep apnea",
+    ],
+  },
+  {
+    category: "Cancer",
+    conditions: ["Any cancer diagnosis"],
+  },
+] as const;
+
+export const MEDICAL_CONDITIONS = MEDICAL_CONDITIONS_BY_CATEGORY.flatMap(
+  (group) => group.conditions
+);
 
 // ── Symptom Inventory (Step 6) — from spec sections 6.1-6.8 ──
 export const SYMPTOM_CATEGORIES = [
@@ -386,62 +415,65 @@ export const SYMPTOM_CATEGORIES = [
   },
 ];
 
-// ── Q5 SEAM: Baseline rating items (26 from spec; Sheila may trim to 23) ──
+// ── Q5: Baseline rating items (29 items — Sheila-approved) ──
 export const BASELINE_RATING_ITEMS = [
   {
-    category: "Gut & Digestion",
+    category: "Gut Health",
     items: [
-      { key: "gut_bloating", label: "Bloating after meals" },
-      { key: "gut_regularity", label: "Bowel regularity" },
-      { key: "gut_comfort", label: "Digestive comfort overall" },
-      { key: "gut_reflux", label: "Acid reflux or heartburn" },
-      { key: "gut_reactions", label: "Food reactions" },
+      { key: "gut_bloating_frequency", label: "Bloating frequency" },
+      { key: "gut_bowel_regularity", label: "Bowel regularity" },
+      { key: "gut_digestive_comfort", label: "Digestive comfort after meals" },
+      { key: "gut_food_sensitivity", label: "Food sensitivity reactions" },
+      { key: "gut_abdominal_discomfort", label: "Abdominal discomfort" },
     ],
   },
   {
     category: "Energy & Metabolism",
     items: [
-      { key: "energy_day", label: "Energy levels throughout the day" },
-      { key: "energy_afternoon", label: "Afternoon energy crashes" },
-      { key: "energy_cravings", label: "Sugar or carbohydrate cravings" },
-      { key: "energy_between_meals", label: "Ability to go between meals without symptoms" },
-      { key: "energy_sleep", label: "Sleep quality" },
+      { key: "energy_morning", label: "Morning energy" },
+      { key: "energy_afternoon", label: "Afternoon energy" },
+      { key: "energy_post_meal", label: "Post-meal energy stability" },
+      { key: "energy_cravings", label: "Cravings intensity" },
+      { key: "energy_exercise_recovery", label: "Exercise recovery" },
     ],
   },
   {
-    category: "Hormones & Cycle",
+    category: "Hormonal Health",
     items: [
-      { key: "hormone_mood", label: "Mood stability throughout the month" },
-      { key: "hormone_pms", label: "PMS symptom severity" },
-      { key: "hormone_cycle", label: "Cycle regularity (if applicable)" },
-      { key: "hormone_flashes", label: "Hot flashes or night sweats (if applicable)" },
-      { key: "hormone_skin_hair", label: "Hair and skin changes" },
+      { key: "hormone_cycle_regularity", label: "Cycle regularity (if applicable)" },
+      { key: "hormone_pms_severity", label: "PMS severity (if applicable)" },
+      { key: "hormone_hot_flashes", label: "Hot flash / night sweat frequency (if applicable)" },
+      { key: "hormone_mood_cycle", label: "Mood stability across cycle" },
+      { key: "hormone_skin_hair", label: "Skin / hair quality" },
+      { key: "hormone_mood_fluctuations", label: "Mood fluctuations" },
     ],
   },
   {
-    category: "Nervous System & Stress",
+    category: "Nervous System",
     items: [
-      { key: "ns_stress", label: "Overall stress level" },
-      { key: "ns_relax", label: "Ability to relax" },
-      { key: "ns_anxiety", label: "Anxiety level" },
-      { key: "ns_overwhelm", label: "Feeling of being overwhelmed" },
-      { key: "ns_racing_mind", label: "Racing mind at night" },
+      { key: "ns_sleep_quality", label: "Sleep quality" },
+      { key: "ns_time_to_sleep", label: "Time to fall asleep" },
+      { key: "ns_stress_response", label: "Stress response" },
+      { key: "ns_ability_relax", label: "Ability to relax" },
+      { key: "ns_overwhelm", label: "Overwhelm frequency" },
     ],
   },
   {
-    category: "Brain & Cognition",
+    category: "Brain & Cognitive",
     items: [
-      { key: "brain_clarity", label: "Mental clarity and focus" },
-      { key: "brain_memory", label: "Memory" },
       { key: "brain_fog", label: "Brain fog" },
+      { key: "brain_focus", label: "Focus duration" },
+      { key: "brain_memory", label: "Memory recall" },
     ],
   },
   {
     category: "Overall Wellbeing",
     items: [
-      { key: "overall_vitality", label: "Overall energy and vitality" },
-      { key: "overall_confidence", label: "Confidence in understanding your body" },
-      { key: "overall_motivation", label: "Motivation to continue the program" },
+      { key: "overall_symptom_burden", label: "Overall symptom burden" },
+      { key: "overall_daily_function", label: "Daily function" },
+      { key: "overall_quality_of_life", label: "Quality of life" },
+      { key: "overall_joint_pain", label: "Joint pain" },
+      { key: "overall_muscle_aches", label: "Muscle / body aches" },
     ],
   },
 ];

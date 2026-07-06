@@ -130,7 +130,7 @@ const StrategyCall = () => {
           {/* CTA */}
           <div className="text-center">
             <a
-              href="https://calendly.com/herwellnessharmony-support/initial-root-cause-strategy-session"
+              href="https://calendly.com/herwellnessharmony-support/priority-support-strategy-session"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block rounded-full px-10 py-4 text-base font-semibold transition-opacity hover:opacity-90 bg-wellness-gold text-wellness-forest-dark"
