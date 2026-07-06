@@ -521,7 +521,7 @@ export default function PortalIntake() {
 
       // Also backward-compat: insert into intake_responses
       const totalSymptoms = (obj: Record<string, string>) => Object.keys(obj).length;
-      await supabase.from("intake_responses" as any).insert({
+      const { data: intakeRow } = await supabase.from("intake_responses" as any).insert({
         subscriber_id: subscriber.id,
         gut_symptoms: Object.keys(form.symptoms_gut),
         metabolic_symptoms: Object.keys(form.symptoms_metabolic),
@@ -535,21 +535,28 @@ export default function PortalIntake() {
         health_history: form.primary_health_goal,
         goals: form.why_now,
         raw_form_data: form,
-      } as any);
+      } as any).select("id").single();
+
+      const intakeResponseId = (intakeRow as any)?.id;
 
       // Call identify-patterns for backward compat (generates pattern_maps)
-      const { data: patternResult } = await supabase.functions.invoke("identify-patterns", {
-        body: { subscriber_id: subscriber.id, intake_response_id: (assessment as any).id },
-      });
-
-      navigate("/portal/results", {
-        state: {
-          patternResult: patternResult?.data,
-          roadmap,
-          tierRec,
-          slotting,
-        },
-      });
+      if (intakeResponseId) {
+        const { data: patternResult } = await supabase.functions.invoke("identify-patterns", {
+          body: { subscriber_id: subscriber.id, intake_response_id: intakeResponseId },
+        });
+        navigate("/portal/results", {
+          state: {
+            patternResult: patternResult?.data,
+            roadmap,
+            tierRec,
+            slotting,
+          },
+        });
+      } else {
+        navigate("/portal/results", {
+          state: { roadmap, tierRec, slotting },
+        });
+      }
     } catch (err) {
       console.error("Assessment submission failed:", err);
       toast.error("Failed to submit assessment. Please try again.");

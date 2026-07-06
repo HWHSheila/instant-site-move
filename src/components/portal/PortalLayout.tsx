@@ -9,7 +9,6 @@ import {
   Route,
   Bot,
   FileText,
-  ArrowUpCircle,
   UserCircle,
   Menu,
   X,
@@ -23,6 +22,7 @@ import {
   ChevronDown,
   TrendingUp,
   NotebookPen,
+  MessageCircle,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useSupabase, useClerkUserId } from "@/hooks/use-supabase";
@@ -71,6 +71,8 @@ const portalNav: NavItem[] = [
   { label: "Portal Studio", to: "/portal/studio/portal-library", icon: BookOpen, section: true, adminOnly: true },
   { label: "Portal Script Generator", to: "/portal/studio/portal-generate", icon: Sparkles, indent: true, adminOnly: true },
   { label: "Portal Video Library", to: "/portal/studio/portal-library", icon: Library, indent: true, adminOnly: true },
+  { label: "Member Content Editor", to: "/portal/studio/member-content", icon: BookOpen, indent: true, adminOnly: true },
+  { label: "Weekly Notes Editor", to: "/portal/studio/weekly-notes", icon: FileText, indent: true, adminOnly: true },
 
   // Member nav
   { label: "Member Content", to: "/portal/content", icon: BookOpen },
@@ -81,7 +83,7 @@ const portalNav: NavItem[] = [
   { label: "Symptom Log", to: "/portal/symptom-log", icon: NotebookPen },
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
-  { label: "Deep Support Coaching", to: "/portal/start-here", icon: ArrowUpCircle },
+  { label: "Priority Support", to: "/portal/priority-support", icon: MessageCircle },
   { label: "Account", to: "/portal/account", icon: UserCircle },
 ];
 

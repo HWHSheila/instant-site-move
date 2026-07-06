@@ -75,6 +75,8 @@ import ContentCalendar from "./pages/portal/studio/ContentCalendar";
 import Campaigns from "./pages/portal/studio/Campaigns";
 import PortalVideoLibrary from "./pages/portal/studio/PortalVideoLibrary";
 import PortalScriptGenerator from "./pages/portal/studio/PortalScriptGenerator";
+import MemberContentEditor from "./pages/portal/studio/MemberContentEditor";
+import PortalPrioritySupport from "./pages/portal/PortalPrioritySupport";
 
 
 const queryClient = new QueryClient();
@@ -150,6 +152,8 @@ const App = () => (
             <Route path="studio/campaigns" element={<Campaigns />} />
             <Route path="studio/portal-library" element={<PortalVideoLibrary />} />
             <Route path="studio/portal-generate" element={<PortalScriptGenerator />} />
+            <Route path="studio/member-content" element={<MemberContentEditor postType="article" />} />
+            <Route path="studio/weekly-notes" element={<MemberContentEditor postType="weekly_note" />} />
             
             <Route path="content" element={<PortalContent />} />
             <Route path="intake" element={<PortalIntake />} />
@@ -165,6 +169,7 @@ const App = () => (
             <Route path="HWHcoach" element={<PortalAICoaching />} />
             <Route path="weekly-notes" element={<PortalWeeklyNotes />} />
             <Route path="community" element={<PortalCommunity />} />
+            <Route path="priority-support" element={<PortalPrioritySupport />} />
             <Route path="coaching" element={<PortalUpgrade />} />
             <Route path="account" element={<PortalAccount />} />
           </Route>

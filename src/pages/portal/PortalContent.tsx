@@ -6,6 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, BookOpen, Loader2, PlayCircle, Video } from "lucide-react";
 import { useSupabase } from "@/hooks/use-supabase";
 import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useMemberContentPosts } from "@/hooks/use-member-content-posts";
+import { useSubscriber } from "@/hooks/use-subscriber";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 import {
@@ -37,7 +39,9 @@ const TIER_ACCESS: Record<string, string[]> = {
 
 export default function PortalContent() {
   const supabase = useSupabase();
+  const { subscriber } = useSubscriber();
   const { previewTier, isAdmin } = usePreviewTier();
+  const { data: articles = [] } = useMemberContentPosts("article", false);
   const [content, setContent] = useState<ContentPiece[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -65,9 +69,30 @@ export default function PortalContent() {
 
   const allowedTiers = TIER_ACCESS[previewTier] ?? TIER_ACCESS["admin"];
 
-  const pillars = Array.from(new Set(content.map(c => c.pillar_name).filter(Boolean))) as string[];
+  const effectiveTier =
+    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
 
-  const filtered = content.filter(item => {
+  const publishedArticles = articles
+    .filter((a) => {
+      if (isAdmin && previewTier === "admin") return true;
+      if (!effectiveTier) return false;
+      return a.tier_access.includes(effectiveTier);
+    })
+    .map((a) => ({
+      id: a.id,
+      title: a.title,
+      caption: a.body.slice(0, 160),
+      body: a.body,
+      pillar_name: "Articles",
+      post_type: "article",
+      source: "member_content_posts",
+    }));
+
+  const allContent = [...publishedArticles, ...content.map((c) => ({ ...c, source: "content_pieces" }))];
+
+  const pillars = Array.from(new Set(allContent.map(c => c.pillar_name).filter(Boolean))) as string[];
+
+  const filtered = allContent.filter(item => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.caption ?? "").toLowerCase().includes(searchQuery.toLowerCase());
