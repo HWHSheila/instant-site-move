@@ -27,8 +27,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment files
-.env
+# Environment files — .env is committed (Lovable requires it for VITE_* build vars).
+# Server secrets must NEVER go in .env; use Lovable Cloud Secrets or .env.local instead.
 .env.*
 !.env.example
 
@@ -39,8 +39,15 @@ dist-ssr
 credentials.*
 secrets.*
 
-# Local agent rules and skills (never commit)
-.cursor/
+# Local agent config (rules stay local; project skills are tracked)
+.cursor/*
+!.cursor/skills/
+!.cursor/skills/**
+
+# Vercel CLI local auth/config (scripts/vercel-env.sh)
+.vercel-cli-config/
+.vercel-cli-cache/
+.vercel-isolation-backup.json
 
 # Supabase local state
 supabase/.temp/
