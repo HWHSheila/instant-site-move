@@ -21,6 +21,7 @@ import GLP1BundleThankYou from "./pages/GLP1BundleThankYou";
 import GLP1Option from "./pages/GLP1Option";
 import Phase1GutReset from "./pages/Phase1GutReset";
 import ThirtyDayRoadmap from "./pages/ThirtyDayRoadmap";
+import ThirtyDayGuidedBaseline from "./pages/ThirtyDayGuidedBaseline";
 import FourWeekCoaching from "./pages/FourWeekCoaching";
 import FourWeekConfirm from "./pages/FourWeekConfirm";
 import FourWeekThankYou from "./pages/FourWeekThankYou";
