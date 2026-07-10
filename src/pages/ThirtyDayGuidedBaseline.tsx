@@ -201,12 +201,48 @@ export default function ThirtyDayGuidedBaseline() {
                 </div>
               ))}
 
-              <Field label="Top 3 Symptoms">
+              <Field label="Current Top 3 Symptoms">
                 <textarea
                   value={topSymptoms}
                   onChange={(e) => setTopSymptoms(e.target.value)}
-                  placeholder="List the top 3 symptoms that brought you to this reset."
+                  placeholder="List your top 3 symptoms after the reset."
                   rows={4}
+                  style={{ ...inputStyle, resize: "vertical" }}
+                />
+              </Field>
+
+              <Field label="What were your top 3 symptoms on Day 1?">
+                <textarea
+                  value={day1Symptoms}
+                  onChange={(e) => setDay1Symptoms(e.target.value)}
+                  rows={4}
+                  style={{ ...inputStyle, resize: "vertical" }}
+                />
+              </Field>
+
+              <Field label="What has improved?">
+                <textarea
+                  value={improved}
+                  onChange={(e) => setImproved(e.target.value)}
+                  rows={4}
+                  style={{ ...inputStyle, resize: "vertical" }}
+                />
+              </Field>
+
+              <Field label="What would you tell another woman considering this reset?">
+                <textarea
+                  value={tellAnotherWoman}
+                  onChange={(e) => setTellAnotherWoman(e.target.value)}
+                  rows={4}
+                  style={{ ...inputStyle, resize: "vertical" }}
+                />
+              </Field>
+
+              <Field label="May I share your response on my website with your first name?">
+                <textarea
+                  value={shareConsent}
+                  onChange={(e) => setShareConsent(e.target.value)}
+                  rows={3}
                   style={{ ...inputStyle, resize: "vertical" }}
                 />
               </Field>
@@ -233,7 +269,7 @@ export default function ThirtyDayGuidedBaseline() {
                   letterSpacing: "0.02em",
                 }}
               >
-                {submitting ? "Submitting…" : "Submit My Baseline"}
+                {submitting ? "Submitting…" : "Submit"}
               </button>
             </form>
           </>
