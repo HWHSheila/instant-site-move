@@ -39,6 +39,10 @@ export default function ThirtyDayGuidedBaseline() {
     RATINGS.reduce((acc, r) => ({ ...acc, [r.key]: 5 }), {} as Record<BaselineKey, number>)
   );
   const [topSymptoms, setTopSymptoms] = useState("");
+  const [day1Symptoms, setDay1Symptoms] = useState("");
+  const [improved, setImproved] = useState("");
+  const [tellAnotherWoman, setTellAnotherWoman] = useState("");
+  const [shareConsent, setShareConsent] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,19 +52,26 @@ export default function ThirtyDayGuidedBaseline() {
     setError(null);
     setSubmitting(true);
     try {
-      const payload = {
+      const dbPayload = {
         first_name: firstName.trim(),
         last_name: lastName.trim(),
         email: email.trim(),
         top_3_symptoms: topSymptoms.trim() || null,
         ...ratings,
       };
-      const { error: dbError } = await supabase.from("baseline_submissions").insert(payload);
+      const { error: dbError } = await supabase.from("baseline_submissions").insert(dbPayload);
       if (dbError) throw dbError;
 
-      // Fire-and-forget email notification
+      // Fire-and-forget email notification (includes reflection answers)
+      const emailPayload = {
+        ...dbPayload,
+        day1_symptoms: day1Symptoms.trim() || null,
+        improved: improved.trim() || null,
+        tell_another_woman: tellAnotherWoman.trim() || null,
+        share_consent: shareConsent.trim() || null,
+      };
       supabase.functions
-        .invoke("send-baseline-email", { body: payload })
+        .invoke("send-baseline-email", { body: emailPayload })
         .catch((err) => console.error("email send error", err));
 
       setSubmitted(true);
