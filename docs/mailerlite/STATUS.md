@@ -1,17 +1,17 @@
-## Current phase: B (backend shipped; Sheila UAT gated)
-## Last completed: Phase A durable assets + Phase B schema/cron/hooks + eng-smoke all clusters
-## In progress: none — next is Sheila delivery automations for Phase B trigger names + Vercel production deploy for portal hooks
+## Current phase: B (backend + production shipped; Sheila automations pending your send)
+## Last completed: production push `f863e1b` + eng-smoke all clusters with last_trigger asserts
+## In progress: none — wait for your approve before Sheila outreach
 ## Blocked: none
 ## Do not redo: groups, last_trigger field, fire-mailerlite-trigger core
 ## Open decisions: Day 21 vs Day 19 billing (default: keep Day 21)
-## Last eng-smoke: wired / assessment_reminders / checkin_reminders / inactivity / winback / journey_hooks — all pass (2026-07-17); local MAILERLITE_API_KEY now in parent `/Users/venkat/work/hwh/.env` (inventory verified 2026-07-17)
-## Sheila UAT: do not ping Phase B clusters until automations exist for new reminder names; wired Phase 5 already passed
+## Last eng-smoke: wired / assessment_reminders / checkin_reminders / inactivity / winback / journey_hooks — all pass with last_trigger (2026-07-17)
+## Sheila UAT: do not ping until you approve; brief ready at docs/mailerlite/SHEILA_PHASE_B_AUTOMATIONS.md
 
-### Deployed (Supabase)
-- Edge fn `mailerlite-scheduled-triggers`
-- Edge fn `stripe-webhook` (`cancelled_at` on subscription deleted)
-- SQL: `subscribers.cancelled_at` + pg_cron `mailerlite-scheduled-triggers` @ 07:00 UTC
+### Deployed
+- Git: `origin/production` @ `f863e1b` (Vercel)
+- Supabase: `mailerlite-scheduled-triggers`, `stripe-webhook` (`cancelled_at`), cron @ 07:00 UTC
+- Parent `.env`: `MAILERLITE_API_KEY` present for agent scripts
 
-### Portal code (needs Vercel `production` deploy)
+### Portal (production)
 - `useSubscriber` writes `last_login_at` (hourly throttle)
 - `useCompleteLesson` fires `phase_completed` / `full_roadmap_completed`
