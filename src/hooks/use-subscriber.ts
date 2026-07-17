@@ -16,6 +16,8 @@ export interface Subscriber {
   trial_end_date: string | null;
   stripe_customer_id: string | null;
   stripe_subscription_id: string | null;
+  last_login_at?: string | null;
+  cancelled_at?: string | null;
 }
 
 export interface PatternMap {
@@ -62,8 +64,25 @@ export function useSubscriber() {
 
       if (error) throw error;
 
-      if (data) return data as Subscriber;
+      if (data) {
+        const sub = data as Subscriber;
+        // Throttle last_login_at writes to once/hour (inactivity triggers).
+        const last = sub.last_login_at ? new Date(sub.last_login_at).getTime() : 0;
+        if (Date.now() - last > 60 * 60 * 1000) {
+          const nowIso = new Date().toISOString();
+          void supabase
+            .from("subscribers")
+            .update({ last_login_at: nowIso })
+            .eq("id", sub.id)
+            .then(() => {
+              /* best-effort */
+            });
+          sub.last_login_at = nowIso;
+        }
+        return sub;
+      }
 
+      const nowIso = new Date().toISOString();
       const { data: newSub, error: insertErr } = await supabase
         .from("subscribers")
         .insert({
@@ -71,11 +90,35 @@ export function useSubscriber() {
           email: user.primaryEmailAddress?.emailAddress || "",
           intake_completed: false,
           payment_status: "none",
+          last_login_at: nowIso,
         })
         .select()
         .single();
 
       if (insertErr) throw insertErr;
+
+      // Non-blocking: upsert new portal members into MailerLite (HWH Free Members).
+      // Stripe trial_started later moves them to HWH Trial Members.
+      const email = (newSub as Subscriber).email;
+      if (email) {
+        void supabase.functions
+          .invoke("fire-mailerlite-trigger", {
+            body: {
+              trigger_name: "portal_subscriber_created",
+              subscriber_id: (newSub as Subscriber).id,
+              email,
+              first_name: user.firstName ?? undefined,
+              trigger_data: {
+                payment_status: "none",
+                tier: null,
+              },
+            },
+          })
+          .catch(() => {
+            /* best-effort — must not block portal boot */
+          });
+      }
+
       return newSub as Subscriber;
     },
     enabled: !!user,

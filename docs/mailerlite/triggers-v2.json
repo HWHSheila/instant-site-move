@@ -1,0 +1,282 @@
+{
+  "version": 2,
+  "source": "docs/mailerlite/triggers-v2.md (from Sheila HWH_MailerLite_Trigger_Sequence_v2.md)",
+  "billing_reminder_policy": "Keep day_21_billing_reminder until Sheila confirms move to Day 19",
+  "groups": [
+    "HWH Free Members",
+    "HWH Trial Members",
+    "HWH Tier 1 Members",
+    "HWH Tier 2 Members",
+    "HWH Tier 3 Members",
+    "HWH Tier 4 Members",
+    "HWH Tier 5 Members",
+    "HWH Cancelled Members"
+  ],
+  "fields": [
+    "last_trigger"
+  ],
+  "triggers": [
+    {
+      "id": 1,
+      "trigger_name": "trial_started",
+      "automation_name": "Trial Started",
+      "when": "Immediately upon $19 payment confirmation",
+      "subject": "Your root cause journey starts now",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 2,
+      "trigger_name": "wellness_assessment_reminder_1",
+      "automation_name": "Wellness Assessment Reminder 1",
+      "when": "24 hours after signup if assessment not submitted",
+      "subject": "Quick reminder, your Wellness Assessment is waiting",
+      "portal_status": "phase_b",
+      "cluster": "assessment_reminders"
+    },
+    {
+      "id": 3,
+      "trigger_name": "wellness_assessment_reminder_2",
+      "automation_name": "Wellness Assessment Reminder 2",
+      "when": "72 hours from signup if still not submitted",
+      "subject": "You are missing your personalized roadmap",
+      "portal_status": "phase_b",
+      "cluster": "assessment_reminders"
+    },
+    {
+      "id": 4,
+      "trigger_name": "wellness_assessment_reminder_3",
+      "automation_name": "Wellness Assessment Reminder 3",
+      "when": "6 days from signup if still not submitted",
+      "subject": "Last reminder, complete your Wellness Assessment",
+      "portal_status": "phase_b",
+      "cluster": "assessment_reminders"
+    },
+    {
+      "id": 5,
+      "trigger_name": "assessment_not_completed",
+      "automation_name": "Assessment Not Completed",
+      "when": "Day 7 if still not submitted after reminders",
+      "subject": "We started you on our Foundational Gut pathway",
+      "portal_status": "deferred_product",
+      "cluster": "deferred_product"
+    },
+    {
+      "id": 6,
+      "trigger_name": "day_11_mini_assessment_reminder",
+      "automation_name": "Day 11 Mini Assessment Reminder",
+      "when": "Day 11 of trial if day_11 check-in not submitted",
+      "subject": "Time for your Day 11 check in",
+      "portal_status": "phase_b",
+      "cluster": "checkin_reminders"
+    },
+    {
+      "id": 7,
+      "trigger_name": "day_21_final_assessment_reminder",
+      "automation_name": "Day 21 Final Assessment Reminder",
+      "when": "Day 21 if day_21 check-in not submitted",
+      "subject": "Your Day 21 check in is here",
+      "portal_status": "phase_b",
+      "cluster": "checkin_reminders"
+    },
+    {
+      "id": 8,
+      "trigger_name": "day_18_restoration_preview",
+      "automation_name": "Day 18 Restoration Unlock Preview",
+      "when": "Day 18 of trial",
+      "subject": "A preview of what's coming in 3 days",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 9,
+      "trigger_name": "day_19_restoration_unlocked",
+      "automation_name": "Day 19 Restoration Unlocked",
+      "when": "Day 19 when tier auto-upgrades",
+      "subject": "Restoration tier is now open to you",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 10,
+      "trigger_name": "day_21_billing_reminder",
+      "automation_name": "Day 21 Billing Reminder",
+      "when": "Day 21 of trial (kept; v2 proposed Day 19 \u2014 pending Sheila)",
+      "subject": "Your trial ends in 2 days, here's what happens next",
+      "portal_status": "wired",
+      "cluster": "wired",
+      "note": "v2 wants day_19_billing_reminder; we keep day_21 until Sheila confirms"
+    },
+    {
+      "id": 11,
+      "trigger_name": "phase_completed",
+      "automation_name": "Phase Completed",
+      "when": "Member completes any roadmap phase",
+      "subject": "You just completed {{phase_name}}",
+      "portal_status": "phase_b",
+      "cluster": "journey_hooks"
+    },
+    {
+      "id": 12,
+      "trigger_name": "full_roadmap_completed",
+      "automation_name": "Full Roadmap Completed",
+      "when": "Member completes all roadmap phases",
+      "subject": "You completed your full roadmap",
+      "portal_status": "phase_b",
+      "cluster": "journey_hooks"
+    },
+    {
+      "id": 13,
+      "trigger_name": "maintenance_phase_entered",
+      "automation_name": "Maintenance Phase Entered",
+      "when": "Member transitions to maintenance",
+      "subject": "Welcome to maintenance",
+      "portal_status": "deferred_product",
+      "cluster": "deferred_product"
+    },
+    {
+      "id": 14,
+      "trigger_name": "inactivity_3_day",
+      "automation_name": "Inactive 3 Days",
+      "when": "No login for 3 consecutive days",
+      "subject": "We noticed you've been away",
+      "portal_status": "phase_b",
+      "cluster": "inactivity"
+    },
+    {
+      "id": 15,
+      "trigger_name": "inactivity_7_day",
+      "automation_name": "Inactive 7 Days",
+      "when": "No login for 7 consecutive days",
+      "subject": "It's been a week, let's get you back on track",
+      "portal_status": "phase_b",
+      "cluster": "inactivity"
+    },
+    {
+      "id": 16,
+      "trigger_name": "inactivity_10_day",
+      "automation_name": "Inactive 10 Days",
+      "when": "No login for 10 consecutive days; then pause",
+      "subject": "Still here whenever you're ready",
+      "portal_status": "phase_b",
+      "cluster": "inactivity"
+    },
+    {
+      "id": 17,
+      "trigger_name": "maintenance_tracking_gap",
+      "automation_name": "Maintenance Tracking Gap",
+      "when": "No tracking entry for 5 days in maintenance",
+      "subject": "Haven't seen a tracking entry in a few days",
+      "portal_status": "deferred_product",
+      "cluster": "deferred_product"
+    },
+    {
+      "id": 18,
+      "trigger_name": "maintenance_30_day_check_in",
+      "automation_name": "Maintenance 30-Day Check-In",
+      "when": "Every 30 days in maintenance",
+      "subject": "Your 30 day maintenance check in",
+      "portal_status": "deferred_product",
+      "cluster": "deferred_product"
+    },
+    {
+      "id": 19,
+      "trigger_name": "semi_monthly_check_in_reminder",
+      "automation_name": "Semi-Monthly Check-In Reminder",
+      "when": "Every 15 days for paying members after Day 21 if due",
+      "subject": "Time for your check in",
+      "portal_status": "phase_b",
+      "cluster": "checkin_reminders"
+    },
+    {
+      "id": 20,
+      "trigger_name": "tier_upgrade",
+      "automation_name": "Tier Upgrade",
+      "when": "Member upgrades tier",
+      "subject": "Your upgrade is confirmed",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 21,
+      "trigger_name": "tier_downgrade_scheduled",
+      "automation_name": "Tier Downgrade Scheduled",
+      "when": "Member schedules downgrade",
+      "subject": "Your tier change is scheduled",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 22,
+      "trigger_name": "cancellation_confirmed",
+      "automation_name": "Cancellation Confirmed",
+      "when": "Member cancels subscription",
+      "subject": "Your cancellation is confirmed",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 23,
+      "trigger_name": "cancellation_win_back",
+      "automation_name": "Cancellation Win-Back",
+      "when": "30 days after cancellation",
+      "subject": "We've kept your roadmap ready for you",
+      "portal_status": "phase_b",
+      "cluster": "winback"
+    },
+    {
+      "id": 24,
+      "trigger_name": "auto_billing_confirmed",
+      "automation_name": "Auto-Billing Confirmed",
+      "when": "Day 22 Foundation billing succeeds",
+      "subject": "Your Foundation billing is confirmed",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 25,
+      "trigger_name": "payment_failed",
+      "automation_name": "Payment Failed",
+      "when": "Stripe payment fails",
+      "subject": "We couldn't process your payment",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 26,
+      "trigger_name": "all_payment_retries_failed",
+      "automation_name": "All Payment Retries Failed",
+      "when": "After all Stripe retries fail; account to Free",
+      "subject": "Your account has moved to Free access",
+      "portal_status": "deferred_product",
+      "cluster": "deferred_product"
+    },
+    {
+      "id": 27,
+      "trigger_name": "day_11_mini_assessment",
+      "automation_name": "Day 11 Mini Assessment Submitted",
+      "when": "Member submits Day 11 check-in",
+      "subject": "(submit event \u2014 not a reminder)",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 28,
+      "trigger_name": "day_21_mini_assessment",
+      "automation_name": "Day 21 Mini Assessment Submitted",
+      "when": "Member submits Day 21 check-in",
+      "subject": "(submit event \u2014 not a reminder)",
+      "portal_status": "wired",
+      "cluster": "wired"
+    },
+    {
+      "id": 29,
+      "trigger_name": "semi_monthly_check_in",
+      "automation_name": "Semi-Monthly Check-In Submitted",
+      "when": "Member submits semi-monthly check-in",
+      "subject": "(submit event \u2014 not a reminder)",
+      "portal_status": "wired",
+      "cluster": "wired"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # HWH Portal — Development Backlog
 
-Last updated: 2026-07-01
+Last updated: 2026-07-09
 
 ---
 
@@ -13,13 +13,35 @@ Last updated: 2026-07-01
 | Database | Supabase Postgres (`joxwjoboqkcenmphbtpi`) |
 | Edge functions | Supabase Edge Functions (Deno) |
 | Storage | Supabase Storage (`content-videos` bucket) |
-| Hosting | Vercel (deploys from `main` branch) |
+| Hosting | Vercel (`production` branch → `instant-site-move.vercel.app`) |
 | Billing | Stripe (webhooks → `stripe-webhook` edge function) |
 
 Live URL: `instant-site-move.vercel.app`
 DNS (`herwellnessharmony.com`) not yet pointed at Vercel.
 
 Admin account: `support@herwellnessharmony.com` — the only row in `admin_users`.
+
+---
+
+## Git branches and deployment isolation (Lovable vs Vercel)
+
+| Branch | Who pushes | Deploys to | Purpose |
+|---|---|---|---|
+| `main` | Lovable (`gpt-engineer-app[bot]`) + us | `www.herwellnessharmony.com` (Lovable hosting) | Sheila's marketing/FE edits via Lovable |
+| `production` | Us only | `instant-site-move.vercel.app` (Vercel) | Member portal UAT and eventual cutover |
+
+**Status (2026-07-09):**
+- `origin/production` created from last clean commit `902290d` (Jul 5).
+- Credential skill + `scripts/load-hwh-env.sh` in place (see `.cursor/skills/hwh-credentials/`).
+- **Vercel isolation applied:** production branch → `production`; preview builds on `main` skipped.
+- **Rollback:** `bash scripts/vercel-isolation-rollback.sh` restores pre-change production branch + deployment.
+
+**Cherry-pick policy:** Case-by-case — see [`docs/LOVABLE_SYNC.md`](LOVABLE_SYNC.md). Agent skill: [`.cursor/skills/lovable-sync/`](../.cursor/skills/lovable-sync/SKILL.md).
+
+**Sync log:**
+<!-- Add one line per sync: YYYY-MM-DD — synced <files> from main@<sha> (<reason>) -->
+
+**Cutover (post-UAT):** Point `herwellnessharmony.com` DNS to Vercel; serve from `production`.
 
 ---
 
@@ -104,13 +126,21 @@ Admin account: `support@herwellnessharmony.com` — the only row in `admin_users
   so Pattern Library and Pathways serve real, personalized, tier-locked content.
   Requires ARCH-1 resolved first.
 
+### ML — MailerLite trigger wiring (Phase 6)
+
+See `docs/MAILERLITE.md`, catalog `docs/mailerlite/triggers-v2.json`, and living `docs/mailerlite/STATUS.md`.
+
+**Wired:** trial/tier/cancel/payment_failed (Stripe); day 18/19/21 + auto_billing (`advance-journey-day`); mini-assessment submit fires; portal signup sync.
+
+**Phase B implemented (eng-smoke before Sheila):** assessment reminders, day 11/21 + semi-monthly reminders, inactivity 3/7/10 (`last_login_at`), phase/full roadmap complete, cancellation win-back (`cancelled_at` + cron). Edge fn: `mailerlite-scheduled-triggers`.
+
+**Deferred product (do not build yet):** Day 7 default pathway, maintenance emails, all payment retries failed. Keep Day 21 billing reminder until Sheila confirms Day 19 move.
+
 ### FUTURE — Post-UAT features
 
 - HeyGen AI video generation (edge function scaffolded, not wired)
-- Email automation (MailerLite integration exists for public pages, not portal)
 - Admin panel (routes under `/admin/`, pages exist, not linked from nav)
 - Campaigns (table + UI exist, not fully wired)
-- Weekly Notes / Community / AI Coach (pages exist, no backend)
 - DNS cutover: point `herwellnessharmony.com` to Vercel
 
 ---
@@ -119,9 +149,9 @@ Admin account: `support@herwellnessharmony.com` — the only row in `admin_users
 
 | Step | Status | Date sent | Feedback received |
 |---|---|---|---|
-| Step 1 — Content Studio | Sent | 2026-07-01 | Pending |
-| Step 2 — Intake + Pattern Map | Not sent | — | — |
-| Step 3 — Stripe checkout | Not sent | — | — |
+| Phase 1 — Portal Studio | Sent | 2026-07-01 | Pending |
+| Phases 2–6 — UAT workbook | Sent | 2026-07-06 | Pending |
+| Phase 5 — Trial & Billing | Built + CSV in workbook | — | — |
 
 **Gate rule**: do not send Step N+1 guide until Step N feedback is received and all blockers resolved.
 
@@ -148,5 +178,6 @@ git config user.name "HWH Support"
 ```
 
 Always set before committing. No personal names in any committed file.
-Push to `origin main` → Vercel auto-deploys.
+Push to `origin production` → Vercel deploys portal (after isolation apply).
+Lovable pushes to `origin main` → `herwellnessharmony.com` only.
 Remote: `https://github.com/HWHSheila/instant-site-move.git`

@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSupabase } from "./use-supabase";
 import type { RoadmapVideo } from "@/lib/roadmap-catalog";
+import { NS_FOUNDATION_PHASE } from "@/lib/roadmap-catalog";
 import type { ProgressRow } from "@/lib/content-locking";
 import {
   buildOrderedLessonList,
@@ -126,6 +127,36 @@ export function useRoadmapWithProgress(subscriberId: string | undefined) {
   };
 }
 
+function isPhaseComplete(
+  phase: string,
+  orderedLessons: RoadmapVideo[],
+  progress: ProgressRow[],
+  justCompletedCode?: string
+): boolean {
+  const phaseLessons = orderedLessons.filter((v) => v.phase === phase);
+  if (phaseLessons.length === 0) return false;
+  return phaseLessons.every((v) => {
+    if (justCompletedCode && v.video_code === justCompletedCode) return true;
+    return (
+      progress.find((p) => p.video_code === v.video_code && p.content_type === "lesson")
+        ?.status === "completed"
+    );
+  });
+}
+
+function pathwayPhases(orderedLessons: RoadmapVideo[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const v of orderedLessons) {
+    if (v.phase === NS_FOUNDATION_PHASE) continue;
+    if (!seen.has(v.phase)) {
+      seen.add(v.phase);
+      out.push(v.phase);
+    }
+  }
+  return out;
+}
+
 export function useCompleteLesson(subscriberId: string | undefined) {
   const supabase = useSupabase();
   const queryClient = useQueryClient();
@@ -143,6 +174,14 @@ export function useCompleteLesson(subscriberId: string | undefined) {
       if (!subscriberId) throw new Error("Not authenticated");
 
       const now = new Date().toISOString();
+      const completedLesson = orderedLessons.find((v) => v.video_code === videoCode);
+      const phase = completedLesson?.phase;
+
+      const phaseWasComplete =
+        !!phase && isPhaseComplete(phase, orderedLessons, progress);
+      const roadmapWasComplete = pathwayPhases(orderedLessons).every((p) =>
+        isPhaseComplete(p, orderedLessons, progress)
+      );
 
       const { error: completeErr } = await supabase
         .from("member_content_progress" as any)
@@ -167,6 +206,68 @@ export function useCompleteLesson(subscriberId: string | undefined) {
             { onConflict: "subscriber_id,video_code,content_type" }
           );
         if (unlockErr) throw unlockErr;
+      }
+
+      // MailerLite: phase / full roadmap completion (best-effort)
+      if (phase && !phaseWasComplete) {
+        const phaseNowComplete = isPhaseComplete(
+          phase,
+          orderedLessons,
+          progress,
+          videoCode
+        );
+        if (phaseNowComplete) {
+          const phases = pathwayPhases(orderedLessons);
+          const idx = phases.indexOf(phase);
+          const nextPhase = idx >= 0 && idx < phases.length - 1 ? phases[idx + 1] : null;
+
+          const { data: sub } = await supabase
+            .from("subscribers")
+            .select("email, tier, payment_status")
+            .eq("id", subscriberId)
+            .maybeSingle();
+
+          if (sub?.email) {
+            void supabase.functions
+              .invoke("fire-mailerlite-trigger", {
+                body: {
+                  trigger_name: "phase_completed",
+                  subscriber_id: subscriberId,
+                  email: sub.email,
+                  trigger_data: {
+                    phase_name: phase,
+                    next_phase: nextPhase,
+                    tier: sub.tier,
+                    payment_status: sub.payment_status,
+                  },
+                },
+              })
+              .catch(() => {
+                /* non-blocking */
+              });
+
+            const roadmapNowComplete = phases.every((p) =>
+              isPhaseComplete(p, orderedLessons, progress, videoCode)
+            );
+            if (roadmapNowComplete && !roadmapWasComplete) {
+              void supabase.functions
+                .invoke("fire-mailerlite-trigger", {
+                  body: {
+                    trigger_name: "full_roadmap_completed",
+                    subscriber_id: subscriberId,
+                    email: sub.email,
+                    trigger_data: {
+                      tier: sub.tier,
+                      payment_status: sub.payment_status,
+                    },
+                  },
+                })
+                .catch(() => {
+                  /* non-blocking */
+                });
+            }
+          }
+        }
       }
 
       return { nextCode };

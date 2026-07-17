@@ -38,3 +38,18 @@ verify_jwt = false
 
 [functions.handle-email-suppression]
 verify_jwt = false
+
+[functions.telegram-priority-support]
+verify_jwt = false
+
+[functions.fire-mailerlite-trigger]
+verify_jwt = false
+
+[functions.mailerlite-scheduled-triggers]
+verify_jwt = false
+
+[functions.draft-member-content]
+verify_jwt = false
+
+[functions.ai-coach]
+verify_jwt = false
