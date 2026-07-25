@@ -44,3 +44,4 @@ secrets.*
 
 # Supabase local state
 supabase/.temp/
+.vercel
