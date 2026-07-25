@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { UserButton } from "@clerk/clerk-react";
+import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { UserButton, useClerk } from "@clerk/clerk-react";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -23,9 +23,13 @@ import {
   TrendingUp,
   NotebookPen,
   MessageCircle,
+  LogOut,
+  HeartHandshake,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useSupabase, useClerkUserId } from "@/hooks/use-supabase";
+import { useSubscriber } from "@/hooks/use-subscriber";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // ── Preview Tier Context ──────────────────────────────────────────────────────
 
@@ -55,6 +59,12 @@ interface NavItem {
   section?: boolean;
   indent?: boolean;
   adminOnly?: boolean;
+  /**
+   * Sheila's exclusions forbid a standalone pricing entry point and any
+   * pay-before-assessment path, so membership is only reachable once the
+   * assessment is done.
+   */
+  afterAssessmentOnly?: boolean;
 }
 
 const portalNav: NavItem[] = [
@@ -78,12 +88,13 @@ const portalNav: NavItem[] = [
   { label: "Member Content", to: "/portal/content", icon: BookOpen },
   { label: "Start Here", to: "/portal/start-here", icon: Compass },
   { label: "Pattern Library", to: "/portal/patterns", icon: BookOpen },
-  { label: "Guided Pathways", to: "/portal/pathways", icon: Route },
+  { label: "My Guided Roadmap", to: "/portal/pathways", icon: Route },
   { label: "My Progress", to: "/portal/progress", icon: TrendingUp },
   { label: "Symptom Log", to: "/portal/symptom-log", icon: NotebookPen },
   { label: "Ask the HWH Coach", to: "/portal/HWHcoach", icon: Bot },
   { label: "Weekly Notes", to: "/portal/weekly-notes", icon: FileText },
   { label: "Priority Support", to: "/portal/priority-support", icon: MessageCircle },
+  { label: "Deep Support Coaching", to: "/portal/coaching", icon: HeartHandshake, afterAssessmentOnly: true },
   { label: "Account", to: "/portal/account", icon: UserCircle },
 ];
 
@@ -104,8 +115,11 @@ export function PortalLayout() {
   const [previewTier, setPreviewTier] = useState<Tier>("admin");
   const [tierDropdownOpen, setTierDropdownOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { signOut } = useClerk();
   const supabase = useSupabase();
   const clerkUserId = useClerkUserId();
+  const { subscriber } = useSubscriber();
 
   useEffect(() => {
     if (!clerkUserId) return;
@@ -119,7 +133,10 @@ export function PortalLayout() {
       });
   }, [supabase, clerkUserId]);
 
-  const visibleNav = isAdmin ? portalNav : portalNav.filter(item => !item.adminOnly);
+  const assessmentDone = !!(subscriber?.assessment_completed ?? subscriber?.intake_completed);
+  const visibleNav = portalNav
+    .filter(item => isAdmin || !item.adminOnly)
+    .filter(item => !item.afterAssessmentOnly || assessmentDone || isAdmin);
 
   const previewLabel = TIER_OPTIONS.find(o => o.value === previewTier)?.label ?? "Admin view";
 
@@ -164,6 +181,34 @@ export function PortalLayout() {
       </div>
     );
   };
+
+  const AccountControls = ({ onNavigate }: { onNavigate?: () => void }) => (
+    <>
+      <div className="flex items-center gap-3">
+        <UserButton afterSignOutUrl="/" />
+        <button
+          onClick={() => { onNavigate?.(); navigate("/portal/account"); }}
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Account
+        </button>
+      </div>
+      <button
+        onClick={() => signOut({ redirectUrl: "/" })}
+        className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <LogOut className="w-4 h-4" />
+        Sign Out
+      </button>
+      <button
+        onClick={() => { onNavigate?.(); navigate("/"); }}
+        className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ChevronLeft className="w-4 h-4" />
+        Back to main site
+      </button>
+    </>
+  );
 
   const PreviewTierPicker = () => {
     if (!isAdmin) return null;
@@ -216,17 +261,7 @@ export function PortalLayout() {
           </nav>
           <div className="p-4 border-t border-border space-y-3">
             <PreviewTierPicker />
-            <div className="flex items-center gap-3">
-              <UserButton afterSignOutUrl="/" />
-              <span className="text-xs text-muted-foreground">Account</span>
-            </div>
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Back to main site
-            </button>
+            <AccountControls />
           </div>
         </aside>
 
@@ -266,17 +301,7 @@ export function PortalLayout() {
               </nav>
               <div className="p-4 border-t border-border space-y-3">
                 <PreviewTierPicker />
-                <div className="flex items-center gap-3">
-                  <UserButton afterSignOutUrl="/" />
-                  <span className="text-xs text-muted-foreground">Account</span>
-                </div>
-                <button
-                  onClick={() => { setSidebarOpen(false); navigate("/"); }}
-                  className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  Back to main site
-                </button>
+                <AccountControls onNavigate={() => setSidebarOpen(false)} />
               </div>
             </div>
           </>
@@ -286,7 +311,10 @@ export function PortalLayout() {
         <main className="flex-1 md:ml-64 mt-14 md:mt-0 min-h-screen flex flex-col">
           <PreviewBanner />
           <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 py-6 md:py-10 flex-1">
-            <Outlet />
+            {/* Keyed on path so navigating away clears a caught error */}
+            <ErrorBoundary key={location.pathname}>
+              <Outlet />
+            </ErrorBoundary>
           </div>
         </main>
       </div>

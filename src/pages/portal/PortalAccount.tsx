@@ -52,7 +52,7 @@ export default function PortalAccount() {
       if (error) throw error;
 
       if (data?.data?.url) {
-        window.location.href = data.data.url;
+        window.open(data.data.url, "_blank", "noopener,noreferrer");
       } else {
         toast.error("Unable to open billing portal");
       }

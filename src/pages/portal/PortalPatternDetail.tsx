@@ -36,7 +36,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Bloating often begins in the gut — with impaired motility, microbial imbalances, or incomplete breakdown of food. When the digestive system is under stress, metabolic rhythm slows, which can amplify fluid retention and hormonal signaling disruptions downstream.",
     nextSteps:
-      "Start with the Digestion Rhythm pathway in Guided Pathways to begin stabilizing your digestive foundation, or revisit Start Here to understand how gut health anchors the entire system.",
+      "Start with the Digestion Rhythm pathway in My Guided Roadmap to begin stabilizing your digestive foundation, or revisit Start Here to understand how gut health anchors the entire system.",
   },
   {
     label: "Water Retention",
@@ -57,7 +57,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Water retention is often a downstream signal of chronic stress activation. Elevated cortisol influences aldosterone, which governs fluid balance. When metabolic rhythm is unstable and the nervous system stays in overdrive, the body holds onto fluid as a protective response.",
     nextSteps:
-      "Explore the Stress Load pathway in Guided Pathways to understand nervous system regulation, then revisit Start Here to see how stress connects to metabolic and hormonal responses.",
+      "Explore the Stress Load pathway in My Guided Roadmap to understand nervous system regulation, then revisit Start Here to see how stress connects to metabolic and hormonal responses.",
   },
   {
     label: "Fatigue After Meals",
@@ -78,7 +78,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Post-meal fatigue reflects metabolic instability — often an exaggerated insulin response or poor blood sugar regulation. The gut's digestive workload, combined with nervous system state, determines how much energy is diverted away from the brain and muscles after eating.",
     nextSteps:
-      "Follow the Metabolic Stability pathway in Guided Pathways to work on blood sugar patterns, and review Start Here to understand how metabolism connects to energy and hormones.",
+      "Follow the Metabolic Stability pathway in My Guided Roadmap to work on blood sugar patterns, and review Start Here to understand how metabolism connects to energy and hormones.",
   },
   {
     label: "Cravings",
@@ -99,7 +99,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Cravings are often the body's attempt to self-correct metabolic instability. When blood sugar swings, cortisol rises, or key nutrients are depleted, the brain signals urgency for quick-energy foods. This pattern is amplified when gut health and stress load are both compromised.",
     nextSteps:
-      "Start with the Metabolic Stability pathway in Guided Pathways, and explore the Stress Load pathway to address cortisol-driven appetite patterns.",
+      "Start with the Metabolic Stability pathway in My Guided Roadmap, and explore the Stress Load pathway to address cortisol-driven appetite patterns.",
   },
   {
     label: "Poor Sleep",
@@ -120,7 +120,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Sleep disruption is often a nervous system and metabolic issue. When cortisol doesn't decline properly in the evening — due to chronic stress, blood sugar instability, or gut-driven inflammation — the body stays in a state of alertness that overrides natural sleep signals.",
     nextSteps:
-      "Explore the Stress Load pathway in Guided Pathways to work on nervous system regulation, and revisit Start Here to understand the connection between stress, metabolism, and recovery.",
+      "Explore the Stress Load pathway in My Guided Roadmap to work on nervous system regulation, and revisit Start Here to understand the connection between stress, metabolism, and recovery.",
   },
   {
     label: "Cycle Changes",
@@ -141,7 +141,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Menstrual pattern changes are often the final expression of upstream imbalances. The gut influences estrogen recycling through the estrobolome. Metabolic instability affects ovulation. Chronic stress suppresses progesterone. Hormones are the last system to shift — and the first place many notice symptoms.",
     nextSteps:
-      "Begin with Guided Pathways to stabilize digestion and stress load first — hormonal patterns often improve as upstream systems are addressed. Review Start Here to see the full framework.",
+      "Begin with My Guided Roadmap to stabilize digestion and stress load first — hormonal patterns often improve as upstream systems are addressed. Review Start Here to see the full framework.",
   },
   {
     label: "Slow Digestion",
@@ -162,7 +162,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Slow digestion reflects reduced motility, often driven by nervous system dominance (sympathetic overdrive), insufficient bile flow, or thyroid-related slowing. When the body is in a stress state, it deprioritizes digestion — leading to longer transit times and incomplete elimination.",
     nextSteps:
-      "Start with the Digestion Rhythm pathway in Guided Pathways to address motility foundations, and explore Start Here to understand how gut function drives everything downstream.",
+      "Start with the Digestion Rhythm pathway in My Guided Roadmap to address motility foundations, and explore Start Here to understand how gut function drives everything downstream.",
   },
   {
     label: "Energy Crashes",
@@ -183,7 +183,7 @@ const patternData: PatternData[] = [
     rootCause:
       "Energy crashes signal metabolic instability — the body cycling between blood sugar spikes and drops, often compounded by adrenal fatigue patterns. When the gut isn't absorbing nutrients efficiently and stress load remains high, the metabolic system can't maintain steady energy output.",
     nextSteps:
-      "Follow the Metabolic Stability pathway in Guided Pathways, and address the Stress Load pathway to support adrenal recovery and steady energy.",
+      "Follow the Metabolic Stability pathway in My Guided Roadmap, and address the Stress Load pathway to support adrenal recovery and steady energy.",
   },
 ];
 
@@ -294,7 +294,7 @@ export default function PortalPatternDetail() {
               to="/portal/pathways"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary/10 text-primary text-sm font-medium hover:bg-primary/15 transition-colors"
             >
-              <Route className="w-4 h-4" /> Guided Pathways
+              <Route className="w-4 h-4" /> My Guided Roadmap
             </Link>
           </div>
         </section>

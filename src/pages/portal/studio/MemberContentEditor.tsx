@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { useSupabase } from "@/hooks/use-supabase";
 import {
   useMemberContentPosts,
   useSaveMemberContentPost,

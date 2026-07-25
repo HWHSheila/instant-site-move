@@ -106,7 +106,7 @@ export default function PortalUpgrade() {
       if (error) throw error;
 
       if (data?.data?.url) {
-        window.location.href = data.data.url;
+        window.open(data.data.url, "_blank", "noopener,noreferrer");
       } else {
         toast.error("Failed to create checkout session");
       }
@@ -197,7 +197,7 @@ export default function PortalUpgrade() {
                           Starting checkout...
                         </>
                       ) : (
-                        `Start 21-Day Free Trial`
+                        `Start 21-Day Trial, $19`
                       )}
                     </Button>
                   )}

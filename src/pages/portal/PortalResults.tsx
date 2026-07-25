@@ -300,7 +300,7 @@ export default function PortalResults() {
               </p>
             )}
             <Button className="w-full" size="lg" onClick={() => navigate("/portal/coaching")}>
-              Start Your 21-Day Trial — $19
+              Start Your 21-Day Trial, $19
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </CardContent>

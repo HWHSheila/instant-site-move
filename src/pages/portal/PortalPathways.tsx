@@ -34,7 +34,7 @@ export default function PortalPathways() {
   if (!roadmap) {
     return (
       <>
-        <SEO title="Guided Pathways" noindex />
+        <SEO title="My Guided Roadmap" noindex />
         <div className="space-y-6 text-center max-w-lg mx-auto py-12">
           <Route className="w-12 h-12 text-muted-foreground mx-auto" />
           <h1 className="font-display text-2xl font-semibold">Your Roadmap Awaits</h1>
