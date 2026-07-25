@@ -64,3 +64,7 @@ verify_jwt = false
 # Signed by Clerk with Svix headers, not a bearer token
 [functions.clerk-webhook]
 verify_jwt = false
+
+# One-shot Batch 1 price audit; remove after UAT if desired
+[functions.audit-stripe-prices]
+verify_jwt = false
