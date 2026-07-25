@@ -29,6 +29,24 @@ todos:
   - id: uat1a-workbook
     content: "Produce HWH_Portal_UAT_1a_Batch1 xlsx: ~29 rows across her 5 phase tabs, 7 columns, plus a Not In This Round tab covering the other 32 non-passing and 8 skipped rows"
     status: pending
+  - id: rules-of-record
+    content: "Write docs/uat/HWH_Business_Rules_Of_Record.md as each Batch 1 item lands: her rule, where she said it, what she sees, status, and the UAT 1a row proving it (6h)"
+    status: pending
+  - id: resolve-trial-conflict
+    content: "Resolved by latest-wins: her 25 July trial model supersedes the 1 July Business Architecture version, recorded as a dated supersession. Tier ladder unchanged."
+    status: completed
+  - id: b1-nav-post-assessment
+    content: "Membership nav entry must appear only after assessment completion, per her exclusion of standalone pricing entry points and pay-before-assessment paths"
+    status: pending
+  - id: b1-propose-thresholds
+    content: "Propose tier recommendation thresholds for her written approval before building the recommender, since her clarifications doc records the original proposal as never answered"
+    status: pending
+  - id: b2-free-account-emails
+    content: "Batch 2 flag: her exclusions say free accounts receive zero emails, but three built automations are assessment reminders aimed at unpaid users. Resolve before trusting the reminder cron."
+    status: pending
+  - id: b4-drop-admin-routes
+    content: "Batch 4: drop S-39 admin route registration unless she asks, it is on her deferred list"
+    status: pending
   - id: uat1a-coverage-check
     content: "Verify both directions: each of her 29 in-scope rows has a test row, and each Batch 1 fix appears in a row or is declared untestable"
     status: pending
@@ -101,7 +119,7 @@ Three things moved as a direct result of her corrections:
 - **Added: pattern severity scoring, pulled forward from Batch 3**, so her assessment retest is coherent in one sitting.
 - **Added: a place to hold the tier a member picks during the trial**, which falls directly out of the confirmed trial rule below.
 
-Effort moves from about 40h to about **64h, roughly 8 working days**.
+Effort moves from about 40h to about **70h, roughly 9 working days**, including 6h for the requirements record described below.
 
 ---
 
@@ -184,7 +202,7 @@ Still to confirm, and not blocking Batch 1: whether the $19 is charged upfront a
 ## Tier truth and assessment scoring, 34h
 
 - **Stop the assessment writing the badge, 3h.** `identify-patterns` writes to `pattern_maps.recommended_tier` only. Also fixes the case at lines 121 to 124 where a missing Claude key silently writes `tier: "awareness"`.
-- **Unify the two recommenders, 6h.** Retire the duplicate so one engine produces one recommendation. Fix the `subcategoryCount >= 8 || average_baseline < 3` OR condition in [src/lib/tier-recommendation.ts](src/lib/tier-recommendation.ts) so breadth alone cannot return Integration at mild severity. Sheila reviews the corrected thresholds before we build, since the clinical judgement is hers.
+- **Unify the two recommenders, 6h.** Retire the duplicate so one engine produces one recommendation. The `subcategoryCount >= 8 || average_baseline < 3` OR condition in [src/lib/tier-recommendation.ts](src/lib/tier-recommendation.ts) implements the "whichever is higher" proposal from her clarifications document, whose own status line records that she never answered it. This is therefore a pending question being closed, not a defect being patched: **we propose thresholds, she approves them, then we build.** Nothing ships here without her written answer.
 - **Remove the tier write from the day simulator, 1h.** `simulate-day.sh` stops mutating `subscribers.tier`.
 - **Pattern severity scoring, 8h, pulled forward from Batch 3.** Mild ratings of 7 to 10 must produce mild patterns. Same intake data as the recommender, so the two are corrected together and reviewed by Sheila as one change.
 - **Trial-aware `useEffectiveTier()`, 8h.** One helper implementing the rule above, replacing the `isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier` ternary duplicated across six portal pages, plus the four hooks and libs that read tier separately and each apply their own inconsistent trial logic. Includes the `pending_tier` column so a trial member's choice survives until day 22.
@@ -201,7 +219,7 @@ Still to confirm, and not blocking Batch 1: whether the $19 is charged upfront a
 - **Studio editors, 0.5h.** [MemberContentEditor.tsx](src/pages/portal/studio/MemberContentEditor.tsx) calls `useSupabase()` at line 41 with no import. Sibling `ScriptGenerator.tsx` shows the correct path. Fixes `/portal/studio/member-content` and `/portal/studio/weekly-notes` together.
 - **Sign out, 0.75h.** In [PortalLayout.tsx](src/components/portal/PortalLayout.tsx) lines 217 to 222 the label sits outside the trigger: `<UserButton />` followed by a sibling `<span>Account</span>`. Make the whole row clickable and add a plainly labelled Sign Out. Same fix on the mobile overlay at lines 267 to 272.
 - **Rename to My Guided Roadmap, 0.5h.** Nine occurrences across four files, including eight copy strings in `PortalPatternDetail.tsx`.
-- **Membership route back in the nav, 1h.** `/portal/coaching` renders `PortalUpgrade` and is registered in the router but absent from the sidebar nav array, which is why she could not get back to membership options.
+- **Membership route back in the nav, 1.5h.** `/portal/coaching` renders `PortalUpgrade` and is registered in the router but absent from the sidebar nav array, which is why she could not get back to membership options. **Shown only once the assessment is complete**, since her exclusions forbid a standalone pricing entry point and any pay-before-assessment path.
 - **New tab, 0.5h.** Both Stripe flows use `window.location.href`.
 - **Trial button wording, 0.25h.** "Start Free Trial" charges $19, which her pricing answer confirms is correct. The label names the real price. Closes her Phase 3 row 8.1.
 
@@ -272,6 +290,85 @@ Two nuances stated on that tab:
 
 - Severity scoring is fixed in Batch 1, but the dashboard and roadmap still disagree on which focus comes first until Batch 3. Her Phase 2 row 5.1 stays open.
 - Her Phase 1 row 5.3, the green versus blue border, and her Phase 6 row 4.3, the two similarly named day 11 triggers, need no code change. Both carry an explanation instead of a fix, and she can overrule either.
+
+---
+
+## Her requirements of record, written as we build, about 6h
+
+A running document written for Sheila alone: a record of her own business rules and the resulting behaviour, in her language, with no internals. Produced alongside each Batch 1 item, not afterwards.
+
+`docs/uat/HWH_Business_Rules_Of_Record.md`, opened with Batch 1 and extended by each later batch.
+
+### What it is
+
+A mirror, not a specification we authored. Every rule is something she stated, traced back to where she stated it, so the document reads as her requirements confirmed rather than our interpretation offered. Where two of her own statements conflict, both are shown and she picks.
+
+### One entry per rule
+
+- **The rule**, in plain language, as she expressed it
+- **Where she said it**: her UAT workbook row, her 25 July corrections, her Business Architecture Requirements section, or her v2 trigger spec
+- **What she will see**, the observable behaviour on screen
+- **What happens behind it**, described as behaviour only: the portal records the change, the email service is told, access widens. Never how
+- **Status**: confirmed, conflicts with an earlier statement of hers, or awaiting her decision
+- **How it is proven**: the UAT 1a row that demonstrates it
+
+Rules and tests are written as a pair. A rule with no test is unproven, and a test with no rule is us inventing a requirement.
+
+### Redaction rule, mechanical so it can be checked
+
+Never appears: keys, tokens, or secret values of any kind; Stripe price or product identifiers; MailerLite group identifiers; Supabase or Clerk project identifiers; environment variable names; file paths; component, function or edge function names; database table, column or policy names; code snippets of any kind.
+
+Always appears: tier names and prices, day numbers, what a member sees, what she sees as admin, and the email trigger names, since she needs those to operate her own automations.
+
+The engineering detail continues to live in `docs/uat/INTEGRATION_REVIEW.md`, which is internal and stays that way. Two audiences, two documents, no mixing.
+
+### Batch 1 opens it with these rule groups
+
+Membership and tier truth, the trial ladder, assessment scoring and what the recommendation means, content visibility and the published rule, admin preview behaviour, and account access including sign out and where membership options live.
+
+---
+
+## Provenance: latest statement wins, earlier ones kept and dated
+
+The record is assembled from her own documents and feedback. Where they contradict, her most recent statement is the rule and the earlier one is retained as a dated superseded entry, never deleted. Order of authority, newest first:
+
+- **25 July 2026** — her completed UAT workbook, her Batch 1 corrections and decisions, and her clarifications and exclusions
+- **17 July 2026** — her MailerLite trigger sequence v2, 26 triggers locked
+- **5 July 2026** — her completed planning questions and completed portal review
+- **1 July 2026** — her Business Architecture, Technical Architecture and Legal Compliance requirements
+
+One caution carried into the record: file timestamps are not authorship dates. Several documents were copied or touched later than they were written. Each entry is dated by the event that produced it, and where a document carries no internal date we say so rather than inferring one.
+
+### Resolved by this rule: the trial model
+
+Her Business Architecture Requirements of 1 July describe every subscriber entering at Root-Cause Pattern Awareness at $9 a month, a Guided Experience Preview on days 19 to 21, and remaining at $9 or upgrading afterwards. Her 25 July answer replaces that with a one-time $19 for 21 days, Foundation access to day 18, Restoration for 19 to 21, and automatic billing at $29 Foundation. **The 25 July version governs.** The Batch 1 tier ladder is already written to it and does not change. The July 1 model is recorded as superseded on 25 July, with the difference stated: entry tier, the charge, what day 19 opens, and the day 22 default all changed.
+
+---
+
+## Three things her clarifications document changes
+
+Her 25 July clarifications and exclusions had not been read before today. It moves one Batch 1 item and flags two later ones.
+
+### The membership link must appear only after the assessment, changing our nav fix
+
+She permanently excluded a standalone pricing or tier page, on the grounds that no direct pricing entry point exists and tier selection appears only after the assessment via the recommendation. She also excluded any pay-before-assessment path.
+
+Our Batch 1 item was going to add a Membership entry to the sidebar unconditionally, which would have created exactly the entry point she excluded. Her actual complaint was narrower: after finishing the assessment there was no way back to the options she had already been shown. **The link is therefore conditional on assessment completion.** Before the assessment there is no route to pricing at all.
+
+### The scoring rule she is being asked to approve was never approved in the first place
+
+Her clarifications document proposes recommending a tier from two factors, roadmap breadth and baseline severity, taking **whichever is higher**, and gives "5 or more sub-categories or average baseline below 4" as the example. Its own status line reads pending, dev team proposes, and **"Sheila's answer: not yet provided"**.
+
+That unapproved proposal is what shipped. The `||` that returns Integration for a member with mild symptoms across many areas is a faithful implementation of "whichever is higher". So this is not a coding slip to apologise for, it is an open question that was built before it was answered, and her UAT reaction is her first sight of the consequence. The Batch 1 fix therefore leads with proposed thresholds for her approval rather than presenting a correction as already decided.
+
+### Two flags for later batches
+
+- **Free accounts receive zero emails of any kind**, per her exclusions. Three of the twelve automations we built are wellness assessment reminders, which by definition target people who have not completed the assessment and are therefore unpaid. Either those reminders must not fire to free accounts or "free account" means something narrower than it reads. Resolve in Batch 2 before the reminder cron is trusted.
+- **Registering the unreachable admin routes is on her deferred list**, to be wired when admin features are needed. The remediation plan carries it in Batch 4 at 2h. Drop it unless she asks.
+
+### Useful data the same document supplies
+
+Her confirmed tier feature matrix gives the AI Coach monthly limits that Batch 4 needs: 10 at $9, 35 at $29, 100 at $69, 150 at $119, and unlimited at $299. Her UAT complaint that the counter reads 150 for every tier now has an authoritative target to be fixed against.
 
 ---
 
