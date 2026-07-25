@@ -1,5 +1,12 @@
 project_id = "joxwjoboqkcenmphbtpi"
 
+# Portal functions run as service role, so identity is verified inside the
+# function against the caller's Clerk token, in _shared/clerk-auth.ts. That is
+# the authoritative check and does not depend on gateway configuration.
+# verify_jwt below only says whether the gateway also rejects unsigned calls
+# first; it is never the only thing standing between a caller and another
+# member's data.
+
 [functions.systeme-subscribe]
 verify_jwt = false
 
@@ -52,4 +59,8 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.ai-coach]
+verify_jwt = false
+
+# Signed by Clerk with Svix headers, not a bearer token
+[functions.clerk-webhook]
 verify_jwt = false

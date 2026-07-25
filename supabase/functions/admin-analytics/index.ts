@@ -2,6 +2,7 @@
 // Implements [API s11] -- aggregate metrics for admin dashboard
 
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireAdmin, authErrorResponse } from "../_shared/clerk-auth.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -19,6 +20,15 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
+
+    // Whole-business figures, so admin only. This endpoint had no check at all.
+    try {
+      await requireAdmin(req, supabase);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
+    }
 
     const [
       totalSubs,

@@ -3,6 +3,7 @@
 
 import Anthropic from "npm:@anthropic-ai/sdk@0.24.3";
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireOwnSubscriber, authErrorResponse } from "../_shared/clerk-auth.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -73,15 +74,15 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { subscriber_id, intake_response_id } = await req.json();
+    const { subscriber_id: claimedId, intake_response_id } = await req.json();
 
-    if (!subscriber_id || !intake_response_id) {
+    if (!intake_response_id) {
       return new Response(
         JSON.stringify({
           data: null,
           error: {
             code: "VALIDATION_ERROR",
-            message: "subscriber_id and intake_response_id are required",
+            message: "intake_response_id is required",
           },
         }),
         { status: 422, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -92,10 +93,22 @@ Deno.serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
+    let caller;
+    try {
+      caller = await requireOwnSubscriber(req, supabase, claimedId);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
+    }
+    const subscriber_id = caller.id;
+
+    // Scoped to the caller, so one member cannot analyse another's intake
     const { data: intake, error: intakeErr } = await supabase
       .from("intake_responses")
       .select("*")
       .eq("id", intake_response_id)
+      .eq("subscriber_id", subscriber_id)
       .single();
 
     if (intakeErr || !intake) {

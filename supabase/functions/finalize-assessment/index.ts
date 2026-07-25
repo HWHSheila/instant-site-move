@@ -2,6 +2,7 @@
 // Bypasses member RLS until INSERT policies are applied on member_roadmaps
 
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireOwnSubscriber, authErrorResponse } from "../_shared/clerk-auth.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -17,14 +18,14 @@ Deno.serve(async (req) => {
   try {
     const body = await req.json();
     const {
-      subscriber_id,
+      subscriber_id: claimedId,
       assessment_id,
       slotting,
       tierRec,
       progress_rows,
     } = body;
 
-    if (!subscriber_id || !assessment_id || !slotting || !tierRec) {
+    if (!assessment_id || !slotting || !tierRec) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -35,6 +36,16 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
+
+    let caller;
+    try {
+      caller = await requireOwnSubscriber(req, supabase, claimedId);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
+    }
+    const subscriber_id = caller.id;
 
     const { data: roadmap, error: roadmapErr } = await supabase
       .from("member_roadmaps")

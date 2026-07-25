@@ -55,6 +55,23 @@ Use this ownership model consistently:
   - Publishable key can be client-side.
   - Secret key and webhook secret must remain server-side only.
 
+## Secrets required by the Batch 1 identity work
+
+Two new Supabase Edge Function secrets. Portal functions fail closed without
+them, returning 401, so set both before deploying the functions.
+
+- `CLERK_ISSUER` — the Clerk Frontend API URL, for example
+  `https://clerk.your-domain.com`. Used to fetch Clerk's JWKS and verify caller
+  tokens in `supabase/functions/_shared/clerk-auth.ts`. Not a secret in the
+  strict sense, but it must be set or RS256 tokens are refused rather than
+  trusted.
+- `CLERK_WEBHOOK_SECRET` — the signing secret of the Clerk webhook endpoint
+  pointed at the `clerk-webhook` function. Subscribe that endpoint to
+  `user.created`, `user.updated` and `user.deleted`.
+
+`SUPABASE_JWT_SECRET` is already present in the Edge Function runtime and is
+used to verify tokens minted through the Clerk "supabase" JWT template.
+
 ## Existing integrations currently in this branch
 
 - Clerk frontend bootstrap: `src/main.tsx`

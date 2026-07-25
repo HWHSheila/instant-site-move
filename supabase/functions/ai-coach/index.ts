@@ -4,6 +4,8 @@
  */
 import Anthropic from "npm:@anthropic-ai/sdk@0.24.3";
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireOwnSubscriber, authErrorResponse } from "../_shared/clerk-auth.ts";
+import { resolveEffectiveTier } from "../_shared/effective-tier.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -66,38 +68,38 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { subscriber_id, question, history = [] } = await req.json();
+    const { subscriber_id: claimedId, question, history = [] } = await req.json();
 
-    if (!subscriber_id || !question?.trim()) {
+    if (!question?.trim()) {
       return new Response(
-        JSON.stringify({ error: "subscriber_id and question are required" }),
+        JSON.stringify({ error: "question is required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    const { data: subscriber, error: subErr } = await supabase
-      .from("subscribers")
-      .select("id, tier, payment_status, trial_start_date, email")
-      .eq("id", subscriber_id)
-      .single();
-
-    if (subErr || !subscriber) {
-      return new Response(
-        JSON.stringify({ error: "Member not found" }),
-        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+    let subscriber;
+    try {
+      subscriber = await requireOwnSubscriber(req, supabase, claimedId);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
     }
+    const subscriber_id = subscriber.id;
 
-    const tier = subscriber.tier as string | null;
-    const limit = tier ? TIER_LIMITS[tier] : null;
-    const month = billingMonth();
+    // Trial members have no billed tier, so the limit has to come from the
+    // effective tier or an unlimited allowance leaks out during every trial
+    const tier = resolveEffectiveTier(subscriber);
 
-    if (!tier && subscriber.payment_status !== "trial" && subscriber.payment_status !== "active") {
+    if (!tier) {
       return new Response(
         JSON.stringify({ error: "AI Coach requires a paid membership tier." }),
         { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+
+    const limit = TIER_LIMITS[tier];
+    const month = billingMonth();
 
     if (limit != null) {
       const { count } = await supabase

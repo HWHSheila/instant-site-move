@@ -3,6 +3,7 @@
 
 import Stripe from "npm:stripe@14.14.0";
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireOwnSubscriber, authErrorResponse } from "../_shared/clerk-auth.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -33,17 +34,27 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { subscriber_id, tier, success_url, cancel_url } = await req.json();
+    const { subscriber_id: claimedId, tier, success_url, cancel_url } = await req.json();
 
-    if (!subscriber_id || !tier) {
+    if (!tier) {
       return new Response(
         JSON.stringify({
           data: null,
-          error: { code: "VALIDATION_ERROR", message: "subscriber_id and tier are required" },
+          error: { code: "VALIDATION_ERROR", message: "tier is required" },
         }),
         { status: 422, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+
+    let sub;
+    try {
+      sub = await requireOwnSubscriber(req, supabase, claimedId);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
+    }
+    const subscriber_id = sub.id;
 
     const priceId = TIER_PRICE_MAP[tier];
     if (!priceId) {
@@ -56,17 +67,17 @@ Deno.serve(async (req) => {
       );
     }
 
-    const { data: sub } = await supabase
+    const { data: billing } = await supabase
       .from("subscribers")
-      .select("email, stripe_customer_id")
+      .select("stripe_customer_id")
       .eq("id", subscriber_id)
       .single();
 
-    let customerId = sub?.stripe_customer_id;
+    let customerId = billing?.stripe_customer_id;
 
     if (!customerId) {
       const customer = await stripe.customers.create({
-        email: sub?.email,
+        email: sub.email,
         metadata: { subscriber_id },
       });
       customerId = customer.id;
@@ -76,6 +87,13 @@ Deno.serve(async (req) => {
         .update({ stripe_customer_id: customerId })
         .eq("id", subscriber_id);
     }
+
+    // The chosen tier is recorded, not granted. Access during the trial stays
+    // on the Foundation to Restoration ladder; billing applies this on day 22.
+    await supabase
+      .from("subscribers")
+      .update({ pending_tier: tier })
+      .eq("id", subscriber_id);
 
     const session = await stripe.checkout.sessions.create({
       customer: customerId,

@@ -3,6 +3,7 @@
 
 import Stripe from "npm:stripe@14.14.0";
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { requireOwnSubscriber, authErrorResponse } from "../_shared/clerk-auth.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -25,22 +26,21 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { subscriber_id, return_url } = await req.json();
+    const { subscriber_id: claimedId, return_url } = await req.json();
 
-    if (!subscriber_id) {
-      return new Response(
-        JSON.stringify({
-          data: null,
-          error: { code: "VALIDATION_ERROR", message: "subscriber_id is required" },
-        }),
-        { status: 422, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+    let caller;
+    try {
+      caller = await requireOwnSubscriber(req, supabase, claimedId);
+    } catch (err) {
+      const denied = authErrorResponse(err, corsHeaders);
+      if (denied) return denied;
+      throw err;
     }
 
     const { data: sub } = await supabase
       .from("subscribers")
       .select("stripe_customer_id")
-      .eq("id", subscriber_id)
+      .eq("id", caller.id)
       .single();
 
     if (!sub?.stripe_customer_id) {
