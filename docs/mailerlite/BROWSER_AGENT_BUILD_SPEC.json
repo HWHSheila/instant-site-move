@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "ui_path": {
+    "login_url": "https://dashboard.mailerlite.com/",
+    "account": "Her Wellness Harmony / support@herwellnessharmony.com",
+    "steps": [
+      "Automations \u2192 Create / New automation",
+      "Choose template \u2192 Start from scratch",
+      "Set automation title to automation_name",
+      "Triggers tab \u2192 Updates field \u2192 drop on canvas",
+      "Custom field \u2192 last_trigger \u2192 value equals trigger_name \u2192 Save",
+      "Plus under trigger \u2192 Rules & actions \u2192 Send email \u2192 drop",
+      "Email name = automation_name; Subject = subject; Preheader = preheader; From Her Wellness Harmony / support@\u2026",
+      "Design email \u2192 Start from scratch \u2192 Simple editor",
+      "Paste body with {$name} (not {{name}})",
+      "Next \u2192 Save email \u2192 Activate"
+    ],
+    "already_built": [
+      "wellness_assessment_reminder_1"
+    ]
+  },
+  "automations": [
+    {
+      "trigger_name": "wellness_assessment_reminder_2",
+      "automation_name": "Wellness Assessment Reminder 2",
+      "subject": "You are missing your personalized roadmap",
+      "preheader": "Your Wellness Assessment is still open.",
+      "body": "Hello {$name},\n\nYour Wellness Assessment is still sitting unfinished, and without it your roadmap cannot be built around your actual patterns. This is the foundation everything else is built on, so it is worth carving out the ten minutes.\n\nComplete your Wellness Assessment here.\nhttps://instant-site-move.vercel.app/portal/intake\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "wellness_assessment_reminder_3",
+      "automation_name": "Wellness Assessment Reminder 3",
+      "subject": "Last reminder, complete your Wellness Assessment",
+      "preheader": "This is the final reminder before we move forward without it.",
+      "body": "Hello {$name},\n\nThis is the last reminder about your Wellness Assessment. If it is not completed soon, we will move forward with a general starting pathway so you are not stuck waiting, and you can always complete the assessment later to have your roadmap adjusted to fit you more precisely.\n\nComplete your Wellness Assessment here.\nhttps://instant-site-move.vercel.app/portal/intake\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "day_11_mini_assessment_reminder",
+      "automation_name": "Day 11 Mini Assessment Reminder",
+      "subject": "Time for your Day 11 check in",
+      "preheader": "A quick check in to track your progress so far.",
+      "body": "Hello {$name},\n\nYou are halfway through your trial. Your Day 11 mini assessment takes just a couple of minutes and helps track how your patterns are shifting since Day 1. This is how we know what is working and what needs adjusting.\n\nComplete your Day 11 check in here.\nhttps://instant-site-move.vercel.app/portal/mini-assessment\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "day_21_final_assessment_reminder",
+      "automation_name": "Day 21 Final Assessment Reminder",
+      "subject": "Your Day 21 check in is here",
+      "preheader": "Let's see how far you have come before your trial wraps up.",
+      "body": "Hello {$name},\n\nYour trial is coming to a close, and your Day 21 assessment is the moment to look back at how far you have come since Day 1. This is separate from your billing, it is purely about tracking your progress and setting up what comes next in your roadmap.\n\nComplete your Day 21 check in here.\nhttps://instant-site-move.vercel.app/portal/mini-assessment\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "semi_monthly_check_in_reminder",
+      "automation_name": "Semi-Monthly Check-In Reminder",
+      "subject": "Time for your check in",
+      "preheader": "A quick pulse check on how you are doing.",
+      "body": "Hello {$name},\n\nIt is time for your check in. A few minutes here keeps your roadmap honest about what is shifting and what still needs attention.\n\nComplete your check in here.\nhttps://instant-site-move.vercel.app/portal/mini-assessment\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "inactivity_3_day",
+      "automation_name": "Inactive 3 Days",
+      "subject": "We noticed you've been away",
+      "preheader": "Your roadmap is waiting whenever you are ready.",
+      "body": "Hello {$name},\n\nWe noticed you have not been in the portal for a few days. No guilt, just a gentle nudge. Your roadmap is still here whenever you are ready to pick back up.\n\nLog in here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "inactivity_7_day",
+      "automation_name": "Inactive 7 Days",
+      "subject": "It's been a week, let's get you back on track",
+      "preheader": "One small step is enough to restart momentum.",
+      "body": "Hello {$name},\n\nIt has been a week since you were last in the portal. One small step is enough to restart momentum. Your roadmap will meet you where you left off.\n\nLog in here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "inactivity_10_day",
+      "automation_name": "Inactive 10 Days",
+      "subject": "Still here whenever you're ready",
+      "preheader": "No pressure. Your place in the portal remains.",
+      "body": "Hello {$name},\n\nJust a quiet note that we are still here whenever you are ready. There is no pressure and no catch-up quiz. Your place in the portal remains.\n\nLog in here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "phase_completed",
+      "automation_name": "Phase Completed",
+      "subject": "You just completed a roadmap phase",
+      "preheader": "Here's what's opening up next in your roadmap.",
+      "body": "Hello {$name},\n\nYou just finished a phase in your roadmap. That is real progress, and it means your next phase is now open.\n\nKeep going here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "full_roadmap_completed",
+      "automation_name": "Full Roadmap Completed",
+      "subject": "You completed your full roadmap",
+      "preheader": "This is a meaningful milestone.",
+      "body": "Hello {$name},\n\nYou completed your full roadmap. That is a meaningful milestone. Take a moment with it, then keep using the portal for maintenance and ongoing support.\n\nLog in here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    },
+    {
+      "trigger_name": "cancellation_win_back",
+      "automation_name": "Cancellation Win-Back",
+      "subject": "We've kept your roadmap ready for you",
+      "preheader": "Your pathway is still here if you want to return.",
+      "body": "Hello {$name},\n\nIt has been a little while since you cancelled. We have kept your roadmap ready if you want to return. There is no pressure, just an open door.\n\nLog in here.\nhttps://instant-site-move.vercel.app/portal\n\nIn health and harmony,\nSheila\nHer Wellness Harmony"
+    }
+  ]
+}
