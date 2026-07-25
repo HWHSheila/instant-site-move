@@ -5,9 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, BookOpen, Loader2, PlayCircle, Video } from "lucide-react";
 import { useSupabase } from "@/hooks/use-supabase";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { useMemberContentPosts } from "@/hooks/use-member-content-posts";
-import { useSubscriber } from "@/hooks/use-subscriber";
 import { Tables } from "@/integrations/supabase/types";
 import { toast } from "sonner";
 import {
@@ -39,8 +38,7 @@ const TIER_ACCESS: Record<string, string[]> = {
 
 export default function PortalContent() {
   const supabase = useSupabase();
-  const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier, isAdmin, isPreviewing } = useEffectiveTier();
   const { data: articles = [] } = useMemberContentPosts("article", false);
   const [content, setContent] = useState<ContentPiece[]>([]);
   const [loading, setLoading] = useState(true);
@@ -67,14 +65,16 @@ export default function PortalContent() {
     fetchContent();
   }, [supabase]);
 
-  const allowedTiers = TIER_ACCESS[previewTier] ?? TIER_ACCESS["admin"];
-
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
+  const seesEverything = isAdmin && !isPreviewing;
+  const allowedTiers = seesEverything
+    ? TIER_ACCESS.admin
+    : effectiveTier
+      ? TIER_ACCESS[effectiveTier] ?? []
+      : [];
 
   const publishedArticles = articles
     .filter((a) => {
-      if (isAdmin && previewTier === "admin") return true;
+      if (seesEverything) return true;
       if (!effectiveTier) return false;
       return a.tier_access.includes(effectiveTier);
     })
@@ -97,8 +97,9 @@ export default function PortalContent() {
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.caption ?? "").toLowerCase().includes(searchQuery.toLowerCase());
     const matchesPillar = activeTab === "all" || item.pillar_name === activeTab;
-    // When admin is previewing a specific tier, apply tier access filter
-    const matchesTier = !isAdmin || previewTier === "admin" || allowedTiers.includes(item.content_lane ?? "awareness");
+    // Applies to members too, not only to admin previews, which is what let
+    // every lane through for a real member before
+    const matchesTier = seesEverything || allowedTiers.includes(item.content_lane ?? "awareness");
     return matchesSearch && matchesPillar && matchesTier;
   });
 

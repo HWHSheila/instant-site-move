@@ -16,15 +16,15 @@ export function isPaidTier(tier: string | null | undefined): tier is PaidTier {
   return !!tier && PAID_TIERS.includes(tier as PaidTier);
 }
 
-/** Symptom log requires $9+ tier or active trial. */
-export function canAccessSymptomLog(
-  tier: string | null | undefined,
-  paymentStatus: string | null | undefined,
-  trialStartDate: string | null | undefined
-): boolean {
-  if (isPaidTier(tier)) return true;
-  if (paymentStatus === "trial" || paymentStatus === "active") return true;
-  return !!trialStartDate;
+/**
+ * Symptom log requires an entitlement of $9 or above.
+ *
+ * Takes the effective tier, which already accounts for the trial, rather than
+ * re-deriving trial state here. Previously this granted access whenever a trial
+ * date existed, which made a free preview show paid content.
+ */
+export function canAccessSymptomLog(effectiveTier: string | null | undefined): boolean {
+  return isPaidTier(effectiveTier);
 }
 
 export function tierDisplayName(tier: string | null | undefined): string {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { useSubscriber } from "@/hooks/use-subscriber";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { useAiCoachUsage, useAskAiCoach, type CoachMessage } from "@/hooks/use-ai-coach";
 import { isAiCoachAvailable } from "@/lib/ai-coach-config";
 import { Button } from "@/components/ui/button";
@@ -14,10 +14,11 @@ import { toast } from "sonner";
 export default function PortalAICoaching() {
   const navigate = useNavigate();
   const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier, isAdmin, isPreviewing } = useEffectiveTier();
+  // Usage limits follow the effective tier, so previewing shows that tier's real allowance
   const { data: usage, isLoading: usageLoading } = useAiCoachUsage(
     subscriber?.id,
-    subscriber?.tier,
+    effectiveTier,
     subscriber?.payment_status,
     subscriber?.trial_start_date
   );
@@ -26,10 +27,8 @@ export default function PortalAICoaching() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<CoachMessage[]>([]);
 
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
   const hasAccess =
-    isAdmin && previewTier === "admin"
+    isAdmin && !isPreviewing
       ? true
       : isAiCoachAvailable(
           effectiveTier,

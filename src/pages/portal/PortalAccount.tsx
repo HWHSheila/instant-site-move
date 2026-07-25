@@ -2,7 +2,9 @@ import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { UserProfile } from "@clerk/clerk-react";
 import { useSubscriber } from "@/hooks/use-subscriber";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { useSupabase } from "@/hooks/use-supabase";
+import { trialDayNumber, TRIAL_LENGTH_DAYS, TRIAL_UNLOCK_DAY } from "@/lib/effective-tier";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +21,7 @@ const TIER_LABELS: Record<string, string> = {
 
 const STATUS_LABELS: Record<string, { label: string; variant: "default" | "secondary" | "destructive" | "outline" }> = {
   none: { label: "No Subscription", variant: "secondary" },
-  trial: { label: "Free Trial", variant: "default" },
+  trial: { label: "21-Day Trial", variant: "default" },
   active: { label: "Active", variant: "default" },
   past_due: { label: "Past Due", variant: "destructive" },
   cancelled: { label: "Cancelled", variant: "secondary" },
@@ -30,9 +32,13 @@ export default function PortalAccount() {
   const supabase = useSupabase();
   const [loadingPortal, setLoadingPortal] = useState(false);
 
-  const tier = subscriber?.tier;
+  const { tier: accessTier } = useEffectiveTier();
   const paymentStatus = subscriber?.payment_status || "none";
   const statusInfo = STATUS_LABELS[paymentStatus] || STATUS_LABELS.none;
+  const onTrial = paymentStatus === "trial";
+  const trialDay = onTrial ? trialDayNumber(subscriber?.trial_start_date) : null;
+  // During the trial, billed tier and access tier differ by design
+  const billedTier = subscriber?.tier;
 
   async function openBillingPortal() {
     if (!subscriber) return;
@@ -85,7 +91,7 @@ export default function PortalAccount() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="font-medium">
-                  {tier ? TIER_LABELS[tier] || tier : "No active tier"}
+                  {accessTier ? TIER_LABELS[accessTier] || accessTier : "No active tier"}
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {subscriber?.email}
@@ -94,14 +100,31 @@ export default function PortalAccount() {
               <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>
             </div>
 
-            {subscriber?.trial_end_date && paymentStatus === "trial" && (
-              <p className="text-sm text-muted-foreground">
-                Trial ends:{" "}
-                {new Date(subscriber.trial_end_date).toLocaleDateString(
-                  "en-US",
-                  { month: "long", day: "numeric", year: "numeric" }
+            {onTrial && (
+              <div className="text-sm text-muted-foreground space-y-1">
+                {trialDay != null && (
+                  <p>
+                    Day {Math.min(trialDay, TRIAL_LENGTH_DAYS)} of {TRIAL_LENGTH_DAYS}.
+                    {trialDay < TRIAL_UNLOCK_DAY
+                      ? ` Restoration access opens on day ${TRIAL_UNLOCK_DAY}.`
+                      : " Restoration access is open."}
+                  </p>
                 )}
-              </p>
+                {subscriber?.trial_end_date && (
+                  <p>
+                    Trial ends:{" "}
+                    {new Date(subscriber.trial_end_date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </p>
+                )}
+                <p>
+                  After the trial you will be billed for{" "}
+                  {TIER_LABELS[billedTier ?? "foundation"] ?? "Foundation"}.
+                </p>
+              </div>
             )}
 
             <div className="flex gap-3">

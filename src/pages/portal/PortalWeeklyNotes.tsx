@@ -1,19 +1,14 @@
 import { SEO } from "@/components/SEO";
 import { FileText, Loader2 } from "lucide-react";
 import { useMemberContentPosts } from "@/hooks/use-member-content-posts";
-import { useSubscriber } from "@/hooks/use-subscriber";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 
 export default function PortalWeeklyNotes() {
-  const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier, isAdmin, isPreviewing } = useEffectiveTier();
   const { data: notes = [], isLoading } = useMemberContentPosts("weekly_note", false);
 
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
-
   const visible = notes.filter((note) => {
-    if (isAdmin && previewTier === "admin") return true;
+    if (isAdmin && !isPreviewing) return true;
     if (!effectiveTier) return false;
     return note.tier_access.includes(effectiveTier);
   });

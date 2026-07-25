@@ -4,7 +4,7 @@ import { SEO } from "@/components/SEO";
 import { useSubscriber } from "@/hooks/use-subscriber";
 import { useRoadmapWithProgress, useCompleteLesson } from "@/hooks/use-member-roadmap";
 import { useSupabase } from "@/hooks/use-supabase";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,7 +47,7 @@ export default function PortalLesson() {
   const navigate = useNavigate();
   const supabase = useSupabase();
   const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier } = useEffectiveTier();
   const { orderedLessons, progress, isLoading } = useRoadmapWithProgress(subscriber?.id);
   const completeLesson = useCompleteLesson(subscriber?.id);
 
@@ -58,9 +58,7 @@ export default function PortalLesson() {
   const [script, setScript] = useState<any>(null);
   const [loadingContent, setLoadingContent] = useState(true);
 
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier ?? "awareness";
-  const features = TIER_FEATURES[effectiveTier] ?? TIER_FEATURES.awareness;
+  const features = TIER_FEATURES[effectiveTier ?? "awareness"] ?? TIER_FEATURES.awareness;
 
   const lesson = orderedLessons.find((v) => v.video_code === videoCode);
   const hasAccess = lesson && canAccessLesson(videoCode!, orderedLessons, progress);

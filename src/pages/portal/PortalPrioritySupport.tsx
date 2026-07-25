@@ -1,6 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { useSubscriber } from "@/hooks/use-subscriber";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import {
   usePrioritySupportMessages,
   usePrioritySupportUsage,
@@ -20,11 +20,9 @@ const ELIGIBLE_TIERS = ["restoration", "integration"];
 export default function PortalPrioritySupport() {
   const navigate = useNavigate();
   const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier } = useEffectiveTier();
   const { data: messages = [], isLoading } = usePrioritySupportMessages(subscriber?.id);
 
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
   const hasAccess = ELIGIBLE_TIERS.includes(effectiveTier ?? "");
 
   const { data: usage } = usePrioritySupportUsage(subscriber?.id, effectiveTier);

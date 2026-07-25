@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { useSubscriber } from "@/hooks/use-subscriber";
-import { usePreviewTier } from "@/components/portal/PortalLayout";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { useSymptomLogs, useAddSymptomLog } from "@/hooks/use-symptom-logs";
 import { canAccessSymptomLog } from "@/lib/tier-access";
 import { Button } from "@/components/ui/button";
@@ -14,21 +14,12 @@ import { toast } from "sonner";
 export default function PortalSymptomLog() {
   const navigate = useNavigate();
   const { subscriber } = useSubscriber();
-  const { previewTier, isAdmin } = usePreviewTier();
+  const { tier: effectiveTier, isAdmin, isPreviewing } = useEffectiveTier();
   const { data: logs = [], isLoading } = useSymptomLogs(subscriber?.id);
   const addLog = useAddSymptomLog(subscriber?.id);
   const [text, setText] = useState("");
 
-  const effectiveTier =
-    isAdmin && previewTier !== "admin" ? previewTier : subscriber?.tier;
-  const hasAccess =
-    isAdmin && previewTier === "admin"
-      ? true
-      : canAccessSymptomLog(
-          effectiveTier,
-          subscriber?.payment_status,
-          subscriber?.trial_start_date
-        );
+  const hasAccess = isAdmin && !isPreviewing ? true : canAccessSymptomLog(effectiveTier);
 
   const handleSubmit = async () => {
     if (!text.trim()) {

@@ -1,12 +1,23 @@
--- SUPERSEDED. Do not run this by hand.
--- Now maintained as supabase/migrations/20260725120000_portal_schema_baseline.sql.
--- Kept only as the historical record of what was applied manually before that.
+-- Portal schema baseline.
 --
--- Portal Membership Database Schema
--- Designed for Clerk auth (user_id is Clerk's sub claim, text not FK)
+-- sql/portal_schema.sql was applied to production by hand, so there was no way
+-- to prove the database matched the repo. This migration restates it in
+-- idempotent form: applied to the existing production database every statement
+-- is a no-op, and applied to an empty database it produces the same schema.
+--
+-- It also adds two things Batch 1 needs: pending_tier, and the unique
+-- constraint that subscriber_progress upserts already assume exists.
+
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
 -- ============================================
--- SUBSCRIBERS (member profiles)
+-- TABLES
 -- ============================================
 CREATE TABLE IF NOT EXISTS subscribers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -24,9 +35,6 @@ CREATE TABLE IF NOT EXISTS subscribers (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- INTAKE RESPONSES (wellness assessment)
--- ============================================
 CREATE TABLE IF NOT EXISTS intake_responses (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   subscriber_id UUID NOT NULL REFERENCES subscribers(id) ON DELETE CASCADE,
@@ -40,9 +48,6 @@ CREATE TABLE IF NOT EXISTS intake_responses (
   raw_form_data JSONB DEFAULT '{}'::jsonb
 );
 
--- ============================================
--- PATTERN MAPS (AI-identified patterns)
--- ============================================
 CREATE TABLE IF NOT EXISTS pattern_maps (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   subscriber_id UUID NOT NULL REFERENCES subscribers(id) ON DELETE CASCADE,
@@ -59,9 +64,6 @@ CREATE TABLE IF NOT EXISTS pattern_maps (
   override_by_admin BOOLEAN DEFAULT FALSE
 );
 
--- ============================================
--- SUBSCRIBER PROGRESS (21-day journey)
--- ============================================
 CREATE TABLE IF NOT EXISTS subscriber_progress (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   subscriber_id UUID NOT NULL REFERENCES subscribers(id) ON DELETE CASCADE,
@@ -74,9 +76,6 @@ CREATE TABLE IF NOT EXISTS subscriber_progress (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- CONTENT ITEMS (tier-gated portal content)
--- ============================================
 CREATE TABLE IF NOT EXISTS content_items (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
@@ -92,9 +91,6 @@ CREATE TABLE IF NOT EXISTS content_items (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- CONTENT DRAFTS (admin AI pipeline staging)
--- ============================================
 CREATE TABLE IF NOT EXISTS content_drafts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   topic_seed TEXT NOT NULL,
@@ -117,9 +113,6 @@ CREATE TABLE IF NOT EXISTS content_drafts (
   reviewed_at TIMESTAMPTZ
 );
 
--- ============================================
--- ADMIN USERS (role mapping for Clerk users)
--- ============================================
 CREATE TABLE IF NOT EXISTS admin_users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   clerk_user_id TEXT NOT NULL UNIQUE,
@@ -127,14 +120,59 @@ CREATE TABLE IF NOT EXISTS admin_users (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- ADD user_id TO CONTENT STUDIO TABLES
--- (for multi-user Content Studio support)
--- ============================================
 ALTER TABLE content_pieces ADD COLUMN IF NOT EXISTS user_id TEXT;
 ALTER TABLE campaigns ADD COLUMN IF NOT EXISTS user_id TEXT;
 ALTER TABLE calendar_entries ADD COLUMN IF NOT EXISTS user_id TEXT;
 ALTER TABLE content_weeks ADD COLUMN IF NOT EXISTS user_id TEXT;
+
+-- ============================================
+-- PENDING TIER
+-- ============================================
+-- A member may choose a tier during the 21-day trial, but that choice must not
+-- grant access before day 22. It therefore cannot live in `tier`, which means
+-- what they are billed for. Billing reads this at the end of the trial.
+ALTER TABLE subscribers ADD COLUMN IF NOT EXISTS pending_tier TEXT;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint WHERE conname = 'subscribers_pending_tier_check'
+  ) THEN
+    ALTER TABLE subscribers ADD CONSTRAINT subscribers_pending_tier_check
+      CHECK (pending_tier IS NULL OR pending_tier IN
+        ('awareness', 'foundation', 'guided', 'restoration', 'integration'));
+  END IF;
+END $$;
+
+COMMENT ON COLUMN subscribers.tier IS
+  'The tier the member is billed for. Written by billing only. Never written by the assessment.';
+COMMENT ON COLUMN subscribers.pending_tier IS
+  'Tier chosen during the trial, applied when billing starts on day 22. Grants no access on its own.';
+
+-- ============================================
+-- SUBSCRIBER PROGRESS UNIQUE CONSTRAINT
+-- ============================================
+-- The upserts in identify-patterns and advance-journey-day use
+-- onConflict: subscriber_id, which silently does the wrong thing without this.
+-- Duplicates are collapsed to the furthest-along row before the constraint lands.
+DELETE FROM subscriber_progress a
+  USING subscriber_progress b
+  WHERE a.subscriber_id = b.subscriber_id
+    AND (
+      a.day_number < b.day_number
+      OR (a.day_number = b.day_number AND a.created_at < b.created_at)
+      OR (a.day_number = b.day_number AND a.created_at = b.created_at AND a.id < b.id)
+    );
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint WHERE conname = 'subscriber_progress_subscriber_id_key'
+  ) THEN
+    ALTER TABLE subscriber_progress
+      ADD CONSTRAINT subscriber_progress_subscriber_id_key UNIQUE (subscriber_id);
+  END IF;
+END $$;
 
 -- ============================================
 -- INDEXES
@@ -153,25 +191,20 @@ CREATE INDEX IF NOT EXISTS idx_content_pieces_user ON content_pieces(user_id);
 CREATE INDEX IF NOT EXISTS idx_campaigns_user ON campaigns(user_id);
 
 -- ============================================
--- UPDATED_AT TRIGGERS (for new tables)
+-- UPDATED_AT TRIGGERS
 -- ============================================
-CREATE TRIGGER update_subscribers_updated_at BEFORE UPDATE ON subscribers FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER update_pattern_maps_updated_at BEFORE UPDATE ON pattern_maps FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER update_progress_updated_at BEFORE UPDATE ON subscriber_progress FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER update_content_items_updated_at BEFORE UPDATE ON content_items FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+DROP TRIGGER IF EXISTS update_subscribers_updated_at ON subscribers;
+CREATE TRIGGER update_subscribers_updated_at BEFORE UPDATE ON subscribers
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
--- ============================================
--- VERIFY
--- ============================================
-DO $$
-BEGIN
-  RAISE NOTICE 'Portal schema created:';
-  RAISE NOTICE '  - subscribers table ready';
-  RAISE NOTICE '  - intake_responses table ready';
-  RAISE NOTICE '  - pattern_maps table ready';
-  RAISE NOTICE '  - subscriber_progress table ready';
-  RAISE NOTICE '  - content_items table ready';
-  RAISE NOTICE '  - content_drafts table ready';
-  RAISE NOTICE '  - admin_users table ready';
-  RAISE NOTICE '  - user_id added to content studio tables';
-END $$;
+DROP TRIGGER IF EXISTS update_pattern_maps_updated_at ON pattern_maps;
+CREATE TRIGGER update_pattern_maps_updated_at BEFORE UPDATE ON pattern_maps
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS update_progress_updated_at ON subscriber_progress;
+CREATE TRIGGER update_progress_updated_at BEFORE UPDATE ON subscriber_progress
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS update_content_items_updated_at ON content_items;
+CREATE TRIGGER update_content_items_updated_at BEFORE UPDATE ON content_items
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();

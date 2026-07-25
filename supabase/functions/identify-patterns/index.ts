@@ -118,9 +118,11 @@ Deno.serve(async (req) => {
         ...fallback,
       });
 
+      // Tier is what the member pays for. The assessment only recommends,
+      // and the recommendation lives on pattern_maps.recommended_tier.
       await supabase
         .from("subscribers")
-        .update({ tier: "awareness", intake_completed: true })
+        .update({ intake_completed: true })
         .eq("id", subscriber_id);
 
       return new Response(
@@ -220,10 +222,11 @@ Deno.serve(async (req) => {
       track = "comprehensive";
     }
 
+    // Deliberately does not write `tier`. Membership comes from payment only;
+    // the recommendation is already stored on pattern_maps.recommended_tier.
     await supabase
       .from("subscribers")
       .update({
-        tier: result.recommended_tier,
         track,
         intake_completed: true,
       })

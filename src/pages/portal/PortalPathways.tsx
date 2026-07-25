@@ -68,9 +68,23 @@ export default function PortalPathways() {
             My Guided Roadmap
           </h1>
           <p className="text-muted-foreground mt-1">
-            Follow your personalized pathway — each lesson unlocks as you complete the previous one.
+            Follow your personalized pathway. Each lesson unlocks as you complete the previous one.
           </p>
         </div>
+
+        {orderedLessons.length === 0 && (
+          <Card>
+            <CardContent className="pt-6 text-center space-y-2">
+              <Route className="w-8 h-8 text-muted-foreground mx-auto" />
+              <p className="font-medium">Your lessons are being prepared</p>
+              <p className="text-sm text-muted-foreground">
+                Your roadmap is built and ready. The lessons for it are not published yet, so
+                there is nothing to watch at the moment. They will appear here as soon as they
+                are released.
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Progress bar */}
         <Card>
@@ -100,7 +114,7 @@ export default function PortalPathways() {
                 <h2 className="font-display text-lg font-semibold">{label}</h2>
                 {parallel && (
                   <Badge variant="secondary" className="text-xs">
-                    Parallel — available from Day 1
+                    Parallel, available from Day 1
                   </Badge>
                 )}
               </div>

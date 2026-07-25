@@ -1,5 +1,9 @@
+-- SUPERSEDED. Do not run this by hand.
+-- Now maintained as supabase/migrations/20260725120100_rls_effective_tier.sql,
+-- which also derives content access from the trial rule rather than from
+-- subscribers.tier. Kept only as the historical record.
+--
 -- Row Level Security Policies
--- Run this AFTER portal_schema.sql and seed_data.sql
 -- Requires Clerk JWT template to be configured so auth.jwt() contains the Clerk sub claim
 --
 -- Helper: extract Clerk user ID from JWT

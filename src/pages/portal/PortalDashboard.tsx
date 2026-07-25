@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSubscriber, usePatternMap, useJourneyProgress } from "@/hooks/use-subscriber";
+import { useEffectiveTier } from "@/hooks/use-effective-tier";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -96,7 +97,7 @@ export default function PortalDashboard() {
   const { data: progress } = useJourneyProgress(subscriber?.id);
 
   const hasIntake = subscriber?.intake_completed;
-  const tier = subscriber?.tier;
+  const { tier } = useEffectiveTier();
   const dayNumber = progress?.day_number;
   const phase = progress?.current_phase;
 

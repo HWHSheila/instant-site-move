@@ -8,6 +8,7 @@ import {
   type CompletedAssessment,
 } from "@/lib/mini-assessment-schedule";
 import { canAccessSymptomLog } from "@/lib/tier-access";
+import { resolveEffectiveTier } from "@/lib/effective-tier";
 import type { Subscriber, SubscriberProgress } from "./use-subscriber";
 
 export interface MiniAssessment {
@@ -75,9 +76,11 @@ export function useAssessmentSchedule(
   }));
 
   const isPaidOrTrial = canAccessSymptomLog(
-    subscriber?.tier,
-    subscriber?.payment_status,
-    subscriber?.trial_start_date
+    resolveEffectiveTier({
+      tier: subscriber?.tier,
+      paymentStatus: subscriber?.payment_status,
+      trialStartDate: subscriber?.trial_start_date,
+    })
   );
 
   const dueType = getDueAssessment(dayNumber, completed, isPaidOrTrial);

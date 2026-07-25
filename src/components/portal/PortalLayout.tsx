@@ -33,7 +33,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // ── Preview Tier Context ──────────────────────────────────────────────────────
 
-type Tier = "admin" | "awareness" | "foundation" | "guided" | "restoration" | "integration";
+type Tier = "admin" | "free" | "awareness" | "foundation" | "guided" | "restoration" | "integration";
 
 interface PreviewTierContextValue {
   previewTier: Tier;
@@ -100,6 +100,7 @@ const portalNav: NavItem[] = [
 
 const TIER_OPTIONS: { value: Tier; label: string }[] = [
   { value: "admin", label: "Admin view (you)" },
+  { value: "free", label: "Free account (no tier)" },
   { value: "awareness", label: "Awareness tier" },
   { value: "foundation", label: "Foundation tier" },
   { value: "guided", label: "Guided tier" },
@@ -133,10 +134,17 @@ export function PortalLayout() {
       });
   }, [supabase, clerkUserId]);
 
+  const isPreviewingMember = isAdmin && previewTier !== "admin";
   const assessmentDone = !!(subscriber?.assessment_completed ?? subscriber?.intake_completed);
   const visibleNav = portalNav
-    .filter(item => isAdmin || !item.adminOnly)
-    .filter(item => !item.afterAssessmentOnly || assessmentDone || isAdmin);
+    // Studio is admin tooling, so it disappears while previewing as a member
+    .filter(item => (isAdmin && !isPreviewingMember) || !item.adminOnly)
+    .filter(item => {
+      if (!item.afterAssessmentOnly) return true;
+      // A free preview stands in for someone with no assessment and no payment
+      if (isPreviewingMember) return previewTier !== "free";
+      return assessmentDone || isAdmin;
+    });
 
   const previewLabel = TIER_OPTIONS.find(o => o.value === previewTier)?.label ?? "Admin view";
 

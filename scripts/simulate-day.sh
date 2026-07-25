@@ -285,17 +285,12 @@ print(json.dumps({
 sb_patch "subscribers?id=eq.${SUB_ID}" "$PATCH_SUB" >/dev/null
 echo "  trial_start_date / assessment_completed_at / payment_status=${NEW_PAYMENT}"
 
-# Day 19 forward: upgrade tier; Day 19 backward: leave tier unless we only bumped for sim
-# Snapshot previous tier in check_in_data when upgrading
+# This script must never write subscribers.tier. Tier means what the member
+# pays for; trial access is derived from payment status and journey day, so
+# day 19 Restoration access happens without touching the stored tier.
 NEW_TIER="$TIER"
 if [[ "$TARGET_DAY" -ge 19 && "$DIRECTION" == "forward" ]]; then
-  case "$TIER" in
-    awareness|foundation|guided|"")
-      NEW_TIER="restoration"
-      sb_patch "subscribers?id=eq.${SUB_ID}" "{\"tier\": \"restoration\"}" >/dev/null
-      echo "  Day 19 side effect: tier → restoration (was ${TIER:-empty})"
-      ;;
-  esac
+  echo "  Day 19: Restoration access is derived from trial day, no tier write"
 fi
 
 echo ""
