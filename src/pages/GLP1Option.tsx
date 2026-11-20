@@ -63,7 +63,7 @@ export default function GLP1Option() {
 
             {/* Option 2: Bundle */}
             <div className="rounded-2xl overflow-hidden shadow-md flex flex-col" style={{ background: "#4B2E39" }}>
-              {/* Bundle image area — two covers layered diagonally */}
+              {/* Bundle image area, two covers layered diagonally */}
               <div className="relative overflow-hidden flex items-center justify-center" style={{ background: "#D8CFC4", height: "420px", paddingTop: "40px", paddingBottom: "40px" }}>
                 <div
                   className="absolute top-4 right-4 z-10 text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
@@ -71,7 +71,7 @@ export default function GLP1Option() {
                 >
                   Best Value
                 </div>
-                {/* Back cover — GLP-1, rotated left */}
+                {/* Back cover, GLP-1, rotated left */}
                 <img
                   src={glp1Cover}
                   alt="Understanding GLP-1 Signaling Ebook"
@@ -82,7 +82,7 @@ export default function GLP1Option() {
                     zIndex: 1,
                   }}
                 />
-                {/* Front cover — Gut Roadmap, rotated right */}
+                {/* Front cover, Gut Roadmap, rotated right */}
                 <img
                   src={gutRoadmapCover}
                   alt="30-Day Gut Reset Roadmap Ebook"

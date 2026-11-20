@@ -60,14 +60,14 @@ interface NavItem {
 const portalNav: NavItem[] = [
   { label: "Dashboard", to: "/portal", icon: LayoutDashboard, end: true },
 
-  // Social Studio — admin only
+  // Social Studio, admin only
   { label: "Social Studio", to: "/portal/studio", icon: Video, section: true, adminOnly: true },
   { label: "Script Generator", to: "/portal/studio/generate", icon: Sparkles, indent: true, adminOnly: true },
   { label: "Content Library", to: "/portal/studio/library", icon: Library, indent: true, adminOnly: true },
   { label: "Content Calendar", to: "/portal/studio/calendar", icon: Calendar, indent: true, adminOnly: true },
   { label: "Campaigns", to: "/portal/studio/campaigns", icon: Target, indent: true, adminOnly: true },
 
-  // Portal Studio — admin only
+  // Portal Studio, admin only
   { label: "Portal Studio", to: "/portal/studio/portal-library", icon: BookOpen, section: true, adminOnly: true },
   { label: "Portal Script Generator", to: "/portal/studio/portal-generate", icon: Sparkles, indent: true, adminOnly: true },
   { label: "Portal Video Library", to: "/portal/studio/portal-library", icon: Library, indent: true, adminOnly: true },
@@ -154,7 +154,7 @@ export function PortalLayout() {
     return (
       <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-800 flex items-center gap-2">
         <Eye className="w-3.5 h-3.5 shrink-0" />
-        Previewing as <span className="font-semibold">{previewLabel}</span> — content filtered accordingly.
+        Previewing as <span className="font-semibold">{previewLabel}</span>, content filtered accordingly.
         <button
           className="ml-auto underline hover:no-underline"
           onClick={() => setPreviewTier("admin")}

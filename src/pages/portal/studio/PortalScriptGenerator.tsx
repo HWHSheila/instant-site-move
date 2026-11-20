@@ -233,7 +233,7 @@ export default function PortalScriptGenerator() {
           )}
           {selectedVideo && (
             <div className="text-sm bg-muted/50 rounded-lg p-3 space-y-1">
-              <p><span className="text-muted-foreground">Selected:</span> <span className="font-medium">{selectedVideo.video_code} — {selectedVideo.title}</span></p>
+              <p><span className="text-muted-foreground">Selected:</span> <span className="font-medium">{selectedVideo.video_code}, {selectedVideo.title}</span></p>
               <p className="text-muted-foreground">{selectedVideo.phase} → {selectedVideo.sub_category}</p>
             </div>
           )}

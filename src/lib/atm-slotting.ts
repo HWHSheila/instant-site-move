@@ -1,7 +1,7 @@
 /**
  * ATM (Antecedents, Triggers, Mediators) pattern slotting.
  *
- * Q6 (Sheila): Option B — targeted sub-categories based on symptoms, baseline
+ * Q6 (Sheila): Option B, targeted sub-categories based on symptoms, baseline
  * severity (29 ratings), lab results, and ATM/diagnosis signals. Severity wins
  * when it conflicts with consciously selected symptom categories.
  */
@@ -34,7 +34,7 @@ export interface AssessmentSlottingInput {
   lab_tsh?: string | null;
   lab_free_t3?: string | null;
   lab_cortisol?: string | null;
-  /** ATM antecedents — early antibiotic use, birth history, etc. */
+  /** ATM antecedents, early antibiotic use, birth history, etc. */
   early_antibiotic_use?: boolean;
   chronic_stress_history?: boolean;
 }

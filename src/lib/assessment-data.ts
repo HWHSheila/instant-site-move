@@ -95,7 +95,7 @@ export const MEDICAL_CONDITIONS = MEDICAL_CONDITIONS_BY_CATEGORY.flatMap(
   (group) => group.conditions
 );
 
-// ── Symptom Inventory (Step 6) — from spec sections 6.1-6.8 ──
+// ── Symptom Inventory (Step 6), from spec sections 6.1-6.8 ──
 export const SYMPTOM_CATEGORIES = [
   {
     key: "symptoms_gut",
@@ -415,7 +415,7 @@ export const SYMPTOM_CATEGORIES = [
   },
 ];
 
-// ── Q5: Baseline rating items (29 items — Sheila-approved) ──
+// ── Q5: Baseline rating items (29 items, Sheila-approved) ──
 export const BASELINE_RATING_ITEMS = [
   {
     category: "Gut Health",

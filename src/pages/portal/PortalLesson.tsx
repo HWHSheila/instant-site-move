@@ -198,7 +198,7 @@ export default function PortalLesson() {
             ) : (
               <div className="aspect-video rounded-lg bg-muted flex flex-col items-center justify-center gap-2">
                 <p className="text-muted-foreground text-sm">
-                  Video coming soon — script and action items are available below.
+                  Video coming soon, script and action items are available below.
                 </p>
               </div>
             )}

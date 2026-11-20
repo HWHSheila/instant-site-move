@@ -126,7 +126,7 @@ export default function PortalDashboard() {
                 <p className="font-semibold">
                   Day {dayNumber}{" "}
                   <span className="text-muted-foreground font-normal">
-                    — {PHASE_LABELS[phase || ""] || phase}
+                   , {PHASE_LABELS[phase || ""] || phase}
                   </span>
                 </p>
               </div>

@@ -54,21 +54,21 @@ function EBookCard({ image, title, description, ctaText, ctaLink, comingSoon }: 
 const ebooks: EBookCardProps[] = [
   {
     image: ebookGutReset,
-    title: "30-Day Gut Reset Roadmap — $37",
-    description: "A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms — without restriction or burnout.",
+    title: "30-Day Gut Reset Roadmap, $37",
+    description: "A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms, without restriction or burnout.",
     ctaText: "Get Your Copy",
     ctaLink: "/30day-roadmap",
   },
   {
     image: ebookGlp1,
-    title: "Understanding GLP-1 Signaling — Launching Soon",
-    description: "Learn how gut health, blood sugar, and metabolic stress influence GLP-1 signaling, appetite, and weight response — and how to strengthen it naturally.",
+    title: "Understanding GLP-1 Signaling, Launching Soon",
+    description: "Learn how gut health, blood sugar, and metabolic stress influence GLP-1 signaling, appetite, and weight response, and how to strengthen it naturally.",
     ctaText: "Coming Soon",
     comingSoon: true,
   },
   {
     image: ebookGutEnvironment,
-    title: "Restoring the Gut Environment — Launching Soon",
+    title: "Restoring the Gut Environment, Launching Soon",
     description: "A comprehensive guide to rebuilding your gut microbiome, reducing inflammation, and creating an environment where healing can truly happen.",
     ctaText: "Coming Soon",
     comingSoon: true,

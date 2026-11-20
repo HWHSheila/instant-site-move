@@ -89,7 +89,7 @@ export default function PortalStartHere() {
                 <CalendarDays className="w-5 h-5 text-primary mt-0.5" />
                 <div>
                   <p className="font-semibold">
-                    Day {dayNumber} — {PHASE_LABELS[phase || ""] || phase}
+                    Day {dayNumber}, {PHASE_LABELS[phase || ""] || phase}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Your 21-day journey is designed to help you move from awareness to action.
@@ -103,7 +103,7 @@ export default function PortalStartHere() {
 
         <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
           <p>
-            This portal is designed to help you understand how your digestion patterns, metabolic rhythm, stress signals, and hormone responses are all connected — and why addressing them in the right order matters.
+            This portal is designed to help you understand how your digestion patterns, metabolic rhythm, stress signals, and hormone responses are all connected, and why addressing them in the right order matters.
           </p>
           <p>
             Instead of chasing individual symptoms, you'll learn to read your body's patterns and follow a structured path toward stability. Everything inside this portal is built on that principle.

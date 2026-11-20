@@ -8,7 +8,7 @@ export default function Phase1GutReset() {
     <div className="min-h-screen flex flex-col" style={{ background: "#F4EFEA" }}>
       <SEO
         title="Complete Phase 1 of Your 90-Day Protocol"
-        description="Get the 30-Day Gut Reset Roadmap — Phase 1 of the 90-Day GLP-1 Optimization Protocol. A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
+        description="Get the 30-Day Gut Reset Roadmap, Phase 1 of the 90-Day GLP-1 Optimization Protocol. A structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
         
       />
       <Header />
@@ -22,13 +22,13 @@ export default function Phase1GutReset() {
                 className="text-sm font-semibold tracking-[0.2em] uppercase mb-4"
                 style={{ color: "#8FA89E" }}
               >
-                Phase 1 — 90-Day GLP-1 Optimization Protocol
+                Phase 1, 90-Day GLP-1 Optimization Protocol
               </p>
               <h1
                 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium mb-4 leading-tight"
                 style={{ color: "#4B2E39" }}
               >
-                You Have the Guide — Now Start Phase&nbsp;1
+                You Have the Guide, Now Start Phase&nbsp;1
               </h1>
               <p
                 className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
@@ -66,7 +66,7 @@ export default function Phase1GutReset() {
                   className="text-2xl md:text-3xl font-display font-medium mb-4 leading-snug"
                   style={{ color: "#4B2E39" }}
                 >
-                  30-Day Gut Reset Roadmap — $29
+                  30-Day Gut Reset Roadmap, $29
                 </h2>
 
                 <p

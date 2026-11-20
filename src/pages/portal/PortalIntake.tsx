@@ -215,7 +215,7 @@ export default function PortalIntake() {
     birth_type: "", infant_feeding: "", childhood_antibiotics_early: "",
     childhood_illness: false, childhood_illness_detail: "",
     childhood_trauma: false, childhood_trauma_detail: "",
-    // Step 6 — symptoms stored as { symptom: frequency } objects
+    // Step 6, symptoms stored as { symptom: frequency } objects
     symptoms_gut: {} as Record<string, string>,
     symptoms_metabolic: {} as Record<string, string>,
     symptoms_hormonal: {} as Record<string, string>,
@@ -250,7 +250,7 @@ export default function PortalIntake() {
     lab_crp: "", lab_esr: "", lab_homocysteine: "",
     lab_gi_map: "", lab_sibo: "", lab_food_sensitivity: "",
     lab_ferritin: "", lab_vitamin_d: "", lab_b12: "", lab_magnesium: "", lab_other: "",
-    // Step 13 — baseline ratings (initialized to 5 for all 29 items)
+    // Step 13, baseline ratings (initialized to 5 for all 29 items)
     baseline_ratings: Object.fromEntries(
       BASELINE_RATING_ITEMS.flatMap((cat) => cat.items.map((item) => [item.key, 5]))
     ),
@@ -610,14 +610,14 @@ export default function PortalIntake() {
             {step === 2 && "Current and past medications can reveal important patterns."}
             {step === 3 && "Genetic predispositions help us understand which patterns to watch."}
             {step === 4 && "Early life factors shape the foundation of your health patterns."}
-            {step === 5 && "Select every symptom or pattern you have been experiencing. Don't filter yourself — include anything that feels relevant even if you have been told it is normal or unrelated. The more complete this picture is, the more personalized your roadmap will be."}
+            {step === 5 && "Select every symptom or pattern you have been experiencing. Don't filter yourself, include anything that feels relevant even if you have been told it is normal or unrelated. The more complete this picture is, the more personalized your roadmap will be."}
             {step === 6 && "Your diet and eating patterns tell us about your metabolic rhythm."}
             {step === 7 && "Sleep quality deeply impacts gut function and hormone balance."}
             {step === 8 && "Stress and emotional health affect every system in your body."}
             {step === 9 && "Movement and activity patterns affect metabolism and recovery."}
             {step === 10 && "Environmental factors can disrupt gut and hormone function."}
             {step === 11 && "Sharing your lab results is completely optional. If you have recent lab work, entering it here can help identify patterns and ensure your roadmap reflects the most complete picture. This information is used for educational pattern awareness only."}
-            {step === 12 && "Rate how you have been experiencing each of the following patterns over the past week, from 1 (severe or constant) to 10 (none or resolved). This is not a clinical evaluation — it is your personal baseline so you can see your own progress over time."}
+            {step === 12 && "Rate how you have been experiencing each of the following patterns over the past week, from 1 (severe or constant) to 10 (none or resolved). This is not a clinical evaluation, it is your personal baseline so you can see your own progress over time."}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

@@ -439,7 +439,7 @@ export default function GLP1Signal() {
         </p>
         <hr style={{ width: "50px", height: "2px", background: "#C9A646", border: "none", marginBottom: "1.8em" }} />
         <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "1.35rem", fontWeight: 600, color: "#4B2E4C", marginBottom: "0" }}>
-          Sheila McFarland
+          Sheila McFarland, CFMP
         </p>
         <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.92rem", fontWeight: 600, color: "#8F747B", position: "absolute", bottom: "0.75in" }}>
           <a href="https://www.herwellnessharmony.com" style={{ color: "#AE9297", textDecoration: "none" }}>www.herwellnessharmony.com</a>
@@ -543,22 +543,22 @@ export default function GLP1Signal() {
               <div className="ebook-signal-node-sub">Origin</div>
               <div className="ebook-signal-node-label">Gut</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">---</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Signal</div>
               <div className="ebook-signal-node-label">GLP-1<br />Release</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">---</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Receiver</div>
               <div className="ebook-signal-node-label">Pancreas</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">---</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Response</div>
               <div className="ebook-signal-node-label">Insulin<br />Release</div>
             </div>
-            <div className="ebook-signal-connector">———</div>
+            <div className="ebook-signal-connector">---</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Outcome</div>
               <div className="ebook-signal-node-label">Stable<br />Blood Sugar</div>
@@ -672,27 +672,27 @@ export default function GLP1Signal() {
               <div className="ebook-signal-node-sub">Signal</div>
               <div className="ebook-signal-node-label">GLP-1</div>
             </div>
-            <div className="ebook-signal-connector">—</div>
+            <div className="ebook-signal-connector">-</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Hormone</div>
               <div className="ebook-signal-node-label">Insulin</div>
             </div>
-            <div className="ebook-signal-connector">—</div>
+            <div className="ebook-signal-connector">-</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Tissue</div>
               <div className="ebook-signal-node-label">Muscle</div>
             </div>
-            <div className="ebook-signal-connector">—</div>
+            <div className="ebook-signal-connector">-</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Process</div>
               <div className="ebook-signal-node-label">Glucose Uptake</div>
             </div>
-            <div className="ebook-signal-connector">—</div>
+            <div className="ebook-signal-connector">-</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Engine</div>
               <div className="ebook-signal-node-label">Mitochondria</div>
             </div>
-            <div className="ebook-signal-connector">—</div>
+            <div className="ebook-signal-connector">-</div>
             <div className="ebook-signal-node">
               <div className="ebook-signal-node-sub">Outcome</div>
               <div className="ebook-signal-node-label">Energy Output</div>

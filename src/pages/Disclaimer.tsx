@@ -62,7 +62,7 @@ export default function Disclaimer() {
               <section className="space-y-4">
                 <h2 className="text-xl font-display font-medium text-foreground">Affiliate Disclosure</h2>
                 <p>
-                  Her Wellness Harmony may participate in affiliate programs. This means we may receive a commission if you purchase products through links on our website. This does not affect the price you pay or our recommendations—we only recommend products we genuinely believe in and have personally used or thoroughly researched.
+                  Her Wellness Harmony may participate in affiliate programs. This means we may receive a commission if you purchase products through links on our website. This does not affect the price you pay or our recommendations, we only recommend products we genuinely believe in and have personally used or thoroughly researched.
                 </p>
               </section>
 

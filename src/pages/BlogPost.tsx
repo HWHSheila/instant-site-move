@@ -449,7 +449,7 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title={post ? `${post.title} — Her Wellness Harmony` : "Blog — Her Wellness Harmony"}
+        title={post ? `${post.title}, Her Wellness Harmony` : "Blog, Her Wellness Harmony"}
         description={post?.excerpt || "Insights on gut health, metabolism, hormones, and root-cause wellness for women."}
       />
 

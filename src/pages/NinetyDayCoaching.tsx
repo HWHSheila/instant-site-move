@@ -7,7 +7,7 @@ export default function NinetyDayCoaching() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="90-Day Root Cause Coaching — Deeper Support Package"
+        title="90-Day Root Cause Coaching, Deeper Support Package"
         description="Structured weekly coaching to stabilize gut health, metabolism, and hormone signaling over 90 days."
       />
 

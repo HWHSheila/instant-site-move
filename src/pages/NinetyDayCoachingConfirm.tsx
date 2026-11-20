@@ -35,7 +35,7 @@ export default function NinetyDayCoachingConfirm() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Confirm Your Email — 90-Day Root Cause Coaching"
+        title="Confirm Your Email: 90-Day Root Cause Coaching"
         description="Enter your email to receive your onboarding and scheduling link for the 90-Day Root Cause Coaching program."
         noindex
       />

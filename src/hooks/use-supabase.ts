@@ -21,7 +21,7 @@ export function useSupabase() {
       global: {
         fetch: async (url, options: RequestInit = {}) => {
           // Try the "supabase" JWT template (old Clerk integration).
-          // If it doesn't exist, fall back to the raw session token —
+          // If it doesn't exist, fall back to the raw session token , 
           // which Supabase verifies via the Clerk third-party auth JWKS URL.
           const clerkToken =
             (await session?.getToken({ template: "supabase" })) ??

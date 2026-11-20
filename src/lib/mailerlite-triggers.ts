@@ -1,5 +1,5 @@
 /**
- * MailerLite trigger catalog — see HWH_MailerLite_Trigger_Sequence.md
+ * MailerLite trigger catalog, see HWH_MailerLite_Trigger_Sequence.md
  * Edge function handles actual API calls; this module defines names + groups.
  */
 

@@ -109,7 +109,7 @@ export default function PortalProgress() {
                 <div>
                   <p className="font-semibold">{assessmentLabel(dueType)} is ready</p>
                   <p className="text-sm text-muted-foreground">
-                    Day {dayNumber} — check-ins unlock by schedule, not lesson progress.
+                    Day {dayNumber}, check-ins unlock by schedule, not lesson progress.
                   </p>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function PortalProgress() {
                         </td>
                         {presentTypes.map((t) => (
                           <td key={t} className="text-center py-2 px-2 tabular-nums">
-                            {row.values[t] ?? "—"}
+                            {row.values[t] ?? "-"}
                           </td>
                         ))}
                         <td className="text-center py-2 pl-2">
@@ -204,7 +204,7 @@ export default function PortalProgress() {
               {assessments.length === 1 && (
                 <span className="block mt-1">
                   Baseline average:{" "}
-                  <strong>{averageRating(assessments[0].ratings) ?? "—"}</strong> / 10
+                  <strong>{averageRating(assessments[0].ratings) ?? "-"}</strong> / 10
                 </span>
               )}
             </CardContent>
@@ -231,7 +231,7 @@ export default function PortalProgress() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Badge variant="secondary" className="text-xs">
-                      avg {averageRating(a.ratings) ?? "—"}
+                      avg {averageRating(a.ratings) ?? "-"}
                     </Badge>
                     <span className="text-xs text-muted-foreground">
                       {new Date(a.completed_at).toLocaleDateString()}

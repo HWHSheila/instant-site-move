@@ -7,7 +7,7 @@ export default function NinetyDayCoachingThankYou() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Welcome — 90-Day Root Cause Coaching"
+        title="Welcome: 90-Day Root Cause Coaching"
         description="Your onboarding email is on its way. Check your inbox."
         noindex
       />
@@ -23,7 +23,7 @@ export default function NinetyDayCoachingThankYou() {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-6 leading-tight">
-              You're In — Welcome to the Deeper Support Package
+              You're In: Welcome to the Deeper Support Package
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">

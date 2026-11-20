@@ -319,7 +319,7 @@ export default function ContentLibrary() {
 
             <TabsContent value="upload" className="space-y-4 mt-4">
               <div className="space-y-2">
-                <Label>Upload video file (MP4, MOV, WebM — max 500MB)</Label>
+                <Label>Upload video file (MP4, MOV, WebM, max 500MB)</Label>
                 <input ref={fileRef} type="file" accept="video/*" className="hidden" onChange={uploadVideoFile} />
                 <Button variant="outline" className="w-full" onClick={() => fileRef.current?.click()} disabled={uploading}>
                   {uploading ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Uploading...</> : <><Upload className="w-4 h-4 mr-2" />Choose Video File</>}

@@ -32,7 +32,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Blog — Her Wellness Harmony"
+        title="Blog, Her Wellness Harmony"
         description="Insights on gut health, metabolism, hormones, and root-cause wellness for women."
       />
 

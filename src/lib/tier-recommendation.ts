@@ -1,6 +1,6 @@
 /**
  * Tier recommendation after assessment.
- * Dev-proposed thresholds — Sheila approves async (see HWH_Clarifications doc).
+ * Dev-proposed thresholds, Sheila approves async (see HWH_Clarifications doc).
  */
 
 export type RecommendedTier =

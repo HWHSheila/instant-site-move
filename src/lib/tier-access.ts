@@ -1,5 +1,5 @@
 /**
- * Tier access helpers — mirrors HWH tier gating specs.
+ * Tier access helpers, mirrors HWH tier gating specs.
  */
 
 export const PAID_TIERS = [

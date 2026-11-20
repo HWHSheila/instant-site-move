@@ -58,7 +58,7 @@ const workingWithItems = [
     image: workingFunctional,
     title: "Functional Medicine Education",
     lines: [
-      "Currently pursuing FM-CP certification, blending evidence-based strategies with gut-first, hormone-friendly protocols.",
+      "Certified Functional Medicine Practitioner (CFMP), blending evidence-based strategies with gut-first, hormone-friendly protocols.",
       "Ongoing training strengthens a systems-based approach to health.",
     ],
   },
@@ -81,7 +81,7 @@ export function About() {
           <div className="flex justify-center md:justify-start">
             <img
               src={sheilaPortrait}
-              alt="Sheila McFarland, founder of Her Wellness Harmony"
+              alt="Sheila McFarland, CFMP, founder of Her Wellness Harmony"
               className="w-72 md:w-80 h-auto object-contain rounded-2xl"
               loading="lazy"
             />
@@ -92,12 +92,12 @@ export function About() {
               Where Science Meets Lived Experience
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm <strong>Sheila McFarland</strong> — a wellness educator with 20+ years of scientific laboratory experience in root cause analysis, a chemistry degree, and a lived journey through metabolic crisis, gut dysfunction, and hormonal imbalance. I built Her Wellness Harmony because I know what it feels like to be dismissed by a system focused only on surface-level numbers while your body screams something deeper. That is the experience I bring to every woman I work with.
+              I'm <strong>Sheila McFarland, CFMP</strong>, a wellness educator with 20+ years of scientific laboratory experience in root cause analysis, a chemistry degree, and a lived journey through metabolic crisis, gut dysfunction, and hormonal imbalance. I built Her Wellness Harmony because I know what it feels like to be dismissed by a system focused only on surface-level numbers while your body screams something deeper. That is the experience I bring to every woman I work with.
             </p>
           </div>
         </div>
 
-        {/* My Journey — Timeline */}
+        {/* My Journey, Timeline */}
         <div className="mb-10">
           <div className="text-center mb-10">
             <p className="section-label mb-3">My Journey</p>

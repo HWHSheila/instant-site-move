@@ -35,7 +35,7 @@ export default function SixMonthCoachingConfirm() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Confirm Your Email — 6-Month Root Cause Transformation"
+        title="Confirm Your Email: 6-Month Root Cause Transformation"
         description="Enter your email to receive your onboarding and scheduling link for the 6-Month Root Cause Transformation program."
         noindex
       />

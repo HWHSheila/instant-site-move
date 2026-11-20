@@ -34,7 +34,7 @@ const patternData: PatternData[] = [
       "Enzyme and bile production capacity",
     ],
     rootCause:
-      "Bloating often begins in the gut — with impaired motility, microbial imbalances, or incomplete breakdown of food. When the digestive system is under stress, metabolic rhythm slows, which can amplify fluid retention and hormonal signaling disruptions downstream.",
+      "Bloating often begins in the gut, with impaired motility, microbial imbalances, or incomplete breakdown of food. When the digestive system is under stress, metabolic rhythm slows, which can amplify fluid retention and hormonal signaling disruptions downstream.",
     nextSteps:
       "Start with the Digestion Rhythm pathway in Guided Pathways to begin stabilizing your digestive foundation, or revisit Start Here to understand how gut health anchors the entire system.",
   },
@@ -43,7 +43,7 @@ const patternData: PatternData[] = [
     slug: "water-retention",
     icon: Droplets,
     feelsLike: [
-      "Puffiness in hands, face, or ankles — especially in the morning",
+      "Puffiness in hands, face, or ankles, especially in the morning",
       "Weight fluctuations of several pounds day to day",
       "A feeling of heaviness unrelated to food intake",
       "Rings or shoes feeling tighter than usual",
@@ -76,7 +76,7 @@ const patternData: PatternData[] = [
       "Mitochondrial energy production efficiency",
     ],
     rootCause:
-      "Post-meal fatigue reflects metabolic instability — often an exaggerated insulin response or poor blood sugar regulation. The gut's digestive workload, combined with nervous system state, determines how much energy is diverted away from the brain and muscles after eating.",
+      "Post-meal fatigue reflects metabolic instability, often an exaggerated insulin response or poor blood sugar regulation. The gut's digestive workload, combined with nervous system state, determines how much energy is diverted away from the brain and muscles after eating.",
     nextSteps:
       "Follow the Metabolic Stability pathway in Guided Pathways to work on blood sugar patterns, and review Start Here to understand how metabolism connects to energy and hormones.",
   },
@@ -85,7 +85,7 @@ const patternData: PatternData[] = [
     slug: "cravings",
     icon: Cookie,
     feelsLike: [
-      "Intense urges for sugar, salt, or carbohydrates — especially mid-afternoon or evening",
+      "Intense urges for sugar, salt, or carbohydrates, especially mid-afternoon or evening",
       "Eating past fullness without feeling satisfied",
       "Cravings that spike after poor sleep or stressful days",
       "Feeling driven to eat even when not physically hungry",
@@ -118,7 +118,7 @@ const patternData: PatternData[] = [
       "Nervous system state (sympathetic vs. parasympathetic tone)",
     ],
     rootCause:
-      "Sleep disruption is often a nervous system and metabolic issue. When cortisol doesn't decline properly in the evening — due to chronic stress, blood sugar instability, or gut-driven inflammation — the body stays in a state of alertness that overrides natural sleep signals.",
+      "Sleep disruption is often a nervous system and metabolic issue. When cortisol doesn't decline properly in the evening, due to chronic stress, blood sugar instability, or gut-driven inflammation, the body stays in a state of alertness that overrides natural sleep signals.",
     nextSteps:
       "Explore the Stress Load pathway in Guided Pathways to work on nervous system regulation, and revisit Start Here to understand the connection between stress, metabolism, and recovery.",
   },
@@ -139,9 +139,9 @@ const patternData: PatternData[] = [
       "Gut microbiome and estrobolome activity",
     ],
     rootCause:
-      "Menstrual pattern changes are often the final expression of upstream imbalances. The gut influences estrogen recycling through the estrobolome. Metabolic instability affects ovulation. Chronic stress suppresses progesterone. Hormones are the last system to shift — and the first place many notice symptoms.",
+      "Menstrual pattern changes are often the final expression of upstream imbalances. The gut influences estrogen recycling through the estrobolome. Metabolic instability affects ovulation. Chronic stress suppresses progesterone. Hormones are the last system to shift, and the first place many notice symptoms.",
     nextSteps:
-      "Begin with Guided Pathways to stabilize digestion and stress load first — hormonal patterns often improve as upstream systems are addressed. Review Start Here to see the full framework.",
+      "Begin with Guided Pathways to stabilize digestion and stress load first, hormonal patterns often improve as upstream systems are addressed. Review Start Here to see the full framework.",
   },
   {
     label: "Slow Digestion",
@@ -160,7 +160,7 @@ const patternData: PatternData[] = [
       "Hydration and electrolyte balance",
     ],
     rootCause:
-      "Slow digestion reflects reduced motility, often driven by nervous system dominance (sympathetic overdrive), insufficient bile flow, or thyroid-related slowing. When the body is in a stress state, it deprioritizes digestion — leading to longer transit times and incomplete elimination.",
+      "Slow digestion reflects reduced motility, often driven by nervous system dominance (sympathetic overdrive), insufficient bile flow, or thyroid-related slowing. When the body is in a stress state, it deprioritizes digestion, leading to longer transit times and incomplete elimination.",
     nextSteps:
       "Start with the Digestion Rhythm pathway in Guided Pathways to address motility foundations, and explore Start Here to understand how gut function drives everything downstream.",
   },
@@ -171,7 +171,7 @@ const patternData: PatternData[] = [
     feelsLike: [
       "Sudden mid-afternoon energy drops",
       "Needing caffeine or sugar to get through the day",
-      "Feeling wired but tired — exhausted yet unable to rest",
+      "Feeling wired but tired, exhausted yet unable to rest",
       "Energy that is unpredictable from day to day",
     ],
     systems: [
@@ -181,7 +181,7 @@ const patternData: PatternData[] = [
       "Sleep quality and overnight recovery",
     ],
     rootCause:
-      "Energy crashes signal metabolic instability — the body cycling between blood sugar spikes and drops, often compounded by adrenal fatigue patterns. When the gut isn't absorbing nutrients efficiently and stress load remains high, the metabolic system can't maintain steady energy output.",
+      "Energy crashes signal metabolic instability, the body cycling between blood sugar spikes and drops, often compounded by adrenal fatigue patterns. When the gut isn't absorbing nutrients efficiently and stress load remains high, the metabolic system can't maintain steady energy output.",
     nextSteps:
       "Follow the Metabolic Stability pathway in Guided Pathways, and address the Stress Load pathway to support adrenal recovery and steady energy.",
   },
@@ -216,7 +216,7 @@ export default function PortalPatternDetail() {
 
   return (
     <>
-      <SEO title={`${pattern.label} — Pattern Library`} noindex />
+      <SEO title={`${pattern.label}, Pattern Library`} noindex />
       <div className="space-y-8">
         {/* Back link */}
         <Link

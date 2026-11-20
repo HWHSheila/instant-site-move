@@ -68,7 +68,7 @@ export default function PortalPathways() {
             My Guided Roadmap
           </h1>
           <p className="text-muted-foreground mt-1">
-            Follow your personalized pathway — each lesson unlocks as you complete the previous one.
+            Follow your personalized pathway, each lesson unlocks as you complete the previous one.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export default function PortalPathways() {
                 <h2 className="font-display text-lg font-semibold">{label}</h2>
                 {parallel && (
                   <Badge variant="secondary" className="text-xs">
-                    Parallel — available from Day 1
+                    Parallel, available from Day 1
                   </Badge>
                 )}
               </div>

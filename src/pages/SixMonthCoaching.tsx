@@ -7,7 +7,7 @@ export default function SixMonthCoaching() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="6-Month Root Cause Transformation — Weekly Coaching"
+        title="6-Month Root Cause Transformation, Weekly Coaching"
         description="Weekly coaching designed for deeper physiology stabilization and sustainable metabolic regulation over six months."
       />
 

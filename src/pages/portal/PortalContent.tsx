@@ -27,7 +27,7 @@ const pillarColors: Record<string, string> = {
   "Chronic Fatigue": "bg-blue-100 text-blue-700",
 };
 
-// Tier access map — what each tier can see (cumulative up the stack)
+// Tier access map, what each tier can see (cumulative up the stack)
 const TIER_ACCESS: Record<string, string[]> = {
   admin: ["awareness", "foundation", "guided", "restoration", "integration"],
   integration: ["awareness", "foundation", "guided", "restoration", "integration"],

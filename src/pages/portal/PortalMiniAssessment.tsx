@@ -77,7 +77,7 @@ export default function PortalMiniAssessment() {
         },
       });
     } catch {
-      // Non-blocking — trigger logging is best-effort until Sheila provides API key
+      // Non-blocking, trigger logging is best-effort until Sheila provides API key
     }
   };
 

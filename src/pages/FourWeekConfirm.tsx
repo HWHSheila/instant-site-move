@@ -42,7 +42,7 @@ export default function FourWeekConfirm() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Confirm Your Email — Deep Support Package"
+        title="Confirm Your Email: Deep Support Package"
         description="Enter your email to receive your onboarding and scheduling link for the 4-Week Gut & Hormone Coaching package."
         noindex
       />

@@ -7,7 +7,7 @@ export default function FourWeekCoaching() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Deep Support Package — 4-Week Gut & Hormone Coaching"
+        title="Deep Support Package, 4-Week Gut & Hormone Coaching"
         description="A structured 4-week container designed to stabilize digestion and stress load to support metabolic rhythm and hormone signaling in the correct order."
       />
 
@@ -44,7 +44,7 @@ export default function FourWeekCoaching() {
         <Header />
 
         <main className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8">
-          {/* Hero content — centered, no image */}
+          {/* Hero content, centered, no image */}
           <div className="text-center mb-12">
             <p className="section-label text-wellness-gold mb-4 animate-fade-in">
               Coaching
@@ -105,7 +105,7 @@ export default function FourWeekCoaching() {
             </p>
           </div>
 
-          {/* Investment — slightly darker blend */}
+          {/* Investment, slightly darker blend */}
           <div
             className="rounded-2xl px-6 py-10 md:px-10 md:py-12 mb-4"
             style={{

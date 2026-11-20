@@ -88,7 +88,7 @@ export default function MemberContentEditor({ postType }: Props) {
       if (error) throw error;
       if (data?.body) {
         setEditing({ ...editing, body: data.body, title: data.title || editing.title });
-        toast.success("Draft generated — edit and save when ready.");
+        toast.success("Draft generated, edit and save when ready.");
       }
     } catch {
       toast.error("Could not generate draft. You can still write manually.");
@@ -119,7 +119,7 @@ export default function MemberContentEditor({ postType }: Props) {
 
   return (
     <>
-      <SEO title={`Portal Studio — ${meta.title}`} noindex />
+      <SEO title={`Portal Studio, ${meta.title}`} noindex />
       <div className="space-y-6">
         <div className="flex items-center justify-between gap-4">
           <div>
@@ -159,10 +159,10 @@ export default function MemberContentEditor({ postType }: Props) {
                   <Label>Pain point (optional)</Label>
                   <Select value={painPoint} onValueChange={setPainPoint}>
                     <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Skip — not required" />
+                      <SelectValue placeholder="Skip, not required" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">None — write freely</SelectItem>
+                      <SelectItem value="">None, write freely</SelectItem>
                       {MEMBER_CONTENT_PAIN_POINTS.map((p) => (
                         <SelectItem key={p} value={p}>{p}</SelectItem>
                       ))}
@@ -173,7 +173,7 @@ export default function MemberContentEditor({ postType }: Props) {
                   <Label>False belief (optional)</Label>
                   <Select value={falseBelief} onValueChange={setFalseBelief}>
                     <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Skip — not required" />
+                      <SelectValue placeholder="Skip, not required" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="">None</SelectItem>

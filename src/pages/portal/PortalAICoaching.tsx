@@ -94,7 +94,7 @@ export default function PortalAICoaching() {
             Ask the HWH Coach
           </h1>
           <p className="text-muted-foreground mt-1">
-            Get guidance on your roadmap, patterns, and next steps — grounded in the
+            Get guidance on your roadmap, patterns, and next steps, grounded in the
             Gut → Metabolism → Hormones framework.
           </p>
           {usage && (
@@ -108,7 +108,7 @@ export default function PortalAICoaching() {
 
         <Card className="bg-muted/30">
           <CardContent className="pt-4 text-xs text-muted-foreground">
-            This assistant provides educational wellness guidance only — not medical advice,
+            This assistant provides educational wellness guidance only, not medical advice,
             diagnoses, or supplement recommendations. Always work with your licensed
             healthcare provider for medical decisions.
           </CardContent>

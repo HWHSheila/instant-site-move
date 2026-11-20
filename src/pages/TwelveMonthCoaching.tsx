@@ -7,7 +7,7 @@ export default function TwelveMonthCoaching() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="12-Month Root Cause Partnership — Deepest Support"
+        title="12-Month Root Cause Partnership, Deepest Support"
         description="The highest level of weekly coaching support for long-term physiology restoration and metabolic stability."
       />
 

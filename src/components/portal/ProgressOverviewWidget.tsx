@@ -100,7 +100,7 @@ export function ProgressOverviewWidget() {
             <p className="font-semibold mt-1">{pathwayLabel}</p>
             {roadmap?.current_subcategory && (
               <p className="text-sm text-muted-foreground mt-0.5">
-                Currently in: {roadmap.current_phase} — {roadmap.current_subcategory}
+                Currently in: {roadmap.current_phase}, {roadmap.current_subcategory}
               </p>
             )}
           </div>
@@ -155,7 +155,7 @@ export function ProgressOverviewWidget() {
               <div>
                 <p className="text-sm font-medium">{assessmentLabel(dueType)} is ready</p>
                 <p className="text-xs text-muted-foreground">
-                  Takes about 5 minutes — unlocks by day, not lesson progress.
+                  Takes about 5 minutes, unlocks by day, not lesson progress.
                 </p>
               </div>
             </div>

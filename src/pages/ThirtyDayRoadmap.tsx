@@ -8,7 +8,7 @@ export default function ThirtyDayRoadmap() {
     <div className="min-h-screen flex flex-col" style={{ background: "#F4EFEA" }}>
       <SEO
         title="30-Day Gut Reset Roadmap"
-        description="Get the 30-Day Gut Reset Roadmap — a structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
+        description="Get the 30-Day Gut Reset Roadmap, a structured reset to calm digestion, stabilize metabolism, and reduce hormone-driven symptoms."
         
       />
       <Header />
@@ -43,7 +43,7 @@ export default function ThirtyDayRoadmap() {
                   className="text-2xl md:text-4xl font-display font-medium mb-5 leading-snug"
                   style={{ color: "#4B2E39" }}
                 >
-                  30-Day Gut Reset Roadmap — $37
+                  30-Day Gut Reset Roadmap, $37
                 </h1>
 
                 <p

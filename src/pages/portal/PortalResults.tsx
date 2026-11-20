@@ -170,7 +170,7 @@ export default function PortalResults() {
         </h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
           Based on your assessment, we've identified the patterns your body is
-          communicating. These aren't random symptoms — they're connected
+          communicating. These aren't random symptoms, they're connected
           signals.
         </p>
       </div>
@@ -300,7 +300,7 @@ export default function PortalResults() {
               </p>
             )}
             <Button className="w-full" size="lg" onClick={() => navigate("/portal/coaching")}>
-              Start Your 21-Day Trial — $19
+              Start Your 21-Day Trial, $19
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </CardContent>

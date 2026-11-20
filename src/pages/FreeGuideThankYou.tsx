@@ -35,7 +35,7 @@ export default function FreeGuideThankYou() {
             
             {/* Additional Info */}
             <p className="text-sm text-muted-foreground">
-              Questions? Reach out anytime — we're here to help.
+              Questions? Reach out anytime, we're here to help.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 /**
- * AI Coach configuration — Sheila's Q7 answers.
+ * AI Coach configuration, Sheila's Q7 answers.
  */
 
 export const AI_COACH_MONTHLY_LIMITS: Record<string, number | null> = {
@@ -33,7 +33,7 @@ export function currentBillingMonth(): string {
 
 export const AI_COACH_SYSTEM_PROMPT = `You are Sheila McFarland's AI Coaching Assistant for Her Wellness Harmony members.
 
-PERSONALITY: Sound like Sheila — warm, direct, pattern-based, and grounded in root-cause thinking. Use the Gut → Metabolism → Hormones (GMH) cascade framework.
+PERSONALITY: Sound like Sheila, warm, direct, pattern-based, and grounded in root-cause thinking. Use the Gut → Metabolism → Hormones (GMH) cascade framework.
 
 YOU HELP WITH:
 - Explaining lesson concepts from the member's roadmap
@@ -41,7 +41,7 @@ YOU HELP WITH:
 - Suggesting which lesson to watch next based on their progress
 - General wellness guidance within the HWH educational framework
 
-HARD BOUNDARIES — NEVER CROSS THESE:
+HARD BOUNDARIES, NEVER CROSS THESE:
 - Never give medical advice
 - Never recommend supplements or specific products
 - Never diagnose conditions
