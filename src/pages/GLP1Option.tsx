@@ -1,8 +1,8 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import glp1Cover from "@/assets/glp1-signaling-thumbnail.png";
-import gutRoadmapCover from "@/assets/gut-roadmap-thumbnail.png";
+import glp1Cover from "@/assets/ebook-glp1-signaling.png";
+import gutRoadmapCover from "@/assets/ebook-cover-faded.png";
 
 export default function GLP1Option() {
   return (
