@@ -60,12 +60,13 @@ export function getInitialUnlockedCodes(orderedLessons: RoadmapVideo[]): string[
 export function buildInitialProgressRows(
   orderedLessons: RoadmapVideo[],
   unlockedCodes: string[]
-): Array<{ video_code: string; content_type: string; status: ProgressStatus }> {
+): ProgressRow[] {
   const unlockedSet = new Set(unlockedCodes);
   return orderedLessons.map((lesson) => ({
     video_code: lesson.video_code,
     content_type: "lesson",
     status: unlockedSet.has(lesson.video_code) ? "unlocked" : "locked",
+    completed_at: null,
   }));
 }
 

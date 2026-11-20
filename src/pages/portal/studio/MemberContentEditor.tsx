@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select";
 import { Loader2, Sparkles, Save, BookOpen, FileText } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const TYPE_LABELS: Record<MemberPostType, { title: string; singular: string; icon: typeof BookOpen }> = {
   article: { title: "Member Content", singular: "article", icon: BookOpen },
@@ -38,7 +39,6 @@ interface Props {
 }
 
 export default function MemberContentEditor({ postType }: Props) {
-  const supabase = useSupabase();
   const { data: posts = [], isLoading } = useMemberContentPosts(postType, true);
   const savePost = useSaveMemberContentPost();
 
